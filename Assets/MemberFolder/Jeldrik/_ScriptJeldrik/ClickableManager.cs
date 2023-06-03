@@ -10,6 +10,7 @@ public class ClickableManager : MonoBehaviour
     [SerializeField] private TMP_Text _titleText;
     [SerializeField] private TMP_Text _descriptionText;
     [SerializeField] private Image _image;
+    [SerializeField] private QuestionManager _qM;
     private Clickable _currentClickable;
 
     private TouchHandler _tH;
@@ -40,6 +41,7 @@ public class ClickableManager : MonoBehaviour
         else
         {
             _currentClickable = C;
+            _qM.ObjectClick(cH);
             DisplayPopUp(cH);
             return true;
         }

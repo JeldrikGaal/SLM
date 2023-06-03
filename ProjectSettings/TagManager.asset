@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ClickableManager
   - Canvas
+  - QuestionMenuButton
   layers:
   - Default
   - TransparentFX

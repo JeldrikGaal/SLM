@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class TouchHandler : MonoBehaviour
 {
-    private float _width;
-    private float _height;
+    [HideInInspector]
+    public float _width, _height;
     private Vector3 _position;
 
     [Tooltip("Factor with how fast the camera moves when being dragged around")]
@@ -22,6 +22,8 @@ public class TouchHandler : MonoBehaviour
     private float _lastInputTime;
 
     [SerializeField] private GameObject _inputReminderObject;
+
+    private QuestionMenuButton _qMB;
 
     private bool locked;
 
@@ -45,6 +47,8 @@ public class TouchHandler : MonoBehaviour
         _canvas = GameObject.FindGameObjectWithTag("Canvas");
         locked = true;
         _lastInputTime = Time.time;
+        _qMB = GameObject.FindGameObjectWithTag("QuestionMenuButton").GetComponent<QuestionMenuButton>();
+        _qMB.ToggleSelf(false);
     }
 
     // Update is called once per frame
@@ -77,7 +81,6 @@ public class TouchHandler : MonoBehaviour
         {
             mpS = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             camPS = Camera.main.transform.position;
-            Debug.Log("test");
 
             LogInputTime();
 
@@ -112,7 +115,7 @@ public class TouchHandler : MonoBehaviour
     {
         Debug.Log("SPAWN!");
         GameObject temp = Instantiate(_inputReminderObject, _canvas.transform);
-        temp.transform.localPosition = new Vector3(_camTransform.position.x, _camTransform.position.y + 200, 0);
+        temp.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + _height * 0.05f, temp.transform.position.z);
         temp.GetComponent<ReminerPopUp>().Show();
     }
 
@@ -123,11 +126,14 @@ public class TouchHandler : MonoBehaviour
 
     public void LockInput()
     {
+        _qMB.ToggleSelf(false);
         locked = true;
     }
 
     public void UnlockInput()
     {
+        _qMB.ToggleSelf(true);
         locked = false;
+        _lastInputTime = Time.time;
     }
 }
