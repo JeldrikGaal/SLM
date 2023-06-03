@@ -18,6 +18,7 @@ public class Clickable : MonoBehaviour
         _image.color = new Color(_image.color.r, _image.color.g, _image.color.b, 0);
     }
 
+    // Function used by the UI button if this object is clicked. Tries to display the information in an popup by calling the function on the Clickable Manager and returns an warning if the holder is missing
     public void Clicked()
     {
         if (cH != null)
@@ -36,7 +37,6 @@ public class Clickable : MonoBehaviour
         _image.color = c;
     }
 
-    // Update is called once per frame
     void Update()
     {
         
