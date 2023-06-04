@@ -13,9 +13,11 @@ public class QuestionManager : MonoBehaviour
 
     [SerializeField] private List<Question> _questions = new List<Question>();
 
+    [SerializeField] private GameObject _confetti;
     
     private int _currentQ = -1;
     private float _timeOnCurrentQ;
+    
 
 
     // Start is called before the first frame update
@@ -33,6 +35,7 @@ public class QuestionManager : MonoBehaviour
             _currentQ = 0;
             _timeOnCurrentQ = Time.time;
         }
+        this.gameObject.SetActive(false);
         
     }
 
@@ -61,6 +64,8 @@ public class QuestionManager : MonoBehaviour
     {
         if (_questions[_currentQ].ObjectToFind == cH)
         {
+            GameObject temp = Instantiate(_confetti, Camera.main.transform);
+            Destroy(temp, 4);
             CompleteCurrentQuestion();
         }
     }
