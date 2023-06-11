@@ -30,6 +30,7 @@ public class QuestionMenuButton : MonoBehaviour
     {
         _image.enabled = active;
         _questionMark.SetActive(active);
+        
     }
 
     // Toggles the question menu and adds a small animation
@@ -40,17 +41,21 @@ public class QuestionMenuButton : MonoBehaviour
         {
             _questionMenuButton.transform.DOScale(Vector3.zero, 0.35f).OnComplete(() =>
             {
+                _tH.UnlockInput();
                 _questionMenuButton.SetActive(false);
+                
             });
         }
         else
         {
             _questionMenuButton.transform.localScale = Vector3.zero;
             _questionMenuButton.SetActive(true);
-            _questionMenuButton.transform.DOScale(Vector3.one, 0.35f);
+            _questionMenuButton.transform.DOScale(Vector3.one, 0.35f).OnComplete(() => _tH.LockInput());
+            
         }
 
         // Prevents wrong input particle from spawning
         _tH.BlockWrongInputPart();
+        
     }
 }

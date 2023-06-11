@@ -30,6 +30,7 @@ public class TouchHandler : MonoBehaviour
 
     // Reference to the button toggling the question menu
     private QuestionMenuButton _qMB;
+    private CurrentQuestion _cQ;
 
     private bool locked;
 
@@ -37,7 +38,7 @@ public class TouchHandler : MonoBehaviour
     [HideInInspector] public bool ValidInput;
     private bool _lastFrameClicked;
     private float _lastFrameClickedStartTime;
-    private float _lastFrameClickedCountTime = 0.3f;
+    private float _lastFrameClickedCountTime = 0.02f;
 
     // Camera stuff
     private Vector2 _camLimits;
@@ -71,9 +72,12 @@ public class TouchHandler : MonoBehaviour
         _canvas = GameObject.FindGameObjectWithTag("Canvas");
         _qMB = GameObject.FindGameObjectWithTag("QuestionMenuButton").GetComponent<QuestionMenuButton>();
         _qMB.ToggleSelf(false);
+        _cQ = GameObject.FindGameObjectWithTag("CurrentQuestion").GetComponent<CurrentQuestion>();
+        _cQ.ToggleSelf(false);
+
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         // Prevents any input when the handler is locked
@@ -201,15 +205,21 @@ public class TouchHandler : MonoBehaviour
         _lastInputTime = Time.time;
     }
 
-    public void LockInput()
+    public void LockInput(bool qmb = false)
     {
-        _qMB.ToggleSelf(false);
+        // Only toggle question manager button if needed
+        if (qmb )
+        {
+            _qMB.ToggleSelf(false);
+            _cQ.ToggleSelf(false);
+        }
         locked = true;
     }
 
     public void UnlockInput()
     {
         _qMB.ToggleSelf(true);
+        _cQ.ToggleSelf(true);
         locked = false;
         _lastInputTime = Time.time;
     }

@@ -79,9 +79,7 @@ public class ClickableManager : MonoBehaviour
             _qM.ObjectClick(cH);
         });
 
-        
-
-        _tH.LockInput();
+        _tH.LockInput(true);
         
     }
 

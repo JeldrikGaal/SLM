@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -18,14 +19,16 @@ public class QuestionManager : MonoBehaviour
 
     [Tooltip("Prefab for spawning confetti upon question completion")]
     [SerializeField] private GameObject _confetti;
-    #endregion
 
+    [Tooltip("Reference to the current question menu")]
+    [SerializeField] private CurrentQuestion _currentQuestion;
+
+    [HideInInspector] public TouchHandler _tH;
+
+    #endregion
 
     private int _currentQ = -1;
     private float _timeOnCurrentQ;
-    private TouchHandler _tH;
-    
-
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +45,7 @@ public class QuestionManager : MonoBehaviour
             _questionsText[2].text = _questions[2].Text;
             _currentQ = 0;
             _timeOnCurrentQ = Time.time;
+            _currentQuestion.ChangeCurrentQuestion(GetCurrentQuestion());
         }
 
         // Getting references 
@@ -63,6 +67,7 @@ public class QuestionManager : MonoBehaviour
     {
         
         _questionStatus[_currentQ].color = Color.green;
+        
 
         if (_questions[_currentQ].End)
         {
@@ -71,6 +76,7 @@ public class QuestionManager : MonoBehaviour
         }
 
         _currentQ++;
+        _currentQuestion.ChangeCurrentQuestion(_questions[_currentQ]);
     }
 
     // Gets called by Clickables whenever they are sucessfully clicked -> Questionmanager checks if its the currently needed object
@@ -87,7 +93,22 @@ public class QuestionManager : MonoBehaviour
     // Handles completing all questions
     private void End()
     {
-        Debug.Log("Last Question Done ! ");
+        Debug.Log("==== Last Question Done ! ====");
+
+        Camera c = Camera.main;
+        DOTween.To(() => c.orthographicSize, x => c.orthographicSize = x, 0f, 2f).OnComplete(() =>
+        {
+            #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+            #endif
+        });
+
+        
     }
-    
+
+    // Return the currently selected Question
+    public Question GetCurrentQuestion()
+    {
+        return _questions[_currentQ];
+    }
 }
