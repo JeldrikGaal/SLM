@@ -7,8 +7,8 @@ public class TouchHandler : MonoBehaviour
 {
     [HideInInspector]
     public float _width, _height;
-    private Vector3 _position;
 
+    #region Serialized Fields
     [Tooltip("Factor with how fast the camera moves when being dragged around")]
     [SerializeField] private float _dragFactor = 0.1f;
 
@@ -18,35 +18,57 @@ public class TouchHandler : MonoBehaviour
     [Tooltip("How long to after Spawning a reminder for the next one")]
     [SerializeField] private float _waitTimeReminderWaitTime;
 
-
-    private float _lastInputTime;
-
+    [Tooltip("Prefab for the input reminder Object")]
     [SerializeField] private GameObject _inputReminderObject;
 
+    [Tooltip("Prefab for the wrong input particle")]
+    [SerializeField] private GameObject _wrongInputParticle;
+    #endregion
+
+    private float _lastInputTime;
+    private float _lastBlockPartTime;
+
+    // Reference to the button toggling the question menu
     private QuestionMenuButton _qMB;
 
     private bool locked;
 
-    private Vector2 _camLimits;
-    private Transform _camTransform;
+    // Set true by buttons if in this frame a button was clicked to prevent spawning of wrong input particle
+    [HideInInspector] public bool ValidInput;
+    private bool _lastFrameClicked;
+    private float _lastFrameClickedStartTime;
+    private float _lastFrameClickedCountTime = 0.3f;
 
+    // Camera stuff
+    private Vector2 _camLimits;
     private Vector3 mpS;
-    private Vector3 mp;
     private Vector3 camPS;
     private GameObject _canvas;
+    private Transform _camTransform;
 
-   
+
 
     // Start is called before the first frame update
     void Awake()
     {
         _width = (float)Screen.width / 2.0f;
         _height = (float)Screen.height / 2.0f;
+
+        // Used for timing the spawning of 'Wrong Input' particle
+        _lastFrameClickedCountTime = 0.3f;
+        
+        // Limits where the camera can be moved to by dragging
         _camLimits = new Vector2(65,39);
+
+        // Locks all input until its unlocked by UnlockInput()
+        locked = true;
+
+        // Used to time the spawning of reminder notifications
+        _lastInputTime = Time.time;
+
+        // Fetching needed references 
         _camTransform = Camera.main.transform;
         _canvas = GameObject.FindGameObjectWithTag("Canvas");
-        locked = true;
-        _lastInputTime = Time.time;
         _qMB = GameObject.FindGameObjectWithTag("QuestionMenuButton").GetComponent<QuestionMenuButton>();
         _qMB.ToggleSelf(false);
     }
@@ -57,6 +79,7 @@ public class TouchHandler : MonoBehaviour
         // Prevents any input when the handler is locked
         if (locked) return;
 
+        #region Commented Touch controls
         /*if (Input.touchCount == 1)
         {
             Touch touch = Input.GetTouch(0);
@@ -75,7 +98,28 @@ public class TouchHandler : MonoBehaviour
                 pos.y = (pos.y - _height) / _height;
             }
         }*/
-    
+        #endregion
+
+        #region Wrong Input particle Logic
+        // Checking if last frame the user started a click and if they are now dragging or not
+        if (_lastFrameClicked && !Input.GetMouseButton(0))
+        {
+            
+            if (!ValidInput)
+            {
+                SpawnWrongInputPart(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            }
+            
+        }
+
+        // Resetting variable that checks if a button has been clicked after x sec
+        if (Time.time - _lastBlockPartTime > 0.1f && ValidInput)
+        {
+            ValidInput = false;
+        }
+        #endregion
+
+        #region Handling Input
         // Starting to drag the camera around ( with mouse controls for debugging purposes )
         if (Input.GetMouseButtonDown(0))
         {
@@ -83,10 +127,19 @@ public class TouchHandler : MonoBehaviour
             camPS = Camera.main.transform.position;
 
             LogInputTime();
-
+            _lastFrameClicked = true;
+            _lastFrameClickedStartTime = Time.time;
 
 
         }
+        else
+        {
+            if (Time.time - _lastFrameClickedStartTime > _lastFrameClickedCountTime && _lastFrameClicked)
+            {
+                _lastFrameClicked = false;
+            }
+        }
+       
         // Actually dragging the camera around ( with mouse controls for debugging purposes )
         if (Input.GetMouseButton(0))
         {
@@ -98,10 +151,13 @@ public class TouchHandler : MonoBehaviour
 
             LogInputTime();
         }
+        #endregion
 
         ReminderLogic();
     }
 
+    #region Reminder Notification Functions
+    // Logic for spawning reminder notifcations when user has not pressed anything for _waitTimeReminder seconds 
     private void ReminderLogic()
     {
         if (Time.time - _lastInputTime > _waitTimeReminder)
@@ -111,6 +167,7 @@ public class TouchHandler : MonoBehaviour
         }
     }
 
+    // Spawn reminder notifcation Objects
     private void SpawnInputReminder()
     {
         Debug.Log("SPAWN!");
@@ -118,7 +175,27 @@ public class TouchHandler : MonoBehaviour
         temp.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + _height * 0.05f, temp.transform.position.z);
         temp.GetComponent<ReminerPopUp>().Show();
     }
+    #endregion
 
+    #region wrong input functions
+    // Spawning the 'red ripple' particle at pos
+    public void SpawnWrongInputPart(Vector2 pos)
+    {
+        GameObject temp = Instantiate(_wrongInputParticle, Camera.main.transform);
+        temp.transform.position = new Vector3(pos.x, pos.y, temp.transform.position.z);
+        Destroy(temp, 2f);
+        _lastFrameClicked = false;
+    }
+
+    // Called by buttons to block the spawning of wrong input particles 
+    public void BlockWrongInputPart()
+    {
+        ValidInput = true;
+        _lastBlockPartTime = Time.time;
+    }
+    #endregion
+
+    #region Input helper
     private void LogInputTime()
     {
         _lastInputTime = Time.time;
@@ -136,4 +213,5 @@ public class TouchHandler : MonoBehaviour
         locked = false;
         _lastInputTime = Time.time;
     }
+    #endregion
 }

@@ -6,23 +6,31 @@ using UnityEngine.UI;
 
 public class QuestionManager : MonoBehaviour
 {
+    #region References    
+    [Tooltip("TMP_Text Objects for each question from the menu overview")]
     [SerializeField] private List<TMP_Text> _questionsText = new List<TMP_Text>();
 
+    [Tooltip("TMP_Text Objects for each question from the menu overview")]
     [SerializeField] private List<Image> _questionStatus = new List<Image>();
-   
 
+    [Tooltip("Question objects in order of needed completion")]
     [SerializeField] private List<Question> _questions = new List<Question>();
 
+    [Tooltip("Prefab for spawning confetti upon question completion")]
     [SerializeField] private GameObject _confetti;
-    
+    #endregion
+
+
     private int _currentQ = -1;
     private float _timeOnCurrentQ;
+    private TouchHandler _tH;
     
 
 
     // Start is called before the first frame update
     void Start()
     {
+        // Loading and displaying question objects in the menu
         if (_questions.Count < 3)
         {
             Debug.LogWarning("Not enough Questions provided to properly load");
@@ -35,12 +43,18 @@ public class QuestionManager : MonoBehaviour
             _currentQ = 0;
             _timeOnCurrentQ = Time.time;
         }
+
+        // Getting references 
+        _tH = Camera.main.GetComponent<TouchHandler>();
+        
+        // Starts off disables
         this.gameObject.SetActive(false);
         
     }
 
     private void Update()
     {
+        // Always being display in the middle of the screen
         transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, transform.position.z);
     }
 
@@ -70,6 +84,7 @@ public class QuestionManager : MonoBehaviour
         }
     }
 
+    // Handles completing all questions
     private void End()
     {
         Debug.Log("Last Question Done ! ");

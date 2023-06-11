@@ -61,7 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _title: {fileID: 7636297327382615260}
   _content: {fileID: 7636297327256846339}
-  _holder: {fileID: 11400000, guid: 75d456ff6acd84f46abe118b35a4e06b, type: 2}
+  _holder: {fileID: 11400000, guid: 0e96e9417b523ff41b266216c11321cb, type: 2}
   _container: {fileID: 7636297327517042224}
 --- !u!1 &7636297327256846341
 GameObject:

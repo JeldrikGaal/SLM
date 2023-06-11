@@ -3,18 +3,22 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class ClickableManager : MonoBehaviour
 {
+
+    #region References
     [SerializeField] private GameObject _popUp;
     [SerializeField] private TMP_Text _titleText;
     [SerializeField] private TMP_Text _descriptionText;
     [SerializeField] private Image _image;
     [SerializeField] private QuestionManager _qM;
     private Clickable _currentClickable;
+    private TouchHandler _tH;   
+    #endregion
 
-    private TouchHandler _tH;
-
+    // Colors
     private Color _disabled;
     private Color _highlight;
 
@@ -41,7 +45,6 @@ public class ClickableManager : MonoBehaviour
         else
         {
             _currentClickable = C;
-            _qM.ObjectClick(cH);
             DisplayPopUp(cH);
             return true;
         }
@@ -68,6 +71,16 @@ public class ClickableManager : MonoBehaviour
         // Highlighting the clicked object
         _currentClickable.SetColor(_highlight);
 
+        // Animate Scale
+        Vector3 safeScale = _popUp.transform.localScale;
+        _popUp.transform.localScale = Vector3.zero;
+        _popUp.transform.DOScale(safeScale, 0.35f).OnComplete(() =>
+        {
+            _qM.ObjectClick(cH);
+        });
+
+        
+
         _tH.LockInput();
         
     }
@@ -75,9 +88,15 @@ public class ClickableManager : MonoBehaviour
     // Hides the popup 
     public void HidePopUp()
     {
-        _popUp.SetActive(false);
-        _currentClickable.SetColor(_disabled);
-        _tH.UnlockInput();
+        Vector3 safeScale = _popUp.transform.localScale;
+        _popUp.transform.DOScale(Vector3.zero, 0.35f).OnComplete(() =>
+        {
+            _popUp.SetActive(false);
+            _popUp.transform.localScale = safeScale;
+            _currentClickable.SetColor(_disabled);
+            _tH.UnlockInput();
+        });
+        
     }
 
     

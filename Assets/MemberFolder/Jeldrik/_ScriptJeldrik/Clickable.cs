@@ -6,15 +6,22 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class Clickable : MonoBehaviour
 {
+    #region References
+    [Tooltip("Assign Object that holds all clickables")]
     [SerializeField] ClickableHolder cH;
     private ClickableManager cM;
     private Image _image;
+    private TouchHandler _tH;
+    #endregion
 
-    // Start is called before the first frame update
     void Start()
     {
+        // Assigning references
         cM = GameObject.FindGameObjectWithTag("ClickableManager").GetComponent<ClickableManager>();
         _image = GetComponent<Image>();
+        _tH = Camera.main.GetComponent<TouchHandler>();
+
+        // Making the editor display invisible on scene start
         _image.color = new Color(_image.color.r, _image.color.g, _image.color.b, 0);
     }
 
@@ -24,6 +31,7 @@ public class Clickable : MonoBehaviour
         if (cH != null)
         {
             cM.TryDisplayPopUp(cH, this);
+            _tH.BlockWrongInputPart();
         }
         else
         {
