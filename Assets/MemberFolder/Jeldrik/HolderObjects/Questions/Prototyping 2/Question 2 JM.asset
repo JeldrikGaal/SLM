@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc3f8039032b2fe42bb67b6178cf2229, type: 3}
+  m_Name: Question 2 JM
+  m_EditorClassIdentifier: 
+  Text: Who is the Host of the party?
+  Hint: 
+  Number: 1
+  ObjectsToFind1:
+  - {fileID: 11400000, guid: e132add23bdb04a47a8bbbb4ba427692, type: 2}
+  ObjectsToFind2: []
+  ObjectsToFind3: []
+  AmountNeeded: 01000000
+  End: 0

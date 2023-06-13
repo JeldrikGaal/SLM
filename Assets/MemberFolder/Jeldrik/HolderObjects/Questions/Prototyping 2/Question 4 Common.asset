@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc3f8039032b2fe42bb67b6178cf2229, type: 3}
+  m_Name: Question 4 Common
+  m_EditorClassIdentifier: 
+  Text: Find Objects with the JM symbol
+  Hint: 
+  Number: 4
+  ObjectsToFind1:
+  - {fileID: 11400000, guid: caf6ab6c61d8efe47b62ddb352e2adcb, type: 2}
+  - {fileID: 11400000, guid: ad7f90346aacd6e4e89c74e12d382b4a, type: 2}
+  - {fileID: 11400000, guid: fa46ba566778881498791aa0ae54d2d4, type: 2}
+  ObjectsToFind2:
+  - {fileID: 11400000, guid: a9798ea4726f2bd4cb1bd9c474da4ec5, type: 2}
+  - {fileID: 11400000, guid: 28b1f380194e31d4ba02402fdb45b242, type: 2}
+  ObjectsToFind3: []
+  AmountNeeded: 0200000001000000
+  End: 1
