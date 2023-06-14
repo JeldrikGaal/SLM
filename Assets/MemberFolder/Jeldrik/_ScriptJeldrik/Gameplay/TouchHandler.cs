@@ -47,8 +47,6 @@ public class TouchHandler : MonoBehaviour
     private GameObject _canvas;
     private Transform _camTransform;
 
-
-
     // Start is called before the first frame update
     void Awake()
     {
@@ -70,12 +68,10 @@ public class TouchHandler : MonoBehaviour
         // Fetching needed references 
         _camTransform = Camera.main.transform;
         _canvas = GameObject.FindGameObjectWithTag("Canvas");
-        _qMB = GameObject.FindGameObjectWithTag("QuestionMenuButton").GetComponent<QuestionMenuButton>();
-        _qMB.ToggleSelf(false);
+        //_qMB = GameObject.FindGameObjectWithTag("QuestionMenuButton").GetComponent<QuestionMenuButton>();
+        //_qMB.ToggleSelf(false);
         _cQ = GameObject.FindGameObjectWithTag("CurrentQuestion").GetComponent<CurrentQuestion>();
         _cQ.ToggleSelf(false);
-
-
     }
 
     void Update()
@@ -174,7 +170,6 @@ public class TouchHandler : MonoBehaviour
     // Spawn reminder notifcation Objects
     private void SpawnInputReminder()
     {
-        Debug.Log("SPAWN!");
         GameObject temp = Instantiate(_inputReminderObject, _canvas.transform);
         temp.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + _height * 0.05f, temp.transform.position.z);
         temp.GetComponent<ReminerPopUp>().Show();
@@ -210,7 +205,7 @@ public class TouchHandler : MonoBehaviour
         // Only toggle question manager button if needed
         if (qmb )
         {
-            _qMB.ToggleSelf(false);
+            //_qMB.ToggleSelf(false);
             _cQ.ToggleSelf(false);
         }
         locked = true;
@@ -218,7 +213,7 @@ public class TouchHandler : MonoBehaviour
 
     public void UnlockInput()
     {
-        _qMB.ToggleSelf(true);
+        //_qMB.ToggleSelf(true);
         _cQ.ToggleSelf(true);
         locked = false;
         _lastInputTime = Time.time;

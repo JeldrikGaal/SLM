@@ -2,12 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Unity.VisualScripting;
 
 public class SceneInfoPopUp : MonoBehaviour
 {
     private TouchHandler _tH;
     private int _dummyCounter;
     private int _dummyCounterGoal;
+
+    private GameObject _canvas;
+    private GameObject _reminderRef;
+    private bool _spawnedReminder;
+
+    private float _spawnTime;
+    [SerializeField] float _blockTime;
+    [SerializeField] float _reminderTime;
+    [SerializeField] GameObject _reminderPrefab;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,13 +32,34 @@ public class SceneInfoPopUp : MonoBehaviour
 
         // Animate Popup to appear
         transform.DOScale(new Vector3(0.5f, 0.5f, 0.5f), 0.6f).SetEase(Ease.InSine);
+
+        _canvas = GameObject.FindGameObjectWithTag("Canvas");
+        _spawnTime = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        DummyCounterLogic();
+        //DummyCounterLogic();
         
+        if (Time.time - _spawnTime > _blockTime)
+        {
+            // TODO: also include touch input
+            if (Input.GetMouseButtonDown(0))
+            {
+                EndPopUp();
+            }
+        }
+
+
+        if (Time.time - _spawnTime > _reminderTime && !_spawnedReminder)
+        {
+            _reminderRef = Instantiate(_reminderPrefab, _canvas.transform);
+            _reminderRef.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + _tH._height * 0.05f, _reminderRef.transform.position.z);
+            _reminderRef.GetComponent<ReminerPopUp>().Show();
+            _spawnedReminder = true;
+        }
+
     }
 
     // If the user does not understand to click the button and clicks more than _dummyCounterGoal times just anywhere in the game field the popup also will disappear

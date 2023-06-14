@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8970760925307327829}
   - component: {fileID: 8970760925307327828}
   - component: {fileID: 8913731878872273556}
+  - component: {fileID: 8966502645956320481}
   m_Layer: 5
   m_Name: ClickArea
   m_TagString: Untagged
@@ -61,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -147,3 +148,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cH: {fileID: 0}
+  _outline: {fileID: 0}
+--- !u!114 &8966502645956320481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8970760925307327830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe7823ea37562fa49bc704b8e4310251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _color: {r: 0.990566, g: 0.87127876, b: 0, a: 1}
+  _material: {fileID: 2100000, guid: f15d8479f37395e4db5a344e7ab024dd, type: 2}

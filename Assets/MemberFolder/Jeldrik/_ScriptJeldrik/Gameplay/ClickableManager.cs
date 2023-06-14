@@ -15,24 +15,22 @@ public class ClickableManager : MonoBehaviour
     [SerializeField] private Image _image;
     [SerializeField] private QuestionManager _qM;
     private Clickable _currentClickable;
-    private TouchHandler _tH;   
+    private TouchHandler _tH;
+    private ClickableStorage _cS;
     #endregion
 
     // Colors
     private Color _disabled;
     private Color _highlight;
 
+    private bool _main;
 
     void Start()
     {
         _disabled = new Color(1, 1, 1, 0);
         _highlight = new Color(1, 0.93f, 0.14f, 0.6f);
         _tH = Camera.main.GetComponent<TouchHandler>();
-    }
-
-    void Update()
-    {
-        
+        _cS = GameObject.FindGameObjectWithTag("ClickableStorage").GetComponent<ClickableStorage>();
     }
 
     // Try to display a new Popup. If one is already being displayed return false otherwise displays new one and returns true
@@ -59,28 +57,48 @@ public class ClickableManager : MonoBehaviour
     // Retrieves the information from a give 'clickableholder' object and displays everything accordingly in the popup
     private void DisplayPopUp(ClickableHolder cH)
     {
-        _popUp.SetActive(true);
-        // Setting the popup in the middle of the screen
-        _popUp.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, _popUp.transform.position.z);
-
         // Setting all the info in the popup
         _titleText.text = cH.Title;
         _descriptionText.text = cH.Description;
         _image.sprite = cH.Image;
 
         // Highlighting the clicked object
-        _currentClickable.SetColor(_highlight);
+        //_currentClickable.SetColor(_highlight);
 
-        // Animate Scale
-        Vector3 safeScale = _popUp.transform.localScale;
-        _popUp.transform.localScale = Vector3.zero;
-        _popUp.transform.DOScale(safeScale, 0.35f).OnComplete(() =>
+        // Showing the outline of the clicked object
+        if (_currentClickable._outline != null)
         {
-            _qM.ObjectClick(cH);
-        });
+            _currentClickable._outline.ToggleOutline(true);
+        }
 
+        // Animate Camera so highlighted object is in the right spot
+        Vector3 pos = _currentClickable.transform.position;
+        Vector3 goal = new Vector3(pos.x + _tH._width * 0.035f, pos.y, Camera.main.transform.position.z);
+        Camera.main.transform.DOMove(goal, 0.5f).OnComplete(() =>
+        {
+            // Setting the popup in the middle of the screen
+            _popUp.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, _popUp.transform.position.z);
+
+            // Animate Scale
+            Vector3 safeScale = _popUp.transform.localScale;
+            _popUp.transform.localScale = Vector3.zero;
+            _popUp.SetActive(true);
+            _popUp.transform.DOScale(safeScale, 0.35f).OnComplete(() =>
+            {
+                // Handle further logic of object having been clicked
+                _qM.ObjectClick(cH);
+                StoreClicked(cH);
+
+            });
+        });
         _tH.LockInput(true);
         
+    }
+
+    // Store information about a clickable having been clicked to later transfer to the book
+    public void StoreClicked(ClickableHolder cH)
+    {
+        _cS.AddToStorage(cH);
     }
 
     // Hides the popup 
@@ -91,7 +109,16 @@ public class ClickableManager : MonoBehaviour
         {
             _popUp.SetActive(false);
             _popUp.transform.localScale = safeScale;
-            _currentClickable.SetColor(_disabled);
+
+            // Change color of clickable box
+            //_currentClickable.SetColor(_disabled);
+
+            // Hide outline
+            if (_currentClickable._outline != null)
+            {
+                _currentClickable._outline.ToggleOutline(false);
+            }
+
             _tH.UnlockInput();
         });
         
