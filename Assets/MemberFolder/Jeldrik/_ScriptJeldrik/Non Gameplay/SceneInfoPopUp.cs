@@ -55,7 +55,8 @@ public class SceneInfoPopUp : MonoBehaviour
         if (Time.time - _spawnTime > _reminderTime && !_spawnedReminder)
         {
             _reminderRef = Instantiate(_reminderPrefab, _canvas.transform);
-            _reminderRef.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + _tH._height * 0.05f, _reminderRef.transform.position.z);
+            _reminderRef.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + Camera.main.orthographicSize * 0.9f
+                , _reminderRef.transform.position.z);
             _reminderRef.GetComponent<ReminerPopUp>().Show();
             _spawnedReminder = true;
         }

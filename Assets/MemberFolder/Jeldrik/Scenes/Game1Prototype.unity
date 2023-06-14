@@ -3829,8 +3829,8 @@ RectTransform:
   m_GameObject: {fileID: 1188763494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.12782791, y: 0.12782791, z: 0.12782791}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 171410896}
   m_Father: {fileID: 0}
@@ -3839,7 +3839,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 903.3242}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1197527679 stripped
 RectTransform:
@@ -4703,7 +4703,7 @@ Camera:
   far clip plane: 1000
   field of view: 30
   orthographic: 1
-  orthographic size: 30
+  orthographic size: 300
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

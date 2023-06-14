@@ -28,7 +28,7 @@ public class CurrentQuestion : MonoBehaviour
     void Update()
     {
         // Positioning object on screen
-        transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - _tH._height * 0.05f, transform.position.z);
+        transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - Camera.main.orthographicSize * 0.9f, transform.position.z);
         
     }
 

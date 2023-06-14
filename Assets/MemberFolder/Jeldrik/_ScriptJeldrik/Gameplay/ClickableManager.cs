@@ -73,7 +73,26 @@ public class ClickableManager : MonoBehaviour
 
         // Animate Camera so highlighted object is in the right spot
         Vector3 pos = _currentClickable.transform.position;
-        Vector3 goal = new Vector3(pos.x + _tH._width * 0.035f, pos.y, Camera.main.transform.position.z);
+        Vector3 goal = Vector3.zero;
+        float x = 0;
+
+        Debug.Log((pos.x, _tH._width * 0.65f));
+        // See if the object is too close to the right border of the screen and decide on which side to put it
+        if (pos.x < _tH._width * 0.65f)
+        {
+            // Position on the left of the camera
+             x = Mathf.Max(-_tH._camLimits.x, Mathf.Min(pos.x + (Camera.main.orthographicSize * _tH._aspect) * 0.6f, _tH._camLimits.x));
+        }
+        else
+        {
+            // Position on the right of the camera
+            x = Mathf.Max(-_tH._camLimits.x, Mathf.Min(pos.x - (Camera.main.orthographicSize * _tH._aspect) * 0.6f, _tH._camLimits.x));
+        }
+        
+        float y = Mathf.Max(- _tH._camLimits.y, Mathf.Min(pos.y, _tH._camLimits.y));
+        goal = new Vector3(x, y, Camera.main.transform.position.z);
+        
+        // Actually move the camera
         Camera.main.transform.DOMove(goal, 0.5f).OnComplete(() =>
         {
             // Setting the popup in the middle of the screen

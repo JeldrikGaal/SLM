@@ -6,7 +6,7 @@ using UnityEngine;
 public class TouchHandler : MonoBehaviour
 {
     [HideInInspector]
-    public float _width, _height;
+    public float _width, _height, _aspect;
 
     #region Serialized Fields
     [Tooltip("Factor with how fast the camera moves when being dragged around")]
@@ -33,6 +33,7 @@ public class TouchHandler : MonoBehaviour
     private CurrentQuestion _cQ;
 
     private bool locked;
+    
 
     // Set true by buttons if in this frame a button was clicked to prevent spawning of wrong input particle
     [HideInInspector] public bool ValidInput;
@@ -41,7 +42,7 @@ public class TouchHandler : MonoBehaviour
     private float _lastFrameClickedCountTime = 0.02f;
 
     // Camera stuff
-    private Vector2 _camLimits;
+    [HideInInspector] public Vector2 _camLimits;
     private Vector3 mpS;
     private Vector3 camPS;
     private GameObject _canvas;
@@ -55,9 +56,10 @@ public class TouchHandler : MonoBehaviour
 
         // Used for timing the spawning of 'Wrong Input' particle
         _lastFrameClickedCountTime = 0.3f;
-        
+
         // Limits where the camera can be moved to by dragging
-        _camLimits = new Vector2(65,39);
+        _aspect = (float)Screen.currentResolution.width / (float)Screen.currentResolution.height;
+        _camLimits = new Vector2(_width - Camera.main.orthographicSize  * _aspect, _height - Camera.main.orthographicSize);
 
         // Locks all input until its unlocked by UnlockInput()
         locked = true;
@@ -171,7 +173,7 @@ public class TouchHandler : MonoBehaviour
     private void SpawnInputReminder()
     {
         GameObject temp = Instantiate(_inputReminderObject, _canvas.transform);
-        temp.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + _height * 0.05f, temp.transform.position.z);
+        temp.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + Camera.main.orthographicSize * 0.9f, temp.transform.position.z);
         temp.GetComponent<ReminerPopUp>().Show();
     }
     #endregion

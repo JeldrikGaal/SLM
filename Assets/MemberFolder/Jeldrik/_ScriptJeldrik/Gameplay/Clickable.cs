@@ -43,7 +43,7 @@ public class Clickable : MonoBehaviour
             Debug.LogWarning("Clickable" + transform.name + "has been clicked but does not cotain an Holder");
         }
        
-    }
+    }   
 
     public void SetColor(Color c)
     {
