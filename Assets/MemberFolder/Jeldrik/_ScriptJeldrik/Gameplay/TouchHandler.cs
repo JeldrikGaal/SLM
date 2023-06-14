@@ -47,6 +47,8 @@ public class TouchHandler : MonoBehaviour
     private GameObject _canvas;
     private Transform _camTransform;
 
+
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -72,6 +74,8 @@ public class TouchHandler : MonoBehaviour
         _qMB.ToggleSelf(false);
         _cQ = GameObject.FindGameObjectWithTag("CurrentQuestion").GetComponent<CurrentQuestion>();
         _cQ.ToggleSelf(false);
+
+
     }
 
     void Update()

@@ -22,13 +22,17 @@ public class ClickableManager : MonoBehaviour
     private Color _disabled;
     private Color _highlight;
 
-    // Store information of objects that have been clicked already to transfer to book
-    
+
     void Start()
     {
         _disabled = new Color(1, 1, 1, 0);
         _highlight = new Color(1, 0.93f, 0.14f, 0.6f);
         _tH = Camera.main.GetComponent<TouchHandler>();
+    }
+
+    void Update()
+    {
+        
     }
 
     // Try to display a new Popup. If one is already being displayed return false otherwise displays new one and returns true
@@ -65,33 +69,18 @@ public class ClickableManager : MonoBehaviour
         _image.sprite = cH.Image;
 
         // Highlighting the clicked object
-        //_currentClickable.SetColor(_highlight);
+        _currentClickable.SetColor(_highlight);
 
-        // Showing the outline of the clicked object
-        if (_currentClickable._outline != null)
-        {
-            _currentClickable._outline.ToggleOutline(true);
-        }
-            
         // Animate Scale
         Vector3 safeScale = _popUp.transform.localScale;
         _popUp.transform.localScale = Vector3.zero;
         _popUp.transform.DOScale(safeScale, 0.35f).OnComplete(() =>
         {
-            // Handle further logic of object having been clicked
             _qM.ObjectClick(cH);
-            StoreClicked(cH);
-
         });
 
         _tH.LockInput(true);
         
-    }
-
-    // Store information about a clickable having been clicked to later transfer to the book
-    public void StoreClicked(ClickableHolder cH)
-    {
-
     }
 
     // Hides the popup 
@@ -102,16 +91,7 @@ public class ClickableManager : MonoBehaviour
         {
             _popUp.SetActive(false);
             _popUp.transform.localScale = safeScale;
-
-            // Change color of clickable box
-            //_currentClickable.SetColor(_disabled);
-
-            // Hide outline
-            if (_currentClickable._outline != null)
-            {
-                _currentClickable._outline.ToggleOutline(false);
-            }
-
+            _currentClickable.SetColor(_disabled);
             _tH.UnlockInput();
         });
         

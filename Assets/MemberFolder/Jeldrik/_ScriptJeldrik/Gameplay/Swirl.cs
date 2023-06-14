@@ -13,6 +13,7 @@ public class Swirl : MonoBehaviour
     void Start()
     {
         _image = GetComponent<Image>();
+        
     }
 
     void Update()

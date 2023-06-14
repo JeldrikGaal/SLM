@@ -11,7 +11,6 @@ public class CurrentQuestion : MonoBehaviour
     #region References
     [SerializeField] private TMP_Text _questionTitle;
     [SerializeField] private TMP_Text _questionText;
-    [SerializeField] private TMP_Text _questionCounter;
 
     private QuestionManager _qM;
     private Question _currentQ;
@@ -49,31 +48,9 @@ public class CurrentQuestion : MonoBehaviour
             // Setting new content
             _questionTitle.text = _currentQ.Text;
             _questionText.text = _currentQ.Hint;
-            UpdateQuestionCounter(_currentQ);
         });
         _questionTitle.transform.DOScale(Vector3.one, 0.5f);
-    }
 
-    public void UpdateQuestionCounter(Question _q)
-    {
-        if (_q.AmountNeeded[0] <= 1)
-        {
-            _questionCounter.text = "";
-        }
-        else
-        {
-            if (_q.AmountNeeded.Count > 1)
-            {
-                _questionCounter.text = _qM._questionObjectCounts[0].ToString() + "/" + _currentQ.AmountNeeded[0].ToString() + "\n"
-                    + _qM._questionObjectCounts[1].ToString() + "/" + _currentQ.AmountNeeded[1].ToString() + "\n";
 
-            }
-            else
-            {
-                _questionCounter.text = _qM._questionObjectCounts[0].ToString() + "/" + _currentQ.AmountNeeded[0].ToString();
-            }
-            
-        }
-        
     }
 }

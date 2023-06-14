@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f26cf9e1397fcfa439d8636d30126c25, type: 3}
-  m_Name: Dude4
+  m_Script: {fileID: 11500000, guid: cc3f8039032b2fe42bb67b6178cf2229, type: 3}
+  m_Name: Question 1 Dinig
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 9b26dade62631a64d8cb0342eeafba66, type: 3}
-  Title: Dude4
-  Description: 4
-  BackgroundColor: {r: 0, g: 0, b: 0, a: 0}
+  Text: 'Where is the dining room ? '
+  Hint: 
+  Number: 0
+  ObjectToFind: {fileID: 0}
+  End: 0

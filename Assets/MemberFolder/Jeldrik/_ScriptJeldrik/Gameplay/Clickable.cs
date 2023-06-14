@@ -11,7 +11,6 @@ public class Clickable : MonoBehaviour
     [SerializeField] ClickableHolder cH;
     private ClickableManager cM;
     private Image _image;
-    [HideInInspector] public MakeOutline _outline;
     private TouchHandler _tH;
     #endregion
 
@@ -23,11 +22,7 @@ public class Clickable : MonoBehaviour
         _tH = Camera.main.GetComponent<TouchHandler>();
 
         // Making the editor display invisible on scene start
-        //_image.color = new Color(_image.color.r, _image.color.g, _image.color.b, 0);
-
-        
-        _outline = GetComponentInChildren<MakeOutline>();
-        _image.alphaHitTestMinimumThreshold = 0.1f;
+        _image.color = new Color(_image.color.r, _image.color.g, _image.color.b, 0);
     }
 
     // Function used by the UI button if this object is clicked. Tries to display the information in an popup by calling the function on the Clickable Manager and returns an warning if the holder is missing

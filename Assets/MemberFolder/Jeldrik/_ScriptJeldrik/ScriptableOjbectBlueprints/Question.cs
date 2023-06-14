@@ -11,9 +11,6 @@ public class Question : ScriptableObject
     public string Text;
     public string Hint;
     public int Number;
-    public List<ClickableHolder> ObjectsToFind1 = new List<ClickableHolder>();
-    public List<ClickableHolder> ObjectsToFind2 = new List<ClickableHolder>();
-    public List<ClickableHolder> ObjectsToFind3 = new List<ClickableHolder>();
-    public List<int> AmountNeeded = new List<int>(); 
+    public ClickableHolder ObjectToFind;
     public bool End = false;
 }
