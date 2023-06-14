@@ -20,7 +20,7 @@ public class SceneChangeDebugger : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            SceneManager.LoadScene("Book");
+            SceneManager.LoadScene("Book_J");
         }
     }
 }

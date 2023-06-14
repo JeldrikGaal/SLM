@@ -13,6 +13,9 @@ public class CurrentQuestion : MonoBehaviour
     [SerializeField] private TMP_Text _questionText;
     [SerializeField] private TMP_Text _questionCounter;
 
+    [SerializeField] private GameObject _forwardButton;
+    [SerializeField] private GameObject _backButton;
+
     private QuestionManager _qM;
     private Question _currentQ;
     private TouchHandler _tH;
@@ -22,14 +25,16 @@ public class CurrentQuestion : MonoBehaviour
     {
         _qM = GameObject.FindGameObjectWithTag("QuestionMenu").GetComponent<QuestionManager>();
         _tH = Camera.main.transform.GetComponent<TouchHandler>();
-        
+        ToggleBackButton(false);
+        ToggleForwardButton(false);
+
     }
 
     void Update()
     {
         // Positioning object on screen
         transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - Camera.main.orthographicSize * 0.9f, transform.position.z);
-        
+        ButtonLogic();
     }
 
     public void ToggleSelf(bool toggle)
@@ -43,17 +48,67 @@ public class CurrentQuestion : MonoBehaviour
     {
         _currentQ = _q;
 
-        // Small animation 
+        // Setting new content
+        _questionTitle.text = _currentQ.Text;
+        _questionText.text = _currentQ.Hint;
+        UpdateQuestionCounter(_currentQ);
+
+        /* // Small animation 
         _questionTitle.transform.DOScale(Vector3.zero, 0.5f).OnComplete(() =>
         {
-            // Setting new content
-            _questionTitle.text = _currentQ.Text;
-            _questionText.text = _currentQ.Hint;
-            UpdateQuestionCounter(_currentQ);
+            
         });
-        _questionTitle.transform.DOScale(Vector3.one, 0.5f);
+        _questionTitle.transform.DOScale(Vector3.one, 0.5f);*/
     }
 
+    public void ToggleForwardButton(bool toggle)
+    {
+        _forwardButton.SetActive(toggle);
+    }
+
+    public void ToggleBackButton(bool toggle)
+    {
+        _backButton.SetActive(toggle);
+    }
+
+    public void Forward()
+    {
+        _qM.Forward();
+    }
+
+    public void Backward()
+    {
+        _qM.Backward();
+    }
+
+    private void ButtonLogic()
+    {
+        if (_qM.GetCurrentQuestionId() == 0 && _qM.IsCurrentQuestionCompleted())
+        {
+            ToggleForwardButton(true);
+            ToggleBackButton(false);
+        }
+        else
+        {
+            ToggleForwardButton(false);
+        }
+        if (_qM.GetCurrentQuestionId() > 0 ) 
+        {
+            if (_qM.IsCurrentQuestionCompleted())
+            {
+                ToggleForwardButton(true);
+            }
+            ToggleBackButton(true);
+        }
+        if (_qM.GetCurrentQuestionId() == _qM.GetQuestionAmount() - 1)
+        {
+            ToggleForwardButton(false);
+            ToggleBackButton(true);
+        }
+    }
+     
+
+    // Updates the question counter
     public void UpdateQuestionCounter(Question _q)
     {
         if (_q.AmountNeeded[0] <= 1)
@@ -64,13 +119,12 @@ public class CurrentQuestion : MonoBehaviour
         {
             if (_q.AmountNeeded.Count > 1)
             {
-                _questionCounter.text = _qM._questionObjectCounts[0].ToString() + "/" + _currentQ.AmountNeeded[0].ToString() + "\n"
-                    + _qM._questionObjectCounts[1].ToString() + "/" + _currentQ.AmountNeeded[1].ToString() + "\n";
-
+                _questionCounter.text = _qM._questionObjectCounts[_qM.GetCurrentQuestionId()][0].ToString() + "/" + _currentQ.AmountNeeded[0].ToString() + "\n"
+                    + _qM._questionObjectCounts[_qM.GetCurrentQuestionId()][1].ToString() + "/" + _currentQ.AmountNeeded[1].ToString() + "\n";
             }
             else
             {
-                _questionCounter.text = _qM._questionObjectCounts[0].ToString() + "/" + _currentQ.AmountNeeded[0].ToString();
+                _questionCounter.text = _qM._questionObjectCounts[_qM.GetCurrentQuestionId()][0].ToString() + "/" + _currentQ.AmountNeeded[0].ToString();
             }
             
         }

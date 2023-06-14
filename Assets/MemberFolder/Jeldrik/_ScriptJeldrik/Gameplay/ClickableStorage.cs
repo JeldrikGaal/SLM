@@ -11,9 +11,10 @@ public class ClickableStorage : MonoBehaviour
     private List<ClickableHolder> _clickedInfo = new List<ClickableHolder>();
 
     private int _currentQuestionSave;
-    [HideInInspector] public List<int> _questionObjectCountsSave = new List<int>();
+    [HideInInspector] public List<List<int>> _questionObjectCountsSave = new List<List<int>>();
     [HideInInspector] public List<ClickableHolder> _alreadyClickedSave = new List<ClickableHolder>();
     [HideInInspector] public List<List<ClickableHolder>> _alreadyClickedCombSave = new List<List<ClickableHolder>>();
+    [HideInInspector] public List<bool> _completedQuestionsSave = new List<bool>(3);   
 
     private void Awake()
     {
@@ -22,9 +23,20 @@ public class ClickableStorage : MonoBehaviour
         {
             _current = this.gameObject;
             DontDestroyOnLoad(gameObject);
-            _questionObjectCountsSave.Add(0);
-            _questionObjectCountsSave.Add(0);
-            _questionObjectCountsSave.Add(0);
+            for (int i = 0; i < 3; i++)
+            {
+                _questionObjectCountsSave.Add(new List<int>());
+                _questionObjectCountsSave.Add(new List<int>());
+                _questionObjectCountsSave.Add(new List<int>());
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                _questionObjectCountsSave[i].Add(0);
+                _questionObjectCountsSave[i].Add(0);
+                _questionObjectCountsSave[i].Add(0);
+                
+            }
+
         }
         else
         {

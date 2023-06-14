@@ -30,12 +30,16 @@ public class QuestionManager : MonoBehaviour
     private ClickableStorage _cS;
     #endregion
 
-    public List<int> _questionObjectCounts = new List<int>();
+    public List<List<int>> _questionObjectCounts = new List<List<int>>();
     private List<ClickableHolder> _alreadyClicked = new List<ClickableHolder>();
     private List<List<ClickableHolder>> _alreadyClickedComb = new List<List<ClickableHolder>>();
+    private List<bool> _completedQuestions = new List<bool>();
+
+    //private List<List<int>> _question = new List<List<int>>();
 
     private int _currentQ = -1;
     private float _timeOnCurrentQ;
+    private bool _completed;
 
     private void Awake()
     {
@@ -57,15 +61,31 @@ public class QuestionManager : MonoBehaviour
             _currentQ = 0;
             _timeOnCurrentQ = Time.time;
             _currentQuestion.ChangeCurrentQuestion(GetCurrentQuestion());
-            _questionObjectCounts.Add(0);
-            _questionObjectCounts.Add(0);
-            _questionObjectCounts.Add(0);
-            _questionObjectCounts[0] = 0;
+            for (int i = 0; i < 3; i++)
+            {
+                _questionObjectCounts.Add(new List<int>());
+                _questionObjectCounts.Add(new List<int>());
+                _questionObjectCounts.Add(new List<int>());
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                _questionObjectCounts[i].Add(0);
+                _questionObjectCounts[i].Add(0);
+                _questionObjectCounts[i].Add(0);
+            }
         }
 
         // Getting references 
         _tH = Camera.main.GetComponent<TouchHandler>();
         _cS = GameObject.Find("ClickableStorage").GetComponent<ClickableStorage>();
+
+        _completedQuestions.Add(false);
+        _completedQuestions.Add(false);
+        _completedQuestions.Add(false);
+        if (_cS._completedQuestionsSave.Count < 3)
+        {
+            _cS._completedQuestionsSave = _completedQuestions;
+        }
 
         // Loading current Question from storage and displaying it
         LoadingCurrentQuestion();
@@ -79,31 +99,67 @@ public class QuestionManager : MonoBehaviour
     {
         // Always being display in the middle of the screen
         transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, transform.position.z);
+        
+    }
 
+    public bool IsCurrentQuestionCompleted()
+    {
+        return _completedQuestions[_currentQ];
     }
 
     private void LoadingCurrentQuestion()
     {
         _currentQ = _cS.GetCurrentQuestion();
-        _currentQuestion.ChangeCurrentQuestion(_questions[_currentQ]);
         _alreadyClicked = _cS._alreadyClickedSave;
         _alreadyClickedComb = _cS._alreadyClickedCombSave;
         _questionObjectCounts = _cS._questionObjectCountsSave;
+        _completedQuestions = _cS._completedQuestionsSave;
+        _currentQuestion.ChangeCurrentQuestion(_questions[_currentQ]);
     }
 
     private void SavingCurrentQuestion()
     {
         _cS.SafeCurrentQuestion(_currentQ);
         _cS.SafeClickablesList(_alreadyClicked, _alreadyClickedComb);
-        _cS._questionObjectCountsSave = _questionObjectCounts;        
+        _cS._questionObjectCountsSave = _questionObjectCounts;    
+        _cS._completedQuestionsSave = _completedQuestions;
+    }
+
+    public int GetCurrentQuestionId()
+    {
+        return _currentQ;
+    }
+
+    public int GetQuestionAmount()
+    {
+        return _questions.Count;
+    }
+
+    public void Forward()
+    {
+
+        _currentQ++;
+        //_completed = false;
+        ResetCounts();
+        _currentQuestion.ChangeCurrentQuestion(_questions[_currentQ]);
+        SavingCurrentQuestion();
+    }
+
+    public void Backward()
+    {
+        _currentQ--;
+        //_completed = true;
+        ResetCounts();
+        _currentQuestion.ChangeCurrentQuestion(_questions[_currentQ]);
+        
     }
 
     // Mark a questions as completed and proceed to the next one
     private void CompleteCurrentQuestion()
     {
         
-        if (_currentQ <= 2) _questionStatus[_currentQ].color = Color.green;
-        ResetCounts();
+        //if (_currentQ <= 2) _questionStatus[_currentQ].color = Color.green;
+        
 
         if (_questions[_currentQ].End)
         {
@@ -111,10 +167,11 @@ public class QuestionManager : MonoBehaviour
             return;
         }
 
-        _currentQ++;
+        //_currentQ++;
+        _completed = true;
         SavingCurrentQuestion();
-            
-        _currentQuestion.ChangeCurrentQuestion(_questions[_currentQ]);
+        _completedQuestions[_currentQ] = true;
+        //_currentQuestion.ChangeCurrentQuestion(_questions[_currentQ]);
     }
 
     // Gets called by Clickables whenever they are sucessfully clicked -> Questionmanager checks if its the currently needed object
@@ -127,8 +184,8 @@ public class QuestionManager : MonoBehaviour
             if (_alreadyClicked.Contains(cH)) return;
 
             // Track already clicked objects
-            _alreadyClicked.Add(cH);    
-            _questionObjectCounts[GetIDForClicked(cH)] += 1;
+            _alreadyClicked.Add(cH);
+            _questionObjectCounts[_currentQ][GetIDForClicked(cH)] += 1;
 
             _currentQuestion.UpdateQuestionCounter(_questions[_currentQ]);
 
@@ -183,11 +240,11 @@ public class QuestionManager : MonoBehaviour
     }
 
     // Returns bool if the current questions has been completed 
-    private bool CheckQuestionCompletition()
+    public bool CheckQuestionCompletition()
     {
         for (int i = 0; i < GetCurrentQuestion().AmountNeeded.Count; i++)
         {
-            if (_questionObjectCounts[i] < GetCurrentQuestion().AmountNeeded[i] && GetCurrentQuestion().AmountNeeded[i] > 0)
+            if (_questionObjectCounts[_currentQ][i] < GetCurrentQuestion().AmountNeeded[i] && GetCurrentQuestion().AmountNeeded[i] > 0)
             {
                 return false;
             }
@@ -197,9 +254,9 @@ public class QuestionManager : MonoBehaviour
 
     private void ResetCounts()
     {
-        _questionObjectCounts[0] = 0;
+        /*_questionObjectCounts[0] = 0;
         _questionObjectCounts[1] = 0;
-        _questionObjectCounts[2] = 0;
+        _questionObjectCounts[2] = 0;*/
     }
 
     // Handles completing all questions

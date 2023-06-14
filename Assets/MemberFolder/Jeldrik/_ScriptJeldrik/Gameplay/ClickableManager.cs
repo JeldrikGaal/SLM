@@ -76,7 +76,6 @@ public class ClickableManager : MonoBehaviour
         Vector3 goal = Vector3.zero;
         float x = 0;
 
-        Debug.Log((pos.x, _tH._width * 0.65f));
         // See if the object is too close to the right border of the screen and decide on which side to put it
         if (pos.x < _tH._width * 0.65f)
         {
