@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class TouchHandler : MonoBehaviour
 {
+    private VALUECONTROLER _VC;
     [HideInInspector]
     public float _width, _height, _aspect;
 
@@ -51,6 +52,8 @@ public class TouchHandler : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
+
         _width = (float)Screen.width / 2.0f;
         _height = (float)Screen.height / 2.0f;
 
@@ -60,6 +63,7 @@ public class TouchHandler : MonoBehaviour
         // Limits where the camera can be moved to by dragging
         _aspect = (float)Screen.currentResolution.width / (float)Screen.currentResolution.height;
         _camLimits = new Vector2(_width - Camera.main.orthographicSize  * _aspect, _height - Camera.main.orthographicSize);
+        _camLimits *= 1 + _VC.Camera_Border;
 
         // Locks all input until its unlocked by UnlockInput()
         locked = true;

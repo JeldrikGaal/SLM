@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 
 public class SceneInfoPopUp : MonoBehaviour
 {
+    private VALUECONTROLER _VC;
     private TouchHandler _tH;
     private int _dummyCounter;
     private int _dummyCounterGoal;
@@ -15,14 +16,14 @@ public class SceneInfoPopUp : MonoBehaviour
     private bool _spawnedReminder;
 
     private float _spawnTime;
-    [SerializeField] float _blockTime;
-    [SerializeField] float _reminderTime;
     [SerializeField] GameObject _reminderPrefab;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
+
         // Getting references
         _tH = Camera.main.GetComponent<TouchHandler>();
 
@@ -31,7 +32,7 @@ public class SceneInfoPopUp : MonoBehaviour
         _dummyCounterGoal = 5;
 
         // Animate Popup to appear
-        transform.DOScale(new Vector3(0.5f, 0.5f, 0.5f), 0.6f).SetEase(Ease.InSine);
+        transform.DOScale(new Vector3(0.5f, 0.5f, 0.5f), _VC.SceneInfo_AnimSpeed).SetEase(Ease.InSine);
 
         _canvas = GameObject.FindGameObjectWithTag("Canvas");
         _spawnTime = Time.time;
@@ -42,7 +43,7 @@ public class SceneInfoPopUp : MonoBehaviour
     {
         //DummyCounterLogic();
         
-        if (Time.time - _spawnTime > _blockTime)
+        if (Time.time - _spawnTime > _VC.SceneInfo_BlockTime)
         {
             // TODO: also include touch input
             if (Input.GetMouseButtonDown(0))
@@ -52,7 +53,7 @@ public class SceneInfoPopUp : MonoBehaviour
         }
 
 
-        if (Time.time - _spawnTime > _reminderTime && !_spawnedReminder)
+        if (Time.time - _spawnTime > _VC.SceneInfo_ReminderTime && !_spawnedReminder)
         {
             _reminderRef = Instantiate(_reminderPrefab, _canvas.transform);
             _reminderRef.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + Camera.main.orthographicSize * 0.9f

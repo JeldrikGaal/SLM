@@ -17,20 +17,14 @@ public class ClickableManager : MonoBehaviour
     private Clickable _currentClickable;
     private TouchHandler _tH;
     private ClickableStorage _cS;
+    private VALUECONTROLER _VC;
     #endregion
-
-    // Colors
-    private Color _disabled;
-    private Color _highlight;
-
-    private bool _main;
 
     void Start()
     {
-        _disabled = new Color(1, 1, 1, 0);
-        _highlight = new Color(1, 0.93f, 0.14f, 0.6f);
         _tH = Camera.main.GetComponent<TouchHandler>();
         _cS = GameObject.FindGameObjectWithTag("ClickableStorage").GetComponent<ClickableStorage>();
+        _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
     }
 
     // Try to display a new Popup. If one is already being displayed return false otherwise displays new one and returns true
@@ -62,9 +56,6 @@ public class ClickableManager : MonoBehaviour
         _descriptionText.text = cH.Description;
         _image.sprite = cH.Image;
 
-        // Highlighting the clicked object
-        //_currentClickable.SetColor(_highlight);
-
         // Showing the outline of the clicked object
         if (_currentClickable._outline != null)
         {
@@ -80,19 +71,19 @@ public class ClickableManager : MonoBehaviour
         if (pos.x < _tH._width * 0.65f)
         {
             // Position on the left of the camera
-             x = Mathf.Max(-_tH._camLimits.x, Mathf.Min(pos.x + (Camera.main.orthographicSize * _tH._aspect) * 0.6f, _tH._camLimits.x));
+             x = Mathf.Max(-_tH._camLimits.x, Mathf.Min(pos.x + (Camera.main.orthographicSize * _tH._aspect) * _VC.Clickable_Pos, _tH._camLimits.x));
         }
         else
         {
             // Position on the right of the camera
-            x = Mathf.Max(-_tH._camLimits.x, Mathf.Min(pos.x - (Camera.main.orthographicSize * _tH._aspect) * 0.6f, _tH._camLimits.x));
+            x = Mathf.Max(-_tH._camLimits.x, Mathf.Min(pos.x - (Camera.main.orthographicSize * _tH._aspect) * _VC.Clickable_Pos, _tH._camLimits.x));
         }
         
         float y = Mathf.Max(- _tH._camLimits.y, Mathf.Min(pos.y, _tH._camLimits.y));
         goal = new Vector3(x, y, Camera.main.transform.position.z);
         
         // Actually move the camera
-        Camera.main.transform.DOMove(goal, 0.5f).OnComplete(() =>
+        Camera.main.transform.DOMove(goal, _VC.Camera_ClickMoveTime).OnComplete(() =>
         {
             // Setting the popup in the middle of the screen
             _popUp.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, _popUp.transform.position.z);
@@ -101,7 +92,7 @@ public class ClickableManager : MonoBehaviour
             Vector3 safeScale = _popUp.transform.localScale;
             _popUp.transform.localScale = Vector3.zero;
             _popUp.SetActive(true);
-            _popUp.transform.DOScale(safeScale, 0.35f).OnComplete(() =>
+            _popUp.transform.DOScale(safeScale, _VC.PopUp_AnimSpeed).OnComplete(() =>
             {
                 // Handle further logic of object having been clicked
                 _qM.ObjectClick(cH);
@@ -123,7 +114,7 @@ public class ClickableManager : MonoBehaviour
     public void HidePopUp()
     {
         Vector3 safeScale = _popUp.transform.localScale;
-        _popUp.transform.DOScale(Vector3.zero, 0.35f).OnComplete(() =>
+        _popUp.transform.DOScale(Vector3.zero, _VC.PopUp_AnimSpeed).OnComplete(() =>
         {
             _popUp.SetActive(false);
             _popUp.transform.localScale = safeScale;

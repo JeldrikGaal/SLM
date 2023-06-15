@@ -5,14 +5,13 @@ using UnityEngine;
 
 public class PopUp : MonoBehaviour
 {
-    [SerializeField] private float _blockTime;
-    [SerializeField] private float _reminderTime;
     [SerializeField] private GameObject _reminderPrefab;
 
     private ClickableManager cM;
     private float _spawnTime;
     private Canvas _canvas;
     private TouchHandler _tH;
+    private VALUECONTROLER _VC;
     private bool _spawnedReminder;
     private GameObject _reminderRef;
 
@@ -23,7 +22,8 @@ public class PopUp : MonoBehaviour
         cM = GameObject.FindGameObjectWithTag("ClickableManager").GetComponent<ClickableManager>();
         _canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Canvas>();
         _tH = Camera.main.GetComponent<TouchHandler>();
-        
+        _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
+
     }
 
     private void OnEnable()
@@ -34,7 +34,7 @@ public class PopUp : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time - _spawnTime > _blockTime)
+        if (Time.time - _spawnTime > _VC.Reminder_BlockTime)
         {
             // TODO: Include proper touch controls
             if (Input.GetMouseButtonDown(0))
@@ -43,10 +43,10 @@ public class PopUp : MonoBehaviour
             }
         }
 
-        if (Time.time - _spawnTime > _reminderTime && !_spawnedReminder)
+        if (Time.time - _spawnTime > _VC.Reminder_ReminderTime && !_spawnedReminder)
         {
             _reminderRef = Instantiate(_reminderPrefab, _canvas.transform);
-            _reminderRef.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + Camera.main.orthographicSize * 0.85f, _reminderRef.transform.position.z);
+            _reminderRef.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + Camera.main.orthographicSize * (_VC.Reminder_Pos * 0.01f), _reminderRef.transform.position.z);
             _reminderRef.GetComponent<ReminerPopUp>().Show();
             _spawnedReminder = true;
         }

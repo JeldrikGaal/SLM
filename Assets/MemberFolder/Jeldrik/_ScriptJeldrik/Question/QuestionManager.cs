@@ -15,7 +15,7 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] private List<Image> _questionStatus = new List<Image>();
 
     [Tooltip("Question objects in order of needed completion")]
-    [SerializeField] private List<Question> _questions = new List<Question>();
+    private List<Question> _questions = new List<Question>();
 
     [Tooltip("Prefab for spawning confetti upon question completion")]
     [SerializeField] private GameObject _confetti;
@@ -40,6 +40,7 @@ public class QuestionManager : MonoBehaviour
     private int _currentQ = -1;
     private float _timeOnCurrentQ;
     private bool _completed;
+    private VALUECONTROLER _VC;
 
     private void Awake()
     {
@@ -48,6 +49,10 @@ public class QuestionManager : MonoBehaviour
 
     void Start()
     {
+        // VC
+        _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
+        _questions = _VC.Questions;
+
         // Loading and displaying question objects in the menu
         if (_questions.Count < 3)
         {
@@ -193,6 +198,7 @@ public class QuestionManager : MonoBehaviour
             if (CheckQuestionCompletition())
             {
                 GameObject temp = Instantiate(_confetti, Camera.main.transform);
+                temp.transform.localScale *= _VC.Confetti_Size;
                 Destroy(temp, 4);
                 CompleteCurrentQuestion();
             }

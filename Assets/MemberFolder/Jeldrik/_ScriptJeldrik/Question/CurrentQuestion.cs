@@ -52,13 +52,6 @@ public class CurrentQuestion : MonoBehaviour
         _questionTitle.text = _currentQ.Text;
         _questionText.text = _currentQ.Hint;
         UpdateQuestionCounter(_currentQ);
-
-        /* // Small animation 
-        _questionTitle.transform.DOScale(Vector3.zero, 0.5f).OnComplete(() =>
-        {
-            
-        });
-        _questionTitle.transform.DOScale(Vector3.one, 0.5f);*/
     }
 
     public void ToggleForwardButton(bool toggle)

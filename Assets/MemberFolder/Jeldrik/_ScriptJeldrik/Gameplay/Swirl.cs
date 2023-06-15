@@ -7,12 +7,14 @@ using UnityEngine.UI;
 public class Swirl : MonoBehaviour
 {
     [Tooltip("Time it takes the swirl to fully form")]
-    [SerializeField] private float _swirlTime;
+     private float _swirlTime;
     private Image _image;
+    private VALUECONTROLER _VC;
 
     void Start()
     {
         _image = GetComponent<Image>();
+        _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
     }
 
     void Update()
@@ -26,6 +28,6 @@ public class Swirl : MonoBehaviour
     public void ShowSwirl()
     {
         _image.fillAmount = 0;
-        DOTween.To(() => _image.fillAmount, x => _image.fillAmount = x, 1f, _swirlTime).SetEase(Ease.InSine);
+        DOTween.To(() => _image.fillAmount, x => _image.fillAmount = x, 1f, _VC.Swirl_Time).SetEase(Ease.InSine);
     }
 }

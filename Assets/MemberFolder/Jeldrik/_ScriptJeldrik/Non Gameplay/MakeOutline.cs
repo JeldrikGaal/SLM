@@ -12,13 +12,16 @@ public class MakeOutline : MonoBehaviour
     private Image _image;
     private Image _outline1;
     private Image _outline2;
+    private VALUECONTROLER _VC;
     #endregion
 
-    void Start()
+    void Awake()
     {
         _image = GetComponent<Image>();
+        _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
         SpawnOutline();
         ToggleOutline(false);
+        Debug.Log(_VC.Outline_Size);
     }
 
     // Creates 2 objects based on the image the parent object of this script contains
@@ -26,14 +29,20 @@ public class MakeOutline : MonoBehaviour
     // The original object will be parented to the inner outline to ensure the correct rendering order
     public void SpawnOutline()
     {
-        float scaling = transform.localScale.x - ( transform.localScale.x * 0.04f);
-        float scaling2 = 1.08f;
 
+        // Calculating scalings based on VC values and relative screen position
+        float scaling = transform.localScale.x - ( ( transform.localScale.x * 0.05f) * (_VC.Outline_Size * 0.01f) );
+        float scaling2 = 1 + (.08f * (_VC.Outline_Size * 0.01f));
+
+        // Making the objects
         GameObject temp1 = MakeOutlineObject(scaling);
         GameObject temp2 = MakeOutlineObject(scaling2);
         
+        // Getting images
         _outline1 = temp1.GetComponent<Image>();
         _outline2 = temp2.GetComponent<Image>();
+
+        // Switching the render order
         temp2.transform.SetParent(temp1.transform, false);
         temp2.transform.localPosition = Vector3.zero;
         transform.parent = temp1.transform;
@@ -61,7 +70,7 @@ public class MakeOutline : MonoBehaviour
         Image temp_i = temp.AddComponent<Image>();
         temp_i.sprite = _image.sprite;
         temp_i.material = _material;
-        temp_i.color = _color;
+        temp_i.color = _VC.Outline_Color;
         temp_i.raycastTarget = false;
 
         return temp;

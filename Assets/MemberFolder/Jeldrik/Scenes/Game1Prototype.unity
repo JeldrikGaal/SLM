@@ -123,6 +123,72 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1018465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1018467}
+  - component: {fileID: 1018466}
+  m_Layer: 0
+  m_Name: VALUECONTROLLER
+  m_TagString: VC
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1018466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54235cab482874544abfb0defce516d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Outline_Size: 30
+  Outline_Color: {r: 1, g: 0.10917871, b: 0, a: 1}
+  BookTransition_Time: 3
+  Swirl_Time: 2
+  Confetti_Size: 5
+  SceneInfo_AnimSpeed: 0.6
+  SceneInfo_BlockTime: 1
+  SceneInfo_ReminderTime: 5
+  PopUp_BlockTime: 0
+  PopUp_ReminderTime: 0
+  PopUp_Pos: 0
+  Reminder_BlockTime: 1
+  Reminder_ReminderTime: 7
+  Reminder_Pos: 89
+  PopUp_AnimSpeed: 0.7
+  Questions:
+  - {fileID: 11400000, guid: 90cae102534cdbb43b98c6c4fa192278, type: 2}
+  - {fileID: 11400000, guid: c8acb9f15aada0346856c8d72c5e010e, type: 2}
+  - {fileID: 11400000, guid: a60a9d4faa6617d49a74162e72d04f44, type: 2}
+  Clickable_Pos: 0.6
+  Camera_Border: 0
+  Camera_ClickMoveTime: 0.6
+--- !u!4 &1018467
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018465}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -64.36016, y: -2.4714816, z: -11.452845}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &19503978
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,8 +639,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11cffc97580e6a24db6701fa43847960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _questionObjectCountsSave: 
   _alreadyClickedSave: []
+  _completedQuestionsSave: 
 --- !u!4 &91748256
 Transform:
   m_ObjectHideFlags: 0
@@ -916,8 +982,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c58fc1b4d67f3e4e8bb4dd6abf39565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blockTime: 3
-  _reminderTime: 5
   _reminderPrefab: {fileID: 7636297325856840815, guid: a6fa90edf154d7d4797d03582a5ddd5f, type: 3}
 --- !u!1 &277232707
 GameObject:
@@ -3276,15 +3340,10 @@ MonoBehaviour:
   - {fileID: 1754131724}
   - {fileID: 1838903818}
   - {fileID: 2029059061}
-  _questions:
-  - {fileID: 11400000, guid: 90cae102534cdbb43b98c6c4fa192278, type: 2}
-  - {fileID: 11400000, guid: c8acb9f15aada0346856c8d72c5e010e, type: 2}
-  - {fileID: 11400000, guid: a60a9d4faa6617d49a74162e72d04f44, type: 2}
   _confetti: {fileID: 3296407345304177552, guid: b537c2daca19d1047acd6cf8c5070cd6, type: 3}
   _currentQuestion: {fileID: 1316571896}
   _bT: {fileID: 555075603}
   _tH: {fileID: 0}
-  _questionObjectCounts: 
 --- !u!1 &925978112
 GameObject:
   m_ObjectHideFlags: 0

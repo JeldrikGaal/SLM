@@ -9,6 +9,8 @@ TagManager:
   - QuestionMenuButton
   - QuestionMenu
   - CurrentQuestion
+  - ClickableStorage
+  - VC
   layers:
   - Default
   - TransparentFX
