@@ -42,9 +42,9 @@ public class ReminerPopUp : MonoBehaviour
         _started = true;
 
         // Animation
-        transform.DOShakeRotation(0.5f, 5);
-        transform.DOShakePosition(0.5f, 10);
-        transform.DOShakeScale(0.5f, 0.05f);
+        transform.DOShakeRotation(0.5f, new Vector3(0, 0, 5));
+        transform.DOShakePosition(0.5f, new Vector3(10, 10, 0));
+        transform.DOShakeScale(0.5f, new Vector3(0.01f, 0.01f, 0));
     }
 
     // Disables container and destroys the reminder

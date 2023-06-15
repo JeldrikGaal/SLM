@@ -66,6 +66,7 @@ public class TouchHandler : MonoBehaviour
 
         // Limits where the camera can be moved to by dragging
         _aspect = (float)Screen.currentResolution.width / (float)Screen.currentResolution.height;
+        
         _camLimits = new Vector2(_width - Camera.main.orthographicSize  * _aspect, _height - Camera.main.orthographicSize);
         _camLimits *= 1 + _VC.Camera_Border;
 
@@ -129,6 +130,14 @@ public class TouchHandler : MonoBehaviour
         }
         #endregion
 
+        ReminderLogic();
+    }
+
+    void FixedUpdate()
+    {
+        // Prevents any input when the handler is locked
+        if (locked) return;
+
         #region Handling Input
         // Starting to drag the camera around ( with mouse controls for debugging purposes )
         if (Input.GetMouseButtonDown(0))
@@ -153,17 +162,21 @@ public class TouchHandler : MonoBehaviour
         // Actually dragging the camera around ( with mouse controls for debugging purposes )
         if (Input.GetMouseButton(0))
         {
+            Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            Debug.Log(Camera.main.transform.position);
+            Debug.Log("===");
             Vector3 dif = mpS - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 newPos = camPS + ( dif  * _dragFactor) ;
-            _camTransform.position = new Vector3(
+            Debug.Log(dif);
+            Debug.Log("===");
+            Vector3 newPos = camPS + ( dif  * _dragFactor);
+            Camera.main.transform.position = new Vector3(
                 Mathf.Max(-_camLimits.x, Mathf.Min(_camLimits.x, newPos.x)),
-                Mathf.Max(-_camLimits.y, Mathf.Min(_camLimits.y, newPos.y)), _camTransform.position.z);
+                Mathf.Max(-_camLimits.y, Mathf.Min(_camLimits.y, newPos.y)),
+                 Camera.main.transform.position.z);
 
             LogInputTime();
         }
         #endregion
-
-        ReminderLogic();
     }
 
     #region Reminder Notification Functions

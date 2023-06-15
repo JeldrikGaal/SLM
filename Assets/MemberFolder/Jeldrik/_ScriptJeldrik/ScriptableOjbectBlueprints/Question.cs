@@ -16,4 +16,6 @@ public class Question : ScriptableObject
     public List<ClickableHolder> ObjectsToFind3 = new List<ClickableHolder>();
     public List<int> AmountNeeded = new List<int>(); 
     public bool End = false;
+
+    public string LocalizationKey;
 }

@@ -20,4 +20,6 @@ public class ClickableHolder : ScriptableObject
     [Header("Info only for runtime do not touch bls")]
     public float FirstClickTime;
     public int Num;
+
+    public string LocalizationKey;
 }

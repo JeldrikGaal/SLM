@@ -21,7 +21,6 @@ public class MakeOutline : MonoBehaviour
         _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
         SpawnOutline();
         ToggleOutline(false);
-        Debug.Log(_VC.Outline_Size);
     }
 
     // Creates 2 objects based on the image the parent object of this script contains

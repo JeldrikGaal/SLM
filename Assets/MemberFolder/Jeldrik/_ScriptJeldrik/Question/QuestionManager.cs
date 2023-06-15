@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Assets.SimpleLocalization;
 
 public class QuestionManager : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class QuestionManager : MonoBehaviour
     private bool _completed;
     private VALUECONTROLER _VC;
 
+
     private void Awake()
     {
         
@@ -52,6 +54,11 @@ public class QuestionManager : MonoBehaviour
         // VC
         _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
         _questions = _VC.Questions;
+
+        foreach (Question q in _questions)
+        {
+            q.Text = LocalizationManager.Localize(q.LocalizationKey); 
+        }
 
         // Loading and displaying question objects in the menu
         if (_questions.Count < 3)
@@ -97,6 +104,7 @@ public class QuestionManager : MonoBehaviour
 
         // Starts off disables
         this.gameObject.SetActive(false);
+        
         
     }
 

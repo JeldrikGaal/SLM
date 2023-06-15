@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Assets.SimpleLocalization;
 
 [RequireComponent(typeof(Image))]
 public class Clickable : MonoBehaviour
@@ -21,6 +22,9 @@ public class Clickable : MonoBehaviour
         cM = GameObject.FindGameObjectWithTag("ClickableManager").GetComponent<ClickableManager>();
         _image = GetComponent<Image>();
         _tH = Camera.main.GetComponent<TouchHandler>();
+
+        cH.Title = LocalizationManager.Localize(cH.LocalizationKey + ".Title");
+        cH.Description = LocalizationManager.Localize(cH.LocalizationKey + ".Description");
 
         // Making the editor display invisible on scene start
         //_image.color = new Color(_image.color.r, _image.color.g, _image.color.b, 0);

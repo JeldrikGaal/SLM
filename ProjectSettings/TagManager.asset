@@ -11,6 +11,7 @@ TagManager:
   - CurrentQuestion
   - ClickableStorage
   - VC
+  - LocalizationManager
   layers:
   - Default
   - TransparentFX

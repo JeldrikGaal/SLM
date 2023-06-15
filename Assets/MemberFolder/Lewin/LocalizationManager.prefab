@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7168890305178761407}
   - component: {fileID: 7168890305178761400}
+  - component: {fileID: 2991951011285614433}
   m_Layer: 0
   m_Name: LocalizationManager
   m_TagString: Untagged
@@ -48,4 +49,18 @@ MonoBehaviour:
   Sheets:
   - Name: Menu
     Id: 0
+  - Name: MG 1
+    Id: 1072768192
   SaveFolder: {fileID: 102900000, guid: c392831e85f928548b8494fefd912562, type: 3}
+--- !u!114 &2991951011285614433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7168890305178761401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8f64ae5646677d4e85090620c0c1a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

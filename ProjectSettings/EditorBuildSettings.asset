@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/MemberFolder/Philip/Scenes/Book.unity
     guid: 78107024e8bf1384bae208e352eb9f46
   - enabled: 0

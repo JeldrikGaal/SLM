@@ -55,10 +55,13 @@ public class PopUp : MonoBehaviour
     // Closes the popup - gets called by UI button
     public void Close()
     {
+        Debug.Log(_reminderRef);
         if (_reminderRef != null)
         {
             Destroy(_reminderRef);
         }
+        // Preventing popup to spawn while the animation is running
+        _spawnTime = Time.time;
         cM.HidePopUp();
     }
 }
