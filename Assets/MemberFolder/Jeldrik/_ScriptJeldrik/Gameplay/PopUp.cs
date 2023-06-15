@@ -34,7 +34,7 @@ public class PopUp : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time - _spawnTime > _VC.Reminder_BlockTime)
+        if (Time.time - _spawnTime > _VC.PopUp_BlockTime)
         {
             // TODO: Include proper touch controls
             if (Input.GetMouseButtonDown(0))
@@ -43,10 +43,10 @@ public class PopUp : MonoBehaviour
             }
         }
 
-        if (Time.time - _spawnTime > _VC.Reminder_ReminderTime && !_spawnedReminder)
+        if (Time.time - _spawnTime > _VC.PopUp_ReminderTime && !_spawnedReminder)
         {
             _reminderRef = Instantiate(_reminderPrefab, _canvas.transform);
-            _reminderRef.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + Camera.main.orthographicSize * (_VC.Reminder_Pos * 0.01f), _reminderRef.transform.position.z);
+            _reminderRef.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + Camera.main.orthographicSize * (_VC.PopUp_Reminder_Pos * 0.01f), _reminderRef.transform.position.z);
             _reminderRef.GetComponent<ReminerPopUp>().Show();
             _spawnedReminder = true;
         }

@@ -11,13 +11,13 @@ public class TouchHandler : MonoBehaviour
 
     #region Serialized Fields
     [Tooltip("Factor with how fast the camera moves when being dragged around")]
-    [SerializeField] private float _dragFactor = 0.1f;
+    private float _dragFactor = 0.1f;
 
     [Tooltip("How long to wait for next input to deploy a reminder")]
-    [SerializeField] private float _waitTimeReminder;
+     private float _waitTimeReminder;
 
     [Tooltip("How long to after Spawning a reminder for the next one")]
-    [SerializeField] private float _waitTimeReminderWaitTime;
+    private float _waitTimeReminderWaitTime;
 
     [Tooltip("Prefab for the input reminder Object")]
     [SerializeField] private GameObject _inputReminderObject;
@@ -53,6 +53,10 @@ public class TouchHandler : MonoBehaviour
     void Awake()
     {
         _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
+        _dragFactor = _VC.Camera_MoveSpeed;
+        _waitTimeReminder = _VC.Misc_WaitTime_InputReminder;
+        _waitTimeReminderWaitTime = _VC.Misc_SecondWaitTime_InputReminder;
+        _inputReminderObject = _VC.Misc_Reminder_Object;
 
         _width = (float)Screen.width / 2.0f;
         _height = (float)Screen.height / 2.0f;
@@ -177,7 +181,7 @@ public class TouchHandler : MonoBehaviour
     private void SpawnInputReminder()
     {
         GameObject temp = Instantiate(_inputReminderObject, _canvas.transform);
-        temp.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + Camera.main.orthographicSize * 0.9f, temp.transform.position.z);
+        temp.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + Camera.main.orthographicSize * _VC.PopUp_Reminder_Pos, temp.transform.position.z);
         temp.GetComponent<ReminerPopUp>().Show();
     }
     #endregion

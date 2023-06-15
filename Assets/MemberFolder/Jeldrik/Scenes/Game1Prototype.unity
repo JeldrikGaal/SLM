@@ -160,18 +160,15 @@ MonoBehaviour:
   SceneInfo_AnimSpeed: 0.6
   SceneInfo_BlockTime: 1
   SceneInfo_ReminderTime: 5
-  PopUp_BlockTime: 0
-  PopUp_ReminderTime: 0
-  PopUp_Pos: 0
-  Reminder_BlockTime: 1
-  Reminder_ReminderTime: 7
-  Reminder_Pos: 89
+  PopUp_BlockTime: 0.5
+  PopUp_ReminderTime: 3
   PopUp_AnimSpeed: 0.7
+  PopUp_Reminder_Pos: 85
   Questions:
   - {fileID: 11400000, guid: 90cae102534cdbb43b98c6c4fa192278, type: 2}
   - {fileID: 11400000, guid: c8acb9f15aada0346856c8d72c5e010e, type: 2}
   - {fileID: 11400000, guid: a60a9d4faa6617d49a74162e72d04f44, type: 2}
-  Clickable_Pos: 0.6
+  Clickable_Pos: 0.9
   Camera_Border: 0
   Camera_ClickMoveTime: 0.6
 --- !u!4 &1018467
@@ -4156,7 +4153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -199}
+  m_AnchoredPosition: {x: 0, y: -172.2}
   m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1316571894

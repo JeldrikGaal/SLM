@@ -26,27 +26,27 @@ public class VALUECONTROLER : MonoBehaviour
     [Header("PopUp")]
     [Tooltip("Time the scene input is blocked")] public float PopUp_BlockTime;
     [Tooltip("Time after the scene reminder is spawned")] public float PopUp_ReminderTime;
-    [Tooltip("0-100% of the upper half of the screen to position the PopUp"), Range(0, 100)] public float PopUp_Pos;
     [Tooltip("How long the animation when the PopUp spawns take")] public float PopUp_AnimSpeed;
+    [Tooltip("0-100% of the upper half of the screen to position the PopUp"), Range(0, 100)] public float PopUp_Reminder_Pos;
 
-    [Header("Reminder PopUp")]
-    [Tooltip("Time the scene input is blocked")] public float Reminder_BlockTime;
-    [Tooltip("Time after the scene reminder is spawned")] public float Reminder_ReminderTime;
-    [Tooltip("0-100% of the upper half of the screen to position the PopUp"), Range(0, 100)] public float Reminder_Pos;
-
+    //[Header("Reminder PopUp")]
     
 
     [Header("Questions")]
     [Tooltip("List of the Question objects in order of needed completion")] public List<Question> Questions;
 
     [Header("Clickables")]
-    [Tooltip("Highlighted object position"), Range(0, 100)] public float Clickable_Pos;
+    [Tooltip("Highlighted object position ( 0-100% of half the screen starting from the camera)"), Range(0, 100)] public float Clickable_Pos;
 
     [Header("Camera")]
     [Tooltip("Border around the image that the camera can move in"), Range(0, 1)] public float Camera_Border;
     [Tooltip("How long the Camera takes to move to the clicked options")] public float Camera_ClickMoveTime;
-    
+    [Tooltip("Factor with how fast the camera moves when being dragged around")] public float Camera_MoveSpeed;
 
+    [Header("Misc")]
+    [Tooltip("How long to wait for next input to deploy a reminder")] public float Misc_WaitTime_InputReminder;
+    [Tooltip("How long to wait after first reminder to deploy a second one")] public float Misc_SecondWaitTime_InputReminder;
+    [Tooltip("The prefab for the reminder that gets deployed after having no input for Misc_WaitTime_InputReminder seconds")] public GameObject Misc_Reminder_Object;
 
 
     /* 

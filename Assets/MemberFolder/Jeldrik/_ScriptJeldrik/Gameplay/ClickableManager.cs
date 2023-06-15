@@ -71,12 +71,12 @@ public class ClickableManager : MonoBehaviour
         if (pos.x < _tH._width * 0.65f)
         {
             // Position on the left of the camera
-             x = Mathf.Max(-_tH._camLimits.x, Mathf.Min(pos.x + (Camera.main.orthographicSize * _tH._aspect) * _VC.Clickable_Pos, _tH._camLimits.x));
+             x = Mathf.Max(-_tH._camLimits.x, Mathf.Min(pos.x + (Camera.main.orthographicSize * _tH._aspect) * _VC.Clickable_Pos * 0.01f, _tH._camLimits.x));
         }
         else
         {
             // Position on the right of the camera
-            x = Mathf.Max(-_tH._camLimits.x, Mathf.Min(pos.x - (Camera.main.orthographicSize * _tH._aspect) * _VC.Clickable_Pos, _tH._camLimits.x));
+            x = Mathf.Max(-_tH._camLimits.x, Mathf.Min(pos.x - (Camera.main.orthographicSize * _tH._aspect) * _VC.Clickable_Pos * 0.01f, _tH._camLimits.x));
         }
         
         float y = Mathf.Max(- _tH._camLimits.y, Mathf.Min(pos.y, _tH._camLimits.y));
