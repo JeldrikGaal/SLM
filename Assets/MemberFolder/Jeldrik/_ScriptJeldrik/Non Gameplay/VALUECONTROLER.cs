@@ -49,6 +49,8 @@ public class VALUECONTROLER : MonoBehaviour
     [Tooltip("The prefab for the reminder that gets deployed after having no input for Misc_WaitTime_InputReminder seconds")] public GameObject Misc_Reminder_Object;
 
 
+    /*[InspectorButton("SetValues")]
+    [Tooltip("Updates the values from the Valuecontroller during runtime")] public bool SETVALUES;*/
     /* 
     [Header("")]
     [Tooltip("")]
@@ -60,9 +62,11 @@ public class VALUECONTROLER : MonoBehaviour
         _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void SetValues()
     {
-        
+       
     }
+    
+
+
 }
