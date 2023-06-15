@@ -43,11 +43,13 @@ public class TouchHandler : MonoBehaviour
     private float _lastFrameClickedCountTime = 0.02f;
 
     // Camera stuff
-    [HideInInspector] public Vector2 _camLimits;
+    public Vector4 _camLimits;
     private Vector3 mpS;
     private Vector3 camPS;
     private GameObject _canvas;
     private Transform _camTransform;
+
+    private bool EDITOR;
 
     // Start is called before the first frame update
     void Awake()
@@ -57,9 +59,14 @@ public class TouchHandler : MonoBehaviour
         _waitTimeReminder = _VC.Misc_WaitTime_InputReminder;
         _waitTimeReminderWaitTime = _VC.Misc_SecondWaitTime_InputReminder;
         _inputReminderObject = _VC.Misc_Reminder_Object;
+         // Fetching needed references 
+        _camTransform = Camera.main.transform;
+        _canvas = GameObject.FindGameObjectWithTag("Canvas");
 
         _width = (float)Screen.width / 2.0f;
+        _width = 1920 / 2f;
         _height = (float)Screen.height / 2.0f;
+        _height = 1080 / 2f;
 
         // Used for timing the spawning of 'Wrong Input' particle
         _lastFrameClickedCountTime = 0.3f;
@@ -68,6 +75,9 @@ public class TouchHandler : MonoBehaviour
         _aspect = (float)Screen.currentResolution.width / (float)Screen.currentResolution.height;
         
         _camLimits = new Vector2(_width - Camera.main.orthographicSize  * _aspect, _height - Camera.main.orthographicSize);
+        _camLimits = new Vector4(- _camLimits.x + _canvas.transform.position.x, _camLimits.x + _canvas.transform.position.x,
+                                - _camLimits.y + _canvas.transform.position.y, _camLimits.y + _canvas.transform.position.y);
+        //_camLimits = new Vector2();
         _camLimits *= 1 + _VC.Camera_Border;
 
         // Locks all input until its unlocked by UnlockInput()
@@ -76,12 +86,13 @@ public class TouchHandler : MonoBehaviour
         // Used to time the spawning of reminder notifications
         _lastInputTime = Time.time;
 
-        // Fetching needed references 
-        _camTransform = Camera.main.transform;
-        _canvas = GameObject.FindGameObjectWithTag("Canvas");
+       
         //_qMB = GameObject.FindGameObjectWithTag("QuestionMenuButton").GetComponent<QuestionMenuButton>();
         //_qMB.ToggleSelf(false);
         _cQ = GameObject.FindGameObjectWithTag("CurrentQuestion").GetComponent<CurrentQuestion>();
+
+        EDITOR = false;
+
         _cQ.ToggleSelf(false);
     }
 
@@ -90,26 +101,7 @@ public class TouchHandler : MonoBehaviour
         // Prevents any input when the handler is locked
         if (locked) return;
 
-        #region Commented Touch controls
-        /*if (Input.touchCount == 1)
-        {
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Began)
-            {
-                Vector3 pos = touch.position;
-                pos.x = (pos.x - _width) / _width;
-                pos.y = (pos.y - _height) / _height;
-                _position = new Vector3(-pos.x, pos.y, 0.0f);
-            }
-            
-            if (touch.phase == TouchPhase.Moved)
-            {
-                Vector3 pos = touch.position;
-                pos.x = (pos.x - _width) / _width;
-                pos.y = (pos.y - _height) / _height;
-            }
-        }*/
-        #endregion
+      
 
         #region Wrong Input particle Logic
         // Checking if last frame the user started a click and if they are now dragging or not
@@ -130,44 +122,82 @@ public class TouchHandler : MonoBehaviour
         }
         #endregion
 
+        #region Handling Input
+        if (EDITOR)
+        {
+            // Starting to drag the camera around ( with mouse controls for debugging purposes )
+            if (Input.GetMouseButtonDown(0))
+            {
+                StartScrolling();
+            }
+            else
+            {
+                if (Time.time - _lastFrameClickedStartTime > _lastFrameClickedCountTime && _lastFrameClicked)
+                {
+                    _lastFrameClicked = false;
+                }
+            }
+        
+            // Actually dragging the camera around ( with mouse controls for debugging purposes )
+            if (Input.GetMouseButton(0))
+            {
+                Scrolling();
+            } 
+        }
+
+        #endregion
+
         ReminderLogic();
+
+        // Constrain camera
+        Vector3 newPos = Camera.main.transform.position;
+            Camera.main.transform.position = new Vector3(
+                Mathf.Max(_camLimits.x, Mathf.Min(_camLimits.y, newPos.x)),
+                Mathf.Max(_camLimits.z, Mathf.Min(_camLimits.w, newPos.y)),
+                 Camera.main.transform.position.z);
     }
 
     void FixedUpdate()
     {
-        // Prevents any input when the handler is locked
         if (locked) return;
 
-        #region Handling Input
-        // Starting to drag the camera around ( with mouse controls for debugging purposes )
-        if (Input.GetMouseButtonDown(0))
+        #region Touch controls
+        if (Input.touchCount == 1)
         {
+            /*Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
+            {
+                StartScrolling();
+            }
+            else
+            {
+                if (Time.time - _lastFrameClickedStartTime > _lastFrameClickedCountTime && _lastFrameClicked)
+                {
+                    _lastFrameClicked = false;
+                }
+            }
+            
+            if (touch.phase == TouchPhase.Moved)
+            {
+                Scrolling();
+            }*/
+        }
+        #endregion
+    }
+
+    private void StartScrolling()
+    {
             mpS = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             camPS = Camera.main.transform.position;
 
             LogInputTime();
             _lastFrameClicked = true;
             _lastFrameClickedStartTime = Time.time;
+    }
 
-
-        }
-        else
-        {
-            if (Time.time - _lastFrameClickedStartTime > _lastFrameClickedCountTime && _lastFrameClicked)
-            {
-                _lastFrameClicked = false;
-            }
-        }
-       
-        // Actually dragging the camera around ( with mouse controls for debugging purposes )
-        if (Input.GetMouseButton(0))
-        {
-            Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-            Debug.Log(Camera.main.transform.position);
-            Debug.Log("===");
-            Vector3 dif = mpS - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Debug.Log(dif);
-            Debug.Log("===");
+    private void Scrolling()
+    {
+        Vector3 dif = mpS - Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3 newPos = camPS + ( dif  * _dragFactor);
             Camera.main.transform.position = new Vector3(
                 Mathf.Max(-_camLimits.x, Mathf.Min(_camLimits.x, newPos.x)),
@@ -175,8 +205,6 @@ public class TouchHandler : MonoBehaviour
                  Camera.main.transform.position.z);
 
             LogInputTime();
-        }
-        #endregion
     }
 
     #region Reminder Notification Functions

@@ -18,6 +18,8 @@ public class ClickableManager : MonoBehaviour
     private TouchHandler _tH;
     private ClickableStorage _cS;
     private VALUECONTROLER _VC;
+
+    private Transform _canvas;
     #endregion
 
     void Start()
@@ -25,6 +27,7 @@ public class ClickableManager : MonoBehaviour
         _tH = Camera.main.GetComponent<TouchHandler>();
         _cS = GameObject.FindGameObjectWithTag("ClickableStorage").GetComponent<ClickableStorage>();
         _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
+        _canvas = GameObject.FindGameObjectWithTag("Canvas").transform;
     }
 
     // Try to display a new Popup. If one is already being displayed return false otherwise displays new one and returns true
@@ -68,15 +71,15 @@ public class ClickableManager : MonoBehaviour
         float x = 0;
 
         // See if the object is too close to the right border of the screen and decide on which side to put it
-        if (pos.x < _tH._width * 0.65f)
+        if (pos.x < (_tH._width + _canvas.position.x) * 0.65f )
         {
             // Position on the left of the camera
-             x = Mathf.Max(-_tH._camLimits.x, Mathf.Min(pos.x + (Camera.main.orthographicSize * _tH._aspect) * _VC.Clickable_Pos * 0.01f, _tH._camLimits.x));
+             x = Mathf.Max(_tH._camLimits.x, Mathf.Min(pos.x + (Camera.main.orthographicSize * _tH._aspect) * _VC.Clickable_Pos * 0.01f, _tH._camLimits.y));
         }
         else
         {
             // Position on the right of the camera
-            x = Mathf.Max(-_tH._camLimits.x, Mathf.Min(pos.x - (Camera.main.orthographicSize * _tH._aspect) * _VC.Clickable_Pos * 0.01f, _tH._camLimits.x));
+            x = Mathf.Max(_tH._camLimits.x, Mathf.Min(pos.x - (Camera.main.orthographicSize * _tH._aspect) * _VC.Clickable_Pos * 0.01f, _tH._camLimits.y));
         }
         
         float y = Mathf.Max(- _tH._camLimits.y, Mathf.Min(pos.y, _tH._camLimits.y));

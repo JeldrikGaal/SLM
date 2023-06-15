@@ -59,8 +59,11 @@ public class MakeOutline : MonoBehaviour
     // but this sprite gets assigned a material making it all white and then getting colored to the outline color
     private GameObject MakeOutlineObject(float scaling)
     {
+        
+
         RectTransform rectT = GetComponent<RectTransform>();
         GameObject temp = Instantiate(new GameObject(), transform.parent);
+        temp.transform.name = "SSSS";
         temp.AddComponent<RectTransform>();
         temp.transform.localScale = new Vector3(scaling, scaling, scaling);
         RectTransform rectTI = temp.GetComponent<RectTransform>();

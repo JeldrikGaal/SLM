@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: JM
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: a7d17b24b0bd77e4a986302fb2e26d0a, type: 3}
-  Title: Johan Maurits
-  Description: This is the one and ony dude ( he do be kinda ass )
+  Title: Johan Moritz
+  Description: Das ist JM der Sklavenhandel betreibende Bre
   BookInfo: 
   Question: 1
   language: 0
   FirstClickTime: 0
   Num: 0
+  LocalizationKey: C1

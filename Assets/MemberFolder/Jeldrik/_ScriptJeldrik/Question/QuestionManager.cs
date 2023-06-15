@@ -206,6 +206,7 @@ public class QuestionManager : MonoBehaviour
             if (CheckQuestionCompletition())
             {
                 GameObject temp = Instantiate(_confetti, Camera.main.transform);
+                temp.transform.name = "QM";
                 temp.transform.localScale *= _VC.Confetti_Size;
                 Destroy(temp, 4);
                 CompleteCurrentQuestion();
