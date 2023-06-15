@@ -33,10 +33,15 @@ namespace Lean.Touch
 		public Vector3 DefaultPosition { set { defaultPosition = value; } get { return defaultPosition; } } [SerializeField] private Vector3 defaultPosition;
 
 		[SerializeField]
+		//private TouchHandler _tH;
 		private Vector3 remainingDelta;
+        private float _width;
+        private float _height;
+        private Vector4 _camLimits;
+        private float _aspect;
 
-		/// <summary>This method resets the target position value to the <b>DefaultPosition</b> value.</summary>
-		[ContextMenu("Reset Position")]
+        /// <summary>This method resets the target position value to the <b>DefaultPosition</b> value.</summary>
+        [ContextMenu("Reset Position")]
 		public virtual void ResetRotation()
 		{
 			remainingDelta = defaultPosition - transform.position;
@@ -97,7 +102,18 @@ namespace Lean.Touch
 
 		protected virtual void Awake()
 		{
+			_width = 1920 / 2f;
+			_height = 1080 / 2f;
+
+
+			GameObject _canvas = GameObject.FindGameObjectWithTag("Canvas");
+			_aspect = (float)Screen.currentResolution.width / (float)Screen.currentResolution.height;
 			Use.UpdateRequiredSelectable(gameObject);
+			_aspect = (float)Screen.currentResolution.width / (float)Screen.currentResolution.height;
+        
+        	_camLimits = new Vector2(_width - Camera.main.orthographicSize  * _aspect, _height - Camera.main.orthographicSize);
+        	_camLimits = new Vector4(- _camLimits.x + _canvas.transform.position.x, _camLimits.x + _canvas.transform.position.x,
+                                - _camLimits.y + _canvas.transform.position.y, _camLimits.y + _canvas.transform.position.y);
 		}
 
 		protected virtual void LateUpdate()
@@ -129,6 +145,12 @@ namespace Lean.Touch
 
 			// Shift this position by the change in delta
 			transform.localPosition = oldPosition + remainingDelta - newRemainingDelta;
+			Vector3 newPos = transform.position;
+			transform.position = Camera.main.transform.position;
+            Camera.main.transform.position = new Vector3(
+                Mathf.Max(_camLimits.x, Mathf.Min(_camLimits.y, newPos.x)),
+                Mathf.Max(_camLimits.z, Mathf.Min(_camLimits.w, newPos.y)),
+                 Camera.main.transform.position.z);
 
 			if (fingers.Count == 0 && inertia > 0.0f && damping > 0.0f)
 			{

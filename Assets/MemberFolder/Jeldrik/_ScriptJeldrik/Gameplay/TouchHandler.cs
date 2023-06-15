@@ -144,17 +144,16 @@ public class TouchHandler : MonoBehaviour
                 Scrolling();
             } 
         }
-
         #endregion
 
         ReminderLogic();
 
         // Constrain camera
-        Vector3 newPos = Camera.main.transform.position;
+        /* Vector3 newPos = Camera.main.transform.position;
             Camera.main.transform.position = new Vector3(
                 Mathf.Max(_camLimits.x, Mathf.Min(_camLimits.y, newPos.x)),
                 Mathf.Max(_camLimits.z, Mathf.Min(_camLimits.w, newPos.y)),
-                 Camera.main.transform.position.z);
+                 Camera.main.transform.position.z); */
     }
 
     void FixedUpdate()

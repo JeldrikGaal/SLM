@@ -50,6 +50,13 @@ public class SceneInfoPopUp : MonoBehaviour
             {
                 EndPopUp();
             }
+            if (Input.touchCount == 1)
+            {
+                if (Input.GetTouch(0).phase == TouchPhase.Began)
+                {
+                    EndPopUp();
+                }
+            }
         }
 
 

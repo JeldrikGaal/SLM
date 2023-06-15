@@ -36,10 +36,17 @@ public class PopUp : MonoBehaviour
     {
         if (Time.time - _spawnTime > _VC.PopUp_BlockTime)
         {
-            // TODO: Include proper touch controls
+            
             if (Input.GetMouseButtonDown(0))
             {
                 Close();
+            }
+            if (Input.touchCount == 1)
+            {
+                if (Input.GetTouch(0).phase == TouchPhase.Began)
+                {
+                    Close();
+                }
             }
         }
 
