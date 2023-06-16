@@ -22,6 +22,7 @@ public class ClickableStorage : MonoBehaviour
         if (_current == null)
         {
             _current = this.gameObject;
+            transform.parent = null;
             DontDestroyOnLoad(gameObject);
             for (int i = 0; i < 3; i++)
             {

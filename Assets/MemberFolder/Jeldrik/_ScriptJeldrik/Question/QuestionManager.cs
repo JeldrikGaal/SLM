@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Assets.SimpleLocalization;
+using UnityEngine.Sprites;
 
 public class QuestionManager : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class QuestionManager : MonoBehaviour
     [Tooltip("Prefab for spawning confetti upon question completion")]
     [SerializeField] private GameObject _confetti;
 
+    [Tooltip("Prefab for spawning the swirl aorund clicked objects")]
+    [SerializeField] private GameObject _swirl;    
+    private List<GameObject> _spawnedSwirls = new List<GameObject>();
+
     [Tooltip("Reference to the current question menu")]
     [SerializeField] private CurrentQuestion _currentQuestion;
 
@@ -29,6 +34,7 @@ public class QuestionManager : MonoBehaviour
 
     [HideInInspector] public TouchHandler _tH;
     private ClickableStorage _cS;
+    private ClickableManager _cM;
     #endregion
 
     public List<List<int>> _questionObjectCounts = new List<List<int>>();
@@ -55,10 +61,13 @@ public class QuestionManager : MonoBehaviour
         _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
         _questions = _VC.Questions;
 
+        // Loading localized data for questions
         foreach (Question q in _questions)
         {
             q.Text = LocalizationManager.Localize(q.LocalizationKey); 
         }
+
+
 
         // Loading and displaying question objects in the menu
         if (_questions.Count < 3)
@@ -89,7 +98,8 @@ public class QuestionManager : MonoBehaviour
 
         // Getting references 
         _tH = Camera.main.GetComponent<TouchHandler>();
-        _cS = GameObject.Find("ClickableStorage").GetComponent<ClickableStorage>();
+        _cS = GameObject.FindGameObjectWithTag("ClickableStorage").GetComponent<ClickableStorage>();
+        _cM = GameObject.FindGameObjectWithTag("ClickableManager").GetComponent<ClickableManager>();
 
         _completedQuestions.Add(false);
         _completedQuestions.Add(false);
@@ -200,13 +210,26 @@ public class QuestionManager : MonoBehaviour
             _alreadyClicked.Add(cH);
             _questionObjectCounts[_currentQ][GetIDForClicked(cH)] += 1;
 
+            // Add swirl to question objects
+            GameObject tempSwirl = Instantiate(_swirl, _cM.GetCurrentClickable().transform);
+            Image tempI = _cM.GetCurrentClickable().GetComponent<Image>();
+            Sprite sprite = tempI.sprite;
+            Debug.Log(tempI.transform.name);
+            Debug.Log(tempI.sprite.texture.width + " " + tempI.sprite.texture.height);
+
+            Vector2 padding = tempI.sprite.textureRect.size;
+            
+            tempSwirl.GetComponent<RectTransform>().sizeDelta = new Vector2(padding.x, padding.y) * cH.swirlMod;
+            tempSwirl.GetComponent<Swirl>().ShowSwirl();
+            tempSwirl.transform.localPosition = Vector3.zero;
+            _spawnedSwirls.Add(tempSwirl);
+
             _currentQuestion.UpdateQuestionCounter(_questions[_currentQ]);
 
             // Only complete question if enough objects have been clicked
             if (CheckQuestionCompletition())
             {
                 GameObject temp = Instantiate(_confetti, Camera.main.transform);
-                temp.transform.name = "QM";
                 temp.transform.localScale *= _VC.Confetti_Size;
                 Destroy(temp, 4);
                 CompleteCurrentQuestion();
@@ -277,17 +300,7 @@ public class QuestionManager : MonoBehaviour
     // Handles completing all questions
     private void End()
     {
-        _bT.OpenBook();
-        /*Debug.Log("==== Last Question Done ! ====");
-
-        Camera c = Camera.main;
-        DOTween.To(() => c.orthographicSize, x => c.orthographicSize = x, 0f, 2f).OnComplete(() =>
-        {
-            #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-            #endif
-
-        });*/
+        //_bT.OpenBook();
     }
 
     // Return the currently selected Question

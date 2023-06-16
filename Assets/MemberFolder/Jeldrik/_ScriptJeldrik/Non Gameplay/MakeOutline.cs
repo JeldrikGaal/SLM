@@ -62,8 +62,8 @@ public class MakeOutline : MonoBehaviour
         
 
         RectTransform rectT = GetComponent<RectTransform>();
-        GameObject temp = Instantiate(new GameObject(), transform.parent);
-        temp.transform.name = "SSSS";
+        GameObject temp = new GameObject();
+        temp.transform.parent = transform.parent;
         temp.AddComponent<RectTransform>();
         temp.transform.localScale = new Vector3(scaling, scaling, scaling);
         RectTransform rectTI = temp.GetComponent<RectTransform>();

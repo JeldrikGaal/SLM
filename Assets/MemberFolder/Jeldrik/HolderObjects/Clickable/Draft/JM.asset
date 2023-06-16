@@ -21,3 +21,4 @@ MonoBehaviour:
   FirstClickTime: 0
   Num: 0
   LocalizationKey: C1
+  swirlMod: 0.5

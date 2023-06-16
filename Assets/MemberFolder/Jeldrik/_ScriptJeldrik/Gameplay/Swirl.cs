@@ -27,6 +27,8 @@ public class Swirl : MonoBehaviour
 
     public void ShowSwirl()
     {
+        _image = GetComponent<Image>();
+        _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
         _image.fillAmount = 0;
         DOTween.To(() => _image.fillAmount, x => _image.fillAmount = x, 1f, _VC.Swirl_Time).SetEase(Ease.InSine);
     }

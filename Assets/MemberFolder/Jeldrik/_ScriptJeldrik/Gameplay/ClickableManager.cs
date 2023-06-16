@@ -14,6 +14,8 @@ public class ClickableManager : MonoBehaviour
     [SerializeField] private TMP_Text _descriptionText;
     [SerializeField] private Image _image;
     [SerializeField] private QuestionManager _qM;
+    [SerializeField] private Image _grayScaleImage;
+    private Transform _grayScaleParentSafe;
     private Clickable _currentClickable;
     private TouchHandler _tH;
     private ClickableStorage _cS;
@@ -51,6 +53,11 @@ public class ClickableManager : MonoBehaviour
         return _popUp.activeInHierarchy;
     }
 
+    public GameObject GetCurrentClickable()
+    {
+        return _currentClickable.transform.gameObject;
+    }
+
     // Retrieves the information from a give 'clickableholder' object and displays everything accordingly in the popup
     private void DisplayPopUp(ClickableHolder cH)
     {
@@ -65,13 +72,18 @@ public class ClickableManager : MonoBehaviour
             _currentClickable._outline.ToggleOutline(true);
         }
 
+        // Toggling the grayscale fake effect 
+        _grayScaleImage.enabled = true;
+        _grayScaleParentSafe = _currentClickable.transform.parent.transform.parent;
+        _currentClickable.transform.parent.transform.parent = _grayScaleImage.transform;
+
         // Animate Camera so highlighted object is in the right spot
         Vector3 pos = _currentClickable.transform.position;
         Vector3 goal = Vector3.zero;
         float x = 0;
 
         // See if the object is too close to the right border of the screen and decide on which side to put it
-        if (pos.x < (_tH._width + _canvas.position.x) * 0.65f )
+        if (pos.x < (_tH._width + _canvas.position.x) * 0.75f )
         {
             // Position on the left of the camera
              x = Mathf.Max(_tH._camLimits.x, Mathf.Min(pos.x + (Camera.main.orthographicSize * _tH._aspect) * _VC.Clickable_Pos * 0.01f, _tH._camLimits.y));
@@ -130,6 +142,10 @@ public class ClickableManager : MonoBehaviour
             {
                 _currentClickable._outline.ToggleOutline(false);
             }
+
+            // Toggling the grayscale fake effect 
+            _grayScaleImage.enabled = false;
+            _currentClickable.transform.parent.transform.parent = _grayScaleParentSafe;
 
             _tH.UnlockInput();
         });

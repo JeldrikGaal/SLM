@@ -22,4 +22,5 @@ public class ClickableHolder : ScriptableObject
     public int Num;
 
     public string LocalizationKey;
+    public float swirlMod = 1f;
 }

@@ -11,13 +11,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/MemberFolder/Philip/Scenes/MainMenu.unity
     guid: d90f1c9c52e846d419f9b8305b34b3ee
-  - enabled: 1
+  - enabled: 0
     path: Assets/MemberFolder/Jeldrik/Scenes/Game1Prototype.unity
     guid: 5a3be690f657b334bba1a07ef707f89f
-  - enabled: 1
+  - enabled: 0
     path: Assets/MemberFolder/Jeldrik/Scenes/Book_J.unity
     guid: f9ef08c79be6d2d4981b71869f383e8a
   - enabled: 0
     path: Assets/Plugins/CW/LeanTouch/Examples/Sidescroll2D.unity
     guid: 84b65774cb71fc543a5cba771cda3f7b
+  - enabled: 1
+    path: Assets/Scenes/MG1.unity
+    guid: 3b0816604ec8a57409e88b913f38b426
   m_configObjects: {}

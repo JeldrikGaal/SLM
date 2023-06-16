@@ -31,6 +31,8 @@ public class SceneInfoPopUp : MonoBehaviour
         _dummyCounter = 0;
         _dummyCounterGoal = 5;
 
+        transform.position = new Vector3( Camera.main.transform.position.x,  Camera.main.transform.position.y, 0);
+
         // Animate Popup to appear
         transform.DOScale(new Vector3(0.5f, 0.5f, 0.5f), _VC.SceneInfo_AnimSpeed).SetEase(Ease.InSine);
 

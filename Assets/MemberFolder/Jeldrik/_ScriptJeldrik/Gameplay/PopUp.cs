@@ -36,7 +36,7 @@ public class PopUp : MonoBehaviour
     {
         if (Time.time - _spawnTime > _VC.PopUp_BlockTime)
         {
-            
+            // TODO: Include proper touch controls
             if (Input.GetMouseButtonDown(0))
             {
                 Close();
@@ -50,6 +50,8 @@ public class PopUp : MonoBehaviour
             }
         }
 
+        transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, transform.position.z);
+
         if (Time.time - _spawnTime > _VC.PopUp_ReminderTime && !_spawnedReminder)
         {
             _reminderRef = Instantiate(_reminderPrefab, _canvas.transform);
@@ -62,7 +64,6 @@ public class PopUp : MonoBehaviour
     // Closes the popup - gets called by UI button
     public void Close()
     {
-        Debug.Log(_reminderRef);
         if (_reminderRef != null)
         {
             Destroy(_reminderRef);
