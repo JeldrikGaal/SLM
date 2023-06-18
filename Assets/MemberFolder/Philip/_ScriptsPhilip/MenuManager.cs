@@ -21,8 +21,9 @@ public class MenuManager : MonoBehaviour
 
     [Header("Minigame 1")]
     public String sceneToLoad;
-    
+
     [Header("Book Pages")]
+    public Animator bookAnimator;
     public GameObject[] pages;
     [Tooltip("Distance that a swipe needs to cover to be registered")]
     public float swipeThreshold = 200f;
@@ -30,6 +31,8 @@ public class MenuManager : MonoBehaviour
 
     private void Awake()
     {
+        _currentPageIndex = GameManager.Instance.pageIndex;
+        
         _ageButtonText = ageButton.GetComponentInChildren<TextMeshProUGUI>();
         _ageButtonText.text = _ageGroups[_currentIndex];
 
@@ -42,6 +45,7 @@ public class MenuManager : MonoBehaviour
     void Update()
     {
         DetectSwipeInput();
+        //GameManager.Instance.pageIndex = _currentPageIndex;
     }
 
     #region BookPages
@@ -67,7 +71,10 @@ public class MenuManager : MonoBehaviour
 
                 if (swipeDistance > swipeThreshold)
                 {
-                    PreviousPage();
+                    if (GameManager.Instance.pageIndex != 1)
+                    {
+                        PreviousPage();
+                    }
                 }
                 else if (swipeDistance < -swipeThreshold)
                 {
@@ -93,7 +100,10 @@ public class MenuManager : MonoBehaviour
         if (_currentPageIndex < pages.Length - 1)
         {
             _currentPageIndex++;
+            GameManager.Instance.pageIndex = _currentPageIndex;
             ShowCurrentPage();
+            
+            bookAnimator.Play("bookFlipLeft");
         }
     }
 
@@ -102,7 +112,10 @@ public class MenuManager : MonoBehaviour
         if (_currentPageIndex > 0)
         {
             _currentPageIndex--;
+            GameManager.Instance.pageIndex = _currentPageIndex;
             ShowCurrentPage();
+
+            bookAnimator.Play("bookFlipRight");
         }
     }
 
