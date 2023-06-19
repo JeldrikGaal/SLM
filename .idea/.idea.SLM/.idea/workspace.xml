@@ -3,13 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="58850cd5-8d2e-4765-8fce-206cb2b23995" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SLM/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SLM/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Scenes/Book.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Scenes/Book.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Base.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Base.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Fonts/AlexBrush-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Fonts/AlexBrush-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Fonts/Allura-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Fonts/Allura-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Fonts/Andesia Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Fonts/Andesia Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Fonts/MonsieurLaDoulaise-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Fonts/MonsieurLaDoulaise-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Fonts/RockSalt-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Fonts/RockSalt-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Fonts/Sofia-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Fonts/Sofia-Regular SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/MenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Book_Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Book_Main.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +88,7 @@
       <workItem from="1686680385873" duration="634000" />
       <workItem from="1686765762803" duration="1805000" />
       <workItem from="1687054956891" duration="5947000" />
+      <workItem from="1687203184013" duration="6429000" />
     </task>
     <servers />
   </component>

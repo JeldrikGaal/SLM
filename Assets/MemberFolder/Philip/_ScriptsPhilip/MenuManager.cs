@@ -21,14 +21,18 @@ public class MenuManager : MonoBehaviour
     private string[] _languages = { "German (DE)", "English (EN)" };
     private string[] _localizationNames = {"German", "Simplified German", "English", "Simplified English"};
 
-    [Header("Minigame 1")]
-    public String sceneToLoad;
-
     [Header("Book Pages")]
     public Animator bookAnimator;
     public GameObject[] pages;
     [Tooltip("Distance that a swipe needs to cover to be registered")]
     public float swipeThreshold = 200f;
+
+    [Header("Resolutions")] 
+    [SerializeField] private TMP_Dropdown resolutionDropdown;
+    private Resolution[] resolutions;
+    private List<Resolution> filteredResolutions;
+    public TextMeshProUGUI resolutionText;
+    private int currentResolutionIndex = 0;
     
     private LangugageStorage _langugageStorage;
 
@@ -44,13 +48,13 @@ public class MenuManager : MonoBehaviour
         
         _langugageStorage = GameObject.FindGameObjectWithTag("LanguageStorage").GetComponent<LangugageStorage>();
 
+        ResolutionSetup();
         ShowCurrentPage();
     }
-    
+
     void Update()
     {
         DetectSwipeInput();
-        //GameManager.Instance.pageIndex = _currentPageIndex;
     }
 
     #region BookPages
@@ -104,11 +108,11 @@ public class MenuManager : MonoBehaviour
     {
         if (_currentPageIndex < pages.Length - 1)
         {
+            bookAnimator.Play("bookFlipLeft");
+            
             _currentPageIndex++;
             GameManager.Instance.pageIndex = _currentPageIndex;
             ShowCurrentPage();
-            
-            bookAnimator.Play("bookFlipLeft");
         }
     }
 
@@ -116,16 +120,17 @@ public class MenuManager : MonoBehaviour
     {
         if (_currentPageIndex > 0)
         {
+            bookAnimator.Play("bookFlipRight");
+            
             _currentPageIndex--;
             GameManager.Instance.pageIndex = _currentPageIndex;
             ShowCurrentPage();
-
-            bookAnimator.Play("bookFlipRight");
         }
     }
 
     #endregion
     
+    #region Language and Age
     
     public void ToggleAgeGroup()
     {
@@ -175,10 +180,63 @@ public class MenuManager : MonoBehaviour
         _langugageStorage.Language = LocalizationManager.Language;
     }
     
+    #endregion
     
-    public void PlayGame()
+    #region Screen Resolution
+    
+    public void ResolutionSetup()
     {
-        SceneManager.LoadScene(sceneToLoad);
+        resolutions = Screen.resolutions;
+        filteredResolutions = new List<Resolution>();
+        
+        resolutionDropdown.ClearOptions();
+
+        //get all resolutions that match your refresh rate - avoids unnecessary resolution clutter
+        for (int i = 0; i < resolutions.Length; i++)
+        {
+            if (resolutions[i].refreshRate == Screen.currentResolution.refreshRate)
+            {
+                filteredResolutions.Add(resolutions[i]);
+            }
+        }
+
+        List<string> options = new List<string>();
+
+        //goes through the filtered resolutions and adds them to the options list - also finds the current resolution
+        for (int i = 0; i < filteredResolutions.Count; i++)
+        {
+            string resolutionOption = filteredResolutions[i].width + "x" + filteredResolutions[i].height;
+            options.Add(resolutionOption);
+
+            if (filteredResolutions[i].width == Screen.width && filteredResolutions[i].height == Screen.height)
+            {
+                currentResolutionIndex = i;
+            }
+        }
+        
+        //adds all options to the dropdown menu
+        resolutionDropdown.AddOptions(options);
+        resolutionDropdown.value = currentResolutionIndex;
+        resolutionDropdown.RefreshShownValue();
+
+        //set resolution text top left
+        resolutionText.text = Screen.currentResolution.width + " x " + Screen.currentResolution.height;
+    }
+
+    //gets called from the dropdown value changed
+    public void SetResolution(int resolutionIndex)
+    {
+        Resolution resolution = filteredResolutions[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, true);
+        resolutionText.text = Screen.currentResolution.width + " x " + Screen.currentResolution.height;
+    }
+    
+    #endregion
+    
+    
+    public void LoadMinigame(string minigame)
+    {
+        SceneManager.LoadScene(minigame);
     }
 
     public void QuitGame()
