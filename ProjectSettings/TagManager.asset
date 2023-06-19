@@ -12,6 +12,8 @@ TagManager:
   - ClickableStorage
   - VC
   - LocalizationManager
+  - BackGround
+  - LanguageStorage
   layers:
   - Default
   - TransparentFX

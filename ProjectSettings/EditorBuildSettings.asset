@@ -6,20 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/MemberFolder/Philip/Scenes/Book.unity
-    guid: 78107024e8bf1384bae208e352eb9f46
-  - enabled: 1
-    path: Assets/MemberFolder/Philip/Scenes/TestPhilip.unity
-    guid: 4e91af0cd0e193d4f9ea2609ee4ff84e
-  - enabled: 0
-    path: Assets/MemberFolder/Jeldrik/Scenes/Game1Prototype.unity
-    guid: 5a3be690f657b334bba1a07ef707f89f
-  - enabled: 0
-    path: Assets/MemberFolder/Jeldrik/Scenes/Book_J.unity
-    guid: f9ef08c79be6d2d4981b71869f383e8a
-  - enabled: 0
-    path: Assets/Plugins/CW/LeanTouch/Examples/Sidescroll2D.unity
-    guid: 84b65774cb71fc543a5cba771cda3f7b
+    path: Assets/Scenes/Book_Main.unity
+    guid: 08a6b4608fc5a9142bc5c38bd7b585ec
   - enabled: 1
     path: Assets/Scenes/MG1.unity
     guid: 3b0816604ec8a57409e88b913f38b426

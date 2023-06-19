@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f26cf9e1397fcfa439d8636d30126c25, type: 3}
+  m_Name: Sklave1
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 859c4a48aea4fbf479bebba5d513187e, type: 3}
+  Title: Versklavte Person
+  Description: "Das ist kein:e Besucher:in. Das ist eine versklavte Person aus Afrika,
+    die in Johann Moritz's Palast in der niederl\xE4ndischn Kolonie in Brazilien
+    unfreie Arbeit leistet."
+  BookInfo: 
+  Question: 1
+  language: 0
+  FirstClickTime: 0
+  Num: 0
+  LocalizationKey: C4
+  swirlMod: 1

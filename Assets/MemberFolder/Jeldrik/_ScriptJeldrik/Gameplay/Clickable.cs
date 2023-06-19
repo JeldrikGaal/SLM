@@ -34,11 +34,18 @@ public class Clickable : MonoBehaviour
         _image.alphaHitTestMinimumThreshold = 0.1f;
     }
 
+    public void UpdateLocalizedData()
+    {
+        cH.Title = LocalizationManager.Localize(cH.LocalizationKey + ".Title");
+        cH.Description = LocalizationManager.Localize(cH.LocalizationKey + ".Description");
+    }
+
     // Function used by the UI button if this object is clicked. Tries to display the information in an popup by calling the function on the Clickable Manager and returns an warning if the holder is missing
     public void Clicked()
     {
         if (cH != null)
         {
+            UpdateLocalizedData();
             cM.TryDisplayPopUp(cH, this);
             _tH.BlockWrongInputPart();
         }

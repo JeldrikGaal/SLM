@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class TouchHandler : MonoBehaviour
 {
@@ -49,19 +51,28 @@ public class TouchHandler : MonoBehaviour
     private GameObject _canvas;
     private Transform _camTransform;
 
+    GraphicRaycaster m_Raycaster;
+    PointerEventData m_PointerEventData;
+    EventSystem m_EventSystem;
+
     private bool EDITOR;
 
     // Start is called before the first frame update
     void Awake()
     {
+        
+
         _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
         _dragFactor = _VC.Camera_MoveSpeed;
         _waitTimeReminder = _VC.Misc_WaitTime_InputReminder;
         _waitTimeReminderWaitTime = _VC.Misc_SecondWaitTime_InputReminder;
         _inputReminderObject = _VC.Misc_Reminder_Object;
+
          // Fetching needed references 
         _camTransform = Camera.main.transform;
         _canvas = GameObject.FindGameObjectWithTag("Canvas");
+        m_Raycaster = _canvas.GetComponent<GraphicRaycaster>();
+        m_EventSystem = GetComponent<EventSystem>();
 
         _width = (float)Screen.width / 2.0f;
         _width = 1920 / 2f;
@@ -98,13 +109,41 @@ public class TouchHandler : MonoBehaviour
 
     void Update()
     {
+
+
         // Prevents any input when the handler is locked
         if (locked) return;
 
-      
+
 
         #region Wrong Input particle Logic
-        // Checking if last frame the user started a click and if they are now dragging or not
+
+        if (Input.touchCount > 0)
+        {
+            Touch t = Input.GetTouch(0);
+            if (t.phase == TouchPhase.Began)
+            {
+                
+            }
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+                //Set up the new Pointer Event
+                m_PointerEventData = new PointerEventData(m_EventSystem);
+                //Set the Pointer Event Position to that of the game object
+                m_PointerEventData.position = Input.mousePosition;
+                //Create a list of Raycast Results
+                List<RaycastResult> results = new List<RaycastResult>();
+                //Raycast using the Graphics Raycaster and mouse click position
+                m_Raycaster.Raycast(m_PointerEventData, results);
+                if (results[0].gameObject.CompareTag("BackGround")){
+                    Vector3 partPos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0.5f);
+                    SpawnWrongInputPart(partPos);
+                }
+        }
+
+        /* // Checking if last frame the user started a click and if they are now dragging or not
         if (_lastFrameClicked && !Input.GetMouseButton(0))
         {
             
@@ -119,7 +158,7 @@ public class TouchHandler : MonoBehaviour
         if (Time.time - _lastBlockPartTime > 0.1f && ValidInput)
         {
             ValidInput = false;
-        }
+        } */
         #endregion
 
         #region Handling Input
@@ -147,13 +186,6 @@ public class TouchHandler : MonoBehaviour
         #endregion
 
         ReminderLogic();
-
-        // Constrain camera
-        /* Vector3 newPos = Camera.main.transform.position;
-            Camera.main.transform.position = new Vector3(
-                Mathf.Max(_camLimits.x, Mathf.Min(_camLimits.y, newPos.x)),
-                Mathf.Max(_camLimits.z, Mathf.Min(_camLimits.w, newPos.y)),
-                 Camera.main.transform.position.z); */
     }
 
     void FixedUpdate()
@@ -228,10 +260,12 @@ public class TouchHandler : MonoBehaviour
 
     #region wrong input functions
     // Spawning the 'red ripple' particle at pos
-    public void SpawnWrongInputPart(Vector2 pos)
+    public void SpawnWrongInputPart(Vector3 pos)
     {
+        return;
         GameObject temp = Instantiate(_wrongInputParticle, Camera.main.transform);
-        temp.transform.position = new Vector3(pos.x, pos.y, temp.transform.position.z);
+        temp.transform.position = new Vector3(pos.x, pos.y, pos.z);
+        temp.transform.localPosition = new Vector3(temp.transform.localPosition.x, temp.transform.localPosition.y, 0.5f);
         Destroy(temp, 2f);
         _lastFrameClicked = false;
     }

@@ -1,7 +1,19 @@
-Key,English,German
-MG1.Q1,Where is Johan Maurits ?,Wo is Johann??
-MG1.Q2,Who is attending the party ?,Wer ist auf der Party ??
-MG1.Q3,Where can you find the symbol ?,Wo kannst du die Symbole finden ??
-,,
-C1.Title,Johan Maurits,Johan Moritz
-C1.Description,This is Johan Maurits,Das ist Johan Moritz.
+Key,English,German,Simplified German,Simplified English
+MG1.Q1,Find Johan Maurits!,Finde Johann Moritz!,,
+MG1.Q2,Wo is visiting Johan Maurits at the court 'Vrijburg?,Wer hat Johan Maurits in seinem Palast Freiburg besucht?,,
+MG1.Q3,Where can you find this symbol?,Wo kannst du dies Symbol finden?,,
+,,,,
+C1.Title,Johan Maurits,Johann Moritz,Johann Moritz,Johan Maurits
+C1.Description,"This is Johan Maurits of Nassau-Siegen. He was born in Siegen in 1604 and was appointed as the governor of the Dutch colony in Brazil by his employer, the West India Company (WIC), in 1637.","Das ist Johann Moritz von Nassau-Siegen. Er wurde 1604 in Siegen geboren und wurde 1637 von seinem Arbeitgeber, der Westinidien-Kompanie (WIC) zum Gouverneur der niederländischen Kolonie in Brazilien ernannt.","Das ist Johann Moritz von Nassau-Siegen. Er wurde 1604 hier in Siegen geboren. Im Jahr 1637 wurde er von seiner Firma, der Westindien-Kompanie (WIC), zum Gouverneur einer niederländischen Kolonie in Brasilien ernannt.","This is Johann Moritz of Nassau-Siegen. He was born in the city of Siegen in 1604. In 1637, he was appointed by his company, the West India Company (WIC), as the governor of a Dutch colony in Brazil."
+,,,,
+C2.Title,Frans Post,Frans Post,Frans Post,
+C2.Description,"This is Frans Post. He was a Dutch painter of the 17th century. He accompanied Johann Moritz as part of his entourage in 1637 on his expedition to Brazil. There, he mainly created landscape paintings.",Das ist Frans Post. Er war ein niederländischer Maler des 17ten Jahrhunderts. Er begleitete Johann Moritz als Teil seines Gefolges 1637 auf dessen Expedition nach Brasilien. Dort fertigte er hauptsächlich Landschaftsmalereien an.,Das ist Frans Post. Er war ein Künstler aus Holland. Er hat Johann Moritz 1637 nach Brasilien begleitet. Dort malte er vor allem brasilianische Landschaften.,"This is Frans Post. He was an artist from Holland. He accompanied Johann Moritz to Brazil in 1637. There, he primarily painted Brazilian landscapes."
+,,,,
+C3.Title,Albert Eckhout,Albert Eckhout,Albert Eckhout,Albert Eckhout
+C3.Description,"This is Albert Eckhout. He was a Dutch artist and the primary court artist of Johan Maurits van Nassau-Siegen in Dutch Brazil, where he created still lifes, portraits, and depictions of natural curiosities.","Das ist Albert Eckhout. Er war ein niederländischer Künstler und der Haupt-Hofkünstler von Johann Moritz van Nassau-Siegen in der niederländischen Kolonie in Brasilien, wo er Stillleben, Porträts und Darstellungen von Naturkuriositäten schuf. ","Das ist Albert Eckhout. Er war ein Künstler aus Holland. Er hat für Johann Moritz van Nassau-Siegen gearbeitet. Albert Eckhout hat in der niederländischen Kolonie in Brasilien gemalt. Dort hat er Bilder von Essen, Menschen und interessanten Dingen in der Natur gemacht.","This is Albert Eckhout. He was an artist from Holland. He worked for Johan Maurits of Nassau-Siegen. Albert Eckhout painted in the Dutch colony in Brazil. There, he created paintings of food, people, and interesting things in nature."
+,,,,
+C4.Title,Enslaved Person,Versklavte Person,Versklavte Person,Enslaved Person
+C4.Description,"That is not a visitor. This is an enslaved person from Africa, who is performing unfree labor in Johann Moritz's palace in the Dutch colony in Brazil.","Das ist kein:e Besucher:in. Das ist eine versklavte Person aus Afrika, die in Johann Moritz's Palast in der niederländischn Kolonie in Brazilien unfreie Arbeit leistet.","Das ist kein:e Besucher:in. Das ist eine versklavte Person aus Afrika, die in Johann Moritz's Palast in der niederländischn Kolonie in Brazilien unfreie Arbeit leistet.",That is not a visitor. It is an enslaved person from Africa who is being forced to work in Johann Moritz's palace in the Dutch colony in Brazil.
+,,,,
+,Self Portrait,Johann Moritz Porträt,,
+,,Das ist ein ,,

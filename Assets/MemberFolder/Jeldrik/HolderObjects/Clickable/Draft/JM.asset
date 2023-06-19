@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26cf9e1397fcfa439d8636d30126c25, type: 3}
   m_Name: JM
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: a7d17b24b0bd77e4a986302fb2e26d0a, type: 3}
-  Title: Johan Moritz
-  Description: Das ist JM der Sklavenhandel betreibende Bre
+  Image: {fileID: 21300000, guid: 4b085183ea966a54283732278e38c5d6, type: 3}
+  Title: Johann Moritz
+  Description: "Das ist Johann Moritz von Nassau-Siegen. Er wurde 1604 in Siegen
+    geboren und wurde 1637 von seinem Arbeitgeber, der Westinidien-Kompanie (WIC)
+    zum Gouverneur der niederl\xE4ndischen Kolonie in Brazilien ernannt."
   BookInfo: 
   Question: 1
   language: 0
   FirstClickTime: 0
   Num: 0
   LocalizationKey: C1
-  swirlMod: 0.5
+  swirlMod: 1

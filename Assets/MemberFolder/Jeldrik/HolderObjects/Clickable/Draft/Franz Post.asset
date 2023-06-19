@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f26cf9e1397fcfa439d8636d30126c25, type: 3}
+  m_Name: Franz Post
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: d9aa0e6191c3717499e9f4d1b3d4b6d1, type: 3}
+  Title: Frans Post
+  Description: "Das ist Frans Post. Er war ein niederl\xE4ndischer Maler des 17ten
+    Jahrhunderts. Er begleitete Johann Moritz als Teil seines Gefolges 1637 auf dessen
+    Expedition nach Brasilien. Dort fertigte er haupts\xE4chlich Landschaftsmalereien
+    an."
+  BookInfo: 
+  Question: 1
+  language: 0
+  FirstClickTime: 0
+  Num: 0
+  LocalizationKey: C2
+  swirlMod: 1

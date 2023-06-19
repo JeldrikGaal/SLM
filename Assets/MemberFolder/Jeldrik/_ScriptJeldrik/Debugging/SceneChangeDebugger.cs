@@ -23,4 +23,9 @@ public class SceneChangeDebugger : MonoBehaviour
             SceneManager.LoadScene("Book_J");
         }
     }
+
+    public void Book()
+    {
+        SceneManager.LoadScene("Book_Main");
+    }
 }

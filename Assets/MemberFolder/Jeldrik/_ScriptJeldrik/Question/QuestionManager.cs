@@ -42,6 +42,8 @@ public class QuestionManager : MonoBehaviour
     private List<List<ClickableHolder>> _alreadyClickedComb = new List<List<ClickableHolder>>();
     private List<bool> _completedQuestions = new List<bool>();
 
+    private List<List<GameObject>> _swirls = new List<List<GameObject>>();
+
     //private List<List<int>> _question = new List<List<int>>();
 
     private int _currentQ = -1;
@@ -66,8 +68,8 @@ public class QuestionManager : MonoBehaviour
         {
             q.Text = LocalizationManager.Localize(q.LocalizationKey); 
         }
-
-
+        
+        Debug.Log(LocalizationManager.Language);
 
         // Loading and displaying question objects in the menu
         if (_questions.Count < 3)
@@ -109,6 +111,10 @@ public class QuestionManager : MonoBehaviour
             _cS._completedQuestionsSave = _completedQuestions;
         }
 
+        _swirls.Add(new List<GameObject>());
+        _swirls.Add(new List<GameObject>());
+        _swirls.Add(new List<GameObject>());
+
         // Loading current Question from storage and displaying it
         LoadingCurrentQuestion();
 
@@ -125,6 +131,19 @@ public class QuestionManager : MonoBehaviour
         
     }
 
+    public void UpdateLocalizedData()
+    {
+        foreach (Question q in _questions)
+        {
+            q.Text = LocalizationManager.Localize(q.LocalizationKey); 
+        }
+        _questionsText[0].text = _questions[0].Text;
+        _questionsText[1].text = _questions[1].Text;
+        _questionsText[2].text = _questions[2].Text;
+        _currentQuestion.ChangeCurrentQuestion(GetCurrentQuestion());
+
+    }
+
     public bool IsCurrentQuestionCompleted()
     {
         return _completedQuestions[_currentQ];
@@ -138,6 +157,8 @@ public class QuestionManager : MonoBehaviour
         _questionObjectCounts = _cS._questionObjectCountsSave;
         _completedQuestions = _cS._completedQuestionsSave;
         _currentQuestion.ChangeCurrentQuestion(_questions[_currentQ]);
+        _swirls = _cS._swirlsSave;
+        DisableSwirls(_currentQ);
     }
 
     private void SavingCurrentQuestion()
@@ -146,6 +167,7 @@ public class QuestionManager : MonoBehaviour
         _cS.SafeClickablesList(_alreadyClicked, _alreadyClickedComb);
         _cS._questionObjectCountsSave = _questionObjectCounts;    
         _cS._completedQuestionsSave = _completedQuestions;
+        _cS._swirlsSave = _swirls;
     }
 
     public int GetCurrentQuestionId()
@@ -158,10 +180,35 @@ public class QuestionManager : MonoBehaviour
         return _questions.Count;
     }
 
+    // Disable all swirl gameobjecta
+    public void DisableSwirls(int stayActive)
+    {
+        int i = 0;
+        foreach (List<GameObject> li in _swirls)
+        {
+            if (i != stayActive)
+            {
+                foreach(GameObject g in li)
+                {
+                    g.SetActive(false);
+                }
+            } 
+            else 
+            {
+                 foreach(GameObject g in li)
+                {
+                    g.SetActive(true);
+                }
+            }
+            i++;
+        }
+    }
+
     public void Forward()
     {
 
         _currentQ++;
+        DisableSwirls(_currentQ);
         //_completed = false;
         ResetCounts();
         _currentQuestion.ChangeCurrentQuestion(_questions[_currentQ]);
@@ -171,6 +218,7 @@ public class QuestionManager : MonoBehaviour
     public void Backward()
     {
         _currentQ--;
+        DisableSwirls(_currentQ);
         //_completed = true;
         ResetCounts();
         _currentQuestion.ChangeCurrentQuestion(_questions[_currentQ]);
@@ -215,14 +263,18 @@ public class QuestionManager : MonoBehaviour
             Image tempI = _cM.GetCurrentClickable().GetComponent<Image>();
             Sprite sprite = tempI.sprite;
             Debug.Log(tempI.transform.name);
-            Debug.Log(tempI.sprite.texture.width + " " + tempI.sprite.texture.height);
+            Debug.Log(_cM.GetCurrentClickable().GetComponent<RectTransform>().sizeDelta);
 
             Vector2 padding = tempI.sprite.textureRect.size;
             
-            tempSwirl.GetComponent<RectTransform>().sizeDelta = new Vector2(padding.x, padding.y) * cH.swirlMod;
+            tempSwirl.GetComponent<RectTransform>().sizeDelta = new Vector2(padding.x, padding.y) * cH.swirlMod * _cM.GetCurrentClickable().transform.localScale.x;
+
+            float size = Mathf.Max( _cM.GetCurrentClickable().GetComponent<RectTransform>().sizeDelta.x, _cM.GetCurrentClickable().GetComponent<RectTransform>().sizeDelta.y );
+            size *= 2;
+            tempSwirl.GetComponent<RectTransform>().sizeDelta = new Vector2(size, size);
             tempSwirl.GetComponent<Swirl>().ShowSwirl();
             tempSwirl.transform.localPosition = Vector3.zero;
-            _spawnedSwirls.Add(tempSwirl);
+            _swirls[GetCurrentQuestionId()].Add(tempSwirl);
 
             _currentQuestion.UpdateQuestionCounter(_questions[_currentQ]);
 

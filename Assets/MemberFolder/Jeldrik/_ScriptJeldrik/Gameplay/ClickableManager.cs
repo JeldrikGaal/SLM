@@ -65,6 +65,7 @@ public class ClickableManager : MonoBehaviour
         _titleText.text = cH.Title;
         _descriptionText.text = cH.Description;
         _image.sprite = cH.Image;
+        _image.preserveAspect = true;
 
         // Showing the outline of the clicked object
         if (_currentClickable._outline != null)
