@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class CurrentQuestion : MonoBehaviour
@@ -10,11 +11,12 @@ public class CurrentQuestion : MonoBehaviour
 
     #region References
     [SerializeField] private TMP_Text _questionTitle;
-    [SerializeField] private TMP_Text _questionText;
+    [SerializeField] private TMP_Text _questionTextImage;
     [SerializeField] private TMP_Text _questionCounter;
 
     [SerializeField] private GameObject _forwardButton;
     [SerializeField] private GameObject _backButton;
+    [SerializeField] private Image _image;
 
     private QuestionManager _qM;
     private Question _currentQ;
@@ -48,9 +50,22 @@ public class CurrentQuestion : MonoBehaviour
     {
         _currentQ = _q;
 
-        // Setting new content
-        _questionTitle.text = _currentQ.Text;
-        _questionText.text = _currentQ.Hint;
+        
+        //_questionText.text = _currentQ.Hint;
+        if (_currentQ.Image != null)
+        {
+            _image.enabled = true;
+            _image.sprite = _currentQ.Image;
+            _questionTitle.text = "";
+            _questionTextImage.text = _currentQ.Text;
+        }
+        else
+        {
+            // Setting new content
+            _image.enabled = false;
+            _questionTextImage.text = "";
+            _questionTitle.text = _currentQ.Text;
+        }
         UpdateQuestionCounter(_currentQ);
     }
 
