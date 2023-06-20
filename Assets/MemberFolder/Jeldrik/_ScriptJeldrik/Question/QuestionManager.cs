@@ -258,6 +258,23 @@ public class QuestionManager : MonoBehaviour
             _alreadyClicked.Add(cH);
             _questionObjectCounts[_currentQ][GetIDForClicked(cH)] += 1;
 
+            _currentQuestion.UpdateQuestionCounter(_questions[_currentQ]);
+
+            // Only complete question if enough objects have been clicked
+            if (CheckQuestionCompletition())
+            {
+                GameObject temp = Instantiate(_confetti, Camera.main.transform);
+                temp.transform.localScale *= _VC.Confetti_Size;
+                Destroy(temp, 4);
+                CompleteCurrentQuestion();
+            }
+        }       
+    }
+
+    public void MakeSwirl(ClickableHolder cH)
+    {
+        if (CheckQuestionContaining(cH))
+        {
             // Add swirl to question objects
             GameObject tempSwirl = Instantiate(_swirl, _cM.GetCurrentClickable().transform);
             Image tempI = _cM.GetCurrentClickable().GetComponent<Image>();
@@ -270,23 +287,13 @@ public class QuestionManager : MonoBehaviour
             tempSwirl.GetComponent<RectTransform>().sizeDelta = new Vector2(padding.x, padding.y) * cH.swirlMod * _cM.GetCurrentClickable().transform.localScale.x;
 
             float size = Mathf.Max( _cM.GetCurrentClickable().GetComponent<RectTransform>().sizeDelta.x, _cM.GetCurrentClickable().GetComponent<RectTransform>().sizeDelta.y );
-            size *= 2;
+            //size *= 2;
             tempSwirl.GetComponent<RectTransform>().sizeDelta = new Vector2(size, size);
             tempSwirl.GetComponent<Swirl>().ShowSwirl();
             tempSwirl.transform.localPosition = Vector3.zero;
             _swirls[GetCurrentQuestionId()].Add(tempSwirl);
-
-            _currentQuestion.UpdateQuestionCounter(_questions[_currentQ]);
-
-            // Only complete question if enough objects have been clicked
-            if (CheckQuestionCompletition())
-            {
-                GameObject temp = Instantiate(_confetti, Camera.main.transform);
-                temp.transform.localScale *= _VC.Confetti_Size;
-                Destroy(temp, 4);
-                CompleteCurrentQuestion();
-            }
-        }       
+        }
+        
     }
 
     // 

@@ -111,6 +111,7 @@ public class ClickableManager : MonoBehaviour
             Vector3 safeScale = _popUp.transform.localScale;
             _popUp.transform.localScale = Vector3.zero;
             _popUp.SetActive(true);
+            _qM.MakeSwirl(cH);
             _popUp.transform.DOScale(safeScale, _VC.PopUp_AnimSpeed).OnComplete(() =>
             {
                 // Handle further logic of object having been clicked
