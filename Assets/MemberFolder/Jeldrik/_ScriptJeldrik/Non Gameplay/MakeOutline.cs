@@ -30,8 +30,8 @@ public class MakeOutline : MonoBehaviour
     {
 
         // Calculating scalings based on VC values and relative screen position
-        float scaling = transform.localScale.x - ( ( transform.localScale.x * 0.05f) * (_VC.Outline_Size * 0.01f) );
-        float scaling2 = 1 + (.08f * (_VC.Outline_Size * 0.01f));
+        float scaling = transform.localScale.x - ( ( transform.localScale.x * 0.05f) * (_VC.Outline_Size * 0.02f) );
+        float scaling2 = 1 + (.08f * (_VC.Outline_Size * 0.02f));
 
         // Making the objects
         GameObject temp1 = MakeOutlineObject(scaling);
@@ -40,6 +40,10 @@ public class MakeOutline : MonoBehaviour
         // Getting images
         _outline1 = temp1.GetComponent<Image>();
         _outline2 = temp2.GetComponent<Image>();
+
+        // Setting rotation of outline to match object
+        //temp1.transform.localRotation = transform.localRotation;
+        //temp2.transform.localRotation = transform.localRotation;
 
         // Switching the render order
         temp2.transform.SetParent(temp1.transform, false);

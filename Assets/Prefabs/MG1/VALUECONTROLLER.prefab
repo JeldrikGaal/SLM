@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54235cab482874544abfb0defce516d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Outline_Size: 50
+  Outline_Size: 70
   Outline_Color: {r: 1, g: 0.10917871, b: 0, a: 1}
   SceneInfo_AnimSpeed: 0.6
   SceneInfo_BlockTime: 1

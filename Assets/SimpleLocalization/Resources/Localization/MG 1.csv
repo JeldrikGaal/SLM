@@ -1,7 +1,7 @@
 Key,English,German,Simplified German,Simplified English
-MG1.Q1,Find Johan Maurits!,Finde Johann Moritz!,,
-MG1.Q2,Wo is visiting Johan Maurits at the court 'Vrijburg?,Wer hat Johan Maurits in seinem Palast Freiburg besucht?,,
-MG1.Q3,Where can you find this symbol?,Wo kannst du dies Symbol finden?,,
+MG1.Q1,Find Johan Maurits!,Finde Johann Moritz!,Finde Johann Moritz!,Find Johan Maurits!
+MG1.Q2,Wo is visiting Johan Maurits at the court 'Vrijburg?,Wer hat Johan Maurits in seinem Palast Freiburg besucht?,Wer hat Johan Maurits in seinem Palast Freiburg besucht?,Wo is visiting Johan Maurits at the court 'Vrijburg?
+MG1.Q3,Where can you find this symbol?,Wo kannst du das Symbol finden?,Wo kannst du das Symbol finden?,Where can you find this symbol?
 ,,,,
 C1.Title,Johan Maurits,Johann Moritz,Johann Moritz,Johan Maurits
 C1.Description,"This is Johan Maurits of Nassau-Siegen. He was born in Siegen in 1604 and was appointed as the governor of the Dutch colony in Brazil by his employer, the West India Company (WIC), in 1637.","Das ist Johann Moritz von Nassau-Siegen. Er wurde 1604 in Siegen geboren und wurde 1637 von seinem Arbeitgeber, der Westinidien-Kompanie (WIC) zum Gouverneur der niederländischen Kolonie in Brazilien ernannt.","Das ist Johann Moritz von Nassau-Siegen. Er wurde 1604 hier in Siegen geboren. Im Jahr 1637 wurde er von seiner Firma, der Westindien-Kompanie (WIC), zum Gouverneur einer niederländischen Kolonie in Brasilien ernannt.","This is Johann Moritz of Nassau-Siegen. He was born in the city of Siegen in 1604. In 1637, he was appointed by his company, the West India Company (WIC), as the governor of a Dutch colony in Brazil."
@@ -15,5 +15,11 @@ C3.Description,"This is Albert Eckhout. He was a Dutch artist and the primary co
 C4.Title,Enslaved Person,Versklavte Person,Versklavte Person,Enslaved Person
 C4.Description,"That is not a visitor. This is an enslaved person from Africa, who is performing unfree labor in Johann Moritz's palace in the Dutch colony in Brazil.","Das ist kein:e Besucher:in. Das ist eine versklavte Person aus Afrika, die in Johann Moritz's Palast in der niederländischn Kolonie in Brazilien unfreie Arbeit leistet.","Das ist kein:e Besucher:in. Das ist eine versklavte Person aus Afrika, die in Johann Moritz's Palast in der niederländischn Kolonie in Brazilien unfreie Arbeit leistet.",That is not a visitor. It is an enslaved person from Africa who is being forced to work in Johann Moritz's palace in the Dutch colony in Brazil.
 ,,,,
-,Self Portrait,Johann Moritz Porträt,,
-,,Das ist ein ,,
+C5.Title,Johan Maurits Portrait,Johann Moritz Porträt,Johann Moritz Porträt,Johan Maurits Portrait
+C5.Description,"This is a portrait of Johan Mauritz, painted by the Dutch portrait artist Michiel van Miereveldt in 1636, shortly before Johann's departure to Brazil.","Das ist ein Porträt von Johann Moritz, das vom holländischen Porträtmaler Michiel van Miereveldt in 1636, kurz vor Johanns Aufbruch nach Brazilien, angefertigt wurde.","Das ist ein Portät von Johann Moritz. Ein Künstler namens Michiel van Miereveldt hat es gemalt. Er hat es im Jahr 1636 gemacht, kurz bevor Johann nach Brasilien gereist ist.","This is a portrait of Johan Mauritz. It was painted by the Dutch portrait artist Michiel van Miereveldt in 1636, shortly before Johann's departure to Brazil."
+,,,,
+C6.Title,Bust of Johan Maurits,Statue von Johann Moritz,Staute von Johann Moritz,Bust of Johan Maurits
+C6.Description,"This is a marble bust of Johan Maurits, created by Bartholomeus Eggers.","Das ist eine marmor Büste von Johann Moritz, die von Bartholomeus Eggers angefertigt wurde.",Dies ist eine Statue aus Marmor von Johann Moritz. Sie wurde von einem Künstler namens Bartholomeus Eggers gemacht.,This is a bust of Johan Maurits. It is made out of marble and was created by an artist named Bartholomeus Eggers.
+,,,,
+C7.Title,Map of Mauritsstadt,Mauritsstadt Stadtkarte,Mauritsstadt Stadtkarte,Map of Mauritsstadt
+C7.Description,This map shows Johan Maurits's plans for the transformation of the city of 'Mauritsstadt' (nowadays Recife) in Brazil. The West India Company's colony was located there.,Diese Karte zeigt Johann Morits's Pläne für den Umbau der Stadt 'Mauritsstadt' (Heute Recife) in Brasilien. Dort befand sich die Kolonie der Westindien-Kompanie.,"Diese Karte zeigt, wie Johann Maurits die Stadt namens 'Mauritsstadt' (Heute Recife) in Brasilien umbauen wollte. Dort befand sich die Kolonie der Westindien-Kompanie.",This map shows how Johann Maurits wanted to transform the city called 'Mauritsstadt' (nowadays Recife) in Brazil. The West India Company had its colony there.
