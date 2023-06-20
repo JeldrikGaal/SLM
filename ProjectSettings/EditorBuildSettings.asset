@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MG1.unity
     guid: 3b0816604ec8a57409e88b913f38b426
   - enabled: 0
-    path: Assets/MemberFolder/Lewin/Scenes/MG2.unity
+    path: Assets/Scenes/MG2.unity
     guid: 412e3a9092092204797adda2ab507197
   m_configObjects: {}
