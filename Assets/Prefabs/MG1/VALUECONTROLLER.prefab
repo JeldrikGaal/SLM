@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &70780733498442948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 70780733498442950}
+  - component: {fileID: 70780733498442951}
+  m_Layer: 0
+  m_Name: VALUECONTROLLER
+  m_TagString: VC
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &70780733498442950
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70780733498442948}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -64.36016, y: -2.4714816, z: -11.452845}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &70780733498442951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70780733498442948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54235cab482874544abfb0defce516d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Outline_Size: 50
+  Outline_Color: {r: 1, g: 0.10917871, b: 0, a: 1}
+  SceneInfo_AnimSpeed: 0.6
+  SceneInfo_BlockTime: 1
+  SceneInfo_ReminderTime: 5
+  PopUp_BlockTime: 0.5
+  PopUp_ReminderTime: 3
+  PopUp_AnimSpeed: 0.5
+  PopUp_Reminder_Pos: 88
+  Questions:
+  - {fileID: 11400000, guid: 90cae102534cdbb43b98c6c4fa192278, type: 2}
+  - {fileID: 11400000, guid: c8acb9f15aada0346856c8d72c5e010e, type: 2}
+  - {fileID: 11400000, guid: a60a9d4faa6617d49a74162e72d04f44, type: 2}
+  Clickable_Pos: 60
+  Camera_Border: 0
+  Camera_ClickMoveTime: 0.6
+  Camera_MoveSpeed: 0.8
+  Misc_WaitTime_InputReminder: 5
+  Misc_SecondWaitTime_InputReminder: 20
+  Misc_Reminder_Object: {fileID: 8986657409634884106, guid: 59d1396709e4687479a957372853e949, type: 3}
+  BookTransition_Time: 3
+  Swirl_Time: 0.75
+  Confetti_Size: 5

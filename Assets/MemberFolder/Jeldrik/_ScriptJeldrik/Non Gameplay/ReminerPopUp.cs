@@ -10,6 +10,8 @@ public class ReminerPopUp : MonoBehaviour
     [SerializeField] TMP_Text _content;
     [SerializeField] ReminderPopUpHolder _holder;
     [SerializeField] GameObject _container;
+
+    FontManager _fontManager;
     #endregion
 
     // Lifetime related variables
@@ -21,6 +23,11 @@ public class ReminerPopUp : MonoBehaviour
     {
         _title.text = _holder.Title;
         _content.text = _holder.Content;
+        
+        // Set correct font 
+        _fontManager = GameObject.FindWithTag("FontManager").GetComponent<FontManager>();
+        _title.font = _fontManager.GetFont();
+        _content.font = _fontManager.GetFont();
        
     }
 

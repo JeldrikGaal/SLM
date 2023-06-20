@@ -263,11 +263,11 @@ public class TouchHandler : MonoBehaviour
     public void SpawnWrongInputPart(Vector3 pos)
     {
         return;
-        GameObject temp = Instantiate(_wrongInputParticle, Camera.main.transform);
+        /*GameObject temp = Instantiate(_wrongInputParticle, Camera.main.transform);
         temp.transform.position = new Vector3(pos.x, pos.y, pos.z);
         temp.transform.localPosition = new Vector3(temp.transform.localPosition.x, temp.transform.localPosition.y, 0.5f);
         Destroy(temp, 2f);
-        _lastFrameClicked = false;
+        _lastFrameClicked = false;*/
     }
 
     // Called by buttons to block the spawning of wrong input particles 

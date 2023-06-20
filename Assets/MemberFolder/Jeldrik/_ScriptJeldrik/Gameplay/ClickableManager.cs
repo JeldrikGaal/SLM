@@ -75,6 +75,9 @@ public class ClickableManager : MonoBehaviour
 
         // Toggling the grayscale fake effect 
         _grayScaleImage.enabled = true;
+        _grayScaleImage.color = new Color(_grayScaleImage.color.r, _grayScaleImage.color.g, _grayScaleImage.color.b, 0);
+        Color fade = new Color(_grayScaleImage.color.r, _grayScaleImage.color.g, _grayScaleImage.color.b, 0.8f);
+        _grayScaleImage.DOColor(fade, _VC.PopUp_AnimSpeed);
         _grayScaleParentSafe = _currentClickable.transform.parent.transform.parent;
         _currentClickable.transform.parent.transform.parent = _grayScaleImage.transform;
 
@@ -130,6 +133,8 @@ public class ClickableManager : MonoBehaviour
     public void HidePopUp()
     {
         Vector3 safeScale = _popUp.transform.localScale;
+        Color fade = new Color(_grayScaleImage.color.r, _grayScaleImage.color.g, _grayScaleImage.color.b, 0);
+        _grayScaleImage.DOColor(fade, _VC.PopUp_AnimSpeed);
         _popUp.transform.DOScale(Vector3.zero, _VC.PopUp_AnimSpeed).OnComplete(() =>
         {
             _popUp.SetActive(false);
