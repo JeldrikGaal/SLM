@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 79174597693759950}
   - component: {fileID: 4822931663249995091}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Picture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288,6 +288,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pictureSide: {fileID: 4496224262495699140}
   textSide: {fileID: 4496224263267640084}
+  Picture: {fileID: 4822931663249995091}
+  MoveToCenterDuration: 0.8
   yourCanvas: {fileID: 0}
 --- !u!1 &4496224263267640086
 GameObject:

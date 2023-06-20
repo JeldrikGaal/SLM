@@ -12,6 +12,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     private bool isPictureUp = true;
     private Vector3 originalPosition;
     private bool dragging;
+    private bool actuallyDragging;
     private bool draggingAvailable;
     private bool flippable;
     private bool isAnimating = false;
@@ -21,7 +22,20 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     private bool isAnimationReversed = false;
     private Coroutine flipCoroutine;
     
+    private Coroutine highlightCoroutine;
+    private bool isHighlighted = false;
+
+    private readonly Vector3 highlightedScale = new Vector3(1.15f, 1.15f, 1.15f); // Adjust this to the desired scale when highlighted
+    private readonly Quaternion highlightedRotation = Quaternion.Euler(0, 0, 10); // Adjust this to the desired rotation when highlighted
+
+    public Image Picture;
+
+    public float MoveToCenterDuration = 0.5f;
+    private bool isMovingCardToCenter;
+    
     public Canvas yourCanvas;
+    
+    
 
     // Get a reference to the LeanDragTranslate component
     private LeanDragTranslate leanDragTranslate;
@@ -47,6 +61,11 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public void HandleFingerTap(LeanFinger finger)
     {
 
+    }
+
+    public void SetPicture(Sprite pPicture)
+    {
+        Picture.sprite = pPicture;
     }
     
     // Flip the card
@@ -93,7 +112,13 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 flipCoroutine = StartCoroutine(FlipUp());
             }
         }
-
+        else
+        {
+            if (!dragging)
+            {
+                Shake();
+            }
+        }
     }
     
     private IEnumerator FlipDown()
@@ -270,6 +295,11 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public void OnBeginDrag(PointerEventData eventData)
     {
         dragging = true;
+        actuallyDragging = true;
+        if (draggingAvailable)
+        {
+            SetHighlight(true);
+        }
         //originalPosition = transform.position;
     }
 
@@ -280,6 +310,8 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        actuallyDragging = false;
+        SetHighlight(false);
         Invoke("SetDraggingFalse", 0.2f);
         // Just moving it back for now
         //transform.position = originalPosition;
@@ -287,7 +319,10 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     void SetDraggingFalse()
     {
-        dragging = false;
+        if (!actuallyDragging)
+        {
+            dragging = false;  
+        }
     }
 
     // Add the new function to enable/disable the LeanDragTranslate component
@@ -303,9 +338,152 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
             Debug.LogError("LeanDragTranslate component not found on " + gameObject.name);
         }
     }
+
+    public void MakeInteractable()
+    {
+        EnableDragging(true);
+        EnableFlippable(true);
+    }
+    public void MakeInteractableAfterTime()
+    {
+        Invoke("MakeInteractable", MoveToCenterDuration);
+    }
+
+
     
     public void EnableFlippable(bool shouldEnable)
     {
         flippable = shouldEnable;
     }
+    
+    public void SetHighlight(bool pHighlight)
+    {
+        if (highlightCoroutine != null)
+        {
+            StopCoroutine(highlightCoroutine);
+        }
+
+        if (pHighlight)
+        {
+            highlightCoroutine = StartCoroutine(EnterHighlightState());
+        }
+        else
+        {
+            highlightCoroutine = StartCoroutine(LeaveHighlightState());
+        }
+    }
+
+    private IEnumerator EnterHighlightState()
+    {
+        isHighlighted = true;
+
+        float duration = 0.13f;
+        float startTime = Time.time;
+        float endTime = startTime + duration;
+
+        Vector3 startScale = transform.localScale;
+        Quaternion startRotation = transform.rotation;
+
+        while (Time.time <= endTime)
+        {
+            float t = (Time.time - startTime) / duration;
+            transform.localScale = Vector3.Lerp(startScale, highlightedScale, t);
+            transform.rotation = Quaternion.Lerp(startRotation, highlightedRotation, t);
+            yield return null;
+        }
+
+        transform.localScale = highlightedScale;
+        transform.rotation = highlightedRotation;
+    }
+
+    private IEnumerator LeaveHighlightState()
+    {
+        isHighlighted = false;
+
+        float duration = 0.13f;
+        float startTime = Time.time;
+        float endTime = startTime + duration;
+
+        Vector3 startScale = transform.localScale;
+        Quaternion startRotation = transform.rotation;
+
+        while (Time.time <= endTime)
+        {
+            float t = (Time.time - startTime) / duration;
+            transform.localScale = Vector3.Lerp(startScale, Vector3.one, t);
+            transform.rotation = Quaternion.Lerp(startRotation, Quaternion.identity, t);
+            yield return null;
+        }
+
+        transform.localScale = Vector3.one;
+        transform.rotation = Quaternion.identity;
+    }
+    
+    
+    public void Shake()
+    {
+        StartCoroutine(ShakeCoroutine());
+    }
+
+    private IEnumerator ShakeCoroutine()
+    {
+        int numberOfShakes = 5; // Adjust this as needed
+        float shakeDuration = 0.1f; // Adjust this as needed
+        float shakeMagnitude = 10f; // Adjust this as needed
+
+        int direction = 1; // This will be used to alternate the direction of the rotation
+
+        for (int i = 0; i < numberOfShakes; i++)
+        {
+            Quaternion startRotation = transform.rotation;
+            float randomRotation = Random.Range(5f, shakeMagnitude) * direction; // Multiply by direction
+            Quaternion endRotation = Quaternion.Euler(0, 0, randomRotation);
+            float startTime = Time.time;
+            while (Time.time < startTime + shakeDuration)
+            {
+                float t = (Time.time - startTime) / shakeDuration;
+                transform.rotation = Quaternion.Lerp(startRotation, endRotation, t);
+                yield return null;
+            }
+
+            direction *= -1; // Switch the direction for the next shake
+
+            yield return null; // Ensure at least one frame passes
+        }
+
+        // Smoothly return to original rotation
+        Quaternion finalStartRotation = transform.rotation;
+        Quaternion finalEndRotation = Quaternion.identity;
+        float finalStartTime = Time.time;
+        while (Time.time < finalStartTime + shakeDuration)
+        {
+            float t = (Time.time - finalStartTime) / shakeDuration;
+            transform.rotation = Quaternion.Lerp(finalStartRotation, finalEndRotation, t);
+            yield return null;
+        }
+
+        transform.rotation = Quaternion.identity;
+    }
+
+    
+    public void MoveToCenter()
+    {
+        // Use StartCoroutine to start the coroutine that handles the move
+        StartCoroutine(MoveToPosition(new Vector2(Screen.width / 2, Screen.height / 2)));
+    }
+
+    IEnumerator MoveToPosition(Vector2 targetPosition)
+    {
+        Vector2 startPosition = this.transform.position;
+        float startTime = Time.time;
+        while (Time.time < startTime + MoveToCenterDuration)
+        {
+            float t = (Time.time - startTime) / MoveToCenterDuration;
+            t = Mathf.SmoothStep(0.0f, 1.0f, t); // Modify t to create easing effect
+            this.transform.position = Vector2.Lerp(startPosition, targetPosition, t);
+            yield return null;
+        }
+        this.transform.position = targetPosition; // Ensure card is at target position at the end
+    }
+    
 }

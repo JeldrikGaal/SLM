@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Deck : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Deck : MonoBehaviour
     public GameObject startObject; // Assign your starting GameObject in the inspector
     public Vector3 offset; // The offset between each card
     public int numCards = 3; // Number of cards in the deck
+    public Sprite[] CardImages;
+    private Card DeckTopCard;
 
     private List<GameObject> cards = new List<GameObject>();
 
@@ -21,10 +24,12 @@ public class Deck : MonoBehaviour
             var card = Instantiate(cardPrefab, startObject.transform.position + i * offset, Quaternion.identity, canvas);
             var CardRef = card.GetComponent<Card>();
             CardRef.yourCanvas = cardCanvas;
-            CardRef.EnableDragging(i == numCards-1);
-            CardRef.EnableFlippable(i == numCards-1);
+            CardRef.EnableDragging(false);
+            CardRef.EnableFlippable(false);
             CardRef.SetCardSide(true);
+            CardRef.SetPicture(CardImages[i]);
             cards.Add(card);
+            DeckTopCard = CardRef;
         }
     }
 
@@ -49,5 +54,11 @@ public class Deck : MonoBehaviour
         // Add your logic here to check the rules of your game
 
         return false; // placeholder return statement
+    }
+
+    public void MoveTopCardToCenter()
+    {
+        DeckTopCard.MoveToCenter();
+        DeckTopCard.MakeInteractableAfterTime();
     }
 }
