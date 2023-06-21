@@ -48,11 +48,11 @@ public class MG2_Info : MonoBehaviour
             c.a = Mathf.Lerp(0, targetAlpha, t);
             cInfo.a = Mathf.Lerp(0, 1f, t);
             targetImage.color = c;
-            infoBox.color = c;
+            //infoBox.color = c;
             yield return null;
         }
         c.a = targetAlpha; // Ensure alpha is set to 1 at the end
-        targetImage.color = c;
+        //targetImage.color = c;
         infoBox.color = cInfo;
     }
 
@@ -66,12 +66,12 @@ public class MG2_Info : MonoBehaviour
             float t = (Time.time - startTime) / duration;
             c.a = Mathf.Lerp(targetAlpha, 0, t);
             targetImage.color = c;
-            infoBox.color = c;
+            //infoBox.color = c;
             yield return null;
         }
         c.a = 0; // Ensure alpha is set to 0 at the end
         targetImage.color = c;
-        infoBox.color = c;
+        //infoBox.color = c;
         targetImage.enabled = false;
     }
     

@@ -8,6 +8,7 @@ using TMPro;
 
 public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    public float cardScale = 0.5f;
     public Image pictureSide; 
     public Image textSide;
     private bool isPictureUp = true;
@@ -50,6 +51,8 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         leanDragTranslate = GetComponent<LeanDragTranslate>();
         _fontManager = GameObject.FindGameObjectWithTag("FontManager").GetComponent<FontManager>();
         _text.font = _fontManager.GetFont();
+        transform.localScale = new Vector3(cardScale, cardScale, cardScale);
+        textSide.rectTransform.localScale = new Vector3(0, 1, 1);
     }
 
     private void OnEnable()
@@ -388,19 +391,21 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         float endTime = startTime + duration;
 
         Vector3 startScale = transform.localScale;
+        Vector3 targetScale = highlightedScale * cardScale; // This line has been changed
         Quaternion startRotation = transform.rotation;
 
         while (Time.time <= endTime)
         {
             float t = (Time.time - startTime) / duration;
-            transform.localScale = Vector3.Lerp(startScale, highlightedScale, t);
+            transform.localScale = Vector3.Lerp(startScale, targetScale, t);
             transform.rotation = Quaternion.Lerp(startRotation, highlightedRotation, t);
             yield return null;
         }
 
-        transform.localScale = highlightedScale;
+        transform.localScale = targetScale;
         transform.rotation = highlightedRotation;
     }
+
 
     private IEnumerator LeaveHighlightState()
     {
@@ -411,19 +416,21 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         float endTime = startTime + duration;
 
         Vector3 startScale = transform.localScale;
+        Vector3 targetScale = Vector3.one * cardScale; // This line has been changed
         Quaternion startRotation = transform.rotation;
 
         while (Time.time <= endTime)
         {
             float t = (Time.time - startTime) / duration;
-            transform.localScale = Vector3.Lerp(startScale, Vector3.one, t);
+            transform.localScale = Vector3.Lerp(startScale, targetScale, t);
             transform.rotation = Quaternion.Lerp(startRotation, Quaternion.identity, t);
             yield return null;
         }
 
-        transform.localScale = Vector3.one;
+        transform.localScale = targetScale;
         transform.rotation = Quaternion.identity;
     }
+
     
     
     public void Shake()

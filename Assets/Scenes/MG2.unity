@@ -311,6 +311,7 @@ GameObject:
   m_Component:
   - component: {fileID: 534006180}
   - component: {fileID: 534006181}
+  - component: {fileID: 534006182}
   m_Layer: 0
   m_Name: CardManager
   m_TagString: Untagged
@@ -355,6 +356,22 @@ MonoBehaviour:
   - {fileID: 21300000, guid: aaee5165a2a7c144f9c5ced5c142645d, type: 3}
   - {fileID: 21300000, guid: 7b5f58f864a0fe346bd32ac2073e8a33, type: 3}
   - {fileID: 21300000, guid: aaee5165a2a7c144f9c5ced5c142645d, type: 3}
+--- !u!114 &534006182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534006179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ed65ea819ff474d9092b992c3cd4cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardPrefab: {fileID: 4496224262785354723, guid: fcdbc090f3781134bbee64c79f2ca8e3, type: 3}
+  canvas: {fileID: 2031257525}
+  cardCanvas: {fileID: 2031257524}
+  xOffset: 130
 --- !u!1 &771291144
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,7 +896,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 605, y: 218}
+  m_AnchoredPosition: {x: 558, y: 245.9}
   m_SizeDelta: {x: 114.5187, y: 173.1403}
   m_Pivot: {x: 0.50000006, y: 0.50000006}
 --- !u!1 &1753191732
