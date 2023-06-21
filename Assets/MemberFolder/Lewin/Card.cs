@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using Lean.Touch;
+using TMPro;
 
 public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -34,6 +35,9 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     private bool isMovingCardToCenter;
     
     public Canvas yourCanvas;
+
+    [SerializeField] private TMP_Text _text;
+    private FontManager _fontManager;
     
     
 
@@ -44,6 +48,8 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     {
         // Get the LeanDragTranslate component
         leanDragTranslate = GetComponent<LeanDragTranslate>();
+        _fontManager = GameObject.FindGameObjectWithTag("FontManager").GetComponent<FontManager>();
+        _text.font = _fontManager.GetFont();
     }
 
     private void OnEnable()
