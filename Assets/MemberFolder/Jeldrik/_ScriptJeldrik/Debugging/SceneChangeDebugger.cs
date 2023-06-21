@@ -16,11 +16,11 @@ public class SceneChangeDebugger : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            SceneManager.LoadScene("Game1Prototype");
+            SceneManager.LoadScene("MG1");
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            SceneManager.LoadScene("Book_J");
+            SceneManager.LoadScene("MG2");
         }
     }
 

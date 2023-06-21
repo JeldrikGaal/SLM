@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Symbol3
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 99b49dab9c20ccf458d324a55dbabefb, type: 3}
-  Title: Object with JM Symbol
-  Description: 3
+  Title: .Title
+  Description: .Description
   BookInfo: 
   Question: 1
   language: 0
   FirstClickTime: 0
   Num: 0
-  LocalizationKey: 
+  LocalizationKey: C8
   swirlMod: 1

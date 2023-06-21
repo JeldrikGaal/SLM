@@ -12,7 +12,7 @@ public class MenuManager : MonoBehaviour
     [Header("Age Group Stuff")]
     public Button ageButton;
     private TextMeshProUGUI _ageButtonText;
-    private string[] _ageGroups = { "Stöpsel (9+)", "Old Fart (50+)" };
+    private string[] _ageGroups = { "Normal Mode", "Advanced Mode" };
     private int _currentIndex = 0;
 
     [Header("Language Stuff")] 

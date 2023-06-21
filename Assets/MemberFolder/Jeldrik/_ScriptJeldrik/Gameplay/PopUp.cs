@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Assets.SimpleLocalization;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 

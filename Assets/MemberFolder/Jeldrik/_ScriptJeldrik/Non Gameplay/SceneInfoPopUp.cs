@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using Unity.VisualScripting;
+using Assets.SimpleLocalization;
+using TMPro;
 
 public class SceneInfoPopUp : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class SceneInfoPopUp : MonoBehaviour
     private bool _spawnedReminder;
 
     private float _spawnTime;
+    [SerializeField] private TMP_Text _text;
     [SerializeField] GameObject _reminderPrefab;
 
 
@@ -38,6 +41,8 @@ public class SceneInfoPopUp : MonoBehaviour
 
         _canvas = GameObject.FindGameObjectWithTag("Canvas");
         _spawnTime = Time.time;
+
+        _text.text = LocalizationManager.Localize("PopUpText");
     }
 
     // Update is called once per frame
