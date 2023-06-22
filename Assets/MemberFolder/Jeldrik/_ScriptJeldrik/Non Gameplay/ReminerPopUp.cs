@@ -31,9 +31,9 @@ public class ReminerPopUp : MonoBehaviour
        
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // Calling end function once the lifetime runs out
         if (_started && Time.time - _startLifeTime > _holder.LifeTime)
         {
             End();

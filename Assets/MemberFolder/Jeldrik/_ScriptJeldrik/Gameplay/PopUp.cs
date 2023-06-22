@@ -7,20 +7,23 @@ using UnityEngine;
 
 public class PopUp : MonoBehaviour
 {
+    #region References
     [SerializeField] private GameObject _reminderPrefab;
-
-    private ClickableManager cM;
-    private float _spawnTime;
     private Canvas _canvas;
     private TouchHandler _tH;
     private VALUECONTROLER _VC;
-    private bool _spawnedReminder;
+    private ClickableManager cM;
     private GameObject _reminderRef;
+    #endregion
+    private float _spawnTime;
+    private bool _spawnedReminder;
+    
 
 
 
     void Start()
     {
+        // Fetching reference to all needed manager
         cM = GameObject.FindGameObjectWithTag("ClickableManager").GetComponent<ClickableManager>();
         _canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Canvas>();
         _tH = Camera.main.GetComponent<TouchHandler>();
@@ -36,9 +39,9 @@ public class PopUp : MonoBehaviour
 
     private void Update()
     {
+        // Waiting until more than _VC.PopUp_BlockTime seconds have passed to allow closing the popup
         if (Time.time - _spawnTime > _VC.PopUp_BlockTime)
         {
-            // TODO: Include proper touch controls
             if (Input.GetMouseButtonDown(0))
             {
                 Close();
@@ -52,8 +55,10 @@ public class PopUp : MonoBehaviour
             }
         }
 
+        // Ensuring the object is in the middle of the screen
         transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, transform.position.z);
 
+        // Spawning a reminder prefab after the waiting time set in VC
         if (Time.time - _spawnTime > _VC.PopUp_ReminderTime && !_spawnedReminder)
         {
             _reminderRef = Instantiate(_reminderPrefab, _canvas.transform);

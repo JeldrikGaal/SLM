@@ -6,7 +6,6 @@ using UnityEngine.Rendering.PostProcessing;
 public class ClickableStorage : MonoBehaviour
 {
     static private GameObject _current = null;
-
     private List<ClickableHolder> _clickedQuestion = new List<ClickableHolder>();
     private List<ClickableHolder> _clickedInfo = new List<ClickableHolder>();
 
@@ -25,6 +24,8 @@ public class ClickableStorage : MonoBehaviour
             _current = this.gameObject;
             transform.parent = null;
             DontDestroyOnLoad(gameObject);
+
+            // Filling the list used to safe all data from the clickable manager to enable scene switching back to the book
             for (int i = 0; i < 3; i++)
             {
                 _questionObjectCountsSave.Add(new List<int>());

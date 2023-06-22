@@ -12,6 +12,7 @@ public class LanguageSwitch : MonoBehaviour
         _qM = GameObject.FindGameObjectWithTag("QuestionMenu").GetComponent<QuestionManager>();
     }
 
+    // Toggling between English and German, just used for testing / debugging
     public void ToggleLanguage()
     {
         if (LocalizationManager.Language == "English")

@@ -8,7 +8,8 @@ public class LangugageStorage : MonoBehaviour
     private object _current;
     public string Language = "German";
 
-    // Start is called before the first frame update
+    // DontDestroyOnLoad object that stores the language set in the main menu 
+    // UPDATE: may be not needed and just used wrongly to fix an unknown problem
     void Start()
     {
         if (_current == null)
@@ -22,11 +23,5 @@ public class LangugageStorage : MonoBehaviour
             return;
         }
         LocalizationManager.Language = Language;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

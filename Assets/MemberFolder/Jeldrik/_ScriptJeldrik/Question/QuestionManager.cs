@@ -296,7 +296,7 @@ public class QuestionManager : MonoBehaviour
         
     }
 
-    // 
+    // If clicked objects is required by the question return id of the needed list
     public int GetIDForClicked(ClickableHolder cH)
     {
         if (_questions[_currentQ].ObjectsToFind1.Contains(cH))
@@ -349,6 +349,7 @@ public class QuestionManager : MonoBehaviour
         return true;
     }
 
+    // Legacy reset
     private void ResetCounts()
     {
         /*_questionObjectCounts[0] = 0;

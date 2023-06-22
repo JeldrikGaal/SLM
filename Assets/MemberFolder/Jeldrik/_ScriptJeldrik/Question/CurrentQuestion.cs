@@ -50,8 +50,7 @@ public class CurrentQuestion : MonoBehaviour
     {
         _currentQ = _q;
 
-        
-        //_questionText.text = _currentQ.Hint;
+        // Display an image next to the question if the question requires it -> for that activate the proper text boxxes and fill them with the needed text
         if (_currentQ.Image != null)
         {
             _image.enabled = true;
@@ -89,6 +88,7 @@ public class CurrentQuestion : MonoBehaviour
         _qM.Backward();
     }
 
+    // Show and hide forward and backward buttons 
     private void ButtonLogic()
     {
         if (_qM.GetCurrentQuestionId() == 0 && _qM.IsCurrentQuestionCompleted())

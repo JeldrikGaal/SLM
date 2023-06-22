@@ -19,6 +19,8 @@ public class MakeOutline : MonoBehaviour
     {
         _image = GetComponent<Image>();
         _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
+
+        // Creating the outline objects and then toggling them off to have them ready but not show from the beginning
         SpawnOutline();
         ToggleOutline(false);
     }
@@ -41,10 +43,6 @@ public class MakeOutline : MonoBehaviour
         _outline1 = temp1.GetComponent<Image>();
         _outline2 = temp2.GetComponent<Image>();
 
-        // Setting rotation of outline to match object
-        //temp1.transform.localRotation = transform.localRotation;
-        //temp2.transform.localRotation = transform.localRotation;
-
         // Switching the render order
         temp2.transform.SetParent(temp1.transform, false);
         temp2.transform.localPosition = Vector3.zero;
@@ -64,7 +62,6 @@ public class MakeOutline : MonoBehaviour
     private GameObject MakeOutlineObject(float scaling)
     {
         
-
         RectTransform rectT = GetComponent<RectTransform>();
         GameObject temp = new GameObject();
         temp.transform.parent = transform.parent;

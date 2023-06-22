@@ -25,9 +25,4 @@ public class FontManager : MonoBehaviour
             text.font = _font;
         }
     }
-
-    void Update()
-    {
-        
-    }
 }

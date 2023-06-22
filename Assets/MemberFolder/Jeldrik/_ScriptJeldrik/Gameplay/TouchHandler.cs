@@ -35,6 +35,7 @@ public class TouchHandler : MonoBehaviour
     private QuestionMenuButton _qMB;
     private CurrentQuestion _cQ;
 
+    // If true updates will be suppressed
     private bool locked;
     
 
@@ -51,10 +52,12 @@ public class TouchHandler : MonoBehaviour
     private GameObject _canvas;
     private Transform _camTransform;
 
+    // Needed to send raycast that also hit ui elements to spawn wrong input particles
     GraphicRaycaster m_Raycaster;
     PointerEventData m_PointerEventData;
     EventSystem m_EventSystem;
 
+    // used to toggle on and off functions that should only be called in editor
     private bool EDITOR;
 
     // Start is called before the first frame update
@@ -109,12 +112,8 @@ public class TouchHandler : MonoBehaviour
 
     void Update()
     {
-
-
         // Prevents any input when the handler is locked
         if (locked) return;
-
-
 
         #region Wrong Input particle Logic
 
@@ -142,23 +141,6 @@ public class TouchHandler : MonoBehaviour
                     SpawnWrongInputPart(partPos);
                 }
         }
-
-        /* // Checking if last frame the user started a click and if they are now dragging or not
-        if (_lastFrameClicked && !Input.GetMouseButton(0))
-        {
-            
-            if (!ValidInput)
-            {
-                SpawnWrongInputPart(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-            }
-            
-        }
-
-        // Resetting variable that checks if a button has been clicked after x sec
-        if (Time.time - _lastBlockPartTime > 0.1f && ValidInput)
-        {
-            ValidInput = false;
-        } */
         #endregion
 
         #region Handling Input
@@ -188,34 +170,7 @@ public class TouchHandler : MonoBehaviour
         ReminderLogic();
     }
 
-    void FixedUpdate()
-    {
-        if (locked) return;
-
-        #region Touch controls
-        if (Input.touchCount == 1)
-        {
-            /*Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Began)
-            {
-                StartScrolling();
-            }
-            else
-            {
-                if (Time.time - _lastFrameClickedStartTime > _lastFrameClickedCountTime && _lastFrameClicked)
-                {
-                    _lastFrameClicked = false;
-                }
-            }
-            
-            if (touch.phase == TouchPhase.Moved)
-            {
-                Scrolling();
-            }*/
-        }
-        #endregion
-    }
-
+    // Legacy functions -> replaced by leantouch package
     private void StartScrolling()
     {
             mpS = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -226,6 +181,7 @@ public class TouchHandler : MonoBehaviour
             _lastFrameClickedStartTime = Time.time;
     }
 
+    // Legacy functions -> replaced by leantouch package
     private void Scrolling()
     {
         Vector3 dif = mpS - Camera.main.ScreenToWorldPoint(Input.mousePosition);

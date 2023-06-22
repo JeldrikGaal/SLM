@@ -8,19 +8,17 @@ using TMPro;
 
 public class SceneInfoPopUp : MonoBehaviour
 {
+    #region References
     private VALUECONTROLER _VC;
     private TouchHandler _tH;
-    private int _dummyCounter;
-    private int _dummyCounterGoal;
-
     private GameObject _canvas;
-    private GameObject _reminderRef;
-    private bool _spawnedReminder;
-
-    private float _spawnTime;
+    private GameObject _reminderRef;    
     [SerializeField] private TMP_Text _text;
     [SerializeField] GameObject _reminderPrefab;
+    #endregion 
 
+    private float _spawnTime;
+    private bool _spawnedReminder;
 
     // Start is called before the first frame update
     void Start()
@@ -29,10 +27,6 @@ public class SceneInfoPopUp : MonoBehaviour
 
         // Getting references
         _tH = Camera.main.GetComponent<TouchHandler>();
-
-        // Dummy counter set up
-        _dummyCounter = 0;
-        _dummyCounterGoal = 5;
 
         transform.position = new Vector3( Camera.main.transform.position.x,  Camera.main.transform.position.y, 0);
 
@@ -47,12 +41,10 @@ public class SceneInfoPopUp : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        //DummyCounterLogic();
-        
+    {        
+        // once the block time has run out close the popup after any input has been made
         if (Time.time - _spawnTime > _VC.SceneInfo_BlockTime)
         {
-            // TODO: also include touch input
             if (Input.GetMouseButtonDown(0))
             {
                 EndPopUp();
@@ -66,7 +58,7 @@ public class SceneInfoPopUp : MonoBehaviour
             }
         }
 
-
+        // Spawn and properly position reminder popup
         if (Time.time - _spawnTime > _VC.SceneInfo_ReminderTime && !_spawnedReminder)
         {
             _reminderRef = Instantiate(_reminderPrefab, _canvas.transform);
@@ -77,34 +69,6 @@ public class SceneInfoPopUp : MonoBehaviour
             _spawnedReminder = true;
         }
 
-    }
-
-    // If the user does not understand to click the button and clicks more than _dummyCounterGoal times just anywhere in the game field the popup also will disappear
-    private void DummyCounterLogic()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            _dummyCounter++;
-            CheckDummyCounter();
-        }
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Ended)
-            {
-                _dummyCounter++;
-                CheckDummyCounter();
-            }
-        }
-    }
-
-    // Checks if the dummy counter has beed reached
-    private void CheckDummyCounter()
-    {
-        if (_dummyCounter >= _dummyCounterGoal)
-        {
-            EndPopUp();
-        }
     }
 
     // Destroys the popup and unlocks the other input in the touch handler

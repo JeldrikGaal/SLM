@@ -6,18 +6,18 @@ using TMPro;
 public class BuildDebugging : MonoBehaviour
 {
     [SerializeField] private TMP_Text _debuggingText;
-    // Start is called before the first frame update
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
 
+    // Displaying debugging info used in testing the mobile build 
     public void ShowDebugInfo()
     {
         float _width = (float)Screen.width / 2.0f;

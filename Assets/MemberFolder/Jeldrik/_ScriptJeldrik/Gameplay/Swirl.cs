@@ -25,6 +25,7 @@ public class Swirl : MonoBehaviour
         }
     }
 
+    // Animates the radial filling of the image to simulate the swirl being drawn on the canvas
     public void ShowSwirl()
     {
         _image = GetComponent<Image>();

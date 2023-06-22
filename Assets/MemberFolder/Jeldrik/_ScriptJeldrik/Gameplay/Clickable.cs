@@ -22,18 +22,19 @@ public class Clickable : MonoBehaviour
         cM = GameObject.FindGameObjectWithTag("ClickableManager").GetComponent<ClickableManager>();
         _image = GetComponent<Image>();
         _tH = Camera.main.GetComponent<TouchHandler>();
+        _outline = GetComponentInChildren<MakeOutline>();
 
         cH.Title = LocalizationManager.Localize(cH.LocalizationKey + ".Title");
         cH.Description = LocalizationManager.Localize(cH.LocalizationKey + ".Description");
 
         // Making the editor display invisible on scene start
         //_image.color = new Color(_image.color.r, _image.color.g, _image.color.b, 0);
-
         
-        _outline = GetComponentInChildren<MakeOutline>();
+        // Setting the alpha threshold for the image to be clickable
         _image.alphaHitTestMinimumThreshold = 0.1f;
     }
 
+    // Function to be called when the languages get changed to update the text fields
     public void UpdateLocalizedData()
     {
         cH.Title = LocalizationManager.Localize(cH.LocalizationKey + ".Title");
@@ -59,10 +60,5 @@ public class Clickable : MonoBehaviour
     public void SetColor(Color c)
     {
         _image.color = c;
-    }
-
-    void Update()
-    {
-        
     }
 }

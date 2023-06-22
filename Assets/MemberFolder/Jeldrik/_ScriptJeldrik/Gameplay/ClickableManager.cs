@@ -26,6 +26,7 @@ public class ClickableManager : MonoBehaviour
 
     void Start()
     {
+        // Getting References
         _tH = Camera.main.GetComponent<TouchHandler>();
         _cS = GameObject.FindGameObjectWithTag("ClickableStorage").GetComponent<ClickableStorage>();
         _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
@@ -53,6 +54,7 @@ public class ClickableManager : MonoBehaviour
         return _popUp.activeInHierarchy;
     }
 
+    // Returns the gameobject of the currently selected clickable
     public GameObject GetCurrentClickable()
     {
         return _currentClickable.transform.gameObject;
