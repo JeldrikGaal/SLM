@@ -15,6 +15,7 @@ TagManager:
   - BackGround
   - LanguageStorage
   - FontManager
+  - JuiceManager
   layers:
   - Default
   - TransparentFX
