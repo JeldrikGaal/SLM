@@ -26,6 +26,7 @@ public class MenuManager : MonoBehaviour
     public GameObject[] pages;
     [Tooltip("Distance that a swipe needs to cover to be registered")]
     public float swipeThreshold = 200f;
+    public TrailRenderer trailRenderer;
 
     [Header("Resolutions")] 
     [SerializeField] private TMP_Dropdown resolutionDropdown;
@@ -52,9 +53,22 @@ public class MenuManager : MonoBehaviour
         ShowCurrentPage();
     }
 
+    private void Start()
+    {
+        trailRenderer.Clear();
+    }
+
     void Update()
     {
+        _currentPageIndex = GameManager.Instance.pageIndex;
         DetectSwipeInput();
+
+        if (_isSwiping)
+        {
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePos.z = 0f; // Make sure the z-coordinate is appropriate for your scene
+            trailRenderer.transform.position = mousePos;
+        }
     }
 
     #region BookPages
@@ -62,6 +76,7 @@ public class MenuManager : MonoBehaviour
     private int _currentPageIndex = 0;
     private Vector2 _swipeStartPosition;
     private bool _isSwiping = false;
+    private bool _isTrailEnabled;
 
     private void DetectSwipeInput()
     {
@@ -69,6 +84,10 @@ public class MenuManager : MonoBehaviour
         {
             _swipeStartPosition = Input.mousePosition;
             _isSwiping = true;
+            
+            trailRenderer.Clear();
+            trailRenderer.enabled = true;
+            _isTrailEnabled = true;
         }
 
         if (Input.GetMouseButtonUp(0))
@@ -80,9 +99,12 @@ public class MenuManager : MonoBehaviour
 
                 if (swipeDistance > swipeThreshold)
                 {
+                    PreviousPage();
+                    
+                    //add this if we want to disable swiping back to the start page
                     if (GameManager.Instance.pageIndex != 1)
                     {
-                        PreviousPage();
+                        //PreviousPage();
                     }
                 }
                 else if (swipeDistance < -swipeThreshold)
@@ -90,8 +112,19 @@ public class MenuManager : MonoBehaviour
                     NextPage();
                 }
             }
-
+            
             _isSwiping = false;
+        }
+        
+        if (_isSwiping && !_isTrailEnabled)
+        {
+            
+        }
+        else if (!_isSwiping && _isTrailEnabled)
+        {
+            trailRenderer.enabled = false;
+            _isTrailEnabled = false;
+            trailRenderer.Clear();
         }
     }
     
