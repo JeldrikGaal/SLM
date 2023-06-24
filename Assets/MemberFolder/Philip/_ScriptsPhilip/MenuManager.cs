@@ -10,8 +10,8 @@ using Cinemachine;
 
 public class MenuManager : MonoBehaviour
 {
+    public float loadMinigameDelay = 5f;
     public GameObject mapUnfold;
-    public Animator mapUnfoldAnim;
     public CinemachineVirtualCamera cam1;
     public CinemachineVirtualCamera cam2;
     
@@ -30,9 +30,6 @@ public class MenuManager : MonoBehaviour
     [Header("Book Pages")]
     public Animator bookAnimator;
     public GameObject[] pages;
-    [Tooltip("Distance that a swipe needs to cover to be registered")]
-    public float swipeThreshold = 200f;
-    public TrailRenderer trailRenderer;
 
     [Header("Resolutions")] 
     [SerializeField] private TMP_Dropdown resolutionDropdown;
@@ -63,66 +60,16 @@ public class MenuManager : MonoBehaviour
         ResolutionSetup();
         ShowCurrentPage();
     }
-
-    private void Start()
-    {
-        trailRenderer.Clear();
-    }
-
+    
     void Update()
     {
         _currentPageIndex = GameManager.Instance.pageIndex;
-        DetectSwipeInput();
     }
 
     #region BookPages
 
     private int _currentPageIndex = 0;
-    private Vector2 _swipeStartPosition;
-    private bool _isSwiping = false;
-    
-    private void DetectSwipeInput()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            _swipeStartPosition = Input.mousePosition;
-            _isSwiping = true;
-        }
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            if (_isSwiping)
-            {
-                Vector2 swipeEndPosition = Input.mousePosition;
-                float swipeDistance = swipeEndPosition.x - _swipeStartPosition.x;
-
-                if (swipeDistance > swipeThreshold)
-                {
-                    PreviousPage();
-                }
-                else if (swipeDistance < -swipeThreshold)
-                {
-                    NextPage();
-                }
-            }
-            _isSwiping = false;
-        }
-
-        if (_isSwiping)
-        {
-            trailRenderer.enabled = true;
-
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePos.z = 1f;
-            trailRenderer.transform.position = mousePos;
-        }
-        else
-        {
-            trailRenderer.enabled = false;
-            trailRenderer.Clear();
-        }
-    }
-    
     //cycles through all pages and enables only the currentPage
     private void ShowCurrentPage()
     {
@@ -264,26 +211,17 @@ public class MenuManager : MonoBehaviour
     
     public void LoadMinigame(string minigame)
     {
-        Debug.Log("Loading Function");
-        
-        StartCoroutine(MapTransition(5f, minigame));
-
+        StartCoroutine(MapTransition(loadMinigameDelay, minigame));
     }
 
     private IEnumerator MapTransition(float time, string minigame)
     {
         mapUnfold.SetActive(true);
-        
-        Debug.Log("Entered coroutine");
-        
         cam2.Priority = 15;
         
         yield return new WaitForSeconds(time);
         
-        Debug.Log("exit coroutine");
-        
         SceneManager.LoadScene(minigame);
-
         cam2.Priority = 5;
     }
 
