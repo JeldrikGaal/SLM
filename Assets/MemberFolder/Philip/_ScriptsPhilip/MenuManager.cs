@@ -6,9 +6,15 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using Assets.SimpleLocalization;
+using Cinemachine;
 
 public class MenuManager : MonoBehaviour
 {
+    public GameObject mapUnfold;
+    public Animator mapUnfoldAnim;
+    public CinemachineVirtualCamera cam1;
+    public CinemachineVirtualCamera cam2;
+    
     [Header("Age Group Stuff")]
     public Button ageButton;
     private TextMeshProUGUI _ageButtonText;
@@ -39,6 +45,11 @@ public class MenuManager : MonoBehaviour
 
     private void Awake()
     {
+        mapUnfold.SetActive(false);
+        
+        cam1.Priority = 10;
+        cam2.Priority = 5;
+        
         _currentPageIndex = GameManager.Instance.pageIndex;
         
         _ageButtonText = ageButton.GetComponentInChildren<TextMeshProUGUI>();
@@ -62,13 +73,6 @@ public class MenuManager : MonoBehaviour
     {
         _currentPageIndex = GameManager.Instance.pageIndex;
         DetectSwipeInput();
-
-        if (_isSwiping)
-        {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePos.z = 0f; // Make sure the z-coordinate is appropriate for your scene
-            trailRenderer.transform.position = mousePos;
-        }
     }
 
     #region BookPages
@@ -76,18 +80,13 @@ public class MenuManager : MonoBehaviour
     private int _currentPageIndex = 0;
     private Vector2 _swipeStartPosition;
     private bool _isSwiping = false;
-    private bool _isTrailEnabled;
-
+    
     private void DetectSwipeInput()
     {
         if (Input.GetMouseButtonDown(0))
         {
             _swipeStartPosition = Input.mousePosition;
             _isSwiping = true;
-            
-            trailRenderer.Clear();
-            trailRenderer.enabled = true;
-            _isTrailEnabled = true;
         }
 
         if (Input.GetMouseButtonUp(0))
@@ -100,30 +99,26 @@ public class MenuManager : MonoBehaviour
                 if (swipeDistance > swipeThreshold)
                 {
                     PreviousPage();
-                    
-                    //add this if we want to disable swiping back to the start page
-                    if (GameManager.Instance.pageIndex != 1)
-                    {
-                        //PreviousPage();
-                    }
                 }
                 else if (swipeDistance < -swipeThreshold)
                 {
                     NextPage();
                 }
             }
-            
             _isSwiping = false;
         }
-        
-        if (_isSwiping && !_isTrailEnabled)
+
+        if (_isSwiping)
         {
-            
+            trailRenderer.enabled = true;
+
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePos.z = 1f;
+            trailRenderer.transform.position = mousePos;
         }
-        else if (!_isSwiping && _isTrailEnabled)
+        else
         {
             trailRenderer.enabled = false;
-            _isTrailEnabled = false;
             trailRenderer.Clear();
         }
     }
@@ -269,7 +264,27 @@ public class MenuManager : MonoBehaviour
     
     public void LoadMinigame(string minigame)
     {
+        Debug.Log("Loading Function");
+        
+        StartCoroutine(MapTransition(5f, minigame));
+
+    }
+
+    private IEnumerator MapTransition(float time, string minigame)
+    {
+        mapUnfold.SetActive(true);
+        
+        Debug.Log("Entered coroutine");
+        
+        cam2.Priority = 15;
+        
+        yield return new WaitForSeconds(time);
+        
+        Debug.Log("exit coroutine");
+        
         SceneManager.LoadScene(minigame);
+
+        cam2.Priority = 5;
     }
 
     public void QuitGame()
