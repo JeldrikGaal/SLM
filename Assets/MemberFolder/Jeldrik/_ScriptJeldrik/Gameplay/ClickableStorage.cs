@@ -5,9 +5,9 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class ClickableStorage : MonoBehaviour
 {
-    static private GameObject _current = null;
-    private List<ClickableHolder> _clickedQuestion = new List<ClickableHolder>();
-    private List<ClickableHolder> _clickedInfo = new List<ClickableHolder>();
+    public static ClickableStorage Instance = null;
+    public List<ClickableHolder> _clickedQuestion = new List<ClickableHolder>();
+    public List<ClickableHolder> _clickedInfo = new List<ClickableHolder>();
 
     private int _currentQuestionSave;
     [HideInInspector] public List<List<int>> _questionObjectCountsSave = new List<List<int>>();
@@ -19,9 +19,9 @@ public class ClickableStorage : MonoBehaviour
     private void Awake()
     {
         // Ensuring theres only one clickable manager so it can persist throughout changing scenes
-        if (_current == null)
+        if (Instance == null)
         {
-            _current = this.gameObject;
+            Instance = this;
             transform.parent = null;
             DontDestroyOnLoad(gameObject);
 

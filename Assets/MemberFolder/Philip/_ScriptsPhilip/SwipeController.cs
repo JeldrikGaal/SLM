@@ -15,7 +15,6 @@ public class SwipeController : MonoBehaviour
         LeanTouch.OnFingerSwipe += SwipeHandler;
         LeanTouch.OnFingerUpdate += HoldHandler;
         LeanTouch.OnFingerUp += ReleaseHandler;
-        LeanTouch.OnFingerDown += DownHandler;
     }
 
     void OnDisable()
@@ -23,12 +22,6 @@ public class SwipeController : MonoBehaviour
         LeanTouch.OnFingerSwipe -= SwipeHandler;
         LeanTouch.OnFingerUpdate -= HoldHandler;
         LeanTouch.OnFingerUp -= ReleaseHandler;
-        LeanTouch.OnFingerDown -= DownHandler;
-    }
-
-    private void Awake()
-    {
-        
     }
 
     void SwipeHandler(LeanFinger finger)
@@ -58,7 +51,7 @@ public class SwipeController : MonoBehaviour
 
         //disable tr when in editor mode since it thinks we are pressing the screen continuously
         #if (UNITY_EDITOR)
-            tr.enabled = false;
+            //tr.enabled = false;
         #endif
     }
     
@@ -66,31 +59,4 @@ public class SwipeController : MonoBehaviour
     {
         tr.enabled = false;
     }
-    
-    void DownHandler(LeanFinger finger)
-    {
-        //Initialize trail renderer
-        
-    }
-    
-    
 }
-
-
-/*
-
-void HoldHandler(LeanFinger finger)
-    {
-        
-        
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 1f;
-        tr.transform.position = mousePos;
-        tr.enabled = true;
-
-        //disable tr when in editor mode since it thinks we are pressing the screen continuously
-        #if (UNITY_EDITOR)
-            tr.enabled = false;
-        #endif
-    }
-    */

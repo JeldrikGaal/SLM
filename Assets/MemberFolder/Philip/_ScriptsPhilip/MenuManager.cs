@@ -10,6 +10,10 @@ using Cinemachine;
 
 public class MenuManager : MonoBehaviour
 {
+    private ClickableStorage _storage;
+
+    public GameObject rightCorner, leftCorner;
+
     public float loadMinigameDelay = 5f;
     public GameObject mapUnfold;
     public CinemachineVirtualCamera cam1;
@@ -24,12 +28,13 @@ public class MenuManager : MonoBehaviour
     [Header("Language Stuff")] 
     public Button languageButton;
     private TextMeshProUGUI _languageButtonText;
-    private string[] _languages = { "German (DE)", "English (EN)" };
-    private string[] _localizationNames = {"German", "Simplified German", "English", "Simplified English"};
+    private string[] _languages = { "English (EN)", "German (DE)" };
+    private string[] _localizationNames = {"English", "Simplified English", "German", "Simplified German"};
 
-    [Header("Book Pages")]
+    [Header("Book Pages")] 
+    public GameObject book;
     public Animator bookAnimator;
-    public GameObject[] pages;
+    public List<GameObject> pages;
 
     [Header("Resolutions")] 
     [SerializeField] private TMP_Dropdown resolutionDropdown;
@@ -42,6 +47,8 @@ public class MenuManager : MonoBehaviour
 
     private void Awake()
     {
+        _storage = ClickableStorage.Instance;
+        
         mapUnfold.SetActive(false);
         
         cam1.Priority = 10;
@@ -73,15 +80,35 @@ public class MenuManager : MonoBehaviour
     //cycles through all pages and enables only the currentPage
     private void ShowCurrentPage()
     {
-        for (int i = 0; i < pages.Length; i++)
+        for (int i = 0; i < pages.Count; i++)
         {
             pages[i].SetActive(i == _currentPageIndex);
+        }
+        
+        leftCorner.SetActive(false);
+        rightCorner.SetActive(false);
+        leftCorner.GetComponent<Animator>().Rebind();
+        rightCorner.GetComponent<Animator>().Rebind();
+
+        //enable/disable the eselsohren depending on what page you're on
+        if (_currentPageIndex == 0)
+        {
+            leftCorner.SetActive(false);
+            rightCorner.SetActive(true);
+        } else if (_currentPageIndex > 0 && _currentPageIndex < pages.Count - 1)
+        {
+            leftCorner.SetActive(true);
+            rightCorner.SetActive(true);
+        } else
+        {
+            leftCorner.SetActive(true);
+            rightCorner.SetActive(false);
         }
     }
     
     public void NextPage()
     {
-        if (_currentPageIndex < pages.Length - 1)
+        if (_currentPageIndex < pages.Count - 1)
         {
             bookAnimator.Play("bookFlipLeft");
             
@@ -207,7 +234,20 @@ public class MenuManager : MonoBehaviour
     }
     
     #endregion
-    
+
+    public void AddPage(GameObject page)
+    {
+        var newPage = (GameObject)Instantiate(page, book.transform);
+        pages.Add(newPage);
+        newPage.SetActive(false);
+        
+        ShowCurrentPage();
+    }
+
+    public void SetPrefabActive(GameObject prefab)
+    {
+        prefab.SetActive(true);
+    }
     
     public void LoadMinigame(string minigame)
     {
