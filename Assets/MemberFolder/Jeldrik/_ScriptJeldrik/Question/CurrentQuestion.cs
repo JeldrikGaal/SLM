@@ -13,6 +13,7 @@ public class CurrentQuestion : MonoBehaviour
     [SerializeField] private TMP_Text _questionTitle;
     [SerializeField] private TMP_Text _questionTextImage;
     [SerializeField] private TMP_Text _questionCounter;
+    [SerializeField] private TMP_Text _questionCounterAnim;
 
     [SerializeField] private GameObject _forwardButton;
     [SerializeField] private GameObject _backButton;
@@ -20,6 +21,7 @@ public class CurrentQuestion : MonoBehaviour
 
     private QuestionManager _qM;
     private Question _currentQ;
+    private ClickableManager _clickableManager;
     private TouchHandler _tH;
     #endregion
 
@@ -27,6 +29,7 @@ public class CurrentQuestion : MonoBehaviour
     {
         _qM = GameObject.FindGameObjectWithTag("QuestionMenu").GetComponent<QuestionManager>();
         _tH = Camera.main.transform.GetComponent<TouchHandler>();
+        _clickableManager = GameObject.FindGameObjectWithTag("ClickableManager").GetComponent<ClickableManager>();
         ToggleBackButton(false);
         ToggleForwardButton(false);
 
@@ -134,8 +137,25 @@ public class CurrentQuestion : MonoBehaviour
             {
                 _questionCounter.text = _qM._questionObjectCounts[_qM.GetCurrentQuestionId()][0].ToString() + "/" + _currentQ.AmountNeeded[0].ToString();
             }
-            
+            _questionCounterAnim.text = _questionCounter.text;
+            CounterAnimation(4, 0.8f);
         }
         
+    }
+
+    // Function to show an animated effect to make it clear the user found and object
+    public void CounterAnimation(float scale, float time)
+    {
+        _questionCounterAnim.transform.position = Camera.main.WorldToScreenPoint(_clickableManager.GetCurrentClickable().transform.position);
+        _questionCounterAnim.color = new Color(_questionCounterAnim.color.r, _questionCounterAnim.color.g, _questionCounterAnim.color.b, 1f);
+        _questionCounterAnim.transform.localScale = Vector3.one;
+        _questionCounterAnim.transform.DOScale(new Vector3(scale * 0.5f,scale * 0.5f,scale * 0.5f), time * 0.5f).SetEase(Ease.Linear).OnComplete(()=>{
+
+            _questionCounterAnim.transform.DOScale(new Vector3(scale, scale, scale),  time * 0.5f).SetEase(Ease.Linear);
+            Color c = new Color(_questionCounterAnim.color.r, _questionCounterAnim.color.g, _questionCounterAnim.color.b, 0f);
+            //_questionCounter.DOColor(c,  time * 0.5f);
+            //_questionCounter.color = c;
+            DOTween.To(() => _questionCounterAnim.color, x => _questionCounterAnim.color = x, c, time * 0.5f);
+        });
     }
 }
