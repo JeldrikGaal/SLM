@@ -180,11 +180,7 @@ public void NextDeck()
             tpc.SetTraceable(pTraceable);
         }
     }
-
-    private void Update()
-    {
-        Debug.Log(DrawPileCards.Count);
-    }
+    
     
     public T[] ShuffleArray<T>(T[] array)
     {
