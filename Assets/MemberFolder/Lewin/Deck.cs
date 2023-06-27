@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using CW.Common;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 public class Deck : MonoBehaviour
 {
@@ -10,55 +13,81 @@ public class Deck : MonoBehaviour
     public Canvas cardCanvas;
     public GameObject startObject; // Assign your starting GameObject in the inspector
     public Vector3 offset; // The offset between each card
-    public int numCards = 3; // Number of cards in the deck
-    public Sprite[] CardImages;
+    public GameObject TargetPileCollider;
     private Card DeckTopCard;
-
-    private List<GameObject> cards = new List<GameObject>();
-
+    private CardDatabase CDB;
+    private List<TPC> PileColliders = new List<TPC>();
+    public float TargetPiles_yOffset;
+    public int[] Deck1_Initial;
+    public int[] Deck2;
+    public int[] Deck3;
+    public int[] Deck4;
+    public int[] Deck5;
+    public int[] Deck6;
+    
     void Start()
     {
-        // Instantiate the cards
-        for (int i = 0; i < numCards; i++)
+        CDB = GetComponent<CardDatabase>();
+        
+        
+        for (int i = 0; i < Deck2.Length; i++)
         {
-            var card = Instantiate(cardPrefab, startObject.transform.position + i * offset, Quaternion.identity, canvas);
-            var CardRef = card.GetComponent<Card>();
-            CardRef.yourCanvas = cardCanvas;
-            CardRef.EnableDragging(false);
-            CardRef.EnableFlippable(false);
-            CardRef.SetCardSide(true);
-            CardRef.SetPicture(CardImages[i]);
-            cards.Add(card);
+            Card CardGO = CDB.SpawnCard(Deck2[i], startObject.transform.position + i * offset, false, false);
+            var CardRef = CardGO.GetComponent<Card>();
             DeckTopCard = CardRef;
         }
-    }
 
-    public void NextCard()
-    {
-        if (cards.Count == 0)
-        {
-            Debug.Log("No more cards!");
-            return;
-        }
-
-        // Get the next card and move it to the middle of the screen
-        var currentCard = cards[0];
-        cards.RemoveAt(0);
-
-        // Add your logic here to move the card to the desired location
-    }
-
-    public bool CheckCard(GameObject targetCard)
-    {
-        // Check if the card can be placed on the target card
-        // Add your logic here to check the rules of your game
-
-        return false; // placeholder return statement
+        SpawnIntitalTargetCards();
     }
 
     public void MoveTopCardToCenter()
     {
         DeckTopCard.MoveToCenter();
         DeckTopCard.MakeInteractableAfterTime();
+    }
+    
+    void SpawnIntitalTargetCards()
+    {
+        for (int i = 0; i < Deck1_Initial.Length; i++)
+        {
+            Card CardGO = CDB.SpawnCard(Deck1_Initial[i], startObject.transform.position + i * offset, false, true);
+            var CardRef = CardGO.GetComponent<Card>();
+            RectTransform cardRectTransform = CardGO.GetComponent<RectTransform>();
+
+            // Calculate the anchors for the card
+            float anchorX = 1f - (i + 0.5f) / 4f;
+            cardRectTransform.anchorMin = new Vector2(anchorX,1);
+            cardRectTransform.anchorMax = new Vector2(anchorX,1);
+            
+            // Set the pivot to be at the top of the card
+            cardRectTransform.pivot = new Vector2(0.5f, 1);
+            
+            // Set the position of the card to be offset from the left border of the Canvas
+            cardRectTransform.anchoredPosition = new Vector2(0f, -TargetPiles_yOffset);
+            
+            
+            
+            //Spawn PileCollider
+            GameObject PileColliderGO = Instantiate(TargetPileCollider, startObject.transform.position + i * offset, Quaternion.identity, canvas);
+            PileColliders.Add(PileColliderGO.GetComponent<TPC>());
+            RectTransform tpTransform = PileColliderGO.GetComponent<RectTransform>();
+            
+            tpTransform.anchorMin = new Vector2(anchorX,1);
+            tpTransform.anchorMax = new Vector2(anchorX,1);
+            
+            //Set the pivot to be at the top of the card
+            tpTransform.pivot = new Vector2(0.5f, 1);
+            
+            //Set the position of the card to be offset from the left border of the Canvas
+            tpTransform.anchoredPosition = new Vector2(0f, -TargetPiles_yOffset);
+        }
+    }
+
+    public void SetPileCollidersTraceable(bool pTraceable)
+    {
+        foreach (TPC tpc in PileColliders)
+        {
+            tpc.SetTraceable(pTraceable);
+        }
     }
 }

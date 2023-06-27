@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using Lean.Touch;
 using TMPro;
+using Assets.SimpleLocalization;
+using Unity.VisualScripting;
 
 public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -39,20 +41,46 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     [SerializeField] private TMP_Text _text;
     private FontManager _fontManager;
-    
-    
 
     // Get a reference to the LeanDragTranslate component
     private LeanDragTranslate leanDragTranslate;
     
+    
+    private CardData cardData;
+    private Graphic graphicComponent_pictureSide;
+    private Graphic graphicComponent_textSide;
+
+    private Deck DeckRef;
+    public Image DropInfo;
+    private DragOverManager dragOverManager;
+    private bool _droppable;
+    private GameObject _otherCard;
+    
+    public void Init(int ID, CardDatabase pCardDatabase, bool pDraggable, bool pFlippable, Canvas pCardCanvas, Deck pDeck, DragOverManager pDragOverManager)
+    {
+        cardData = pCardDatabase.cards[ID];
+        SetPicture(cardData.Picture);
+        SetPicture(cardData.Picture);
+        SetCardSide(true);
+        EnableDragging(pDraggable);
+        EnableFlippable(pFlippable);
+        yourCanvas = pCardCanvas;
+        _text.text = LocalizationManager.Localize(cardData.LocalizationKey);
+        DeckRef = pDeck;
+        dragOverManager = pDragOverManager;
+    }
+    
+    
     private void Awake()
     {
-        // Get the LeanDragTranslate component
+        graphicComponent_pictureSide = pictureSide.GetComponent<Graphic>();
+        graphicComponent_textSide = pictureSide.GetComponent<Graphic>();
         leanDragTranslate = GetComponent<LeanDragTranslate>();
         _fontManager = GameObject.FindGameObjectWithTag("FontManager").GetComponent<FontManager>();
         _text.font = _fontManager.GetFont();
         transform.localScale = new Vector3(cardScale, cardScale, cardScale);
         textSide.rectTransform.localScale = new Vector3(0, 1, 1);
+        ShowDropInfo(false, null);
     }
 
     private void OnEnable()
@@ -174,9 +202,6 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     textSide.rectTransform.localScale = Vector3.one;
     }
 
-    
-    
-    
     private IEnumerator FlipUp()
     {
     isPictureUp = true;
@@ -308,8 +333,12 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         if (draggingAvailable)
         {
             SetHighlight(true);
+            transform.SetAsLastSibling();
+            dragOverManager.SetActiveDraggingCard(this);
+            graphicComponent_pictureSide.raycastTarget = false;
+            graphicComponent_textSide.raycastTarget = false;
+            DeckRef.SetPileCollidersTraceable(true);
         }
-        //originalPosition = transform.position;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -324,6 +353,17 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         Invoke("SetDraggingFalse", 0.2f);
         // Just moving it back for now
         //transform.position = originalPosition;
+        graphicComponent_pictureSide.raycastTarget = true;
+        graphicComponent_textSide.raycastTarget = true;
+        DeckRef.SetPileCollidersTraceable(false);
+        dragOverManager.SetActiveDraggingCard(null);
+        if (_droppable)
+        {
+            StartCoroutine(MoveToOtherCard(_otherCard, 1f));
+
+            ShowDropInfo(false, null);
+        }
+        
     }
 
     void SetDraggingFalse()
@@ -481,8 +521,9 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     
     public void MoveToCenter()
     {
-        // Use StartCoroutine to start the coroutine that handles the move
-        StartCoroutine(MoveToPosition(new Vector2(Screen.width / 2, Screen.height / 2)));
+        // Get the current y position of the card
+        float currentY = transform.position.y;
+        StartCoroutine(MoveToPosition(new Vector2(Screen.width / 2, currentY)));
     }
 
     IEnumerator MoveToPosition(Vector2 targetPosition)
@@ -498,5 +539,40 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         }
         this.transform.position = targetPosition; // Ensure card is at target position at the end
     }
+    
+    public void ShowDropInfo(bool show, GameObject pOtherCard)
+    {
+        _droppable = show;
+        Color color = DropInfo.color;
+        color.a = show ? 1f : 0f;
+        DropInfo.color = color;
+        DropInfo.transform.GetChild(0).localScale = show ? Vector3.one : Vector3.zero;
+        if (show) _otherCard = pOtherCard;
+    }
+
+    IEnumerator MoveToOtherCard(GameObject otherCard, float duration)
+    {
+        RectTransform rectTransform = this.GetComponent<RectTransform>();
+        RectTransform otherRectTransform = otherCard.GetComponent<RectTransform>();
+    
+        Vector3 startPosition = rectTransform.anchoredPosition3D;
+        Vector3 endPosition = transform.parent.InverseTransformPoint(otherRectTransform.parent.TransformPoint(otherRectTransform.anchoredPosition3D));
+
+        float startTime = Time.time;
+
+        while (Time.time < startTime + duration)
+        {
+            float t = (Time.time - startTime) / duration; // normalized time
+            rectTransform.anchoredPosition3D = Vector3.Lerp(startPosition, endPosition, t); // Linear interpolation
+            yield return null;
+        }
+
+        rectTransform.anchoredPosition3D = endPosition; // Ensure final position is accurate
+    }
+
+
+
+
+
     
 }

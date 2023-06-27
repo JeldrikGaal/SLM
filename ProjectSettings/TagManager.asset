@@ -16,6 +16,8 @@ TagManager:
   - LanguageStorage
   - FontManager
   - JuiceManager
+  - TP_Collider
+  - Card
   layers:
   - Default
   - TransparentFX
