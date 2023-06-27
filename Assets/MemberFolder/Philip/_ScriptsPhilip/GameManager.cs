@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public bool minigame1Complete = false;
     public bool minigame2Complete = false;
 
+    [HideInInspector] public bool toggleMG1 = false, toggleMG2 = false;
+
     private void Awake()
     {
         if (Instance == null)

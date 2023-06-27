@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58850cd5-8d2e-4765-8fce-206cb2b23995" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SLM/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SLM/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/Card.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/Card.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/Deck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/Deck.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/DragOverManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/DragOverManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/TPC.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/TPC.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/TP_Collider.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/TP_Collider.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/InfoCard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/InfoCard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Animations/BlackBar.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Animations/BlackBar.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Animations/blackbarfadeout.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Animations/blackbarfadeout.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/InfoPage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/InfoPage.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/MenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Book_Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Book_Main.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +27,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/DontDestroyOnLoad.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/InfoCard.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/InfoPage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/InfoPageManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/LanguageManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/minigameStuff.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />

@@ -11,43 +11,20 @@ using Cinemachine;
 public class MenuManager : MonoBehaviour
 {
     private ClickableStorage _storage;
-
-    public GameObject rightCorner, leftCorner;
-
+    private InfoPageManager _infoManager;
+    private LangugageStorage _langugageStorage;
+    
+    
     public float loadMinigameDelay = 5f;
     public GameObject mapUnfold;
     public CinemachineVirtualCamera cam1;
     public CinemachineVirtualCamera cam2;
+
     
-    [Header("Age Group Stuff")]
-    public Button ageButton;
-    private TextMeshProUGUI _ageButtonText;
-    private string[] _ageGroups = { "Normal Mode", "Advanced Mode" };
-    private int _currentIndex = 0;
-
-    [Header("Language Stuff")] 
-    public Button languageButton;
-    private TextMeshProUGUI _languageButtonText;
-    private string[] _languages = { "English (EN)", "German (DE)" };
-    private string[] _localizationNames = {"English", "Simplified English", "German", "Simplified German"};
-
-    [Header("Book Pages")] 
-    public GameObject book;
-    public Animator bookAnimator;
-    public List<GameObject> pages;
-
-    [Header("Resolutions")] 
-    [SerializeField] private TMP_Dropdown resolutionDropdown;
-    private Resolution[] resolutions;
-    private List<Resolution> filteredResolutions;
-    public TextMeshProUGUI resolutionText;
-    private int currentResolutionIndex = 0;
-    
-    private LangugageStorage _langugageStorage;
-
     private void Awake()
     {
         _storage = ClickableStorage.Instance;
+        _infoManager = InfoPageManager.Instance;
         
         mapUnfold.SetActive(false);
         
@@ -66,6 +43,7 @@ public class MenuManager : MonoBehaviour
 
         ResolutionSetup();
         ShowCurrentPage();
+        AddInfoPages();
     }
     
     void Update()
@@ -74,22 +52,54 @@ public class MenuManager : MonoBehaviour
     }
 
     #region BookPages
-
+    
+    [Header("Book Pages")] 
+    public GameObject book;
+    public Animator bookAnimator;
+    public List<GameObject> pages;
+    public GameObject rightCorner, leftCorner;
     private int _currentPageIndex = 0;
-
-    //cycles through all pages and enables only the currentPage
+    
+    
+    
     private void ShowCurrentPage()
     {
+        //cycles through all pages and enables only the currentPage
+        
         for (int i = 0; i < pages.Count; i++)
         {
             pages[i].SetActive(i == _currentPageIndex);
         }
         
+        DisplayCorners();
+    }
+    
+    private void AddInfoPages()
+    {
+        foreach(GameObject page in _infoManager._infoPages)
+        {
+            var newPage = Instantiate(page, book.transform);
+            pages.Add(newPage);
+        }
+    }
+    
+    public void AddPage(GameObject page)
+    {
+        _infoManager._infoPages.Add(page);
+        
+        var newPage = (GameObject)Instantiate(page, book.transform);
+        pages.Add(newPage);
+        newPage.name = "InfoPage";
+        newPage.SetActive(false);
+        
+        ShowCurrentPage();
+    }
+
+    public void DisplayCorners()
+    {
         leftCorner.SetActive(false);
         rightCorner.SetActive(false);
-        leftCorner.GetComponent<Animator>().Rebind();
-        rightCorner.GetComponent<Animator>().Rebind();
-
+ 
         //enable/disable the eselsohren depending on what page you're on
         if (_currentPageIndex == 0)
         {
@@ -133,6 +143,18 @@ public class MenuManager : MonoBehaviour
     #endregion
     
     #region Language and Age
+    
+    [Header("Options")]
+    public Button ageButton;
+    private TextMeshProUGUI _ageButtonText;
+    private string[] _ageGroups = { "Normal", "Simplified" };
+    private int _currentIndex = 0;
+    
+    public Button languageButton;
+    private TextMeshProUGUI _languageButtonText;
+    private string[] _languages = { "English (EN)", "German (DE)" };
+    private string[] _localizationNames = {"English", "Simplified English", "German", "Simplified German"};
+
     
     public void ToggleAgeGroup()
     {
@@ -186,6 +208,13 @@ public class MenuManager : MonoBehaviour
     
     #region Screen Resolution
     
+    [Header("Resolutions")] 
+    [SerializeField] private TMP_Dropdown resolutionDropdown;
+    private Resolution[] resolutions;
+    private List<Resolution> filteredResolutions;
+    public TextMeshProUGUI resolutionText;
+    private int currentResolutionIndex = 0;
+    
     public void ResolutionSetup()
     {
         resolutions = Screen.resolutions;
@@ -235,20 +264,6 @@ public class MenuManager : MonoBehaviour
     
     #endregion
 
-    public void AddPage(GameObject page)
-    {
-        var newPage = (GameObject)Instantiate(page, book.transform);
-        pages.Add(newPage);
-        newPage.SetActive(false);
-        
-        ShowCurrentPage();
-    }
-
-    public void SetPrefabActive(GameObject prefab)
-    {
-        prefab.SetActive(true);
-    }
-    
     public void LoadMinigame(string minigame)
     {
         StartCoroutine(MapTransition(loadMinigameDelay, minigame));
