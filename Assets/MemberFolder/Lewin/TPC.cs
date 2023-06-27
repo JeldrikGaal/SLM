@@ -10,6 +10,8 @@ public class TPC : MonoBehaviour
     public Image HitArea;
     private Graphic gp;
     public GameObject TopCardGO;
+    public GameObject BottomCardGO;
+    public int cardCount;
 
     private void Awake()
     {
@@ -19,6 +21,6 @@ public class TPC : MonoBehaviour
 
     public void SetTraceable(bool pTraceable)
     {
-        gp.raycastTarget = pTraceable;
+        HitArea.raycastTarget = pTraceable;
     }
 }

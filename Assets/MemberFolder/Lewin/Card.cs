@@ -55,6 +55,10 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     private DragOverManager dragOverManager;
     private bool _droppable;
     private GameObject _otherCard;
+
+    public bool _placedOnTargetPile;
+    private bool _animatingToOtherCardAtm;
+    private TPC LastTPC;
     
     public void Init(int ID, CardDatabase pCardDatabase, bool pDraggable, bool pFlippable, Canvas pCardCanvas, Deck pDeck, DragOverManager pDragOverManager)
     {
@@ -137,7 +141,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     public void FlipAnimated()
     {
-        if (((!dragging || !draggingAvailable) && flippable)) 
+        if (((!dragging || !draggingAvailable) && flippable && !_animatingToOtherCardAtm)) 
         {
             if (flipCoroutine != null)
             {
@@ -157,7 +161,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         {
             if (!dragging)
             {
-                Shake();
+                //Shake();
             }
         }
     }
@@ -363,7 +367,28 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         dragOverManager.SetActiveDraggingCard(null);
         if (_droppable)
         {
-            StartCoroutine(MoveToOtherCard(_otherCard, 0.15f));
+            Card otherCardScript = _otherCard.GetComponent<Card>();
+            if (otherCardScript.cardData.MatchingID == cardData.ID && otherCardScript.cardData.MatchingID != -1)
+            {
+                if (!otherCardScript.isPictureUp) otherCardScript.FlipAnimated();
+                otherCardScript.EnableDragging(false);
+                otherCardScript.EnableFlippable(false);
+                _placedOnTargetPile = true;
+                LastTPC.TopCardGO = gameObject;
+                LastTPC.cardCount++;
+                EnableDragging(false);
+                StartCoroutine(MoveToOtherCard(LastTPC.BottomCardGO, 0.15f));
+                if (DeckRef.DeckTopCard != null)
+                {
+                    DeckRef.MoveTopCardToCenter();
+                }
+                else
+                {
+                    DeckRef.NextDeck();
+                    DeckRef.MoveTopCardToCenter();
+                }
+            }
+
 
             ShowDropInfo(false, null);
         }
@@ -391,7 +416,6 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
             Debug.LogError("LeanDragTranslate component not found on " + gameObject.name);
         }
     }
-
     public void MakeInteractable()
     {
         EnableDragging(true);
@@ -401,14 +425,10 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     {
         Invoke("MakeInteractable", MoveToCenterDuration);
     }
-
-
-    
     public void EnableFlippable(bool shouldEnable)
     {
         flippable = shouldEnable;
     }
-    
     public void SetHighlight(bool pHighlight)
     {
         if (highlightCoroutine != null)
@@ -425,7 +445,6 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
             highlightCoroutine = StartCoroutine(LeaveHighlightState());
         }
     }
-
     private IEnumerator EnterHighlightState()
     {
         isHighlighted = true;
@@ -449,8 +468,6 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         transform.localScale = targetScale;
         transform.rotation = highlightedRotation;
     }
-
-
     private IEnumerator LeaveHighlightState()
     {
         isHighlighted = false;
@@ -474,14 +491,10 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         transform.localScale = targetScale;
         transform.rotation = Quaternion.identity;
     }
-
-    
-    
     public void Shake()
     {
         StartCoroutine(ShakeCoroutine());
     }
-
     private IEnumerator ShakeCoroutine()
     {
         int numberOfShakes = 5; // Adjust this as needed
@@ -521,17 +534,15 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
         transform.rotation = Quaternion.identity;
     }
-
-    
     public void MoveToCenter()
     {
         // Get the current y position of the card
         float currentY = transform.position.y;
         StartCoroutine(MoveToPosition(new Vector2(Screen.width / 2, currentY)));
     }
-
     IEnumerator MoveToPosition(Vector2 targetPosition)
     {
+        SetTraceable(false);
         Vector2 startPosition = this.transform.position;
         float startTime = Time.time;
         while (Time.time < startTime + MoveToCenterDuration)
@@ -542,8 +553,8 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
             yield return null;
         }
         this.transform.position = targetPosition; // Ensure card is at target position at the end
+        SetTraceable(true);
     }
-    
     public void ShowDropInfo(bool show, GameObject pOtherHitbox)
     {
         _droppable = show;
@@ -553,9 +564,8 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         DropInfo.transform.GetChild(0).localScale = show ? Vector3.one : Vector3.zero;
         if (show)
         {
-            //if (pOtherHitbox.transform.parent.gameObject.GetComponent<TPC>() != null) DevCardZero();
-            _otherCard = pOtherHitbox.transform.parent.gameObject.GetComponent<TPC>().TopCardGO;
-
+            LastTPC = pOtherHitbox.transform.parent.gameObject.GetComponent<TPC>();
+            _otherCard = LastTPC.TopCardGO;
         }
         else
         {
@@ -564,8 +574,10 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     }
     IEnumerator MoveToOtherCard(GameObject otherCard, float duration)
     {
+        _animatingToOtherCardAtm = true;
+        Vector3 offset = new Vector3(-5, -5, 0);
         Vector3 startPosition = this.transform.position; // Starting position
-        Vector3 endPosition = new Vector3(otherCard.transform.position.x, otherCard.transform.position.y-17, this.transform.position.z); // Target position
+        Vector3 endPosition = new Vector3(otherCard.transform.position.x, otherCard.transform.position.y-17, this.transform.position.z) + offset * LastTPC.cardCount; // Target position
 
         float startTime = Time.time;
 
@@ -580,15 +592,20 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
         // Ensure final position is accurate
         this.transform.position = new Vector3(endPosition.x, endPosition.y, this.transform.position.z);
+        _animatingToOtherCardAtm = false;
+    }
+
+    public void SetTraceable(bool pTraceable)
+    {
+        pictureSide.raycastTarget = pTraceable;
+        textSide.raycastTarget = pTraceable;
     }
 
 
-
-
-
-
-
-
-
     
+    
+    
+    
+    
+
 }

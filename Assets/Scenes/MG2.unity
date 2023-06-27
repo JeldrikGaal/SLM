@@ -353,13 +353,14 @@ MonoBehaviour:
   startObject: {fileID: 1677299834}
   offset: {x: -5, y: -5, z: 0}
   TargetPileCollider: {fileID: 4496224262785354723, guid: beb9ec2728faeec42b22426acf6fe5b7, type: 3}
+  DeckTopCard: {fileID: 0}
   TargetPiles_yOffset: 140
-  Deck1_Initial: 130000000e0000000900000002000000
-  Deck2: 140000000f0000000a00000003000000
-  Deck3: 
-  Deck4: 
-  Deck5: 
-  Deck6: 
+  Deck1_Initial: 02000000090000000e00000013000000
+  Deck2: 030000000a0000000f00000014000000
+  Deck3: 040000000b0000001000000015000000
+  Deck4: 050000000c0000001100000016000000
+  Deck5: 0600000017000000
+  Deck6: 07000000
 --- !u!114 &534006183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,7 +459,7 @@ MonoBehaviour:
     MatchingID: 20
   - ID: 20
     LocalizationKey: D4.2_ArtWorks
-    Picture: {fileID: 0}
+    Picture: {fileID: 21300000, guid: aaee5165a2a7c144f9c5ced5c142645d, type: 3}
     MatchingID: 21
   - ID: 21
     LocalizationKey: D4.3_GardenRemodel

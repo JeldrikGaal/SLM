@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using CW.Common;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -14,9 +16,10 @@ public class Deck : MonoBehaviour
     public GameObject startObject; // Assign your starting GameObject in the inspector
     public Vector3 offset; // The offset between each card
     public GameObject TargetPileCollider;
-    private Card DeckTopCard;
+    public Card DeckTopCard;
     private CardDatabase CDB;
     private List<TPC> PileColliders = new List<TPC>();
+    private List<Card> DrawPileCards = new List<Card>();
     public float TargetPiles_yOffset;
     public int[] Deck1_Initial;
     public int[] Deck2;
@@ -24,26 +27,108 @@ public class Deck : MonoBehaviour
     public int[] Deck4;
     public int[] Deck5;
     public int[] Deck6;
+    private int CurrentDeckIndex = 1;
+    private int maxDecks = 6;
     
     void Start()
     {
+        Deck1_Initial = ShuffleArray(Deck1_Initial);
+        Deck2 = ShuffleArray(Deck2);
+        Deck3 = ShuffleArray(Deck3);
+        Deck4 = ShuffleArray(Deck4);
+        Deck5= ShuffleArray(Deck5);
+        Deck6 = ShuffleArray(Deck6);
+        
         CDB = GetComponent<CardDatabase>();
-        
-        
-        for (int i = 0; i < Deck2.Length; i++)
-        {
-            Card CardGO = CDB.SpawnCard(Deck2[i], startObject.transform.position + i * offset, false, false);
-            var CardRef = CardGO.GetComponent<Card>();
-            DeckTopCard = CardRef;
-        }
 
+        NextDeck();
+        
         SpawnIntitalTargetCards();
     }
 
+public void NextDeck()
+{
+    DeckTopCard = null;
+    CurrentDeckIndex++;
+    if (CurrentDeckIndex <= maxDecks)
+    {
+        switch (CurrentDeckIndex)
+        {
+            case 2:
+                for (int i = 0; i < Deck2.Length; i++)
+                {
+                    Card CardGO = CDB.SpawnCard(Deck2[i], startObject.transform.position + i * offset, false, false);
+                    var CardRef = CardGO.GetComponent<Card>();
+                    DrawPileCards.Add(CardRef);
+                    DeckTopCard = CardRef;
+                }
+                break;
+
+            case 3:
+                for (int i = 0; i < Deck3.Length; i++)
+                {
+                    Card CardGO = CDB.SpawnCard(Deck3[i], startObject.transform.position + i * offset, false, false);
+                    var CardRef = CardGO.GetComponent<Card>();
+                    DrawPileCards.Add(CardRef);
+                    DeckTopCard = CardRef;
+                }
+                break;
+
+            case 4:
+                for (int i = 0; i < Deck4.Length; i++)
+                {
+                    Card CardGO = CDB.SpawnCard(Deck4[i], startObject.transform.position + i * offset, false, false);
+                    var CardRef = CardGO.GetComponent<Card>();
+                    DrawPileCards.Add(CardRef);
+                    DeckTopCard = CardRef;
+                }
+                break;
+
+            case 5:
+                for (int i = 0; i < Deck5.Length; i++)
+                {
+                    Card CardGO = CDB.SpawnCard(Deck5[i], startObject.transform.position + i * offset, false, false);
+                    var CardRef = CardGO.GetComponent<Card>();
+                    DrawPileCards.Add(CardRef);
+                    DeckTopCard = CardRef;
+                }
+                break;
+
+            case 6:
+                for (int i = 0; i < Deck6.Length; i++)
+                {
+                    Card CardGO = CDB.SpawnCard(Deck6[i], startObject.transform.position + i * offset, false, false);
+                    var CardRef = CardGO.GetComponent<Card>();
+                    DrawPileCards.Add(CardRef);
+                    DeckTopCard = CardRef;
+                }
+                break;
+
+            default:
+                // Do something for all other cases
+                break;
+        }
+    }
+}
+
+
     public void MoveTopCardToCenter()
     {
-        DeckTopCard.MoveToCenter();
-        DeckTopCard.MakeInteractableAfterTime();
+        if (DeckTopCard)
+        {
+            DeckTopCard.MoveToCenter();
+            DeckTopCard.MakeInteractableAfterTime();
+            int _count = DrawPileCards.Count;
+            if (_count > 0) DrawPileCards.RemoveAt(_count-1);
+            if (_count - 1 > 0)
+            {
+                DeckTopCard = DrawPileCards[DrawPileCards.Count-1];
+            }
+            else
+            {
+                DeckTopCard = null;
+            }
+        }
     }
     
     void SpawnIntitalTargetCards()
@@ -53,6 +138,8 @@ public class Deck : MonoBehaviour
             Card CardReference = CDB.SpawnCard(Deck1_Initial[i], startObject.transform.position + i * offset, false, true);
             RectTransform cardRectTransform = CardReference.GetComponent<RectTransform>();
 
+            CardReference._placedOnTargetPile = true;
+            
             // Calculate the anchors for the card
             float anchorX = 1f - (i + 0.5f) / 4f;
             cardRectTransform.anchorMin = new Vector2(anchorX,1);
@@ -82,6 +169,7 @@ public class Deck : MonoBehaviour
             
             
             PileColliderGO.GetComponent<TPC>().TopCardGO = CardReference.gameObject;
+            PileColliderGO.GetComponent<TPC>().BottomCardGO = CardReference.gameObject;
         }
     }
 
@@ -92,4 +180,25 @@ public class Deck : MonoBehaviour
             tpc.SetTraceable(pTraceable);
         }
     }
+
+    private void Update()
+    {
+        Debug.Log(DrawPileCards.Count);
+    }
+    
+    public T[] ShuffleArray<T>(T[] array)
+    {
+        System.Random rand = new System.Random();
+        for (int i = array.Length - 1; i > 0; i--)
+        {
+            int j = rand.Next(i + 1);
+            T temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+        return array;
+    }
+
+    
+    
 }
