@@ -50,9 +50,8 @@ public class Deck : MonoBehaviour
     {
         for (int i = 0; i < Deck1_Initial.Length; i++)
         {
-            Card CardGO = CDB.SpawnCard(Deck1_Initial[i], startObject.transform.position + i * offset, false, true);
-            var CardRef = CardGO.GetComponent<Card>();
-            RectTransform cardRectTransform = CardGO.GetComponent<RectTransform>();
+            Card CardReference = CDB.SpawnCard(Deck1_Initial[i], startObject.transform.position + i * offset, false, true);
+            RectTransform cardRectTransform = CardReference.GetComponent<RectTransform>();
 
             // Calculate the anchors for the card
             float anchorX = 1f - (i + 0.5f) / 4f;
@@ -80,6 +79,9 @@ public class Deck : MonoBehaviour
             
             //Set the position of the card to be offset from the left border of the Canvas
             tpTransform.anchoredPosition = new Vector2(0f, -TargetPiles_yOffset);
+            
+            
+            PileColliderGO.GetComponent<TPC>().TopCardGO = CardReference.gameObject;
         }
     }
 

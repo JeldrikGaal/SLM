@@ -6,18 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="58850cd5-8d2e-4765-8fce-206cb2b23995" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SLM/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SLM/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Jeldrik/TestAssets/Fonts/XTypeWriter/XTypewriter-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Jeldrik/TestAssets/Fonts/XTypeWriter/XTypewriter-Regular SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/Card.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/Card.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/CardPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/CardPrefab.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/Deck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/Deck.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/TargetCardPiles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/TargetCardPiles.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/CW/LeanCommon/Examples/Prefabs/Label.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/CW/LeanCommon/Examples/Prefabs/Label.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/CW/LeanTouch/Examples/Finger Trail.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/CW/LeanTouch/Examples/Finger Trail.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/IngameDebugConsoleSpriteAtlas.spriteatlas" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/IngameDebugConsoleSpriteAtlas.spriteatlas" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MG2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MG2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/Localization/MG 1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/Localization/MG 1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/Localization/Menu.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/Localization/Menu.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/DragOverManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/DragOverManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/TPC.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/TPC.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/TP_Collider.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/TP_Collider.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/InfoCard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/InfoCard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,6 +128,7 @@
       <workItem from="1687696157376" duration="15046000" />
       <workItem from="1687772230457" duration="12605000" />
       <workItem from="1687806211082" duration="19425000" />
+      <workItem from="1687860552139" duration="10234000" />
     </task>
     <servers />
   </component>

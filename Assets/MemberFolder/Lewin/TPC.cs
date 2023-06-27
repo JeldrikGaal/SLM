@@ -9,6 +9,7 @@ public class TPC : MonoBehaviour
     
     public Image HitArea;
     private Graphic gp;
+    public GameObject TopCardGO;
 
     private void Awake()
     {

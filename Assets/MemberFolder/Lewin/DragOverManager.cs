@@ -22,12 +22,13 @@ public class DragOverManager : MonoBehaviour
         if (_shouldRaycast)
         {
             // Check if the mouse pointer is over a UI element
-            if (EventSystem.current.IsPointerOverGameObject())
+            if (EventSystem.current.IsPointerOverGameObject() || (Input.touchCount > 0 && EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)))
             {
                 // Find what object the pointer is currently over
                 PointerEventData pointerData = new PointerEventData(EventSystem.current)
                 {
-                    position = Input.mousePosition
+                    // check if there is a touch happening
+                    position = Input.touchCount > 0 ? (Vector2)Input.GetTouch(0).position : Input.mousePosition
                 };
 
                 List<RaycastResult> results = new List<RaycastResult>();
@@ -43,27 +44,29 @@ public class DragOverManager : MonoBehaviour
                             Debug.Log("Pointer is over a UI element with the tag: " + result.gameObject.tag);
                             if (result.gameObject.tag == "TP_Collider")
                             {
-                                ShowOutline(true, gameObject);
+                                ShowOutline(true, result.gameObject);
                                 madeitshown = true;
+                                //Debug.Log(result.gameObject.transform.parent.gameObject.GetComponent<TPC>() != null);
                             }
-                            
-                        }
                         
+                        }
+                    
                     }
                 }
-                
-            }
             
+            }
+        
         }
         if (!madeitshown) ShowOutline(false, null);
     }
 
-    void ShowOutline(bool show, GameObject pOtherCard)
+
+    void ShowOutline(bool show, GameObject pOtherHitBox)
     {
         if (show != _dropInfoShow)
         {
             _dropInfoShow = show;
-            _activeDraggingCard.ShowDropInfo(_dropInfoShow, pOtherCard);
+            _activeDraggingCard.ShowDropInfo(_dropInfoShow, pOtherHitBox);
         }
     }
     

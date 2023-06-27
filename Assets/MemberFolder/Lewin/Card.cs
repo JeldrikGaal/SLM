@@ -114,6 +114,10 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         }
     }
 
+    void DevCardZero()
+    {
+        pictureSide.transform.localScale = new Vector3(0, 0, 0);
+    }
     public void SetCardSide(bool picture)
     {
         isPictureUp = picture;
@@ -359,7 +363,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         dragOverManager.SetActiveDraggingCard(null);
         if (_droppable)
         {
-            StartCoroutine(MoveToOtherCard(_otherCard, 1f));
+            StartCoroutine(MoveToOtherCard(_otherCard, 0.15f));
 
             ShowDropInfo(false, null);
         }
@@ -540,35 +544,47 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         this.transform.position = targetPosition; // Ensure card is at target position at the end
     }
     
-    public void ShowDropInfo(bool show, GameObject pOtherCard)
+    public void ShowDropInfo(bool show, GameObject pOtherHitbox)
     {
         _droppable = show;
         Color color = DropInfo.color;
         color.a = show ? 1f : 0f;
         DropInfo.color = color;
         DropInfo.transform.GetChild(0).localScale = show ? Vector3.one : Vector3.zero;
-        if (show) _otherCard = pOtherCard;
-    }
+        if (show)
+        {
+            //if (pOtherHitbox.transform.parent.gameObject.GetComponent<TPC>() != null) DevCardZero();
+            _otherCard = pOtherHitbox.transform.parent.gameObject.GetComponent<TPC>().TopCardGO;
 
+        }
+        else
+        {
+            
+        }
+    }
     IEnumerator MoveToOtherCard(GameObject otherCard, float duration)
     {
-        RectTransform rectTransform = this.GetComponent<RectTransform>();
-        RectTransform otherRectTransform = otherCard.GetComponent<RectTransform>();
-    
-        Vector3 startPosition = rectTransform.anchoredPosition3D;
-        Vector3 endPosition = transform.parent.InverseTransformPoint(otherRectTransform.parent.TransformPoint(otherRectTransform.anchoredPosition3D));
+        Vector3 startPosition = this.transform.position; // Starting position
+        Vector3 endPosition = new Vector3(otherCard.transform.position.x, otherCard.transform.position.y-17, this.transform.position.z); // Target position
 
         float startTime = Time.time;
 
         while (Time.time < startTime + duration)
         {
             float t = (Time.time - startTime) / duration; // normalized time
-            rectTransform.anchoredPosition3D = Vector3.Lerp(startPosition, endPosition, t); // Linear interpolation
+            Vector3 nextPosition = Vector3.Lerp(startPosition, endPosition, t); // Linear interpolation
+            // here we only update the x and y position
+            this.transform.position = new Vector3(nextPosition.x, nextPosition.y, this.transform.position.z);
             yield return null;
         }
 
-        rectTransform.anchoredPosition3D = endPosition; // Ensure final position is accurate
+        // Ensure final position is accurate
+        this.transform.position = new Vector3(endPosition.x, endPosition.y, this.transform.position.z);
     }
+
+
+
+
 
 
 
