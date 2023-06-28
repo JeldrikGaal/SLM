@@ -18,6 +18,7 @@ TagManager:
   - JuiceManager
   - TP_Collider
   - Card
+  - TutorialManager
   layers:
   - Default
   - TransparentFX

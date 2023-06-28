@@ -20,6 +20,7 @@ public class ClickableManager : MonoBehaviour
     private TouchHandler _tH;
     private ClickableStorage _cS;
     private VALUECONTROLER _VC;
+    private MG1Tutorial _tutorialManager;
 
     private Transform _canvas;
     #endregion
@@ -31,6 +32,7 @@ public class ClickableManager : MonoBehaviour
         _cS = GameObject.FindGameObjectWithTag("ClickableStorage").GetComponent<ClickableStorage>();
         _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
         _canvas = GameObject.FindGameObjectWithTag("Canvas").transform;
+        _tutorialManager = GameObject.FindGameObjectWithTag("TutorialManager").GetComponent<MG1Tutorial>();
     }
 
     // Try to display a new Popup. If one is already being displayed return false otherwise displays new one and returns true
@@ -156,6 +158,7 @@ public class ClickableManager : MonoBehaviour
             _grayScaleImage.enabled = false;
             _currentClickable.transform.parent.transform.parent = _grayScaleParentSafe;
 
+            _tutorialManager.PopUpClosing();
             _tH.UnlockInput();
         });
         

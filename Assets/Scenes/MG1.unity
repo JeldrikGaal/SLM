@@ -139,6 +139,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7472608575380782422, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
   m_PrefabInstance: {fileID: 7472608575630314570}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &257409042 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7472608574313776830, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+  m_PrefabInstance: {fileID: 7472608575630314570}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &359216321 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7472608575807993995, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
@@ -166,6 +171,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &451101545 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2019835856543930623, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+  m_PrefabInstance: {fileID: 7472608575630314570}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f061846fc0634418f1aaec764f54fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &538781718 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8448038988702888677, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
@@ -187,6 +203,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8448038988351245349, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
   m_PrefabInstance: {fileID: 7472608575630314570}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1390452200 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7472608574432829128, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+  m_PrefabInstance: {fileID: 7472608575630314570}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0543ef302f0e254887cbd34703a1e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1478498794 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8448038987766170393, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
@@ -292,6 +319,18 @@ PrefabInstance:
       propertyPath: _sparks.Array.data[4]
       value: 
       objectReference: {fileID: 406583482}
+    - target: {fileID: 1769498419, guid: f740ceb45edfc1a4cb6690d967a651c1, type: 3}
+      propertyPath: _sceneInfoPopUp
+      value: 
+      objectReference: {fileID: 1390452200}
+    - target: {fileID: 1769498419, guid: f740ceb45edfc1a4cb6690d967a651c1, type: 3}
+      propertyPath: _currentQuestion
+      value: 
+      objectReference: {fileID: 257409042}
+    - target: {fileID: 1769498419, guid: f740ceb45edfc1a4cb6690d967a651c1, type: 3}
+      propertyPath: _exampleClickable
+      value: 
+      objectReference: {fileID: 451101545}
     - target: {fileID: 5471262566935796342, guid: f740ceb45edfc1a4cb6690d967a651c1, type: 3}
       propertyPath: _qM
       value: 

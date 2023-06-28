@@ -16,6 +16,8 @@ public class Clickable : MonoBehaviour
     private TouchHandler _tH;
     #endregion
 
+    public bool _clicked = false;
+
     void Start()
     {
         // Assigning references
@@ -49,6 +51,7 @@ public class Clickable : MonoBehaviour
             UpdateLocalizedData();
             cM.TryDisplayPopUp(cH, this);
             _tH.BlockWrongInputPart();
+            _clicked = true;
         }
         else
         {

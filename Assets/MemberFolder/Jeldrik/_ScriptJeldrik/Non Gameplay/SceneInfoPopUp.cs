@@ -21,7 +21,7 @@ public class SceneInfoPopUp : MonoBehaviour
     private bool _spawnedReminder;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
 
