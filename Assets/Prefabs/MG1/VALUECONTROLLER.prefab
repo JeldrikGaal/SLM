@@ -45,12 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Outline_Size: 70
-  Outline_Color: {r: 1, g: 0.10917871, b: 0, a: 1}
+  Outline_Color: {r: 0.80784315, g: 0.5019608, b: 0.2, a: 1}
   SceneInfo_AnimSpeed: 0.6
   SceneInfo_BlockTime: 1
-  SceneInfo_ReminderTime: 5
+  SceneInfo_ReminderTime: 20
   PopUp_BlockTime: 0.5
-  PopUp_ReminderTime: 3
+  PopUp_ReminderTime: 10
   PopUp_AnimSpeed: 0.5
   PopUp_Reminder_Pos: 88
   Questions:
@@ -61,7 +61,7 @@ MonoBehaviour:
   Camera_Border: 0
   Camera_ClickMoveTime: 0.6
   Camera_MoveSpeed: 0.8
-  Misc_WaitTime_InputReminder: 5
+  Misc_WaitTime_InputReminder: 20
   Misc_SecondWaitTime_InputReminder: 20
   Misc_Reminder_Object: {fileID: 8986657409634884106, guid: 59d1396709e4687479a957372853e949, type: 3}
   BookTransition_Time: 3

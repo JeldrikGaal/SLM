@@ -83,7 +83,7 @@ public class QuestionManager : MonoBehaviour
             _questionsText[2].text = _questions[2].Text;
             _currentQ = 0;
             _timeOnCurrentQ = Time.time;
-            _currentQuestion.ChangeCurrentQuestion(GetCurrentQuestion());
+            _currentQuestion.ChangeCurrentQuestionInternal(GetCurrentQuestion());
             for (int i = 0; i < 3; i++)
             {
                 _questionObjectCounts.Add(new List<int>());
@@ -140,7 +140,7 @@ public class QuestionManager : MonoBehaviour
         _questionsText[0].text = _questions[0].Text;
         _questionsText[1].text = _questions[1].Text;
         _questionsText[2].text = _questions[2].Text;
-        _currentQuestion.ChangeCurrentQuestion(GetCurrentQuestion());
+        _currentQuestion.ChangeCurrentQuestionInternal(GetCurrentQuestion());
 
     }
 
@@ -156,7 +156,7 @@ public class QuestionManager : MonoBehaviour
         _alreadyClickedComb = _cS._alreadyClickedCombSave;
         _questionObjectCounts = _cS._questionObjectCountsSave;
         _completedQuestions = _cS._completedQuestionsSave;
-        _currentQuestion.ChangeCurrentQuestion(_questions[_currentQ]);
+        _currentQuestion.ChangeCurrentQuestionInternal(_questions[_currentQ]);
         _swirls = _cS._swirlsSave;
         DisableSwirls(_currentQ);
     }

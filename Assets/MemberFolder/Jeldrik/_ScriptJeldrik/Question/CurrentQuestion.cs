@@ -18,6 +18,7 @@ public class CurrentQuestion : MonoBehaviour
     [SerializeField] private GameObject _forwardButton;
     [SerializeField] private GameObject _backButton;
     [SerializeField] private Image _image;
+    [SerializeField] private SlideColorStripe _slideColorStripe;
 
     private QuestionManager _qM;
     private Question _currentQ;
@@ -48,8 +49,13 @@ public class CurrentQuestion : MonoBehaviour
 
     }
 
-    // Change currently display question and display new one with small animation
     public void ChangeCurrentQuestion(Question _q)
+    {
+        _slideColorStripe.CompleteSlide(_q);
+    }
+
+    // Change currently display question and display new one with small animation
+    public void ChangeCurrentQuestionInternal(Question _q)
     {
         _currentQ = _q;
 

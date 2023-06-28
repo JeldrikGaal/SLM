@@ -1,5 +1,140 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &54484069
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 54484070}
+  - component: {fileID: 54484072}
+  - component: {fileID: 54484071}
+  m_Layer: 5
+  m_Name: CounterAnimText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &54484070
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54484069}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 7472608575635802454}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &54484072
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54484069}
+  m_CullTransparentMesh: 1
+--- !u!114 &54484071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54484069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 57fd86071007a324bae932303e6632eb, type: 2}
+  m_sharedMaterial: {fileID: 1329876089496857965, guid: 57fd86071007a324bae932303e6632eb, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &133348361
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,12 +386,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _image: {fileID: 534061233}
-  _slideTime: 0.75
+  _slideTime: 1.25
   _text1: {fileID: 7472608575567431661}
   _text2: {fileID: 739507279621531735}
   _questionImage: {fileID: 292615624317726674}
   _twig: {fileID: 7472608575181901564}
   _child: {fileID: 1673326647}
+  _text1Text: {fileID: 7472608575567431650}
+  _text2Text: {fileID: 7472608575791713712}
+  _currentQuestion: {fileID: 7472608574313776818}
 --- !u!114 &534061231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -777,6 +915,9 @@ MonoBehaviour:
   _questionImage: {fileID: 292615624317726674}
   _twig: {fileID: 7472608575181901564}
   _child: {fileID: 0}
+  _text1Text: {fileID: 0}
+  _text2Text: {fileID: 0}
+  _currentQuestion: {fileID: 0}
 --- !u!1 &1781507946
 GameObject:
   m_ObjectHideFlags: 0
@@ -2144,9 +2285,11 @@ MonoBehaviour:
   _questionTitle: {fileID: 7472608575567431650}
   _questionTextImage: {fileID: 8797660416254342156}
   _questionCounter: {fileID: 7472608575791713712}
+  _questionCounterAnim: {fileID: 54484071}
   _forwardButton: {fileID: 7472608574578340664}
   _backButton: {fileID: 7472608574703683218}
   _image: {fileID: 5743866647471417107}
+  _slideColorStripe: {fileID: 534061232}
 --- !u!1 &7472608574322170034
 GameObject:
   m_ObjectHideFlags: 0
@@ -4696,6 +4839,7 @@ RectTransform:
   - {fileID: 7472608574313776831}
   - {fileID: 7472608574322170035}
   - {fileID: 7472608575722663852}
+  - {fileID: 54484070}
   m_Father: {fileID: 7472608575002670744}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5715,7 +5859,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5750,6 +5894,9 @@ MonoBehaviour:
   _questionImage: {fileID: 292615624317726674}
   _twig: {fileID: 7472608575181901564}
   _child: {fileID: 0}
+  _text1Text: {fileID: 0}
+  _text2Text: {fileID: 0}
+  _currentQuestion: {fileID: 0}
 --- !u!114 &6276737925792561505
 MonoBehaviour:
   m_ObjectHideFlags: 0
