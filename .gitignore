@@ -78,3 +78,4 @@ crashlytics-build.properties
 /ProjectSettings/RiderScriptEditorPersistedState.asset
 
 *.sln.DotSettings*
+.idea/.idea.SLM/.idea/workspace.xml

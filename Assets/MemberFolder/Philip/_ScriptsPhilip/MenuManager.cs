@@ -62,8 +62,9 @@ public class MenuManager : MonoBehaviour
     
     
     
-    private void ShowCurrentPage()
+    public void ShowCurrentPage()
     {
+        _currentPageIndex = GameManager.Instance.pageIndex;
         //cycles through all pages and enables only the currentPage
         
         for (int i = 0; i < pages.Count; i++)
