@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58850cd5-8d2e-4765-8fce-206cb2b23995" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SLM/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SLM/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Jeldrik/TestAssets/Fonts/XTypeWriter/XTypewriter-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Jeldrik/TestAssets/Fonts/XTypeWriter/XTypewriter-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/Card.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/Card.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/Deck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/Deck.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/TPC.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Lewin/TPC.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MG2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MG2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Book_Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Book_Main.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +18,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Lewin/CardDatabase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Lewin/MultiLanguage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Lewin/TPC.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/BlackBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/DontDestroyOnLoad.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/IdleScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/InfoCard.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/InfoPage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/LanguageManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -127,6 +124,7 @@
       <workItem from="1687772230457" duration="12605000" />
       <workItem from="1687806211082" duration="19425000" />
       <workItem from="1687860552139" duration="21811000" />
+      <workItem from="1688028655616" duration="1433000" />
     </task>
     <servers />
   </component>
