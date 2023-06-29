@@ -72,3 +72,9 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 .vsconfig
+
+/.idea
+
+/ProjectSettings/RiderScriptEditorPersistedState.asset
+
+*.sln.DotSettings*
