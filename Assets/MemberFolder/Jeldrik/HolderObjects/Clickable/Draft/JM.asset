@@ -13,14 +13,12 @@ MonoBehaviour:
   m_Name: JM
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 4b085183ea966a54283732278e38c5d6, type: 3}
-  Title: Johann Moritz
-  Description: "Das ist Johann Moritz von Nassau-Siegen. Er wurde 1604 in Siegen
-    geboren und wurde 1637 von seinem Arbeitgeber, der Westinidien-Kompanie (WIC)
-    zum Gouverneur der niederl\xE4ndischen Kolonie in Brazilien ernannt."
+  Title: C1.Title
+  Description: C1.Description
   BookInfo: 
   Question: 1
   language: 0
   FirstClickTime: 0
   Num: 0
-  LocalizationKey: C1
+  LocalizationKey: G1
   swirlMod: 1

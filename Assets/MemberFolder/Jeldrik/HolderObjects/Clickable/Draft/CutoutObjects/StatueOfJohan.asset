@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: StatueOfJohan
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 41f941773ae361c4c88b7ecd32f18d06, type: 3}
-  Title: 
-  Description: 
+  Title: C6.Title
+  Description: C6.Description
   BookInfo: 
   Question: 0
   language: 0
   FirstClickTime: 0
   Num: 0
-  LocalizationKey: C6
+  LocalizationKey: S2
   swirlMod: 1

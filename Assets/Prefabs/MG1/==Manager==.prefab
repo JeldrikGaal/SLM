@@ -142,6 +142,12 @@ MonoBehaviour:
   _exampleClickable: {fileID: 0}
   _sceneInfoPopUp: {fileID: 0}
   _currentQuestion: {fileID: 0}
+  _moveArrows:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _tutorialPopUp: {fileID: 0}
 --- !u!1 &5471262566935796340
 GameObject:
   m_ObjectHideFlags: 0

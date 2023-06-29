@@ -116,6 +116,10 @@ public class ClickableManager : MonoBehaviour
             _popUp.transform.localScale = Vector3.zero;
             _popUp.SetActive(true);
             _qM.MakeSwirl(cH);
+
+            // Tell the tutorial manager an object has been clicked
+             _tutorialManager.PopUpOpening();
+
             _popUp.transform.DOScale(safeScale, _VC.PopUp_AnimSpeed).OnComplete(() =>
             {
                 // Handle further logic of object having been clicked

@@ -1,34 +1,79 @@
 Key,English,German,Simplified English,Simplified German
 MG1.Q1,Find Johan Maurits!,Finde Johann Moritz!,Find Johan Maurits!,Finde Johann Moritz!
-MG1.Q2,Who is visiting Johan Maurits at the court 'Vrijburg?,Wer hat Johan Maurits in seinem Palast Freiburg besucht?,Who is visiting Johan Maurits at the court 'Vrijburg?,Wer hat Johan Maurits in seinem Palast Freiburg besucht?
-MG1.Q3,Where can you find this symbol?,Wo kannst du das Symbol finden?,Where can you find this symbol?,Wo kannst du das Symbol finden?
+MG1.Q2,Which important guests visited Johan Maurits at his court?,Welche wichtigen Personen waren bei Johann Moritz zu Gast?,Which important guests visited Johan Maurits at his court?,Welche wichtigen Personen waren bei Johann Moritz zu Gast?
+MG1.Q3,Where can you find this symbol?,Wo kannst du dieses Symbol finden?,Where can you find this symbol?,Wo kannst du dieses Symbol finden?
 ,,,,
-C1.Title,Johan Maurits,Johann Moritz,Johan Maurits,Johann Moritz
-C1.Description,"This is Johan Maurits of Nassau-Siegen. He was born in Siegen in 1604 and was appointed as the governor of the Dutch colony in Brazil by his employer, the West India Company (WIC), in 1637.","Das ist Johann Moritz von Nassau-Siegen. Er wurde 1604 in Siegen geboren und wurde 1637 von seinem Arbeitgeber, der Westinidien-Kompanie (WIC) zum Gouverneur der niederländischen Kolonie in Brazilien ernannt.","This is Johann Moritz of Nassau-Siegen. He was born in the city of Siegen in 1604. In 1637, he was appointed by his company, the West India Company (WIC), as the governor of a Dutch colony in Brazil.","Das ist Johann Moritz von Nassau-Siegen. Er wurde 1604 hier in Siegen geboren. Im Jahr 1637 wurde er von seiner Firma, der Westindien-Kompanie (WIC), zum Gouverneur einer niederländischen Kolonie in Brasilien ernannt."
+G0.Title,Enslaved Person,Versklavte Person,Enslaved Person,Versklavte Person
+G0.Description,"That is not a visitor. This is an enslaved person from Africa, who is performing unfree labor in Johan Maurits's palace in the Dutch colony in Brazil.","Das ist kein:e Besucher:in. Das ist eine versklavte Person aus Afrika, die in Johann Moritz's Palast in der niederländischn Kolonie in Brazilien unfreie Arbeit leistet.",That is not a visitor. It is an enslaved person from Africa who is being forced to work in Johan Maurits's palace in the Dutch colony in Brazil.,"Das ist kein:e Besucher:in. Das ist eine versklavte Person aus Afrika, die in Johann Moritz's Palast in der niederländischn Kolonie in Brazilien unfreie Arbeit leistet."
 ,,,,
-C2.Title,Frans Post,Frans Post,,Frans Post
-C2.Description,"This is Frans Post. He was a Dutch painter of the 17th century. He accompanied Johann Moritz as part of his entourage in 1637 on his expedition to Brazil. There, he mainly created landscape paintings.",Das ist Frans Post. Er war ein niederländischer Maler des 17ten Jahrhunderts. Er begleitete Johann Moritz als Teil seines Gefolges 1637 auf dessen Expedition nach Brasilien. Dort fertigte er hauptsächlich Landschaftsmalereien an.,"This is Frans Post. He was an artist from Holland. He accompanied Johann Moritz to Brazil in 1637. There, he primarily painted Brazilian landscapes.",Das ist Frans Post. Er war ein Künstler aus Holland. Er hat Johann Moritz 1637 nach Brasilien begleitet. Dort malte er vor allem brasilianische Landschaften.
+G1.Title,Johan Maurits,Johann Moritz,Johan Maurits,Johann Moritz
+G1.Description,"This is Johan Maurits of Nassau-Siegen. He was born in Siegen in 1604 and was appointed as the governor of the Dutch colony in Brazil by his employer, the West India Company (WIC), in 1637.","Das ist Johann Moritz von Nassau-Siegen. Er wurde 1604 in Siegen geboren und wurde 1637 von seinem Arbeitgeber, der Westinidien-Kompanie (WIC) zum Gouverneur der niederländischen Kolonie in Brazilien ernannt.","This is Johann Moritz of Nassau-Siegen. He was born in the city of Siegen in 1604. In 1637, he was appointed by his company, the West India Company (WIC), as the governor of a Dutch colony in Brazil.","Das ist Johann Moritz von Nassau-Siegen. Er wurde 1604 hier in Siegen geboren. Im Jahr 1637 wurde er von seiner Firma, der Westindien-Kompanie (WIC), zum Gouverneur einer niederländischen Kolonie in Brasilien ernannt."
 ,,,,
-C3.Title,Albert Eckhout,Albert Eckhout,Albert Eckhout,Albert Eckhout
-C3.Description,"This is Albert Eckhout. He was a Dutch artist and the primary court artist of Johan Maurits van Nassau-Siegen in Dutch Brazil, where he created still lifes, portraits, and depictions of natural curiosities.","Das ist Albert Eckhout. Er war ein niederländischer Künstler und der Haupt-Hofkünstler von Johann Moritz van Nassau-Siegen in der niederländischen Kolonie in Brasilien, wo er Stillleben, Porträts und Darstellungen von Naturkuriositäten schuf. ","This is Albert Eckhout. He was an artist from Holland. He worked for Johan Maurits of Nassau-Siegen. Albert Eckhout painted in the Dutch colony in Brazil. There, he created paintings of food, people, and interesting things in nature.","Das ist Albert Eckhout. Er war ein Künstler aus Holland. Er hat für Johann Moritz van Nassau-Siegen gearbeitet. Albert Eckhout hat in der niederländischen Kolonie in Brasilien gemalt. Dort hat er Bilder von Essen, Menschen und interessanten Dingen in der Natur gemacht."
+G2.Title,Frans Post,Frans Post,Frans Post,Frans Post
+G2.Description,"This is Frans Post. He was a Dutch painter of the 17th century. He accompanied Johann Moritz as part of his entourage in 1637 on his expedition to Brazil. There, he mainly created landscape paintings.",Das ist Frans Post. Er war ein niederländischer Maler des 17ten Jahrhunderts. Er begleitete Johann Moritz als Teil seines Gefolges 1637 auf dessen Expedition nach Brasilien. Dort fertigte er hauptsächlich Landschaftsmalereien an.,"This is Frans Post. He was an artist from Holland. He accompanied Johann Moritz to Brazil in 1637. There, he primarily painted Brazilian landscapes.",Das ist Frans Post. Er war ein Künstler aus Holland. Er hat Johann Moritz 1637 nach Brasilien begleitet. Dort malte er vor allem brasilianische Landschaften.
 ,,,,
-C4.Title,Enslaved Person,Versklavte Person,Enslaved Person,Versklavte Person
-C4.Description,"That is not a visitor. This is an enslaved person from Africa, who is performing unfree labor in Johann Moritz's palace in the Dutch colony in Brazil.","Das ist kein:e Besucher:in. Das ist eine versklavte Person aus Afrika, die in Johann Moritz's Palast in der niederländischn Kolonie in Brazilien unfreie Arbeit leistet.",That is not a visitor. It is an enslaved person from Africa who is being forced to work in Johann Moritz's palace in the Dutch colony in Brazil.,"Das ist kein:e Besucher:in. Das ist eine versklavte Person aus Afrika, die in Johann Moritz's Palast in der niederländischn Kolonie in Brazilien unfreie Arbeit leistet."
+G3.Title,Albert Eckhout,Albert Eckhout,Albert Eckhout,Albert Eckhout
+G3.Description,"This is Albert Eckhout. He was a Dutch artist and the primary court artist of Johan Maurits van Nassau-Siegen in Dutch Brazil, where he created still lifes, portraits, and depictions of natural curiosities.","Das ist Albert Eckhout. Er war ein niederländischer Künstler und der Haupt-Hofkünstler von Johann Moritz van Nassau-Siegen in der niederländischen Kolonie in Brasilien, wo er Stillleben, Porträts und Darstellungen von Naturkuriositäten schuf.","This is Albert Eckhout. He was an artist from Holland. He worked for Johan Maurits of Nassau-Siegen. Albert Eckhout painted in the Dutch colony in Brazil. There, he created paintings of food, people, and interesting things in nature.","Das ist Albert Eckhout. Er war ein Künstler aus Holland. Er hat für Johann Moritz van Nassau-Siegen gearbeitet. Albert Eckhout hat in der niederländischen Kolonie in Brasilien gemalt. Dort hat er Bilder von Essen, Menschen und interessanten Dingen in der Natur gemacht."
 ,,,,
-C5.Title,Johan Maurits Portrait,Johann Moritz Porträt,Johan Maurits Portrait,Johann Moritz Porträt
-C5.Description,"This is a portrait of Johan Mauritz, painted by the Dutch portrait artist Michiel van Miereveldt in 1636, shortly before Johann's departure to Brazil.","Das ist ein Porträt von Johann Moritz, das vom holländischen Porträtmaler Michiel van Miereveldt in 1636, kurz vor Johanns Aufbruch nach Brazilien, angefertigt wurde.","This is a portrait of Johan Mauritz. It was painted by the Dutch portrait artist Michiel van Miereveldt in 1636, shortly before Johann's departure to Brazil.","Das ist ein Portät von Johann Moritz. Ein Künstler namens Michiel van Miereveldt hat es gemalt. Er hat es im Jahr 1636 gemacht, kurz bevor Johann nach Brasilien gereist ist."
+,Georg Marggrave,,,
 ,,,,
-C6.Title,Bust of Johan Maurits,Statue von Johann Moritz,Bust of Johan Maurits,Staute von Johann Moritz
-C6.Description,"This is a marble bust of Johan Maurits, created by Bartholomeus Eggers.","Das ist eine marmor Büste von Johann Moritz, die von Bartholomeus Eggers angefertigt wurde.",This is a bust of Johan Maurits. It is made out of marble and was created by an artist named Bartholomeus Eggers.,Dies ist eine Statue aus Marmor von Johann Moritz. Sie wurde von einem Künstler namens Bartholomeus Eggers gemacht.
 ,,,,
-C7.Title,Map of Mauritsstadt,Mauritsstadt Stadtkarte,Map of Mauritsstadt,Mauritsstadt Stadtkarte
-C7.Description,This map shows Johan Maurits's plans for the transformation of the city of 'Mauritsstadt' (nowadays Recife) in Brazil. The West India Company's colony was located there.,Diese Karte zeigt Johann Morits's Pläne für den Umbau der Stadt 'Mauritsstadt' (Heute Recife) in Brasilien. Dort befand sich die Kolonie der Westindien-Kompanie.,This map shows how Johann Maurits wanted to transform the city called 'Mauritsstadt' (nowadays Recife) in Brazil. The West India Company had its colony there.,"Diese Karte zeigt, wie Johann Maurits die Stadt namens 'Mauritsstadt' (Heute Recife) in Brasilien umbauen wollte. Dort befand sich die Kolonie der Westindien-Kompanie."
+,Willem Piso,,,
 ,,,,
-C8.Title,Insignia,,,
-C8.Description,The symbol Johann Maurits used to mark his possesions,,,
 ,,,,
-PopUpText,"Find the answers to the questions to uncover the obscured information in the book and and find the truth!
-To do so, use your fingers to swipe through the map and click on the objects and individuals that correspond to the questions! Besides these key elements, there is plenty of side-information to discover! Can you find all of it? Have fun exploring and uncovering!","Find the answers to the questions to uncover the obscured information in the book and and find the truth!
-To do so, use your fingers to swipe through the map and click on the objects and individuals that correspond to the questions! Besides these key elements, there is plenty of side-information to discover! Can you find all of it? Have fun exploring and uncovering!","Find the answers to the questions to uncover the obscured information in the book and and find the truth!
-To do so, use your fingers to swipe through the map and click on the objects and individuals that correspond to the questions! Besides these key elements, there is plenty of side-information to discover! Can you find all of it? Have fun exploring and uncovering!","Find the answers to the questions to uncover the obscured information in the book and and find the truth!
-To do so, use your fingers to swipe through the map and click on the objects and individuals that correspond to the questions! Besides these key elements, there is plenty of side-information to discover! Can you find all of it? Have fun exploring and uncovering!"
+,Gaspar Diaz,,,
+,,,,
+,,,,
+,,,,
+,,,,
+I1.Title,Insignia,,,
+I1.Description,The symbol Johann Maurits used to mark his possesions,,,
+,,,,
+I2.Title,Enslaved Person,,,
+I2.Description,,,,
+,,,,
+I3.Title,Enslaved Person,,,
+I3.Description,,,,
+,,,,
+I4.Title,Enslaved Person,,,
+I4.Description,,,,
+,,,,
+I5.Title,Enslaved Person,,,
+I5.Description,,,,
+,,,,
+I6.Title,Enslaved Person,,,
+I6.Description,,,,
+,,,,
+I7.Title,Front Door,,,
+I7.Description,,,,
+,,,,
+I8.Title,Office Chair,,,
+I8.Description,,,,
+,,,,
+I9.Title,Wood Panel,,,
+I9.Description,,,,
+,,,,
+S1.Title,Johan Maurits Portrait,Johann Moritz Porträt,Johan Maurits Portrait,Johann Moritz Porträt
+S1.Description,"This is a portrait of Johan Mauritz, painted by the Dutch portrait artist Michiel van Miereveldt in 1636, shortly before Johann's departure to Brazil.","Das ist ein Porträt von Johann Moritz, das vom holländischen Porträtmaler Michiel van Miereveldt in 1636, kurz vor Johanns Aufbruch nach Brazilien, angefertigt wurde.","This is a portrait of Johan Mauritz. It was painted by the Dutch portrait artist Michiel van Miereveldt in 1636, shortly before Johann's departure to Brazil.","Das ist ein Portät von Johann Moritz. Ein Künstler namens Michiel van Miereveldt hat es gemalt. Er hat es im Jahr 1636 gemacht, kurz bevor Johann nach Brasilien gereist ist."
+,,,,
+S2.Title,Bust of Johan Maurits,Statue von Johann Moritz,Bust of Johan Maurits,Staute von Johann Moritz
+S2.Description,"This is a marble bust of Johan Maurits, created by Bartholomeus Eggers.","Das ist eine marmor Büste von Johann Moritz, die von Bartholomeus Eggers angefertigt wurde.",This is a bust of Johan Maurits. It is made out of marble and was created by an artist named Bartholomeus Eggers.,Dies ist eine Statue aus Marmor von Johann Moritz. Sie wurde von einem Künstler namens Bartholomeus Eggers gemacht.
+,,,,
+S3.Title,Map of Mauritsstadt,Mauritsstadt Stadtkarte,Map of Mauritsstadt,Mauritsstadt Stadtkarte
+S3.Description,"This map shows Johan Maurits's plans for the transformation of the city of 'Mauritsstadt' (nowadays Recife) in Brazil, that the dutch architect Pieter Post made.The West India Company's colony was located there.","Diese Karte zeigt Johann Morits's Pläne für den Umbau der Stadt 'Mauritsstadt' (Heute Recife) in Brasilien, die von dem holländischen Architekten Pieter Post angefertigt wurden. Dort befand sich die Kolonie der Westindien-Kompanie.",This map shows how Johann Maurits wanted to transform the city called 'Mauritsstadt' (nowadays Recife) in Brazil. It was made by the dutch architect Pieter Post. The West India Company had its colony there.,"Diese Karte zeigt, wie Johann Maurits die Stadt namens 'Mauritsstadt' (Heute Recife) in Brasilien umbauen wollte.  Dort befand sich die Kolonie der Westindien-Kompanie. Die Karte wurde von Pieter Post, einem holländischen Architekten gemacht."
+,,,,
+S4.Title,Matthias van Ceulen,Matthias van Ceulen,,
+S4.Description,"This is Matthias van Ceulen. He was a director of the West India Company (WIC) and commanded Dutch troops in Brazil. At times, he was a member of the 'high and secret council' that operated under the command of Johan Mauritz.","Das ist Matthias van Ceulen. Er war ein Direktor der Westindien-Kompanie (WIC) und hat niederländische Truppen in Brazilien kommandiert. Zeitweise war er Mitglied des hohen, geheimen Rats, der unter dem Kommando von Johann Moritz agiert hat.",,
+,,,,
+PopUpText,"Explore 'Vrijburg' in Dutch Brazil to find out what has been obscured in the book!
+Use your fingers to drag the map and click on objects or people to find your answers! 
+Can you find all there is to discover? Have fun exploring and uncovering!","Endecke 'Vrijburg' in Niederländisch-Brasilien um herauszufinden, was im Buch herausgestrichen wurde!
+Ziehe die Karte mit den Fingern und tippe Objekte und Personen an um Antworten zu bekommen! 
+Kannst du Alles finden?Viel Spaß beim Endecken!","Explore 'Vrijburg' in Dutch Brazil to find out what has been obscured in the book!
+Use your fingers to drag the map and click on objects or people to find your answers! 
+Can you find all there is to discover? Have fun exploring and uncovering!","Endecke 'Vrijburg' in Niederländisch-Brasilien um herauszufinden, was im Buch herausgestrichen wurde!
+Ziehe die Karte mit den Fingern und tippe Objekte und Personen an um Antworten zu bekommen! 
+Kannst du Alles finden?Viel Spaß beim Endecken!"
+,,,,
+TutorialText1,Inspect the object by tapping it,Untersuche das Objekt in dem du es antippst,Inspect the object by tapping it,Untersuche das Objekt in dem du es antippst
+TutorialText2,Move the camera by dragging,Bewege die Kamera in dem du über den Bildschirm wischst ,Move the camera by dragging,Bewege die Kamera in dem du über den Bildschirm wischst

@@ -13,14 +13,12 @@ MonoBehaviour:
   m_Name: Sklave1
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 859c4a48aea4fbf479bebba5d513187e, type: 3}
-  Title: Versklavte Person
-  Description: "Das ist kein:e Besucher:in. Das ist eine versklavte Person aus Afrika,
-    die in Johann Moritz's Palast in der niederl\xE4ndischn Kolonie in Brazilien
-    unfreie Arbeit leistet."
+  Title: C4.Title
+  Description: C4.Description
   BookInfo: 
   Question: 1
   language: 0
   FirstClickTime: 0
   Num: 0
-  LocalizationKey: C4
+  LocalizationKey: G0
   swirlMod: 1

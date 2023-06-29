@@ -13,15 +13,12 @@ MonoBehaviour:
   m_Name: Franz Post
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: d9aa0e6191c3717499e9f4d1b3d4b6d1, type: 3}
-  Title: Frans Post
-  Description: "Das ist Frans Post. Er war ein niederl\xE4ndischer Maler des 17ten
-    Jahrhunderts. Er begleitete Johann Moritz als Teil seines Gefolges 1637 auf dessen
-    Expedition nach Brasilien. Dort fertigte er haupts\xE4chlich Landschaftsmalereien
-    an."
+  Title: C2.Title
+  Description: C2.Description
   BookInfo: 
   Question: 1
   language: 0
   FirstClickTime: 0
   Num: 0
-  LocalizationKey: C2
+  LocalizationKey: G2
   swirlMod: 1

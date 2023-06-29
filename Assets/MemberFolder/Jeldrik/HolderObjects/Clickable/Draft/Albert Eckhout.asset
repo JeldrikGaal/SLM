@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Albert Eckhout
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 9fcfb4a89085fa24491f9e7e168726b8, type: 3}
-  Title: .Title
-  Description: .Description
+  Title: C3.Title
+  Description: C3.Description
   BookInfo: 
   Question: 1
   language: 0
   FirstClickTime: 0
   Num: 0
-  LocalizationKey: C3
+  LocalizationKey: G3
   swirlMod: 1

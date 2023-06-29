@@ -19,6 +19,7 @@ TagManager:
   - TP_Collider
   - Card
   - TutorialManager
+  - ColorStripe
   layers:
   - Default
   - TransparentFX

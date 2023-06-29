@@ -36,6 +36,10 @@ public class CurrentQuestion : MonoBehaviour
 
     }
 
+    void Start()
+    {
+        gameObject.SetActive(false);
+    }
     void Update()
     {
         // Positioning object on screen

@@ -5,6 +5,7 @@ using DG.Tweening;
 using Unity.VisualScripting;
 using Assets.SimpleLocalization;
 using TMPro;
+using Lean.Touch;
 
 public class SceneInfoPopUp : MonoBehaviour
 {
@@ -13,8 +14,12 @@ public class SceneInfoPopUp : MonoBehaviour
     private TouchHandler _tH;
     private GameObject _canvas;
     private GameObject _reminderRef;    
+    private LeanDragCamera _dragController;
+    [SerializeField] private GameObject _currentQuestion;
     [SerializeField] private TMP_Text _text;
     [SerializeField] GameObject _reminderPrefab;
+
+    [SerializeField] private SlideColorStripe _colorStripe;
     #endregion 
 
     private float _spawnTime;
@@ -27,6 +32,8 @@ public class SceneInfoPopUp : MonoBehaviour
 
         // Getting references
         _tH = Camera.main.GetComponent<TouchHandler>();
+        _dragController = Camera.main.GetComponent<LeanDragCamera>();
+        // _colorStripe = GameObject.FindGameObjectWithTag("ColorStripe").GetComponent<SlideColorStripe>();
 
         transform.position = new Vector3( Camera.main.transform.position.x,  Camera.main.transform.position.y, 0);
 
@@ -77,8 +84,14 @@ public class SceneInfoPopUp : MonoBehaviour
         transform.DOScale(Vector3.zero, 0.5f).OnComplete(() => 
         {
             _tH.UnlockInput();
+            _dragController.enabled = true;
+            _colorStripe.Appear();
             Destroy(_reminderRef);
             Destroy(this.gameObject);
+
+            // TODO: Animate question sliding in
+            //_currentQuestion.SetActive(true);
+            
         });
         
     }

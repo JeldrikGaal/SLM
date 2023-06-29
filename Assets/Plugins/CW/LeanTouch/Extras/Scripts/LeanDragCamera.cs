@@ -39,6 +39,7 @@ namespace Lean.Touch
         private float _height;
         private Vector4 _camLimits;
         private float _aspect;
+		[SerializeField] public float _currentDragMoveDist;
 
         /// <summary>This method resets the target position value to the <b>DefaultPosition</b> value.</summary>
         [ContextMenu("Reset Position")]
@@ -114,6 +115,8 @@ namespace Lean.Touch
         	_camLimits = new Vector2(_width - Camera.main.orthographicSize  * _aspect, _height - Camera.main.orthographicSize);
         	_camLimits = new Vector4(- _camLimits.x + _canvas.transform.position.x, _camLimits.x + _canvas.transform.position.x,
                                 - _camLimits.y + _canvas.transform.position.y, _camLimits.y + _canvas.transform.position.y);
+
+			_currentDragMoveDist = 0;
 		}
 
 		protected virtual void LateUpdate()
@@ -152,9 +155,12 @@ namespace Lean.Touch
                 Mathf.Max(_camLimits.z, Mathf.Min(_camLimits.w, newPos.y)),
                  Camera.main.transform.position.z);
 
+			_currentDragMoveDist =  Vector3.Distance(oldPosition, transform.position);
+
 			if (fingers.Count == 0 && inertia > 0.0f && damping > 0.0f)
 			{
 				newRemainingDelta = Vector3.Lerp(newRemainingDelta, remainingDelta, inertia);
+				_currentDragMoveDist = 0;
 			}
 
 			// Update remainingDelta with the dampened value
