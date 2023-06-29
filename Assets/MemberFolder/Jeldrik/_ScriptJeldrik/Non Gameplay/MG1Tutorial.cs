@@ -18,8 +18,10 @@ public class MG1Tutorial : MonoBehaviour
     [SerializeField] private List<Image> _moveArrows;
 
     [SerializeField] private GameObject _tutorialPopUp;
+    [SerializeField] private SlideColorStripe _colorStripe;
     private Transform _moveArrowsHolder;
     private LeanDragCamera _dragController;
+    
 
     private bool _running;
     private bool _runningStep2;
@@ -27,7 +29,7 @@ public class MG1Tutorial : MonoBehaviour
     private float _effectWaitTime = 3f;
     private float _effectStartTime;
 
-    
+    public bool SKIPTUTORIAL;
 
     #endregion
 
@@ -36,7 +38,20 @@ public class MG1Tutorial : MonoBehaviour
     {
         _dragController = Camera.main.GetComponent<LeanDragCamera>();
         _moveArrowsHolder = _moveArrows[0].transform.parent;
-        StartTutorial();
+        if (!SKIPTUTORIAL) 
+        { 
+           Appear();
+        }
+        else 
+        {
+            _currentQuestion.gameObject.SetActive(false);
+            StartTutorial();
+        }
+    }
+
+    public void Appear() 
+    {
+        _colorStripe.Appear();
     }
 
     public void Update()

@@ -26,6 +26,7 @@ public class TouchHandler : MonoBehaviour
 
     [Tooltip("Prefab for the wrong input particle")]
     [SerializeField] private GameObject _wrongInputParticle;
+    [SerializeField] private SlideColorStripe _colorStripe;
     #endregion
 
     private float _lastInputTime;
@@ -254,7 +255,7 @@ public class TouchHandler : MonoBehaviour
     public void UnlockInput()
     {
         //_qMB.ToggleSelf(true);
-        _cQ.ToggleSelf(true);
+        _colorStripe.Appear();
         locked = false;
         _lastInputTime = Time.time;
     }

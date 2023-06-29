@@ -24,6 +24,8 @@ public class CurrentQuestion : MonoBehaviour
     private Question _currentQ;
     private ClickableManager _clickableManager;
     private TouchHandler _tH;
+
+    [HideInInspector] public bool _sliding;
     #endregion
 
     void Awake()
@@ -38,7 +40,7 @@ public class CurrentQuestion : MonoBehaviour
 
     void Start()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
     void Update()
     {
@@ -104,6 +106,7 @@ public class CurrentQuestion : MonoBehaviour
     // Show and hide forward and backward buttons 
     private void ButtonLogic()
     {
+        if (_sliding) return;
         if (_qM.GetCurrentQuestionId() == 0 && _qM.IsCurrentQuestionCompleted())
         {
             ToggleForwardButton(true);

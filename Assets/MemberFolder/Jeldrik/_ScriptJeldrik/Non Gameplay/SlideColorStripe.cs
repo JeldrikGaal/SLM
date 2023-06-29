@@ -87,10 +87,24 @@ public class SlideColorStripe : MonoBehaviour
        ChangeAlpha(_image, 0);
        ChangeAlpha(_twig.GetComponent<Image>(), 0);
        _currentQuestion.gameObject.SetActive(true);
+       Debug.Log("TEST");
        DOAlpha(_text1Text, 1, 0.75f);
        DOAlpha(_text2Text, 1, 0.75f);
        DOAlpha(_image, 1, 0.75f);
        DOAlpha(_twig.GetComponent<Image>(), 1, 0.75f);
+    }
+
+    public void Disappear()
+    {
+       ChangeAlpha(_text1Text, 1);
+       ChangeAlpha(_text2Text, 1);
+       ChangeAlpha(_image,     1);
+       ChangeAlpha(_twig.GetComponent<Image>(), 1);
+       DOAlpha(_text1Text, 0, 0.75f);
+       DOAlpha(_text2Text, 0, 0.75f);
+       DOAlpha(_image,     0, 0.75f);
+       DOAlpha(_twig.GetComponent<Image>(), 0, 0.75f);
+       _currentQuestion.gameObject.SetActive(true);
     }
 
     public void ChangeAlpha(Image img, float a)
@@ -151,7 +165,7 @@ public class SlideColorStripe : MonoBehaviour
 
     public void Slide(float distance)
     {
-        
+        _currentQuestion._sliding = true;
         Sequence seq = DOTween.Sequence();
 
         // Move Elements
@@ -185,6 +199,9 @@ public class SlideColorStripe : MonoBehaviour
             FadeElement(_button2, a, 0, seq);
         }    
 
+        seq.OnComplete(() => {
+            _currentQuestion._sliding = false;
+        });
         
     }
 
