@@ -10,17 +10,18 @@ public class ClickableManager : MonoBehaviour
 
     #region References
     [SerializeField] private GameObject _popUp;
-    [SerializeField] private TMP_Text _titleText;
-    [SerializeField] private TMP_Text _descriptionText;
-    [SerializeField] private Image _image;
+
     [SerializeField] private QuestionManager _qM;
     [SerializeField] private Image _grayScaleImage;
+    [SerializeField] private List<PopUp> _popUps = new List<PopUp>();
     private Transform _grayScaleParentSafe;
     private Clickable _currentClickable;
     private TouchHandler _tH;
     private ClickableStorage _cS;
     private VALUECONTROLER _VC;
     private MG1Tutorial _tutorialManager;
+
+    
 
     private Transform _canvas;
     #endregion
@@ -45,7 +46,16 @@ public class ClickableManager : MonoBehaviour
         else
         {
             _currentClickable = C;
-            DisplayPopUp(cH);
+            if (cH.Question)
+            {
+                DisplayPopUp(cH,_popUps[0]);
+            }
+            else 
+            {
+                int ran = Random.Range(1, _popUps.Count);
+                DisplayPopUp(cH,_popUps[ran]);
+            }
+            
             return true;
         }
     }
@@ -63,13 +73,9 @@ public class ClickableManager : MonoBehaviour
     }
 
     // Retrieves the information from a give 'clickableholder' object and displays everything accordingly in the popup
-    private void DisplayPopUp(ClickableHolder cH)
+    private void DisplayPopUp(ClickableHolder cH, PopUp _popUpScript)
     {
-        // Setting all the info in the popup
-        _titleText.text = cH.Title;
-        _descriptionText.text = cH.Description;
-        _image.sprite = cH.Image;
-        _image.preserveAspect = true;
+        _popUpScript.UpdateText(cH);
 
         // Showing the outline of the clicked object
         if (_currentClickable._outline != null)
@@ -109,18 +115,18 @@ public class ClickableManager : MonoBehaviour
         Camera.main.transform.DOMove(goal, _VC.Camera_ClickMoveTime).OnComplete(() =>
         {
             // Setting the popup in the middle of the screen
-            _popUp.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, _popUp.transform.position.z);
+            //_popUpScript.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, _popUpScript.transform.position.z);
 
             // Animate Scale
-            Vector3 safeScale = _popUp.transform.localScale;
-            _popUp.transform.localScale = Vector3.zero;
-            _popUp.SetActive(true);
+            Vector3 safeScale = _popUpScript.transform.localScale;
+            _popUpScript.transform.localScale = Vector3.zero;
+            _popUpScript.gameObject.SetActive(true);
             _qM.MakeSwirl(cH);
 
             // Tell the tutorial manager an object has been clicked
              _tutorialManager.PopUpOpening();
 
-            _popUp.transform.DOScale(safeScale, _VC.PopUp_AnimSpeed).OnComplete(() =>
+            _popUpScript.transform.DOScale(safeScale, _VC.PopUp_AnimSpeed).OnComplete(() =>
             {
                 // Handle further logic of object having been clicked
                 _qM.ObjectClick(cH);
@@ -139,15 +145,15 @@ public class ClickableManager : MonoBehaviour
     }
 
     // Hides the popup 
-    public void HidePopUp()
+    public void HidePopUp(PopUp _popUpScript)
     {
-        Vector3 safeScale = _popUp.transform.localScale;
+        Vector3 safeScale = _popUpScript.transform.localScale;
         Color fade = new Color(_grayScaleImage.color.r, _grayScaleImage.color.g, _grayScaleImage.color.b, 0);
         _grayScaleImage.DOColor(fade, _VC.PopUp_AnimSpeed);
-        _popUp.transform.DOScale(Vector3.zero, _VC.PopUp_AnimSpeed).OnComplete(() =>
+        _popUpScript.transform.DOScale(Vector3.zero, _VC.PopUp_AnimSpeed).OnComplete(() =>
         {
-            _popUp.SetActive(false);
-            _popUp.transform.localScale = safeScale;
+            _popUpScript.gameObject.SetActive(false);
+            _popUpScript.transform.localScale = safeScale;
 
             // Change color of clickable box
             //_currentClickable.SetColor(_disabled);

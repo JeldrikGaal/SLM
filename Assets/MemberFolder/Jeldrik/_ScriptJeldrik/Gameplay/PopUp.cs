@@ -4,11 +4,18 @@ using Assets.SimpleLocalization;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PopUp : MonoBehaviour
 {
     #region References
     [SerializeField] private GameObject _reminderPrefab;
+    [SerializeField] private TMP_Text _titleText;
+    [SerializeField] private TMP_Text _descriptionText;
+    [SerializeField] private Image _image;
+
+    public bool MainPopUp;
+
     private Canvas _canvas;
     private TouchHandler _tH;
     private VALUECONTROLER _VC;
@@ -56,7 +63,7 @@ public class PopUp : MonoBehaviour
         }
 
         // Ensuring the object is in the middle of the screen
-        transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, transform.position.z);
+        //if (MainPopUp) transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, transform.position.z);
 
         // Spawning a reminder prefab after the waiting time set in VC
         if (Time.time - _spawnTime > _VC.PopUp_ReminderTime && !_spawnedReminder)
@@ -68,6 +75,20 @@ public class PopUp : MonoBehaviour
         }
     }
 
+    public void UpdateText(ClickableHolder cH)
+    {
+        // Setting all the info in the popup
+        _titleText.text = cH.Title;
+        _descriptionText.text = cH.Description;
+       
+        if (cH.Question)
+        {
+            _image.sprite = cH.Image;
+             _image.preserveAspect = true;
+        }
+       
+    }
+
     // Closes the popup - gets called by UI button
     public void Close()
     {
@@ -77,7 +98,8 @@ public class PopUp : MonoBehaviour
         }
         // Preventing popup to spawn while the animation is running
         _spawnTime = Time.time;
-        cM.HidePopUp();
+        
+        cM.HidePopUp(this);
     }
 }
         
