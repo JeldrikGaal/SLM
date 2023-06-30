@@ -740,6 +740,50 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 08aee3a359e84224ba77b9f8b92eed33, type: 3}
+    - target: {fileID: 2002556334421088852, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 924
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002556334421088852, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1385
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002556334421088852, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002556334421088852, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002556334421088852, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002556334421088852, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 634.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002556334421088852, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 92.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002556334421088852, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002556334421088853, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_Name
+      value: Wilhelm Piso
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002556334421088853, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002556334421088854, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4bd22d45841756a4b9bf9a976541f655, type: 3}
     - target: {fileID: 2002556334705576126, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
       propertyPath: m_SizeDelta.x
       value: 1239
