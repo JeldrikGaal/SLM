@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f26cf9e1397fcfa439d8636d30126c25, type: 3}
-  m_Name: Albert Eckhout
+  m_Name: G1 Johan Maurits
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 9fcfb4a89085fa24491f9e7e168726b8, type: 3}
-  Title: C3.Title
-  Description: C3.Description
+  Image: {fileID: 21300000, guid: 4b085183ea966a54283732278e38c5d6, type: 3}
+  Title: C1.Title
+  Description: C1.Description
   BookInfo: 
   Question: 1
   language: 0
   FirstClickTime: 0
   Num: 0
-  LocalizationKey: G3
+  LocalizationKey: G1
   swirlMod: 1

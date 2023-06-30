@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f26cf9e1397fcfa439d8636d30126c25, type: 3}
-  m_Name: Franz Post
+  m_Name: G2 Frans Post
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: d9aa0e6191c3717499e9f4d1b3d4b6d1, type: 3}
+  Image: {fileID: 21300000, guid: 341420c8ea52eb9489a80a23ed991ceb, type: 3}
   Title: C2.Title
   Description: C2.Description
   BookInfo: 

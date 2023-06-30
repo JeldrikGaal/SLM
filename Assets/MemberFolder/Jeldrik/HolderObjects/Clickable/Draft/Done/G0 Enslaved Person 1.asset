@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f26cf9e1397fcfa439d8636d30126c25, type: 3}
-  m_Name: JM
+  m_Name: G0 Enslaved Person 1
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 4b085183ea966a54283732278e38c5d6, type: 3}
-  Title: C1.Title
-  Description: C1.Description
+  Image: {fileID: 21300000, guid: 859c4a48aea4fbf479bebba5d513187e, type: 3}
+  Title: C4.Title
+  Description: C4.Description
   BookInfo: 
   Question: 1
   language: 0
   FirstClickTime: 0
   Num: 0
-  LocalizationKey: G1
+  LocalizationKey: G0
   swirlMod: 1
