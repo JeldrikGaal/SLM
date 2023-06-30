@@ -86,12 +86,11 @@ public class SceneInfoPopUp : MonoBehaviour
             _tH.UnlockInput();
             _dragController.enabled = true;
             _colorStripe.Appear();
-            Destroy(_reminderRef);
-            Destroy(this.gameObject);
 
-            // TODO: Animate question sliding in
-            //_currentQuestion.SetActive(true);
-            
+            // TODO: Trigger book button spawning in animation
+
+            Destroy(_reminderRef);
+            Destroy(this.gameObject);            
         });
         
     }

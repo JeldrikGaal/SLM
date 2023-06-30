@@ -424,6 +424,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 406583482}
     - target: {fileID: 1769498419, guid: f740ceb45edfc1a4cb6690d967a651c1, type: 3}
+      propertyPath: SKIPTUTORIAL
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769498419, guid: f740ceb45edfc1a4cb6690d967a651c1, type: 3}
       propertyPath: _colorStripe
       value: 
       objectReference: {fileID: 966824692}
@@ -560,6 +564,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7472608574062352432, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1f27816634e5987449955394e4115e8b, type: 3}
     - target: {fileID: 7472608575002670744, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -607,6 +615,30 @@ PrefabInstance:
     - target: {fileID: 7472608575002670747, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
       propertyPath: m_Name
       value: GameScene / UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472608575181901564, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 25.099995
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472608575722663852, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.024999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472608575722663852, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.024999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472608575722663852, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.024999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472608575722663852, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 23.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472608575722663852, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}

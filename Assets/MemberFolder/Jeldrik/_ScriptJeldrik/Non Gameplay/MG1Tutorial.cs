@@ -29,6 +29,8 @@ public class MG1Tutorial : MonoBehaviour
     private float _effectWaitTime = 3f;
     private float _effectStartTime;
 
+    public bool Done;
+
     public bool SKIPTUTORIAL;
 
     #endregion
@@ -47,6 +49,7 @@ public class MG1Tutorial : MonoBehaviour
             _currentQuestion.gameObject.SetActive(false);
             StartTutorial();
         }
+        DOTween.SetTweensCapacity(200,50);
     }
 
     public void Appear() 
@@ -107,6 +110,7 @@ public class MG1Tutorial : MonoBehaviour
     }
     public void EndTutorial()
     {
+        Done = true;
         DisablePopUp(0.75f);
         if ( _runningStep2)
         {
@@ -114,7 +118,6 @@ public class MG1Tutorial : MonoBehaviour
         }        
         _running = false;
         _runningStep2 = false;
-
         this.enabled = false;
     }
     #endregion

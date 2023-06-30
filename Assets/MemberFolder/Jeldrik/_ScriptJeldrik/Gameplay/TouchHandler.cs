@@ -27,6 +27,7 @@ public class TouchHandler : MonoBehaviour
     [Tooltip("Prefab for the wrong input particle")]
     [SerializeField] private GameObject _wrongInputParticle;
     [SerializeField] private SlideColorStripe _colorStripe;
+    private MG1Tutorial _tutorialManager;
     #endregion
 
     private float _lastInputTime;
@@ -52,6 +53,7 @@ public class TouchHandler : MonoBehaviour
     private Vector3 camPS;
     private GameObject _canvas;
     private Transform _camTransform;
+    
 
     // Needed to send raycast that also hit ui elements to spawn wrong input particles
     GraphicRaycaster m_Raycaster;
@@ -77,6 +79,7 @@ public class TouchHandler : MonoBehaviour
         _canvas = GameObject.FindGameObjectWithTag("Canvas");
         m_Raycaster = _canvas.GetComponent<GraphicRaycaster>();
         m_EventSystem = GetComponent<EventSystem>();
+        _tutorialManager = GameObject.FindGameObjectWithTag("TutorialManager").GetComponent<MG1Tutorial>();
 
         _width = (float)Screen.width / 2.0f;
         _width = 1920 / 2f;
@@ -255,7 +258,10 @@ public class TouchHandler : MonoBehaviour
     public void UnlockInput()
     {
         //_qMB.ToggleSelf(true);
-        _colorStripe.Appear();
+        if (_tutorialManager.Done)
+        {
+            _colorStripe.Appear();
+        }
         locked = false;
         _lastInputTime = Time.time;
     }
