@@ -6672,7 +6672,7 @@ GameObject:
   - component: {fileID: 1058350921}
   m_Layer: 5
   m_Name: BookButton
-  m_TagString: Untagged
+  m_TagString: BookButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6780,9 +6780,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SceneChangeDebugger, Assembly-CSharp
-        m_MethodName: Book
+      - m_Target: {fileID: 1058350921}
+        m_TargetAssemblyTypeName: BookButtonLogic, Assembly-CSharp
+        m_MethodName: OpenBook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6807,6 +6807,10 @@ MonoBehaviour:
   _animationTime: 0.5
   _scaleModifier: 1.5
   _repeatTime: 3
+  _blockTime: 0.1
+  _colorStripe: {fileID: 534061232}
+  _tutorialManager: {fileID: 0}
+  _qM: {fileID: 7472608575247167139}
 --- !u!1 &7472608575791713714
 GameObject:
   m_ObjectHideFlags: 0
@@ -7699,6 +7703,10 @@ PrefabInstance:
       propertyPath: _blockTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3281235271472290655, guid: 984cd6eb723f32d4b95c334c5173e52e, type: 3}
+      propertyPath: _bookButton
+      value: 
+      objectReference: {fileID: 1058350921}
     - target: {fileID: 3281235271472290655, guid: 984cd6eb723f32d4b95c334c5173e52e, type: 3}
       propertyPath: _colorStripe
       value: 

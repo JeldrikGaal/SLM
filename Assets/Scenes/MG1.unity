@@ -291,17 +291,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8448038988351245349, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
   m_PrefabInstance: {fileID: 7472608575630314570}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1058350921 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1058350921, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
-  m_PrefabInstance: {fileID: 7472608575630314570}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb07e05e0231e6743894ff6413b723fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1340698340 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1340698340, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
@@ -591,29 +580,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1058350921, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
-      propertyPath: _qM
-      value: 
-      objectReference: {fileID: 920560361}
-    - target: {fileID: 1058350921, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
-      propertyPath: _blockTime
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1058350921, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
-      propertyPath: _colorStripe
-      value: 
-      objectReference: {fileID: 966824692}
-    - target: {fileID: 1058350921, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
       propertyPath: _tutorialManager
       value: 
       objectReference: {fileID: 930142042}
-    - target: {fileID: 1392311453, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 7472608574100822770, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.03529412
       objectReference: {fileID: 0}
-    - target: {fileID: 7472608574432829128, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
-      propertyPath: _bookButton
-      value: 
-      objectReference: {fileID: 1058350921}
+    - target: {fileID: 7472608574100822770, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.07058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472608574100822770, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.1764706
+      objectReference: {fileID: 0}
     - target: {fileID: 7472608575002670744, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -662,21 +643,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameScene / UI
       objectReference: {fileID: 0}
-    - target: {fileID: 7472608575722663842, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1058350921}
-    - target: {fileID: 7472608575722663842, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenBook
+    - target: {fileID: 7472608575591199503, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.03529412
       objectReference: {fileID: 0}
-    - target: {fileID: 7472608575722663842, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BookButtonLogic, Assembly-CSharp
+    - target: {fileID: 7472608575591199503, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.07058824
       objectReference: {fileID: 0}
-    - target: {fileID: 7472608575722663855, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
-      propertyPath: m_TagString
-      value: BookButton
+    - target: {fileID: 7472608575591199503, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.1764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472608575731120690, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.03529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472608575731120690, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.07058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472608575731120690, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.1764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472608575807993995, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.03529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472608575807993995, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.07058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472608575807993995, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.1764706
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
