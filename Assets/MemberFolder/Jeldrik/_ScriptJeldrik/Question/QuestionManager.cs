@@ -209,7 +209,7 @@ public class QuestionManager : MonoBehaviour
 
     public void Forward()
     {
-
+        _currentQuestion._sliding = true;
         _currentQ++;
         DisableSwirls(_currentQ);
         //_completed = false;
@@ -220,6 +220,7 @@ public class QuestionManager : MonoBehaviour
 
     public void Backward()
     {
+        _currentQuestion._sliding = true;
         _currentQ--;
         DisableSwirls(_currentQ);
         //_completed = true;
@@ -230,22 +231,23 @@ public class QuestionManager : MonoBehaviour
 
     // Mark a questions as completed and proceed to the next one
     private void CompleteCurrentQuestion()
-    {
-        
-        //if (_currentQ <= 2) _questionStatus[_currentQ].color = Color.green;
-        
-
+    {      
         if (_questions[_currentQ].End)
         {
             End();
             return;
         }
 
-        //_currentQ++;
-        _completed = true;
         SavingCurrentQuestion();
         _completedQuestions[_currentQ] = true;
-        //_currentQuestion.ChangeCurrentQuestion(_questions[_currentQ]);
+    }
+
+    public void ClosePopUp()
+    {
+        if (_completedQuestions[_currentQ])
+        {
+            Invoke("Forward", 0.25f);
+        }
     }
 
     // Gets called by Clickables whenever they are sucessfully clicked -> Questionmanager checks if its the currently needed object

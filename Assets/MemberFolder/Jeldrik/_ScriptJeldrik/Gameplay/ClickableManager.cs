@@ -174,6 +174,7 @@ public class ClickableManager : MonoBehaviour
             _currentClickable.transform.parent.transform.parent = _grayScaleParentSafe;
 
             _tutorialManager.PopUpClosing();
+            _qM.ClosePopUp();
             _tH.UnlockInput();
         });
         

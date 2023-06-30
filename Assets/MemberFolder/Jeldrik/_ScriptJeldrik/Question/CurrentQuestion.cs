@@ -95,13 +95,11 @@ public class CurrentQuestion : MonoBehaviour
 
     public void Forward()
     {
-        _sliding = true;
         _qM.Forward();
     }
 
     public void Backward()
     {
-        _sliding = true;
         _qM.Backward();
     }
 
