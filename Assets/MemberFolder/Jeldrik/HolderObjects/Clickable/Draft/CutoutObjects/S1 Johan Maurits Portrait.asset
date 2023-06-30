@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f26cf9e1397fcfa439d8636d30126c25, type: 3}
-  m_Name: PortraitOfJohan
+  m_Name: S1 Johan Maurits Portrait
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: e7ae54a3a2b24c648a90f175c3dbab3c, type: 3}
-  Title: 
-  Description: 
+  Image: {fileID: 21300000, guid: 08aee3a359e84224ba77b9f8b92eed33, type: 3}
+  Title: C5.Title
+  Description: C5.Description
   BookInfo: 
   Question: 0
   language: 0
   FirstClickTime: 0
   Num: 0
-  LocalizationKey: C5
+  LocalizationKey: S1
   swirlMod: 1
