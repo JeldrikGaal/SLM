@@ -258,7 +258,10 @@ public class TouchHandler : MonoBehaviour
     public void UnlockInput()
     {
         //_qMB.ToggleSelf(true);
-        if (_tutorialManager.Done)
+        if (_tutorialManager.Done || _tutorialManager.SKIPTUTORIAL)
+        {
+            _cQ.ToggleSelf(true);
+        }
         {
             _colorStripe.Appear();
         }

@@ -35,6 +35,7 @@ public class QuestionManager : MonoBehaviour
     [HideInInspector] public TouchHandler _tH;
     private ClickableStorage _cS;
     private ClickableManager _cM;
+    private GameObject _canvas;
     #endregion
 
     public List<List<int>> _questionObjectCounts = new List<List<int>>();
@@ -42,7 +43,7 @@ public class QuestionManager : MonoBehaviour
     private List<List<ClickableHolder>> _alreadyClickedComb = new List<List<ClickableHolder>>();
     private List<bool> _completedQuestions = new List<bool>();
 
-    private List<List<GameObject>> _swirls = new List<List<GameObject>>();
+    [SerializeField] private List<List<GameObject>> _swirls = new List<List<GameObject>>();
 
     //private List<List<int>> _question = new List<List<int>>();
 
@@ -102,6 +103,7 @@ public class QuestionManager : MonoBehaviour
         _tH = Camera.main.GetComponent<TouchHandler>();
         _cS = GameObject.FindGameObjectWithTag("ClickableStorage").GetComponent<ClickableStorage>();
         _cM = GameObject.FindGameObjectWithTag("ClickableManager").GetComponent<ClickableManager>();
+        _canvas = GameObject.FindGameObjectWithTag("Canvas");
 
         _completedQuestions.Add(false);
         _completedQuestions.Add(false);
@@ -117,6 +119,7 @@ public class QuestionManager : MonoBehaviour
 
         // Loading current Question from storage and displaying it
         LoadingCurrentQuestion();
+        LoadSwirls();
 
         // Starts off disables
         this.gameObject.SetActive(false);
@@ -291,9 +294,39 @@ public class QuestionManager : MonoBehaviour
             tempSwirl.GetComponent<RectTransform>().sizeDelta = new Vector2(size, size);
             tempSwirl.GetComponent<Swirl>().ShowSwirl();
             tempSwirl.transform.localPosition = Vector3.zero;
+            
             _swirls[GetCurrentQuestionId()].Add(tempSwirl);
         }
         
+    }
+
+    public void SafeSwirls()
+    {
+        foreach(List<GameObject> s in _swirls)
+        {
+            foreach (GameObject g in s)
+            {
+                g.GetComponent<Swirl>()._originalPosition = g.transform.position;
+                g.transform.parent = null;
+                DontDestroyOnLoad(g);
+            }
+        }
+    }
+
+    public void LoadSwirls()
+    {
+        Debug.Log("SWIRLS");
+        foreach(List<GameObject> s in _swirls)
+        {
+            Debug.Log(s.Count);
+            foreach (GameObject g in s)
+            {
+                Debug.Log(g);
+                //g.transform.parent =  g.GetComponent<Swirl>()._originalParent;
+                g.transform.parent = _canvas.transform;
+                g.transform.position = g.GetComponent<Swirl>()._originalPosition;
+            }
+        }
     }
 
     // If clicked objects is required by the question return id of the needed list

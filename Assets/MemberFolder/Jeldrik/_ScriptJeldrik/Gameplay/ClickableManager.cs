@@ -14,6 +14,7 @@ public class ClickableManager : MonoBehaviour
     [SerializeField] private QuestionManager _qM;
     [SerializeField] private Image _grayScaleImage;
     [SerializeField] private List<PopUp> _popUps = new List<PopUp>();
+    [SerializeField] private SlideColorStripe _colorStripe;
     private Transform _grayScaleParentSafe;
     private Clickable _currentClickable;
     private TouchHandler _tH;
@@ -34,6 +35,10 @@ public class ClickableManager : MonoBehaviour
         _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
         _canvas = GameObject.FindGameObjectWithTag("Canvas").transform;
         _tutorialManager = GameObject.FindGameObjectWithTag("TutorialManager").GetComponent<MG1Tutorial>();
+        if (_tutorialManager.SKIPTUTORIAL)
+        {
+            _colorStripe.Appear();
+        }
     }
 
     // Try to display a new Popup. If one is already being displayed return false otherwise displays new one and returns true
@@ -124,7 +129,7 @@ public class ClickableManager : MonoBehaviour
             _qM.MakeSwirl(cH);
 
             // Tell the tutorial manager an object has been clicked
-             _tutorialManager.PopUpOpening();
+            if(!_tutorialManager.SKIPTUTORIAL) _tutorialManager.PopUpOpening();
 
             _popUpScript.transform.DOScale(safeScale, _VC.PopUp_AnimSpeed).OnComplete(() =>
             {
@@ -169,7 +174,6 @@ public class ClickableManager : MonoBehaviour
             _currentClickable.transform.parent.transform.parent = _grayScaleParentSafe;
 
             _tutorialManager.PopUpClosing();
-            
             _tH.UnlockInput();
         });
         

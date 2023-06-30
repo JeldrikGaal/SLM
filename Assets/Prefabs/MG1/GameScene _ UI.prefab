@@ -3682,7 +3682,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e7eda85e6b5e6de44a703e8bb0438d58, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1f27816634e5987449955394e4115e8b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5703,7 +5703,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 66.3, y: 25.5}
+  m_AnchoredPosition: {x: 66.3, y: 25.099995}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7472608575181901554
@@ -6669,9 +6669,9 @@ GameObject:
   - component: {fileID: 7472608575722663840}
   - component: {fileID: 7472608575722663843}
   - component: {fileID: 7472608575722663842}
-  - component: {fileID: 7472608575722663853}
+  - component: {fileID: 1058350921}
   m_Layer: 5
-  m_Name: Book Debug
+  m_Name: BookButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6686,7 +6686,7 @@ RectTransform:
   m_GameObject: {fileID: 7472608575722663855}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.024708144, y: 0.024708144, z: 0.024708144}
+  m_LocalScale: {x: 0.024999999, y: 0.024999999, z: 0.024999999}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7472608574725280116}
@@ -6695,7 +6695,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -27.52723, y: 24.030487}
+  m_AnchoredPosition: {x: -27.52723, y: 23.3}
   m_SizeDelta: {x: 648, y: 1023}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7472608575722663840
@@ -6780,7 +6780,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7472608575722663853}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SceneChangeDebugger, Assembly-CSharp
         m_MethodName: Book
         m_Mode: 1
@@ -6792,7 +6792,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7472608575722663853
+--- !u!114 &1058350921
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6801,9 +6801,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7472608575722663855}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75e4adbdfb718bd449b2dac23e83c0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: fb07e05e0231e6743894ff6413b723fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animationTime: 0.5
+  _scaleModifier: 1.5
+  _repeatTime: 3
 --- !u!1 &7472608575791713714
 GameObject:
   m_ObjectHideFlags: 0

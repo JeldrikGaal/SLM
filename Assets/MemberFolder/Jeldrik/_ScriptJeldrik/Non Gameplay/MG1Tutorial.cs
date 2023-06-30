@@ -28,19 +28,32 @@ public class MG1Tutorial : MonoBehaviour
     private bool _effectRunning ;
     private float _effectWaitTime = 3f;
     private float _effectStartTime;
-
     public bool Done;
-
     public bool SKIPTUTORIAL;
 
+    private Vector3 _lastPopUpPos;
     #endregion
+
+    public static MG1Tutorial Instance = null;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+            transform.parent = null;
+            DontDestroyOnLoad(gameObject);
+        }
+        else 
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         _dragController = Camera.main.GetComponent<LeanDragCamera>();
         _moveArrowsHolder = _moveArrows[0].transform.parent;
-        if (!SKIPTUTORIAL) 
+        if (SKIPTUTORIAL) 
         { 
            Appear();
         }
@@ -137,7 +150,7 @@ public class MG1Tutorial : MonoBehaviour
     }
 
 
-    private void EnablePopUp(float time, string localizationKey)
+    public void EnablePopUp(float time, string localizationKey)
     {
         _tutorialPopUp.SetActive(true);
         Image img = _tutorialPopUp.GetComponent<Image>();
@@ -150,7 +163,8 @@ public class MG1Tutorial : MonoBehaviour
         img.DOColor(c, time);
         tex.DOColor(c2, time);
     }
-    private void DisablePopUp(float time)
+    
+    public void DisablePopUp(float time)
     {
         Image img = _tutorialPopUp.GetComponent<Image>();
         TMP_Text tex = _tutorialPopUp.GetComponentInChildren<TMP_Text>();
@@ -162,6 +176,17 @@ public class MG1Tutorial : MonoBehaviour
             _tutorialPopUp.SetActive(false);
         });
         
+    }
+
+    public void MovePopUp()
+    {
+        _lastPopUpPos = _tutorialPopUp.transform.localPosition;
+        _tutorialPopUp.transform.localPosition = new Vector3(650, 0 ,0);
+    }
+
+    public void ResetPopUp()
+    {
+         _tutorialPopUp.transform.localPosition = _lastPopUpPos;
     }
 
     private void ShowSceneInfo()

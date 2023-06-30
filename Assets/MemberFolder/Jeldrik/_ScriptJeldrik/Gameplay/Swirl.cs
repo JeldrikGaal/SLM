@@ -11,10 +11,18 @@ public class Swirl : MonoBehaviour
     private Image _image;
     private VALUECONTROLER _VC;
 
+    public Transform _originalParent = null;
+    public Vector3 _originalPosition = Vector3.zero;
+
     void Start()
     {
         _image = GetComponent<Image>();
         _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
+
+        if (_originalParent != null)
+        {
+            transform.parent = _originalParent;
+        }
     }
 
     void Update()
@@ -28,6 +36,7 @@ public class Swirl : MonoBehaviour
     // Animates the radial filling of the image to simulate the swirl being drawn on the canvas
     public void ShowSwirl()
     {
+        _originalPosition = transform.position;
         _image = GetComponent<Image>();
         _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
         _image.fillAmount = 0;

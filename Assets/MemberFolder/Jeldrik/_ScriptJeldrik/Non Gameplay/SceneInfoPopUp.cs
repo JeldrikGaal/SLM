@@ -20,6 +20,8 @@ public class SceneInfoPopUp : MonoBehaviour
     [SerializeField] GameObject _reminderPrefab;
 
     [SerializeField] private SlideColorStripe _colorStripe;
+
+    [SerializeField] private BookButtonLogic _bookButton;
     #endregion 
 
     private float _spawnTime;
@@ -33,6 +35,8 @@ public class SceneInfoPopUp : MonoBehaviour
         // Getting references
         _tH = Camera.main.GetComponent<TouchHandler>();
         _dragController = Camera.main.GetComponent<LeanDragCamera>();
+       
+
         // _colorStripe = GameObject.FindGameObjectWithTag("ColorStripe").GetComponent<SlideColorStripe>();
 
         transform.position = new Vector3( Camera.main.transform.position.x,  Camera.main.transform.position.y, 0);
@@ -83,11 +87,9 @@ public class SceneInfoPopUp : MonoBehaviour
     {
         transform.DOScale(Vector3.zero, 0.5f).OnComplete(() => 
         {
-            _tH.UnlockInput();
-            _dragController.enabled = true;
-            _colorStripe.Appear();
-
+            
             // TODO: Trigger book button spawning in animation
+            _bookButton.SpawnAnimation();
 
             Destroy(_reminderRef);
             Destroy(this.gameObject);            
