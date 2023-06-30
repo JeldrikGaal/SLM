@@ -61,7 +61,7 @@ public class CurrentQuestion : MonoBehaviour
     }
 
     // Change currently display question and display new one with small animation
-    public void ChangeCurrentQuestionInternal(Question _q)
+    public void ChangeCurrentQuestionInternal(Question _q, bool questionCounter = true)
     {
         _currentQ = _q;
 
@@ -80,7 +80,7 @@ public class CurrentQuestion : MonoBehaviour
             _questionTextImage.text = "";
             _questionTitle.text = _currentQ.Text;
         }
-        UpdateQuestionCounter(_currentQ);
+        if (questionCounter) UpdateQuestionCounter(_currentQ);
     }
 
     public void ToggleForwardButton(bool toggle)

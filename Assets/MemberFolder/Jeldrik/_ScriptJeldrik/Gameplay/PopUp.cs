@@ -63,7 +63,7 @@ public class PopUp : MonoBehaviour
         }
 
         // Ensuring the object is in the middle of the screen
-        //if (MainPopUp) transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, transform.position.z);
+        if (MainPopUp) transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, transform.position.z);
 
         // Spawning a reminder prefab after the waiting time set in VC
         if (Time.time - _spawnTime > _VC.PopUp_ReminderTime && !_spawnedReminder)

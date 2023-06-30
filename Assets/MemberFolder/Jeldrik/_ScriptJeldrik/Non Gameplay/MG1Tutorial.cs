@@ -19,6 +19,7 @@ public class MG1Tutorial : MonoBehaviour
 
     [SerializeField] private GameObject _tutorialPopUp;
     [SerializeField] private SlideColorStripe _colorStripe;
+    private TouchHandler _tH;
     private Transform _moveArrowsHolder;
     private LeanDragCamera _dragController;
     
@@ -53,9 +54,11 @@ public class MG1Tutorial : MonoBehaviour
 
         _dragController = Camera.main.GetComponent<LeanDragCamera>();
         _moveArrowsHolder = _moveArrows[0].transform.parent;
+        _tH = Camera.main.GetComponent<TouchHandler>();
         if (SKIPTUTORIAL) 
         { 
            Appear();
+           _tH.UnlockInput();
         }
         else 
         {
@@ -163,7 +166,7 @@ public class MG1Tutorial : MonoBehaviour
         img.DOColor(c, time);
         tex.DOColor(c2, time);
     }
-    
+
     public void DisablePopUp(float time)
     {
         Image img = _tutorialPopUp.GetComponent<Image>();

@@ -222,7 +222,7 @@ public class SlideColorStripe : MonoBehaviour
 
     private void UpdateInfo()
     {
-        _currentQuestion.ChangeCurrentQuestionInternal(_q);
+        _currentQuestion.ChangeCurrentQuestionInternal(_q, false);
     }
 
     public void FadeElement(TMP_Text element, float a, float delay, Sequence s, float time = 0.35f)

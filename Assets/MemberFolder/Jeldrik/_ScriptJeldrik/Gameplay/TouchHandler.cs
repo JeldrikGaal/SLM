@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Lean.Touch;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -28,6 +29,7 @@ public class TouchHandler : MonoBehaviour
     [SerializeField] private GameObject _wrongInputParticle;
     [SerializeField] private SlideColorStripe _colorStripe;
     private MG1Tutorial _tutorialManager;
+    private LeanDragCamera _cameraDrag;
     #endregion
 
     private float _lastInputTime;
@@ -53,6 +55,7 @@ public class TouchHandler : MonoBehaviour
     private Vector3 camPS;
     private GameObject _canvas;
     private Transform _camTransform;
+    private bool _dragged;
     
 
     // Needed to send raycast that also hit ui elements to spawn wrong input particles
@@ -80,6 +83,7 @@ public class TouchHandler : MonoBehaviour
         m_Raycaster = _canvas.GetComponent<GraphicRaycaster>();
         m_EventSystem = GetComponent<EventSystem>();
         _tutorialManager = GameObject.FindGameObjectWithTag("TutorialManager").GetComponent<MG1Tutorial>();
+        _cameraDrag = Camera.main.GetComponent<LeanDragCamera>();
 
         _width = (float)Screen.width / 2.0f;
         _width = 1920 / 2f;
@@ -123,14 +127,33 @@ public class TouchHandler : MonoBehaviour
 
         if (Input.touchCount > 0)
         {
-            Touch t = Input.GetTouch(0);
-            if (t.phase == TouchPhase.Began)
+            if (!_dragged && Mathf.Abs(_cameraDrag._currentDragMoveDist) > 0.1f)
             {
-                
+                _dragged = true;
+            }
+            Touch t = Input.GetTouch(0);
+            if (t.phase == TouchPhase.Ended && !_dragged)
+            {
+                //Set up the new Pointer Event
+                m_PointerEventData = new PointerEventData(m_EventSystem);
+                //Set the Pointer Event Position to that of the game object
+                m_PointerEventData.position = t.position;
+                //Create a list of Raycast Results
+                List<RaycastResult> results = new List<RaycastResult>();
+                //Raycast using the Graphics Raycaster and mouse click position
+                m_Raycaster.Raycast(m_PointerEventData, results);
+                if (results[0].gameObject.CompareTag("BackGround")){
+                    Vector3 partPos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0.5f);
+                    SpawnWrongInputPart(partPos);
+                }
             }
         }
+        else 
+        {
+            _dragged = false;
+        }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Alpha8))
         {
                 //Set up the new Pointer Event
                 m_PointerEventData = new PointerEventData(m_EventSystem);
@@ -222,12 +245,12 @@ public class TouchHandler : MonoBehaviour
     // Spawning the 'red ripple' particle at pos
     public void SpawnWrongInputPart(Vector3 pos)
     {
-        return;
-        /*GameObject temp = Instantiate(_wrongInputParticle, Camera.main.transform);
+        //return;
+        GameObject temp = Instantiate(_wrongInputParticle, Camera.main.transform);
         temp.transform.position = new Vector3(pos.x, pos.y, pos.z);
         temp.transform.localPosition = new Vector3(temp.transform.localPosition.x, temp.transform.localPosition.y, 0.5f);
         Destroy(temp, 2f);
-        _lastFrameClicked = false;*/
+        _lastFrameClicked = false;
     }
 
     // Called by buttons to block the spawning of wrong input particles 
