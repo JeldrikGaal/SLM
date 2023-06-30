@@ -148,6 +148,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   _tutorialPopUp: {fileID: 0}
+  _colorStripe: {fileID: 0}
+  Done: 0
+  SKIPTUTORIAL: 1
 --- !u!1 &5471262566935796340
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,11 +196,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _popUp: {fileID: 0}
-  _titleText: {fileID: 0}
-  _descriptionText: {fileID: 0}
-  _image: {fileID: 0}
   _qM: {fileID: 0}
   _grayScaleImage: {fileID: 0}
+  _popUps:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _colorStripe: {fileID: 0}
 --- !u!1 &5471262567493722020
 GameObject:
   m_ObjectHideFlags: 0

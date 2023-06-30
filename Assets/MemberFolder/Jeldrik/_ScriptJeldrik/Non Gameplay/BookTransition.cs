@@ -17,7 +17,7 @@ public class BookTransition : MonoBehaviour
     {
         _book = GetComponent<Image>();
         _book.transform.localScale = Vector3.zero;
-        _qM = GameObject.FindGameObjectWithTag("QuestionMenu").GetComponent<QuestionManager>();
+        //_qM = GameObject.FindGameObjectWithTag("QuestionMenu").GetComponent<QuestionManager>();
         _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
     }
 

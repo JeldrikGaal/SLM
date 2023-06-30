@@ -153,6 +153,7 @@ public class SlideColorStripe : MonoBehaviour
         FadeElement(_button2  , a, 0, seq, timefactor);
         seq.OnComplete(()=>{
             PositionAllObjects(-241);
+            _currentQuestion._sliding = false;
             Invoke("ResetStrokeAlpha", waitTime);
         });
         return timefactor;
@@ -165,7 +166,7 @@ public class SlideColorStripe : MonoBehaviour
 
     public void Slide(float distance)
     {
-        _currentQuestion._sliding = true;
+        
         Sequence seq = DOTween.Sequence();
 
         // Move Elements
@@ -200,7 +201,7 @@ public class SlideColorStripe : MonoBehaviour
         }    
 
         seq.OnComplete(() => {
-            _currentQuestion._sliding = false;
+            //_currentQuestion._sliding = false;
         });
         
     }

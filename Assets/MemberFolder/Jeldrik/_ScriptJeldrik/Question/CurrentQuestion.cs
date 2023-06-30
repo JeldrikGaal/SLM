@@ -46,7 +46,7 @@ public class CurrentQuestion : MonoBehaviour
     {
         // Positioning object on screen
         //transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - Camera.main.orthographicSize * 0.9f, transform.position.z);
-        ButtonLogic();
+        if(!_sliding) ButtonLogic();
     }
 
     public void ToggleSelf(bool toggle)
@@ -95,11 +95,13 @@ public class CurrentQuestion : MonoBehaviour
 
     public void Forward()
     {
+        _sliding = true;
         _qM.Forward();
     }
 
     public void Backward()
     {
+        _sliding = true;
         _qM.Backward();
     }
 
