@@ -11,7 +11,7 @@ using Cinemachine;
 public class MenuManager : MonoBehaviour
 {
     private ClickableStorage _storage;
-    private InfoPageManager _infoManager;
+    public InfoPageManager _infoManager;
     private LangugageStorage _langugageStorage;
     
     
@@ -24,8 +24,7 @@ public class MenuManager : MonoBehaviour
     private void Awake()
     {
         _storage = ClickableStorage.Instance;
-        _infoManager = InfoPageManager.Instance;
-        
+
         mapUnfold.SetActive(false);
         
         cam1.Priority = 10;
@@ -43,7 +42,7 @@ public class MenuManager : MonoBehaviour
 
         ResolutionSetup();
         ShowCurrentPage();
-        AddInfoPages();
+        //AddInfoPages();
     }
     
     void Update()
@@ -59,9 +58,7 @@ public class MenuManager : MonoBehaviour
     public List<GameObject> pages;
     public GameObject rightCorner, leftCorner;
     private int _currentPageIndex = 0;
-    
-    
-    
+
     public void ShowCurrentPage()
     {
         _currentPageIndex = GameManager.Instance.pageIndex;
@@ -75,9 +72,9 @@ public class MenuManager : MonoBehaviour
         DisplayCorners();
     }
     
-    private void AddInfoPages()
+    public void AddInfoPages()
     {
-        foreach(GameObject page in _infoManager._infoPages)
+        foreach(GameObject page in _infoManager.infoPagePrefabs)
         {
             var newPage = Instantiate(page, book.transform);
             pages.Add(newPage);
@@ -86,7 +83,7 @@ public class MenuManager : MonoBehaviour
     
     public void AddPage(GameObject page)
     {
-        _infoManager._infoPages.Add(page);
+        _infoManager.infoPagePrefabs.Add(page);
         
         var newPage = (GameObject)Instantiate(page, book.transform);
         pages.Add(newPage);

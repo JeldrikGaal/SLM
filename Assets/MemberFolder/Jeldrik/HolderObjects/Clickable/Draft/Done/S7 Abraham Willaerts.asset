@@ -22,3 +22,7 @@ MonoBehaviour:
   Num: 0
   LocalizationKey: S7
   swirlMod: 1
+  johann: 0
+  guest: 1
+  slave: 0
+  info: 0

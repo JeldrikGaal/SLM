@@ -32,12 +32,12 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            SceneManager.LoadScene("Book");
+            SceneManager.LoadScene("Book_Main");
         }
         
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            SceneManager.LoadScene("TestPhilip");
+            SceneManager.LoadScene("MG1");
         }
     }
 }

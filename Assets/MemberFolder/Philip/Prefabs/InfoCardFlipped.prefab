@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 134.4279, y: -0.5193}
+  m_AnchoredPosition: {x: -56.9, y: -0.5193}
   m_SizeDelta: {x: 290.118, y: 268.2748}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2609481374518150079
@@ -172,7 +172,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -120, y: 0}
+  m_AnchoredPosition: {x: 197.1, y: -0.5193}
   m_SizeDelta: {x: 181.46, y: 242.6764}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6980470786470255462
@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 5154326110745895027}
   - component: {fileID: 8435917900761678100}
   m_Layer: 5
-  m_Name: InfoCard
+  m_Name: InfoCardFlipped
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -342,7 +342,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 135, y: 1.1681}
+  m_AnchoredPosition: {x: -56.9, y: -0.5193}
   m_SizeDelta: {x: 354.7784, y: 301.4522}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &958570693501259885

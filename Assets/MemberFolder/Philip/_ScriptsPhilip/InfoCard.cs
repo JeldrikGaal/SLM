@@ -9,4 +9,11 @@ public class InfoCard : MonoBehaviour
 {
     public Image image;
     public TextMeshProUGUI description;
+
+    public void SetContent(Sprite sprite, string desc)
+    {
+        image.sprite = sprite;
+        description.text = desc;
+    }
+
 }

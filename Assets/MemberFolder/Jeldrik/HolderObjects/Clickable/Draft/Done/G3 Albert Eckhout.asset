@@ -24,3 +24,7 @@ MonoBehaviour:
   Num: 0
   LocalizationKey: G3
   swirlMod: 1
+  johann: 0
+  guest: 1
+  slave: 0
+  info: 0

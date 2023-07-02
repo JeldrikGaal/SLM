@@ -22,3 +22,7 @@ MonoBehaviour:
   Num: 0
   LocalizationKey: S3
   swirlMod: 1
+  johann: 0
+  guest: 0
+  slave: 0
+  info: 1

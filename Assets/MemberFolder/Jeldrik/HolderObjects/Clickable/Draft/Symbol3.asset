@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Symbol3
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 99b49dab9c20ccf458d324a55dbabefb, type: 3}
-  Title: .Title
-  Description: .Description
+  Title: C8.Title
+  Description: C8.Description
   BookInfo: 
   Question: 1
   language: 0
@@ -22,3 +22,7 @@ MonoBehaviour:
   Num: 0
   LocalizationKey: C8
   swirlMod: 1
+  johann: 0
+  guest: 0
+  slave: 0
+  info: 1
