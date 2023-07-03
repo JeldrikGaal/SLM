@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26cf9e1397fcfa439d8636d30126c25, type: 3}
   m_Name: S5 Pieter Post
   m_EditorClassIdentifier: 
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 7b9813cef4bcbda4cb384df35a400cec, type: 3}
   Title: 
   Description: 
   BookInfo: 
