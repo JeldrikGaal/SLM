@@ -58,7 +58,7 @@ public class BookButtonLogic : MonoBehaviour
     public void SpawnAnimation()
     {
 
-        _colorStripe.Appear();
+        _colorStripe.OrangeAppear();
         _tutorialManager.MovePopUp();
         _tutorialManager.EnablePopUp(0.75f, "TutorialText3");
 
@@ -77,8 +77,14 @@ public class BookButtonLogic : MonoBehaviour
 
     public void End()
     {
+        //_colorStripe.Appear();
+        
         _tH.UnlockInput();
+        _tutorialManager.Done = true;
+        _colorStripe.CompleteSlide(_colorStripe._q);
+
         _tutorialManager.DisablePopUp(0.75f);
+        
         //_tutorialManager.ResetPopUp();
         _dragController.enabled = true;
         _repeating = false;

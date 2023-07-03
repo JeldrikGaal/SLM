@@ -9,9 +9,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 908c4a1f34b1b7e49a1347b0af6a313d, type: 3}
-  m_Name: Click anywhere
+  m_Script: {fileID: 11500000, guid: f26cf9e1397fcfa439d8636d30126c25, type: 3}
+  m_Name: S11 Painting by Frans Post
   m_EditorClassIdentifier: 
+  Image: {fileID: 0}
   Title: 
-  Content: Click anywhere to continue
-  LifeTime: 7
+  Description: 
+  BookInfo: 
+  Question: 0
+  language: 0
+  FirstClickTime: 0
+  Num: 0
+  LocalizationKey: 
+  swirlMod: 1
+  johann: 0
+  guest: 0
+  slave: 0
+  info: 0

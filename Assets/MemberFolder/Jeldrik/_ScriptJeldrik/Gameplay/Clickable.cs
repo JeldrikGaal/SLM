@@ -9,7 +9,7 @@ public class Clickable : MonoBehaviour
 {
     #region References
     [Tooltip("Assign Object that holds all clickables")]
-    [SerializeField] ClickableHolder cH;
+    [SerializeField] public ClickableHolder cH;
     private ClickableManager cM;
     private Image _image;
     [HideInInspector] public MakeOutline _outline;

@@ -11,7 +11,7 @@ public class MG1Tutorial : MonoBehaviour
 {
     #region References
     
-    [SerializeField] private Clickable _exampleClickable;
+    [SerializeField] public Clickable _exampleClickable;
     [SerializeField] private SceneInfoPopUp _sceneInfoPopUp;
     [SerializeField] private GameObject _currentQuestion;
     // List starting from top going clockwise
@@ -30,6 +30,8 @@ public class MG1Tutorial : MonoBehaviour
     private float _effectWaitTime = 3f;
     private float _effectStartTime;
     public bool Done;
+    public bool infoShowed1;
+    public bool infoShowed2;
     public bool SKIPTUTORIAL;
 
     private Vector3 _lastPopUpPos;
@@ -114,19 +116,19 @@ public class MG1Tutorial : MonoBehaviour
     private void Step2() 
     {
         _runningStep2 = true;
-
-        // Enabling touch controls
-        _dragController.enabled = true;
         
+        _currentQuestion.gameObject.SetActive(false);
+
         // Enabling the info popup and setting the text
         EnablePopUp(0.75f, "TutorialText2");
-
         EnableMoveArrows();
         EffectForMoveArrows(0.6f, 60, 3f);
+
+         _currentQuestion.gameObject.SetActive(false);
+
     }
     public void EndTutorial()
     {
-        Done = true;
         DisablePopUp(0.75f);
         if ( _runningStep2)
         {
@@ -142,13 +144,24 @@ public class MG1Tutorial : MonoBehaviour
     {
         _effectRunning = false;
         DisablePopUp(0.75f);
+        
     }
 
     public void PopUpClosing()
     {
-       if (_running)
+        if (_running)
         {
             Step2();
+        }
+        if (infoShowed1 && !Done)
+        {
+            //Appear();
+            infoShowed2 = true;
+        }
+        if (infoShowed2 && !Done)
+        {
+            //Appear();
+            Done = true;
         }
     }
 
@@ -195,6 +208,7 @@ public class MG1Tutorial : MonoBehaviour
     private void ShowSceneInfo()
     {   
         Debug.Log( _sceneInfoPopUp);
+        infoShowed1 = true;
         _sceneInfoPopUp.gameObject.SetActive(true);
         _dragController.enabled = false;
     }
@@ -268,6 +282,10 @@ public class MG1Tutorial : MonoBehaviour
                 seq3.Append(Camera.main.transform.DOLocalMoveX(orgPosCam.x, duration * 0.25f * 0.5f));       
             }
         } 
+        seq3.OnComplete(() => {
+            // Enabling touch controls
+            _dragController.enabled = true;
+        });
     }
 
     public void EffectForClickable()

@@ -295,12 +295,13 @@ public class TouchHandler : MonoBehaviour
     public void UnlockInput()
     {
         //_qMB.ToggleSelf(true);
-        if (_tutorialManager.Done || _tutorialManager.SKIPTUTORIAL)
+        if ((_tutorialManager.Done || _tutorialManager.SKIPTUTORIAL))
         {
-            _cQ.ToggleSelf(true);
+            Debug.Log("test");
+            _colorStripe.Appear();
         }
         {
-            _colorStripe.Appear();
+            
         }
         locked = false;
         _lastInputTime = Time.time;

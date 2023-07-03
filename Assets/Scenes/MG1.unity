@@ -402,6 +402,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 406583482}
     - target: {fileID: 1769498419, guid: f740ceb45edfc1a4cb6690d967a651c1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769498419, guid: f740ceb45edfc1a4cb6690d967a651c1, type: 3}
       propertyPath: SKIPTUTORIAL
       value: 0
       objectReference: {fileID: 0}
@@ -530,6 +534,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 534061232, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
+      propertyPath: _q
+      value: 
+      objectReference: {fileID: 11400000, guid: 90cae102534cdbb43b98c6c4fa192278, type: 2}
     - target: {fileID: 1058350921, guid: ae72fc238229ba24fa44910f5e44b781, type: 3}
       propertyPath: _tutorialManager
       value: 

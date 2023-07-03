@@ -26,8 +26,10 @@ public class SlideColorStripe : MonoBehaviour
 
     [SerializeField] CurrentQuestion _currentQuestion; 
 
+    [SerializeField] public Question _q;
+
     private string _newText;
-    private Question _q;
+   
 
     public int index;
 
@@ -73,20 +75,20 @@ public class SlideColorStripe : MonoBehaviour
         }
     }
 
-    public void CompleteSlide(Question q)
+    public void CompleteSlide(Question q, float fast = 1f)
     {
         float tf = FadeAll();
         _q = q;
-        Invoke("SlideIn", _slideTime * tf + 0.2f);
+        Invoke("SlideIn", (_slideTime * tf + 0.2f) * fast);
     }
 
-    public void Appear()
+    public void Appear(bool cQToggle = true)
     {
        ChangeAlpha(_text1Text, 0);
        ChangeAlpha(_text2Text, 0);
        ChangeAlpha(_image, 0);
        ChangeAlpha(_twig.GetComponent<Image>(), 0);
-       _currentQuestion.gameObject.SetActive(true);
+       _currentQuestion.gameObject.SetActive(cQToggle);
        Debug.Log("TEST");
        DOAlpha(_text1Text, 1, 0.75f);
        DOAlpha(_text2Text, 1, 0.75f);
@@ -94,7 +96,18 @@ public class SlideColorStripe : MonoBehaviour
        DOAlpha(_twig.GetComponent<Image>(), 1, 0.75f);
     }
 
-    public void Disappear()
+    public void OrangeAppear(bool cQToggle = true)
+    {
+       ChangeAlpha(_text1Text, 0);
+       ChangeAlpha(_text2Text, 0);
+       ChangeAlpha(_image, 0);
+       ChangeAlpha(_twig.GetComponent<Image>(), 0);
+       _currentQuestion.gameObject.SetActive(cQToggle);
+       Debug.Log("OTEST");
+       DOAlpha(_twig.GetComponent<Image>(), 1, 0.75f);
+    }
+
+    public void Disappear(bool cQToggle = true)
     {
        ChangeAlpha(_text1Text, 1);
        ChangeAlpha(_text2Text, 1);
@@ -104,7 +117,7 @@ public class SlideColorStripe : MonoBehaviour
        DOAlpha(_text2Text, 0, 0.75f);
        DOAlpha(_image,     0, 0.75f);
        DOAlpha(_twig.GetComponent<Image>(), 0, 0.75f);
-       _currentQuestion.gameObject.SetActive(true);
+       _currentQuestion.gameObject.SetActive(cQToggle);
     }
 
     public void ChangeAlpha(Image img, float a)

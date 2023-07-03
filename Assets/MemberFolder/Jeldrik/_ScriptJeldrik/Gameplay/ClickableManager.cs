@@ -53,6 +53,11 @@ public class ClickableManager : MonoBehaviour
             _currentClickable = C;
             if (cH.Question)
             {
+                if (!_tutorialManager.SKIPTUTORIAL && !_tutorialManager.Done && cH != _tutorialManager._exampleClickable.cH)
+                {
+                    Debug.Log("You shall not click this !");
+                    return false;
+                }
                 DisplayPopUp(cH,_popUps[0]);
             }
             else 
