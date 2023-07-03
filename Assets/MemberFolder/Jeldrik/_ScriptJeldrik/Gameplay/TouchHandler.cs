@@ -66,6 +66,9 @@ public class TouchHandler : MonoBehaviour
     // used to toggle on and off functions that should only be called in editor
     private bool EDITOR;
 
+    private float _mouseDownTime;
+    private Vector3 _mouseDownPos;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -153,8 +156,19 @@ public class TouchHandler : MonoBehaviour
             _dragged = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha8))
+        if (Input.GetMouseButtonDown(0))
         {
+            _mouseDownTime = Time.time;
+            
+            _mouseDownPos = Input.mousePosition;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+                if (Vector3.Distance(_mouseDownPos, Input.mousePosition) > 2f) 
+                {
+                    return;
+                }
                 //Set up the new Pointer Event
                 m_PointerEventData = new PointerEventData(m_EventSystem);
                 //Set the Pointer Event Position to that of the game object

@@ -150,7 +150,7 @@ public class CurrentQuestion : MonoBehaviour
             {
                 _questionCounter.text = _qM._questionObjectCounts[_qM.GetCurrentQuestionId()][0].ToString() + "/" + _currentQ.AmountNeeded[0].ToString();
             }
-            _questionCounterAnim.text = _questionCounter.text;
+            _questionCounterAnim.text = _q.ObjectsToFind1.Count.ToString() + "/" + _qM._questionObjectCounts[0];
             CounterAnimation(4, 0.8f);
         }
         

@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc3f8039032b2fe42bb67b6178cf2229, type: 3}
   m_Name: Q2
   m_EditorClassIdentifier: 
-  Text: Wo is visiting Johan Maurits at the court 'Vrijburg?
+  Text: Which important guests visited Johan Maurits at his court?
   Hint: 
   Number: 1
+  Image: {fileID: 0}
   ObjectsToFind1:
   - {fileID: 11400000, guid: 8f6b992d079e9d341aba37c3f7154da5, type: 2}
   - {fileID: 11400000, guid: 3d995fd26ce2ea44caae2a5f036f461b, type: 2}
+  - {fileID: 11400000, guid: 1b14aba3e53ec9c4eac94ecf9d489482, type: 2}
   ObjectsToFind2: []
   ObjectsToFind3: []
   AmountNeeded: 01000000

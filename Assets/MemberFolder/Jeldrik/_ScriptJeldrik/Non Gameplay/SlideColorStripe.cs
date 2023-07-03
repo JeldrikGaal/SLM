@@ -213,6 +213,8 @@ public class SlideColorStripe : MonoBehaviour
         PositionObject(transform, distance);
         PositionObject(_button1.transform, distance);
         PositionObject(_button2.transform, distance);
+        PositionObject(_questionImage.transform, distance);
+
     }
 
     private void PositionObject(Transform element, float distance)
