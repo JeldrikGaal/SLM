@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: G6 Gaspar Dias
   m_EditorClassIdentifier: 
   Image: {fileID: 0}
-  Title: 
-  Description: 
+  Title: Gaspar Dias Ferreira
+  Description: Gaspar Dias Ferreira was a merchant and part of the luso-brazilian
+    elite. He is sometimes referred to as Johan Maurits' right hand man. Due to the
+    representation of both major colonist nations, their collaboration was fruitful
+    and lucrative for both of them - though not always completely legal.
   BookInfo: 
-  Question: 0
+  Question: 1
   language: 0
   FirstClickTime: 0
   Num: 0
