@@ -11,7 +11,8 @@ public class InfoPageManager : MonoBehaviour
     public Transform book;
     public GameObject infoCardPrefab;
     public GameObject infoCardPrefabFlipped;
-    
+    public Sprite placeHolderImage;
+
     public MenuManager menuManager;
 
     private void Start()
@@ -91,12 +92,16 @@ public class InfoPageManager : MonoBehaviour
                 var cardObject = Instantiate(j < startIndex + 2 ? infoCardPrefab : infoCardPrefabFlipped, infoPage.infoHolder);
                 var card = cardObject.GetComponent<InfoCard>();
 
-                // Set the content of InfoCard
-                Sprite cardImage = cards[j].Image;
                 string cardDescription = cards[j].Description;
+                //set placholder image first
+                card.SetContent(placeHolderImage, cardDescription);
 
-                card.SetContent(cardImage, cardDescription);
-
+                //if card has image then set that image
+                if(cards[j].Image != null){
+                    Sprite cardImage = cards[j].Image;
+                    card.SetContent(cardImage, cardDescription);
+                }
+                
                 cardObject.SetActive(true);
             }
 
