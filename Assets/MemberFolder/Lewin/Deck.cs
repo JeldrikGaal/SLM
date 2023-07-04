@@ -48,7 +48,8 @@ public class Deck : MonoBehaviour
 
     }
 
-public void NextDeck()
+
+    public void NextDeck()
 {
     DeckTopCard = null;
     CurrentDeckIndex--;
@@ -218,3 +219,4 @@ public void NextDeck()
     
     
 }
+

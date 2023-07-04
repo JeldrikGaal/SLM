@@ -370,7 +370,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
             Card otherCardScript = _otherCard.GetComponent<Card>();
             if (otherCardScript.cardData.MatchingID == cardData.ID && otherCardScript.cardData.MatchingID != -1)
             {
-                if (!otherCardScript.isPictureUp) otherCardScript.FlipAnimated();
+                //if (!otherCardScript.isPictureUp) otherCardScript.FlipAnimated();
                 otherCardScript.EnableDragging(false);
                 otherCardScript.EnableFlippable(false);
                 _placedOnTargetPile = true;
@@ -384,7 +384,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 }
                 else
                 {
-                    DeckRef.NextDeck();
+                    //DeckRef.NextDeck();
                     DeckRef.MoveTopCardToCenter();
                 }
             }
@@ -544,17 +544,22 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     {
         SetTraceable(false);
         Vector2 startPosition = this.transform.position;
+        Quaternion startRotation = this.transform.rotation; // Current rotation
+        Quaternion endRotation = Quaternion.Euler(0, 0, 0); // Target rotation
         float startTime = Time.time;
         while (Time.time < startTime + MoveToCenterDuration)
         {
             float t = (Time.time - startTime) / MoveToCenterDuration;
             t = Mathf.SmoothStep(0.0f, 1.0f, t); // Modify t to create easing effect
             this.transform.position = Vector2.Lerp(startPosition, targetPosition, t);
+            this.transform.rotation = Quaternion.Lerp(startRotation, endRotation, t); // Interpolate rotation
             yield return null;
         }
         this.transform.position = targetPosition; // Ensure card is at target position at the end
+        this.transform.rotation = endRotation; // Ensure card rotation is 0 at the end
         SetTraceable(true);
     }
+
     public void ShowDropInfo(bool show, GameObject pOtherHitbox)
     {
         _droppable = show;
@@ -577,7 +582,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         _animatingToOtherCardAtm = true;
         Vector3 offset = new Vector3(-5, -5, 0);
         Vector3 startPosition = this.transform.position; // Starting position
-        Vector3 endPosition = new Vector3(otherCard.transform.position.x, otherCard.transform.position.y-17, this.transform.position.z) + offset * LastTPC.cardCount; // Target position
+        Vector3 endPosition = new Vector3(otherCard.transform.position.x, otherCard.transform.position.y-24, this.transform.position.z) + offset * LastTPC.cardCount; // Target position
 
         float startTime = Time.time;
 

@@ -1,0 +1,42 @@
+Key,English,German,Simplified German,Simplified English
+D1.1_BrokenShip,Johan Maurits was talking about a broken ship for sale by the slave trading company he works for in a conversation with his right-hand man!,In einem Gespräch hat Johann Moritz über den Verkauf eines beschädigten Bootes geredet. Verkäufer ist die Handelsgesellschaft für die er arbeitet.,,
+D1.2_GasparInfo,"""I received important information for that scam idea I had the other day."" - Gaspar Dias","""Ich habe wichtige Informationen erhalten, die für meine Betrugsidee helfen könnten!"" - Gaspar Dias
+-> right hand man?",,
+D1.3_FixedShip,This ship was recently sold by the WIC. I heard they had to fix it up! It's leaving for Africa tomorrow - as a portuguese vessel. - Recife,Dieses Schiff wurde neulich von der WIC verkauft und musste repariert werden. Morgen fährt es nach Afrika - unter portugiesischer Flagge. - Recife,,
+D1.4_Antonio,"I only agreed to steer the Diemen to get Gaspar Diaz’ favour! But as soon as I meet a Portuguese official I will tell them he is a fraud!
+- Antonio Machado","Ich habe nur für eine Empfehlung von Dias eingewilligt die Diemen zu steuern. Aber sobald ich einen Portugiesischen Verwalter treffe, werde ich ihm sagen, dass Dias ein Betrüger ist! - Antonio Machado",,
+D1.5_SlavesLoaded,"This ship left an african harbour with many enslaved people. Officially it’s heading for a portuguese harbour - strange, that seems vaguely familiar.","Dieses Schiff hat, beladen mit vielen versklavten Menschen, einen afrikanischen Hafen verlassen. Es steuert wohl einen portugiesischen Hafen an - seltsam, das kommt mir vage bekannt vor.",,
+D1.6_Shipwreck,"This shipwreck is odd because no cargo sank with it. However, there are many footsteps leading toward Mauritsstad.
+","Dieses Schiffswrack it ungewöhnlich, da keine Ladung mit gesunken ist. Allerdings führen am Ufer viele Fußstapfen nach Mauritsstad.",,
+,,,,
+D2.1_Identifier,"This object identifies Johan Maurits as the governor of Dutch Brazil.
+","Dieses Objekt identifiziert Johann Moritz als den Gouverneur von Niederländisch-Brasilien. 
+-> der niederländischen Kolonie in Brasilien",,
+D2.2_ArchitectModel,"This model shows buildings near Johan Maurits’ governor residence in Mauritsstad that were initiated and financed by Johan Maurits.
+","Dieses Architekturmodell zeigt Gebäude, die initiiert und finanziert von Johann Moritz nahe seiner Residenz in Mauritsstad erbaut wurden. 
+-> add brazil/recife? for context",,
+D2.3_OrangeTree,"Johan Maurits remodeled the local urban landscape according to his homeland’s influences. For this purpose, he also imported plants, such as the orange tree.","Unter Johann Moritzs' Einfluss wurden viele Gebäude und andere Anlagen nach dem Vorbild seiner Heimat gebaut. Zu diesem Zweck wurden auch Pflanzen importiert, wie zum Beispiel der Orangenbaum.",,
+D2.4_WalkingSlaves,"Usually, imported goods like plants and trading goods such as wine and resources, were unloaded in the ports - as were enslaved people.
+A peculiar group of enslaved people must have come walking up the coast instead.",Normalerweise wurde importierte Ware oder Handelsware wie Wein und Baumaterialien in den Häfen vom Schiff abgeladen - genauso auch versklavte Menschen. Eine bestimmte Gruppe versklavter Menschen muss stattdessen die Küste heraufgewandert gekommen sein.,,
+,,,,
+D3.1_Gossip1,"""Isn't it so progressive of the humanist prince to allow freedom of belief in his colony?""","""Ist es nicht unglaublich fortschrittlich vom humanistischen Fürsten, in der Kolonie Glaubensfreiheit zu erlauben?""",,
+D3.2_Gossip2,"""I worry that Johan Maurits may be getting a little too friendly toward the Portuguese.""
+","""Ich fürchte, dass Johann Moritz vielleicht ein wenig zu freundlich zu den Portugiesen ist.""",,
+D3.3_Gossip3,"""Didn't he also promise them new workers on their sugar farms?""","""Hat er ihnen nicht auch neue Arbeiter für ihre Zuckermühlen versprochen?",,
+D3.4_Documents,"These files document a number of enslaved people having been gifted to the Portuguese sugar mill owners in the name of Johan Maurits.
+","Diese Unterlagen dokumentieren eine Zahl von versklavten Menschen, die im Namen von Johann Moritz an die Zuckermühlenbesitzer verschenkt wurden.",,
+,,,,
+D4.1_ArtistFriend,"""I have an artist friend back in the Netherlands. Do you think Johan Maurits would fund him too?""
+- some Guest","""Ich habe einen Künstlerfreund daheim in Holland. Meinst du, Johann würde ihn auch sponsoren?",,
+D4.2_ArtWorks,"Artists travelling with Johan Maurits documented the Brazilian Flora and Fauna of the 17th century in great detail.
+","Künstler, die mit Johann Moritz reisten haben sehr detailliert brasilianische Pflanzen und Tiere dokumentiert.",,
+D4.3_GardenRemodel,"""I heard he is also planning to remodel the parklands surrounding his palace AGAIN.
+How fortunate, that our research on the local Flora and Fauna has made immense progress thanks to his financial aid!""
+","""Ich habe gehört, er plant SCHON WIEDER seine Parkanlagen um. Unsere Recherche zur heimischen Tier- und Pflanzenwelt hat dank seiner finanziellen Unterstützung glücklicherweise große Fortschritte gemacht!",,
+D4.4_Whealth,"Despite all those ambitious projects he was financing, Johan Maurits’ whealth kept increasing.
+What channels other than the payment from the WIC could he have received money through?
+","Obwohl Johann Moritz verschiedenste Projekte finanziert hat, wuchs sein Wohlstand weiter. Ob es wohl neben seinem Lohn von der WIC noch andere Einnahmensquellen gab?",,
+D4.5_Scam,"Gaspar Diaz, Johan Maurits’ right-hand man, asked the recipients of gifted enslaved people to pay back an outrageous sum of money - months after having received the enslaved people.
+","Gaspar Diaz, die Rechte Hand von Johann Moritz, forderte diejenigen, die mehrere Monate zuvor versklavte Menschen geschenkt bekommen hatten, zu einer großen Geldrückzahlung auf. ",,
+,,,,
+E0.Explanation,(Mini) Story Time! Flip & Match your card to the right mini-story to find out what happened!,"(Mini) Geschichten! Dreh deine Karte um und ziehe sie auf die richtige Mini-Geschichte, um herauszufinden, was passiert ist!",,
