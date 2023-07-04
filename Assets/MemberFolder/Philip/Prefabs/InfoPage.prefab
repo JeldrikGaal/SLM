@@ -110,8 +110,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.6374016, y: -8.0043}
-  m_SizeDelta: {x: 1140.1101, y: 787.1772}
+  m_AnchoredPosition: {x: -2.6374016, y: 19.109}
+  m_SizeDelta: {x: 1140.1101, y: 841.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1679958662796223484
 MonoBehaviour:
@@ -126,15 +126,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: -5
+    m_Left: 0
     m_Right: 0
-    m_Top: 35
+    m_Top: 75
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 520, y: 330}
-  m_Spacing: {x: 40, y: 40}
+  m_CellSize: {x: 539, y: 330}
+  m_Spacing: {x: 40, y: 50}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &5646305893974553255
@@ -252,7 +252,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8390238831085202248
 RectTransform:
   m_ObjectHideFlags: 0

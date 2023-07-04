@@ -9,8 +9,11 @@ public class InfoPageManager : MonoBehaviour
     public GameObject infoPagePrefab;
 
     public Transform book;
-    public GameObject infoCardPrefab;
-    public GameObject infoCardPrefabFlipped;
+    public GameObject infoCard1;
+    public GameObject infoCard2;
+    public GameObject infoCard3;
+    public GameObject infoCard4;
+
     public Sprite placeHolderImage;
 
     public MenuManager menuManager;
@@ -88,18 +91,42 @@ public class InfoPageManager : MonoBehaviour
 
             for (int j = startIndex; j < endIndex; j++)
             {
-                //for the 3rd and 4th cards use the flipped prefab
-                var cardObject = Instantiate(j < startIndex + 2 ? infoCardPrefab : infoCardPrefabFlipped, infoPage.infoHolder);
+                //use different card prefab for each card
+                int prefabIndex = j % 4 + 1; // Calculate the prefab index (1 to 4)
+
+                GameObject prefabToInstantiate;
+
+                switch(prefabIndex){
+                    case 1:
+                        prefabToInstantiate = infoCard1;
+                        break;
+                    case 2:
+                        prefabToInstantiate = infoCard2;
+                        break;
+                    case 3:
+                        prefabToInstantiate = infoCard3;
+                        break;
+                    case 4:
+                        prefabToInstantiate = infoCard4;
+                        break;
+                    default:
+                        prefabToInstantiate = infoCard1; 
+                        break;
+                }
+                
+                //var cardObject = Instantiate(j < startIndex + 2 ? infoCardPrefab : infoCardPrefabFlipped, infoPage.infoHolder);
+                var cardObject = Instantiate(prefabToInstantiate, infoPage.infoHolder);
                 var card = cardObject.GetComponent<InfoCard>();
 
                 string cardDescription = cards[j].Description;
+                string cardTitle = cards[j].Title;
                 //set placholder image first
-                card.SetContent(placeHolderImage, cardDescription);
+                card.SetContent(placeHolderImage, cardDescription, cardTitle);
 
                 //if card has image then set that image
                 if(cards[j].Image != null){
                     Sprite cardImage = cards[j].Image;
-                    card.SetContent(cardImage, cardDescription);
+                    card.SetContent(cardImage, cardDescription, cardTitle);
                 }
                 
                 cardObject.SetActive(true);
