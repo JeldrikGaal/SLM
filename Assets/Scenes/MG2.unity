@@ -355,12 +355,13 @@ MonoBehaviour:
   TargetPileCollider: {fileID: 4496224262785354723, guid: beb9ec2728faeec42b22426acf6fe5b7, type: 3}
   DeckTopCard: {fileID: 0}
   TargetPiles_yOffset: 140
-  Deck1_Initial: 02000000090000000e00000013000000
+  Deck1_Initial: 130000000e0000000900000002000000
   Deck2: 030000000a0000000f00000014000000
   Deck3: 040000000b0000001000000015000000
   Deck4: 050000000c0000001100000016000000
   Deck5: 0600000017000000
   Deck6: 07000000
+  WholeDrawPile: 
 --- !u!114 &534006183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -734,8 +735,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00010363, y: 0.00027657}
-  m_SizeDelta: {x: 1504.6, y: 768}
+  m_AnchoredPosition: {x: -0.0010796, y: 0.000064051}
+  m_SizeDelta: {x: 1614.8, y: 768}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1004069236
 MonoBehaviour:
@@ -1011,12 +1012,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 32
   useTouch: 1
-  useHover: 1
-  useMouse: 1
+  useHover: 0
+  useMouse: 0
   useSimulator: 1
   disableMouseEmulation: 1
   recordFingers: 1
-  recordThreshold: 5
+  recordThreshold: 1
   recordLimit: 10
 --- !u!4 &1650081526
 Transform:
@@ -1120,8 +1121,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00001508, y: 43.431}
-  m_SizeDelta: {x: 1504.6, y: 854.8613}
+  m_AnchoredPosition: {x: -12.6298, y: 3.9629}
+  m_SizeDelta: {x: 1839.2892, y: 1009.5764}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1753191734
 MonoBehaviour:
@@ -1136,14 +1137,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3e38844155d2847479722cb044bce224, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 16db85d3f319aa3419b9c72056b30321, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

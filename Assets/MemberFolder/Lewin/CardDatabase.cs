@@ -27,10 +27,10 @@ public class CardDatabase : MonoBehaviour
         _dragOverManager = GetComponent<DragOverManager>();
     }
 
-    public Card SpawnCard(int ID, Vector3 parentTransform, bool pDraggable, bool pFlippable)
+    public Card SpawnCard(int ID, Vector3 parentTransform, bool pDraggable, bool pFlippable, float angle = 0)
     {
         // Instantiate a new card as a child of the provided transform
-        GameObject cardGO = Instantiate(cardPrefab, parentTransform, Quaternion.identity, canvas);
+        GameObject cardGO = Instantiate(cardPrefab, parentTransform, Quaternion.Euler(0, 0, angle), canvas);
 
         // Get the Card component
         Card card = cardGO.GetComponent<Card>();
