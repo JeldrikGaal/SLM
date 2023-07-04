@@ -50,6 +50,7 @@ public class QuestionManager : MonoBehaviour
     private int _currentQ = -1;
     private float _timeOnCurrentQ;
     private bool _completed;
+    private List<bool> _doneOnce = new List<bool>();
     private VALUECONTROLER _VC;
 
 
@@ -70,7 +71,6 @@ public class QuestionManager : MonoBehaviour
             q.Text = LocalizationManager.Localize(q.LocalizationKey); 
         }
         
-        Debug.Log(LocalizationManager.Language);
 
         // Loading and displaying question objects in the menu
         if (_questions.Count < 3)
@@ -108,6 +108,11 @@ public class QuestionManager : MonoBehaviour
         _completedQuestions.Add(false);
         _completedQuestions.Add(false);
         _completedQuestions.Add(false);
+
+        _doneOnce.Add(false);
+        _doneOnce.Add(false);
+        _doneOnce.Add(false);
+
         if (_cS._completedQuestionsSave.Count < 3)
         {
             _cS._completedQuestionsSave = _completedQuestions;
@@ -244,9 +249,11 @@ public class QuestionManager : MonoBehaviour
 
     public void ClosePopUp()
     {
-        if (_completedQuestions[_currentQ])
+        if (_completedQuestions[_currentQ] && !_doneOnce[_currentQ])
         {
+            _doneOnce[_currentQ] = true;
             Invoke("Forward", 0.25f);
+
         }
     }
 
@@ -319,10 +326,8 @@ public class QuestionManager : MonoBehaviour
 
     public void LoadSwirls()
     {
-        Debug.Log("SWIRLS");
         foreach(List<GameObject> s in _swirls)
         {
-            Debug.Log(s.Count);
             foreach (GameObject g in s)
             {
                 Debug.Log(g);

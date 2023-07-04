@@ -89,7 +89,6 @@ public class SlideColorStripe : MonoBehaviour
        ChangeAlpha(_image, 0);
        ChangeAlpha(_twig.GetComponent<Image>(), 0);
        _currentQuestion.gameObject.SetActive(cQToggle);
-       Debug.Log("TEST");
        DOAlpha(_text1Text, 1, 0.75f);
        DOAlpha(_text2Text, 1, 0.75f);
        DOAlpha(_image, 1, 0.75f);
@@ -103,7 +102,6 @@ public class SlideColorStripe : MonoBehaviour
        ChangeAlpha(_image, 0);
        ChangeAlpha(_twig.GetComponent<Image>(), 0);
        _currentQuestion.gameObject.SetActive(cQToggle);
-       Debug.Log("OTEST");
        DOAlpha(_twig.GetComponent<Image>(), 1, 0.75f);
     }
 

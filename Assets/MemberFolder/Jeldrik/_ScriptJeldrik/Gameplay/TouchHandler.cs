@@ -145,10 +145,13 @@ public class TouchHandler : MonoBehaviour
                 List<RaycastResult> results = new List<RaycastResult>();
                 //Raycast using the Graphics Raycaster and mouse click position
                 m_Raycaster.Raycast(m_PointerEventData, results);
-                if (results[0].gameObject.CompareTag("BackGround")){
-                    Vector3 partPos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0.5f);
-                    SpawnWrongInputPart(partPos);
+                if (results.Count > 0){
+                    if (results[0].gameObject.CompareTag("BackGround")){
+                        Vector3 partPos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0.5f);
+                        SpawnWrongInputPart(partPos);
+                    }
                 }
+                
             }
         }
         else 
@@ -172,7 +175,7 @@ public class TouchHandler : MonoBehaviour
                 //Set up the new Pointer Event
                 m_PointerEventData = new PointerEventData(m_EventSystem);
                 //Set the Pointer Event Position to that of the game object
-                m_PointerEventData.position = Input.mousePosition;
+                m_PointerEventData.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 //Create a list of Raycast Results
                 List<RaycastResult> results = new List<RaycastResult>();
                 //Raycast using the Graphics Raycaster and mouse click position
@@ -300,7 +303,6 @@ public class TouchHandler : MonoBehaviour
         //_qMB.ToggleSelf(true);
         if ((_tutorialManager.Done || _tutorialManager.SKIPTUTORIAL))
         {
-            Debug.Log("test");
             _colorStripe.Appear();
         }
         {

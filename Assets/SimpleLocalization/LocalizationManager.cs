@@ -80,7 +80,6 @@ namespace Assets.SimpleLocalization
                     //Debug.Log(key);
                     for (var j = 1; j < languages.Count; j++)
                     {
-                        Debug.Log(languages[j]);
                         Dictionary[languages[j]].Add(key, columns[j]);
                     }
                 }
