@@ -1017,7 +1017,7 @@ MonoBehaviour:
   useSimulator: 1
   disableMouseEmulation: 1
   recordFingers: 1
-  recordThreshold: 1
+  recordThreshold: 5
   recordLimit: 10
 --- !u!4 &1650081526
 Transform:
