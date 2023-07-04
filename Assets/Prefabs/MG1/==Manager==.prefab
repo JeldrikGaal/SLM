@@ -150,7 +150,9 @@ MonoBehaviour:
   _tutorialPopUp: {fileID: 0}
   _colorStripe: {fileID: 0}
   Done: 0
-  SKIPTUTORIAL: 1
+  infoShowed1: 0
+  infoShowed2: 0
+  SKIPTUTORIAL: 0
 --- !u!1 &5471262566935796340
 GameObject:
   m_ObjectHideFlags: 0
