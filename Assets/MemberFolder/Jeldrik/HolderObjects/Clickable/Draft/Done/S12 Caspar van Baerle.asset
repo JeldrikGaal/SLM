@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: S12 Caspar van Baerle
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: cf44335159174854898977cdb525ad73, type: 3}
-  Title: 
-  Description: 
+  Title: Caspar van Baerle
+  Description: Caspar van Baerle was theologian, philosopher and medic. He was also
+    never in Dutch Brazil. When Johan Maurits was back in the Netherlands, he approached
+    him with the request of writing a book about his time at the colony - based on
+    documents provided and emphasising the 'brilliance of his supreme rule and military
+    glory'.
   BookInfo: 
   Question: 0
   language: 0
@@ -23,6 +27,6 @@ MonoBehaviour:
   LocalizationKey: S12
   swirlMod: 1
   johann: 0
-  guest: 0
+  guest: 1
   slave: 0
   info: 0

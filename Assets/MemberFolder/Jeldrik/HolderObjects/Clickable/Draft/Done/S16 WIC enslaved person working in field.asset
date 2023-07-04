@@ -24,5 +24,5 @@ MonoBehaviour:
   swirlMod: 1
   johann: 0
   guest: 0
-  slave: 0
+  slave: 1
   info: 0

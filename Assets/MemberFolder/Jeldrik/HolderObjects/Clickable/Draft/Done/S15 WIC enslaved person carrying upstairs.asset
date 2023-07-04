@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: S15 WIC enslaved person carrying upstairs
   m_EditorClassIdentifier: 
   Image: {fileID: 0}
-  Title: 
-  Description: 
+  Title: Woman
+  Description: This native Brazilian woman was enslaved and owned by the West India
+    Trading Company. She and other enslaved people belonging to the WIC were given
+    to Johan Maurits as part of his working agreement.
   BookInfo: 
   Question: 0
   language: 0
@@ -24,5 +26,5 @@ MonoBehaviour:
   swirlMod: 1
   johann: 0
   guest: 0
-  slave: 0
+  slave: 1
   info: 0
