@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: G4 Georg Marggrave
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 9269b130adec23d4da5dbe4c32f50a0c, type: 3}
-  Title: 
-  Description: 
+  Title: Georg Marggrave
+  Description: Georg Marggrave was a cartographer, astronomer, natural scientist,
+    and mathematician at the court of Johan Maurits in Brazil. He was also the apprentice
+    of Willem Piso, with whom he wrote the book 'Historia Naturalis Brasiliae'.
   BookInfo: 
-  Question: 0
+  Question: 1
   language: 0
   FirstClickTime: 0
   Num: 0

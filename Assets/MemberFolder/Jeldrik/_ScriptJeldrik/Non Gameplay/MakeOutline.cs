@@ -15,10 +15,14 @@ public class MakeOutline : MonoBehaviour
     private VALUECONTROLER _VC;
     #endregion
 
+    private int _orgSiblingIndex;
+
     void Awake()
     {
         _image = GetComponent<Image>();
         _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
+
+        _orgSiblingIndex = transform.GetSiblingIndex();
 
         // Creating the outline objects and then toggling them off to have them ready but not show from the beginning
         SpawnOutline();
@@ -47,6 +51,7 @@ public class MakeOutline : MonoBehaviour
         temp2.transform.SetParent(temp1.transform, false);
         temp2.transform.localPosition = Vector3.zero;
         transform.parent = temp1.transform;
+        temp1.transform.SetSiblingIndex(_orgSiblingIndex);
         
     }
 

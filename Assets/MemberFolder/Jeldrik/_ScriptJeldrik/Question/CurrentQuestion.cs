@@ -80,7 +80,7 @@ public class CurrentQuestion : MonoBehaviour
             _questionTextImage.text = "";
             _questionTitle.text = _currentQ.Text;
         }
-        if (questionCounter) UpdateQuestionCounter(_currentQ);
+        UpdateQuestionCounter(_currentQ, questionCounter);
     }
 
     public void ToggleForwardButton(bool toggle)
@@ -133,25 +133,36 @@ public class CurrentQuestion : MonoBehaviour
      
 
     // Updates the question counter
-    public void UpdateQuestionCounter(Question _q)
+    public void UpdateQuestionCounter(Question _q, bool spawnEffect = false)
     {
-        if (_q.AmountNeeded[0] <= 1)
+        if (_q.ObjectsToFind1.Count <= 1)
         {
             _questionCounter.text = "";
         }
         else
         {
-            if (_q.AmountNeeded.Count > 1)
+            //_questionCounter.text = _qM._questionObjectCounts[_qM.GetCurrentQuestionId()][0].ToString() + "/" + _currentQ.AmountNeeded[0].ToString();
+            _questionCounter.text =   _qM._questionObjectCounts[_qM.GetCurrentQuestionId()][0] + "/" + _q.ObjectsToFind1.Count.ToString();
+            
+            if (spawnEffect)
+            {
+                _questionCounterAnim.text = _qM._questionObjectCounts[_qM.GetCurrentQuestionId()][0] + "/" + _q.ObjectsToFind1.Count.ToString();
+                CounterAnimation(4, 0.8f);
+            } 
+            else 
+            {
+                _questionCounterAnim.text = "";
+            }
+            /*if (_q.AmountNeeded.Count > 1)
             {
                 _questionCounter.text = _qM._questionObjectCounts[_qM.GetCurrentQuestionId()][0].ToString() + "/" + _currentQ.AmountNeeded[0].ToString() + "\n"
                     + _qM._questionObjectCounts[_qM.GetCurrentQuestionId()][1].ToString() + "/" + _currentQ.AmountNeeded[1].ToString() + "\n";
             }
             else
             {
-                _questionCounter.text = _qM._questionObjectCounts[_qM.GetCurrentQuestionId()][0].ToString() + "/" + _currentQ.AmountNeeded[0].ToString();
-            }
-            _questionCounterAnim.text = _q.ObjectsToFind1.Count.ToString() + "/" + _qM._questionObjectCounts[0];
-            CounterAnimation(4, 0.8f);
+                
+            }*/
+            
         }
         
     }

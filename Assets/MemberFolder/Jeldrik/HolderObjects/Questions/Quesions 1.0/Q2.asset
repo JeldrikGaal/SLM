@@ -17,9 +17,12 @@ MonoBehaviour:
   Number: 1
   Image: {fileID: 0}
   ObjectsToFind1:
+  - {fileID: 11400000, guid: e132add23bdb04a47a8bbbb4ba427692, type: 2}
   - {fileID: 11400000, guid: 8f6b992d079e9d341aba37c3f7154da5, type: 2}
   - {fileID: 11400000, guid: 3d995fd26ce2ea44caae2a5f036f461b, type: 2}
+  - {fileID: 11400000, guid: b148ed6984654e14bbb32269f442bba6, type: 2}
   - {fileID: 11400000, guid: 1b14aba3e53ec9c4eac94ecf9d489482, type: 2}
+  - {fileID: 11400000, guid: 979acb7126001b6409d13abe8751ea17, type: 2}
   ObjectsToFind2: []
   ObjectsToFind3: []
   AmountNeeded: 01000000

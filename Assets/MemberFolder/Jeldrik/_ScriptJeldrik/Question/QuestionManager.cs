@@ -263,7 +263,9 @@ public class QuestionManager : MonoBehaviour
             _alreadyClicked.Add(cH);
             _questionObjectCounts[_currentQ][GetIDForClicked(cH)] += 1;
 
-            _currentQuestion.UpdateQuestionCounter(_questions[_currentQ]);
+            // Checking if the clicked object is one that requires the spawning of a counter animation
+            bool effect = GetCurrentQuestion().ObjectsToFind1.Count > 1;
+            _currentQuestion.UpdateQuestionCounter(_questions[_currentQ], effect);
 
             // Only complete question if enough objects have been clicked
             if (CheckQuestionCompletition())

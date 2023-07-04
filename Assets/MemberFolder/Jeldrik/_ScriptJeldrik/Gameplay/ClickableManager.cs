@@ -16,6 +16,7 @@ public class ClickableManager : MonoBehaviour
     [SerializeField] private List<PopUp> _popUps = new List<PopUp>();
     [SerializeField] private SlideColorStripe _colorStripe;
     private Transform _grayScaleParentSafe;
+    private int _grayScaleSiblingIndexSafe;
     private Clickable _currentClickable;
     private TouchHandler _tH;
     private ClickableStorage _cS;
@@ -99,6 +100,7 @@ public class ClickableManager : MonoBehaviour
         Color fade = new Color(_grayScaleImage.color.r, _grayScaleImage.color.g, _grayScaleImage.color.b, 0.8f);
         _grayScaleImage.DOColor(fade, _VC.PopUp_AnimSpeed);
         _grayScaleParentSafe = _currentClickable.transform.parent.transform.parent;
+        _grayScaleSiblingIndexSafe = _currentClickable.transform.parent.transform.GetSiblingIndex();
         _currentClickable.transform.parent.transform.parent = _grayScaleImage.transform;
 
         // Animate Camera so highlighted object is in the right spot
@@ -177,6 +179,7 @@ public class ClickableManager : MonoBehaviour
             // Toggling the grayscale fake effect 
             _grayScaleImage.enabled = false;
             _currentClickable.transform.parent.transform.parent = _grayScaleParentSafe;
+            _currentClickable.transform.parent.transform.SetSiblingIndex(_grayScaleSiblingIndexSafe);
 
             _tutorialManager.PopUpClosing();
             _qM.ClosePopUp();
