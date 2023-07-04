@@ -8,8 +8,13 @@ public class IdleScript : MonoBehaviour
 {
     public MenuManager menu;
     public float afkThreshold = 30f;
+    public float returnThreshold = 30f;
     private float timer = 0f;
+    private float afkTimer = 0f;
     private bool isAFK = false;
+    private bool popup = false;
+
+    public GameObject afkWindow;
 
     private void OnEnable()
     {
@@ -24,38 +29,80 @@ public class IdleScript : MonoBehaviour
     private void HandleFingerUpdate(LeanFinger finger)
     {
         // Reset the timer when any finger is updated (touch or drag)
-        //ResetTimer();
+        ResetTimer();
+        isAFK = false;
+
+        if (popup)
+        {
+            HidePopup();
+            StartReturnTimer();
+        }
     }
 
     private void Update()
     {
-        Debug.Log(isAFK);
-        
-        timer += Time.deltaTime;
-        
-        if (timer >= afkThreshold && !isAFK)
+        if (!isAFK)
         {
-            //User is afk
-
+            timer += Time.deltaTime;
+        
+            if (timer >= afkThreshold)
+            {
+                ShowPopup();
+                isAFK = true;
+                StartReturnTimer();
+            }
+        }
+        else if (popup)
+        {
+            afkTimer += Time.deltaTime;
             
-            GameManager.Instance.pageIndex = 0;
+            if (afkTimer >= returnThreshold)
+            {
+                ReturnToMainPage();
+            }
+        }
+    }
+    
+    private void ShowPopup()
+    {
+        if (!popup)
+        {
+            afkWindow.SetActive(true);
             menu.ShowCurrentPage();
-
-            isAFK = true;
-            Debug.Log("User is now AFK");
+            ResetTimer();
+            popup = true;
         }
     }
 
-    private void ResetTimer()
+    private void HidePopup()
+    {
+        if (popup)
+        {
+            afkWindow.SetActive(false);
+            popup = false;
+        }
+    }
+    
+    private void StartReturnTimer()
+    {
+        afkTimer = 0f;
+    }
+    
+    private void ReturnToMainPage()
     {
         if (isAFK)
         {
-            // Perform necessary actions when the user returns from being AFK
-
+            afkWindow.SetActive(false);
             isAFK = false;
-            Debug.Log("User is no longer AFK");
+            GameManager.Instance.pageIndex = 0;
+            menu.ShowCurrentPage();
+            ResetTimer();
         }
+    }
 
+
+    private void ResetTimer()
+    {
         timer = 0f;
     }
 

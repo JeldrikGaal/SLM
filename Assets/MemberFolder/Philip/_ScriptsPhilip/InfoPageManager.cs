@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class InfoPageManager : MonoBehaviour
 {
     public List<GameObject> infoPagePrefabs;
     public GameObject infoPagePrefab;
+
+    public GameObject johannPage;
 
     public Transform book;
     public GameObject infoCard1;
@@ -36,12 +39,15 @@ public class InfoPageManager : MonoBehaviour
     {
         ClearInfoPages();
         
+        //combine ClickableInfo and ClickableQuestion into one list
+        List<ClickableHolder> combinedList = ClickableStorage.Instance._clickedQuestion.Concat(ClickableStorage.Instance._clickedInfo).ToList();
+        
         List<ClickableHolder> slaveCards = new List<ClickableHolder>();
         List<ClickableHolder> guestCards = new List<ClickableHolder>();
         List<ClickableHolder> infoCards = new List<ClickableHolder>();
-        List<ClickableHolder> johannCards = new List<ClickableHolder>();
+        //List<ClickableHolder> johannCards = new List<ClickableHolder>();
         
-        foreach (var card in ClickableStorage.Instance._clickedQuestion)
+        foreach (var card in combinedList)
         {
             if (card.slave)
             {
@@ -55,13 +61,20 @@ public class InfoPageManager : MonoBehaviour
             {
                 infoCards.Add(card);
             }
-            else if (card.johann)
-            {
-                johannCards.Add(card);
-            }
         }
         
-        CreateInfoPagesOfType(johannCards, "Johann Mauritz");
+        //check cards if johann has been found
+        bool hasJohannTaggedCards = ClickableStorage.Instance._clickedQuestion.Any(card => card.johann);
+
+        if (hasJohannTaggedCards)
+        {
+            var newPage = Instantiate(johannPage, book);
+            newPage.SetActive(false);
+            menuManager.pages.Add(newPage);
+            menuManager.ShowCurrentPage();
+        }
+        
+        //CreateInfoPagesOfType(johannCards, "Johann Mauritz");
         CreateInfoPagesOfType(guestCards, "Guest cards");
         CreateInfoPagesOfType(slaveCards, "Slave cards");
         CreateInfoPagesOfType(infoCards, "Extra Info cards");
