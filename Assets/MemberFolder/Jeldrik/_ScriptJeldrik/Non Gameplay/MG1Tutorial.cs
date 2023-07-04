@@ -25,7 +25,7 @@ public class MG1Tutorial : MonoBehaviour
     
 
     private bool _running;
-    private bool _runningStep2;
+    public bool _runningStep2;
     private bool _effectRunning ;
     private float _effectWaitTime = 3f;
     private float _effectStartTime;

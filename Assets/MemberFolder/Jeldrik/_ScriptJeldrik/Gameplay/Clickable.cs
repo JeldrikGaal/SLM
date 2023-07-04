@@ -10,6 +10,7 @@ public class Clickable : MonoBehaviour
     #region References
     [Tooltip("Assign Object that holds all clickables")]
     [SerializeField] public ClickableHolder cH;
+    private MG1Tutorial _tutorialManager;
     private ClickableManager cM;
     private Image _image;
     [HideInInspector] public MakeOutline _outline;
@@ -22,6 +23,7 @@ public class Clickable : MonoBehaviour
     {
         // Assigning references
         cM = GameObject.FindGameObjectWithTag("ClickableManager").GetComponent<ClickableManager>();
+        _tutorialManager = cM._tutorialManager;
         _image = GetComponent<Image>();
         _tH = Camera.main.GetComponent<TouchHandler>();
         _outline = GetComponentInChildren<MakeOutline>();
@@ -46,7 +48,7 @@ public class Clickable : MonoBehaviour
     // Function used by the UI button if this object is clicked. Tries to display the information in an popup by calling the function on the Clickable Manager and returns an warning if the holder is missing
     public void Clicked()
     {
-        if (cH != null)
+        if (cH != null && ( !_tutorialManager._runningStep2 || _tutorialManager.SKIPTUTORIAL))
         {
             UpdateLocalizedData();
             cM.TryDisplayPopUp(cH, this);

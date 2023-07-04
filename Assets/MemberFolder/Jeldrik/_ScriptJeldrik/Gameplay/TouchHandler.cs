@@ -296,6 +296,7 @@ public class TouchHandler : MonoBehaviour
             _cQ.ToggleSelf(false);
         }
         locked = true;
+        _cameraDrag.enabled = false;
     }
 
     public void UnlockInput()
@@ -309,6 +310,7 @@ public class TouchHandler : MonoBehaviour
             
         }
         locked = false;
+        _cameraDrag.enabled = true;
         _lastInputTime = Time.time;
     }
     #endregion

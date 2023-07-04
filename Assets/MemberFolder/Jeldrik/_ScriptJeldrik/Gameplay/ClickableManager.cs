@@ -21,12 +21,11 @@ public class ClickableManager : MonoBehaviour
     private TouchHandler _tH;
     private ClickableStorage _cS;
     private VALUECONTROLER _VC;
-    private MG1Tutorial _tutorialManager;
-
-    
-
+    public MG1Tutorial _tutorialManager;
     private Transform _canvas;
     #endregion
+
+    private bool _animating;
 
     void Start()
     {
@@ -86,6 +85,11 @@ public class ClickableManager : MonoBehaviour
     // Retrieves the information from a give 'clickableholder' object and displays everything accordingly in the popup
     private void DisplayPopUp(ClickableHolder cH, PopUp _popUpScript)
     {
+        // If the popup is currently being animated in some shape or form it should not take any other input
+        if (_animating) return;
+
+        _tH.LockInput(true);
+
         _popUpScript.UpdateText(cH);
 
         // Showing the outline of the clicked object
@@ -93,6 +97,8 @@ public class ClickableManager : MonoBehaviour
         {
             _currentClickable._outline.ToggleOutline(true);
         }
+
+        _animating = true;
 
         // Toggling the grayscale fake effect 
         _grayScaleImage.enabled = true;
@@ -143,10 +149,11 @@ public class ClickableManager : MonoBehaviour
                 // Handle further logic of object having been clicked
                 _qM.ObjectClick(cH);
                 StoreClicked(cH);
+                _animating = false;
 
             });
         });
-        _tH.LockInput(true);
+        
         
     }
 
@@ -159,13 +166,18 @@ public class ClickableManager : MonoBehaviour
     // Hides the popup 
     public void HidePopUp(PopUp _popUpScript)
     {
+        // If the popup is currently being animated in some shape or form it should not take any other input
+        if (_animating) return;
+                  
         Vector3 safeScale = _popUpScript.transform.localScale;
         Color fade = new Color(_grayScaleImage.color.r, _grayScaleImage.color.g, _grayScaleImage.color.b, 0);
         _grayScaleImage.DOColor(fade, _VC.PopUp_AnimSpeed);
+        _animating = true;
         _popUpScript.transform.DOScale(Vector3.zero, _VC.PopUp_AnimSpeed).OnComplete(() =>
         {
             _popUpScript.gameObject.SetActive(false);
             _popUpScript.transform.localScale = safeScale;
+            _animating = false;
 
             // Change color of clickable box
             //_currentClickable.SetColor(_disabled);

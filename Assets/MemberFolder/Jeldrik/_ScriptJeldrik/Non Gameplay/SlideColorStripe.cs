@@ -82,17 +82,17 @@ public class SlideColorStripe : MonoBehaviour
         Invoke("SlideIn", (_slideTime * tf + 0.2f) * fast);
     }
 
-    public void Appear(bool cQToggle = true)
+    public void Appear(bool cQToggle = true, float time = 0.75f)
     {
        ChangeAlpha(_text1Text, 0);
        ChangeAlpha(_text2Text, 0);
        ChangeAlpha(_image, 0);
        ChangeAlpha(_twig.GetComponent<Image>(), 0);
        _currentQuestion.gameObject.SetActive(cQToggle);
-       DOAlpha(_text1Text, 1, 0.75f);
-       DOAlpha(_text2Text, 1, 0.75f);
-       DOAlpha(_image, 1, 0.75f);
-       DOAlpha(_twig.GetComponent<Image>(), 1, 0.75f);
+       DOAlpha(_text1Text, 1, time);
+       DOAlpha(_text2Text, 1, time);
+       DOAlpha(_image, 1, time);
+       DOAlpha(_twig.GetComponent<Image>(), 1, time);
     }
 
     public void OrangeAppear(bool cQToggle = true)

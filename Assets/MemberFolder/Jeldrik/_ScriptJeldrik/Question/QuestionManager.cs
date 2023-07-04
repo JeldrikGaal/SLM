@@ -123,8 +123,10 @@ public class QuestionManager : MonoBehaviour
         _swirls.Add(new List<GameObject>());
 
         // Loading current Question from storage and displaying it
-        LoadingCurrentQuestion();
         LoadSwirls();
+        LoadingCurrentQuestion();
+        Debug.Log(_swirls.Count);
+        
 
         // Starts off disables
         this.gameObject.SetActive(false);
@@ -306,6 +308,8 @@ public class QuestionManager : MonoBehaviour
             tempSwirl.GetComponent<Swirl>().ShowSwirl();
             tempSwirl.transform.localPosition = Vector3.zero;
             
+            Debug.Log(GetCurrentQuestionId());
+            Debug.Log(_swirls.Count);
             _swirls[GetCurrentQuestionId()].Add(tempSwirl);
         }
         
