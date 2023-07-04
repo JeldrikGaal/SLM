@@ -21,7 +21,7 @@ public class ClickableManager : MonoBehaviour
     private TouchHandler _tH;
     private ClickableStorage _cS;
     private VALUECONTROLER _VC;
-    public MG1Tutorial _tutorialManager;
+    [SerializeField] public MG1Tutorial _tutorialManager;
     private Transform _canvas;
     #endregion
 
@@ -34,7 +34,7 @@ public class ClickableManager : MonoBehaviour
         _cS = GameObject.FindGameObjectWithTag("ClickableStorage").GetComponent<ClickableStorage>();
         _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
         _canvas = GameObject.FindGameObjectWithTag("Canvas").transform;
-        _tutorialManager = GameObject.FindGameObjectWithTag("TutorialManager").GetComponent<MG1Tutorial>();
+        //_tutorialManager = GameObject.FindGameObjectWithTag("TutorialManager").GetComponent<MG1Tutorial>();
         if (_tutorialManager.SKIPTUTORIAL)
         {
             _colorStripe.Appear();

@@ -124,14 +124,11 @@ public class QuestionManager : MonoBehaviour
 
         // Loading current Question from storage and displaying it
         LoadSwirls();
-        LoadingCurrentQuestion();
-        Debug.Log(_swirls.Count);
-        
+        LoadingCurrentQuestion();        
 
         // Starts off disables
         this.gameObject.SetActive(false);
-        
-        
+  
     }
 
     private void Update()

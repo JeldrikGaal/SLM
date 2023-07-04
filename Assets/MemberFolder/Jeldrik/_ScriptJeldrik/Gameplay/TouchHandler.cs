@@ -56,6 +56,7 @@ public class TouchHandler : MonoBehaviour
     private GameObject _canvas;
     private Transform _camTransform;
     private bool _dragged;
+
     
 
     // Needed to send raycast that also hit ui elements to spawn wrong input particles
@@ -296,7 +297,7 @@ public class TouchHandler : MonoBehaviour
             _cQ.ToggleSelf(false);
         }
         locked = true;
-        _cameraDrag.enabled = false;
+        _cameraDrag.NoTouchy = true;
     }
 
     public void UnlockInput()
@@ -310,7 +311,7 @@ public class TouchHandler : MonoBehaviour
             
         }
         locked = false;
-        _cameraDrag.enabled = true;
+        _cameraDrag.NoTouchy = false;
         _lastInputTime = Time.time;
     }
     #endregion

@@ -39,6 +39,7 @@ namespace Lean.Touch
         private float _height;
         private Vector4 _camLimits;
         private float _aspect;
+    	public bool NoTouchy = false;
 		[SerializeField] public float _currentDragMoveDist;
 
         /// <summary>This method resets the target position value to the <b>DefaultPosition</b> value.</summary>
@@ -121,6 +122,15 @@ namespace Lean.Touch
 
 		protected virtual void LateUpdate()
 		{
+			if (NoTouchy)
+			{
+				Camera.main.transform.position = new Vector3(
+                Mathf.Max(_camLimits.x, Mathf.Min(_camLimits.y, Camera.main.transform.position.x)),
+                Mathf.Max(_camLimits.z, Mathf.Min(_camLimits.w, Camera.main.transform.position.y)),
+                 Camera.main.transform.position.z);
+				 return;
+			}
+
 			// Get the fingers we want to use
 			var fingers = Use.UpdateAndGetFingers();
 
