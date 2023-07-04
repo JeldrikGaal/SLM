@@ -37,7 +37,7 @@ public class TouchHandler : MonoBehaviour
 
     // Reference to the button toggling the question menu
     private QuestionMenuButton _qMB;
-    private CurrentQuestion _cQ;
+    [SerializeField] private CurrentQuestion _cQ;
 
     // If true updates will be suppressed
     private bool locked;
@@ -114,7 +114,7 @@ public class TouchHandler : MonoBehaviour
        
         //_qMB = GameObject.FindGameObjectWithTag("QuestionMenuButton").GetComponent<QuestionMenuButton>();
         //_qMB.ToggleSelf(false);
-        _cQ = GameObject.FindGameObjectWithTag("CurrentQuestion").GetComponent<CurrentQuestion>();
+        //_cQ = GameObject.FindGameObjectWithTag("CurrentQuestion").GetComponent<CurrentQuestion>();
 
         EDITOR = false;
 
@@ -177,10 +177,13 @@ public class TouchHandler : MonoBehaviour
                 List<RaycastResult> results = new List<RaycastResult>();
                 //Raycast using the Graphics Raycaster and mouse click position
                 m_Raycaster.Raycast(m_PointerEventData, results);
-                if (results[0].gameObject.CompareTag("BackGround")){
-                    Vector3 partPos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0.5f);
-                    SpawnWrongInputPart(partPos);
+                if (results.Count > 0){
+                    if (results[0].gameObject.CompareTag("BackGround")){
+                        Vector3 partPos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0.5f);
+                        SpawnWrongInputPart(partPos);
+                    }        
                 }
+                
         }
         #endregion
 
