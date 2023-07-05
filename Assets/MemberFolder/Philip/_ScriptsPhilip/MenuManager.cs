@@ -178,7 +178,7 @@ public class MenuManager : MonoBehaviour
     {
         if (_languageButtonText.text == _languages[0])
         {
-            if (_currentIndex == 1)
+            if (_currentIndex == 0)
             {
                 LocalizationManager.Language = _localizationNames[0];
             }
@@ -189,7 +189,7 @@ public class MenuManager : MonoBehaviour
         }
         else
         {
-            if (_currentIndex == 1)
+            if (_currentIndex == 0)
             {
                 LocalizationManager.Language = _localizationNames[2];
             }
