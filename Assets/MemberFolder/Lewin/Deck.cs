@@ -31,7 +31,12 @@ public class Deck : MonoBehaviour
     private int CurrentDeckIndex = 7;
     private int maxDecks = 6;
     private int counterDrawDeckCards = 0;
-    
+    private string aa;
+
+    public GameObject EmptyGameObject; // The GameObject you select in the Inspector
+    public float FinalEndMoveTargetY; // The target y position you want to animate to
+    public float FinalCamMoveDuration; // Duration of the animation
+
     void Start()
     {
         Deck2 = ShuffleArray(Deck2);
@@ -46,8 +51,21 @@ public class Deck : MonoBehaviour
         SpawnIntitalTargetCards();
         SpawnWholeDrawPile();
 
+
+        StartCoroutine(WaitAndExecute(6));
     }
 
+    IEnumerator WaitAndExecute(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+
+        // Reparent all the canvas elements to the EmptyGameObject
+        ReparentChildObjects(cardCanvas.transform, EmptyGameObject.transform);
+
+
+        // Start animation
+        StartCoroutine(AnimatePosition(EmptyGameObject, FinalEndMoveTargetY, FinalCamMoveDuration));
+    }
 
     public void NextDeck()
 {
@@ -216,7 +234,72 @@ public class Deck : MonoBehaviour
             DeckTopCard = CardRef;
         }
     }
-    
-    
+
+
+    void ReparentChildObjects(Transform parent, Transform newParent)
+    {
+        // Temporarily store all first-level children
+        List<Transform> children = new List<Transform>();
+        for (int i = 0; i < parent.childCount; i++)
+        {
+            children.Add(parent.GetChild(i));
+        }
+
+        // Iterate over the stored list and reparent
+        foreach (Transform child in children)
+        {
+            if (child.gameObject == EmptyGameObject) continue; // Ignore the EmptyGameObject itself
+            child.SetParent(newParent, true);
+        }
+    }
+
+
+
+
+
+
+
+    IEnumerator AnimatePosition(GameObject obj, float offsetY, float duration)
+    {
+        DisableCardInteractions();
+        Vector3 startPos = obj.transform.position;
+
+        // Convert offset to relative offset using Screen height
+        float relativeOffsetY = (Screen.height * offsetY) / 100.0f;
+
+        Vector3 endPos = new Vector3(startPos.x, startPos.y + relativeOffsetY, startPos.z);
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / duration;
+            t = SmootherStep(0.0f, 1.0f, t); // Use SmootherStep instead of Mathf.SmoothStep
+            obj.transform.position = Vector3.Lerp(startPos, endPos, t);
+            yield return null;
+        }
+
+        obj.transform.position = endPos; // Ensure GameObject is at target position at the end
+    }
+
+
+
+
+    float SmootherStep(float edge0, float edge1, float x)
+    {
+        x = Mathf.Clamp01((x - edge0) / (edge1 - edge0));
+        return x * x * x * (x * (x * 6 - 15) + 10);
+    }
+
+    void DisableCardInteractions()
+    {
+        foreach (var collider in PileColliders)
+        {
+            collider.GetComponent<TPC>().TopCardGO.GetComponent<Card>().FlipIfPictureSideIsUp();
+            collider.GetComponent<TPC>().TopCardGO.GetComponent<Card>().EnableFlippable(false);
+        }
+    }
+
+
 }
 

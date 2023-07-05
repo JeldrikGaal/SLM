@@ -606,6 +606,11 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         textSide.raycastTarget = pTraceable;
     }
 
+    public void FlipIfPictureSideIsUp()
+    {
+        if (isPictureUp) FlipAnimated();
+    }
+
 
     
     
