@@ -38,7 +38,7 @@ public class MenuManager : MonoBehaviour
         _languageButtonText = languageButton.GetComponentInChildren<TextMeshProUGUI>();
         _languageButtonText.text = _languages[0];
         
-        _langugageStorage = GameObject.FindGameObjectWithTag("LanguageStorage").GetComponent<LangugageStorage>();
+        //_langugageStorage = GameObject.FindGameObjectWithTag("LanguageStorage").GetComponent<LangugageStorage>();
 
         ResolutionSetup();
         ShowCurrentPage();
@@ -199,7 +199,7 @@ public class MenuManager : MonoBehaviour
             }
         }
         //Debug.Log(LocalizationManager.Language);
-        _langugageStorage.Language = LocalizationManager.Language;
+        //_langugageStorage.Language = LocalizationManager.Language;
     }
     
     #endregion
