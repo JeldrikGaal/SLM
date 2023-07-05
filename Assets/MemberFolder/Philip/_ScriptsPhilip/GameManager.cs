@@ -7,6 +7,15 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public enum GameState
+    {
+        Idle,
+        Animating,
+        Paused
+    }
+    
+    public GameState CurrentState { get; set; }
+    
     public static GameManager Instance;
 
     public int pageIndex = 0;

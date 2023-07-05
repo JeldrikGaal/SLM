@@ -25,6 +25,8 @@ public class MenuManager : MonoBehaviour
     
     private void Awake()
     {
+        GameManager.Instance.CurrentState = GameManager.GameState.Idle;
+        
         _storage = ClickableStorage.Instance;
 
         //mapUnfold.gameObject.SetActive(false);
@@ -115,6 +117,8 @@ public class MenuManager : MonoBehaviour
     
     public void NextPage()
     {
+        if (GameManager.Instance.CurrentState == GameManager.GameState.Animating) return;
+        
         if (_currentPageIndex < pages.Count - 1)
         {
             bookAnimator.Play("bookFlipLeft");
@@ -127,6 +131,8 @@ public class MenuManager : MonoBehaviour
 
     public void PreviousPage()
     {
+        if (GameManager.Instance.CurrentState == GameManager.GameState.Animating) return;
+        
         if (_currentPageIndex > 0)
         {
             bookAnimator.Play("bookFlipRight");
@@ -263,11 +269,15 @@ public class MenuManager : MonoBehaviour
 
     public void LoadMinigame(string minigame)
     {
+        //if (GameManager.Instance.CurrentState == GameManager.GameState.Animating) return;
+         
         StartCoroutine(MapTransition(loadMinigameDelay, minigame));
     }
 
     private IEnumerator MapTransition(float time, string minigame)
     {
+        GameManager.Instance.CurrentState = GameManager.GameState.Animating;
+        
         //mapUnfold.SetActive(true);
         mapUnfoldAnim.Play("mapunfoldAnim");
         yield return new WaitForSeconds(mapUnfold.length - 5.7f);
@@ -276,6 +286,8 @@ public class MenuManager : MonoBehaviour
         
         yield return new WaitForSeconds(mapDelay);
         
+        GameManager.Instance.CurrentState = GameManager.GameState.Idle;
+        
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(minigame);
 
         // Wait until the scene finishes loading
@@ -283,9 +295,13 @@ public class MenuManager : MonoBehaviour
         {
             yield return null;
         }
+        
+        GameManager.Instance.CurrentState = GameManager.GameState.Idle;
 
         SceneManager.LoadScene(minigame);
         cam2.Priority = 5;
+        
+        
     }
 
     public void QuitGame()

@@ -6,13 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="58850cd5-8d2e-4765-8fce-206cb2b23995" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SLM/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SLM/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Animations/MapUnfold.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Animations/MapUnfold.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Animations/mapunfoldAnim.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Animations/mapunfoldAnim.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Jeldrik/TestAssets/Fonts/XTypeWriter/XTypewriter-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Jeldrik/TestAssets/Fonts/XTypeWriter/XTypewriter-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Lobby 1.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Lobby 1.JPG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Pfad_8 (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Pfad_8 (1).png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/curl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/curl.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/pngegg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/pngegg.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/trail.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/trail.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Fonts/x_typewriter/XTypewriter-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Fonts/x_typewriter/XTypewriter-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/IdleScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/IdleScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/MenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/IngameDebugConsoleSpriteAtlas.spriteatlas" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/IngameDebugConsoleSpriteAtlas.spriteatlas" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Book_Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Book_Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/Localization/MG 1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/Localization/MG 1.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/Localization/Menu.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/Localization/Menu.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +146,7 @@
       <workItem from="1688028655616" duration="2829000" />
       <workItem from="1688295746166" duration="11012000" />
       <workItem from="1688503930924" duration="5887000" />
-      <workItem from="1688554483787" duration="8172000" />
+      <workItem from="1688554483787" duration="11495000" />
     </task>
     <servers />
   </component>

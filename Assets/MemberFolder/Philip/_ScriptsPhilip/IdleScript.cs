@@ -47,7 +47,7 @@ public class IdleScript : MonoBehaviour
         {
             timer += Time.deltaTime;
             
-            Debug.Log("not afk");
+            //Debug.Log("not afk");
             if (timer >= afkThreshold)
             {
                 ShowPopup();
@@ -57,7 +57,7 @@ public class IdleScript : MonoBehaviour
         }
         else if (popup)
         {
-            Debug.Log("went afk");
+            //Debug.Log("went afk");
             afkTimer += Time.deltaTime;
             
             if (afkTimer >= returnThreshold)
