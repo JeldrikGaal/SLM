@@ -14,7 +14,9 @@ public class ClickableStorage : MonoBehaviour
     [HideInInspector] public List<ClickableHolder> _alreadyClickedSave = new List<ClickableHolder>();
     [HideInInspector] public List<List<ClickableHolder>> _alreadyClickedCombSave = new List<List<ClickableHolder>>();
     [HideInInspector] public List<bool> _completedQuestionsSave = new List<bool>(3);
+    [HideInInspector] public List<bool> _doneOnceSave = new List<bool>(3);
     [HideInInspector] public List<List<GameObject>> _swirlsSave = new List<List<GameObject>>();
+
 
     private void Awake()
     {

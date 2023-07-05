@@ -41,6 +41,7 @@ public class CurrentQuestion : MonoBehaviour
     void Start()
     {
         //gameObject.SetActive(false);
+        _questionCounterAnim.text = "";
     }
     void Update()
     {

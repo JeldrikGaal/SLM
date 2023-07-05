@@ -166,6 +166,7 @@ public class QuestionManager : MonoBehaviour
         _currentQuestion.ChangeCurrentQuestionInternal(_questions[_currentQ]);
         _swirls = _cS._swirlsSave;
         DisableSwirls(_currentQ);
+         _doneOnce = _cS._doneOnceSave ;
     }
 
     private void SavingCurrentQuestion()
@@ -175,6 +176,7 @@ public class QuestionManager : MonoBehaviour
         _cS._questionObjectCountsSave = _questionObjectCounts;    
         _cS._completedQuestionsSave = _completedQuestions;
         _cS._swirlsSave = _swirls;
+        _cS._doneOnceSave = _doneOnce;
     }
 
     public int GetCurrentQuestionId()
