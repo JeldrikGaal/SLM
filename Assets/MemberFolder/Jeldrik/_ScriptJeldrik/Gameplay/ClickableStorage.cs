@@ -45,6 +45,10 @@ public class ClickableStorage : MonoBehaviour
             _swirlsSave.Add(new List<GameObject>());
             _swirlsSave.Add(new List<GameObject>());
 
+            _doneOnceSave.Add(false);
+            _doneOnceSave.Add(false);
+            _doneOnceSave.Add(false);
+
         }
         else
         {
