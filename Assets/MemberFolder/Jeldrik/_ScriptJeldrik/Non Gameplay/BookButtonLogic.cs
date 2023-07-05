@@ -101,6 +101,7 @@ public class BookButtonLogic : MonoBehaviour
 
     public void OpenBook()
     {
+        _tutorialManager.Done = true;
         SceneManager.LoadScene("Book_Main");
         if (_qM == null)
         {

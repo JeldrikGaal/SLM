@@ -42,6 +42,9 @@ public class MG1Tutorial : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        Debug.Log("SSS");
+
         if (Instance == null)
         {
             Instance = this;
@@ -57,10 +60,11 @@ public class MG1Tutorial : MonoBehaviour
         _dragController = Camera.main.GetComponent<LeanDragCamera>();
         _moveArrowsHolder = _moveArrows[0].transform.parent;
         _tH = Camera.main.GetComponent<TouchHandler>();
-        if (SKIPTUTORIAL) 
+        if (SKIPTUTORIAL || Done) 
         { 
-           Appear();
-           _tH.UnlockInput();
+            Debug.Log("XXX");
+            Appear();
+            _tH.UnlockInput();
         }
         else 
         {

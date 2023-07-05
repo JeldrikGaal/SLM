@@ -34,8 +34,8 @@ public class ClickableManager : MonoBehaviour
         _cS = GameObject.FindGameObjectWithTag("ClickableStorage").GetComponent<ClickableStorage>();
         _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
         _canvas = GameObject.FindGameObjectWithTag("Canvas").transform;
-        //_tutorialManager = GameObject.FindGameObjectWithTag("TutorialManager").GetComponent<MG1Tutorial>();
-        if (_tutorialManager.SKIPTUTORIAL)
+        _tutorialManager = GameObject.FindGameObjectWithTag("TutorialManager").GetComponent<MG1Tutorial>();
+        if (_tutorialManager.SKIPTUTORIAL || _tutorialManager.Done)
         {
             _colorStripe.Appear();
         }
@@ -142,7 +142,7 @@ public class ClickableManager : MonoBehaviour
             _qM.MakeSwirl(cH);
 
             // Tell the tutorial manager an object has been clicked
-            if(!_tutorialManager.SKIPTUTORIAL) _tutorialManager.PopUpOpening();
+            if(!_tutorialManager.SKIPTUTORIAL && !_tutorialManager.Done) _tutorialManager.PopUpOpening();
 
             _popUpScript.transform.DOScale(safeScale, _VC.PopUp_AnimSpeed).OnComplete(() =>
             {
