@@ -13,10 +13,12 @@ public class MenuManager : MonoBehaviour
     private ClickableStorage _storage;
     public InfoPageManager _infoManager;
     private LangugageStorage _langugageStorage;
-    
+
+    public float mapDelay = 2f;
     
     public float loadMinigameDelay = 5f;
-    public GameObject mapUnfold;
+    public Animator mapUnfoldAnim;
+    public AnimationClip mapUnfold;
     public CinemachineVirtualCamera cam1;
     public CinemachineVirtualCamera cam2;
 
@@ -25,7 +27,7 @@ public class MenuManager : MonoBehaviour
     {
         _storage = ClickableStorage.Instance;
 
-        mapUnfold.SetActive(false);
+        //mapUnfold.gameObject.SetActive(false);
         
         cam1.Priority = 10;
         cam2.Priority = 5;
@@ -38,11 +40,8 @@ public class MenuManager : MonoBehaviour
         _languageButtonText = languageButton.GetComponentInChildren<TextMeshProUGUI>();
         _languageButtonText.text = _languages[0];
         
-        //_langugageStorage = GameObject.FindGameObjectWithTag("LanguageStorage").GetComponent<LangugageStorage>();
-
         ResolutionSetup();
         ShowCurrentPage();
-        //AddInfoPages();
     }
     
     void Update()
@@ -269,11 +268,22 @@ public class MenuManager : MonoBehaviour
 
     private IEnumerator MapTransition(float time, string minigame)
     {
-        mapUnfold.SetActive(true);
+        //mapUnfold.SetActive(true);
+        mapUnfoldAnim.Play("mapunfoldAnim");
+        yield return new WaitForSeconds(mapUnfold.length - 5.7f);
+        
         cam2.Priority = 15;
         
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(mapDelay);
         
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(minigame);
+
+        // Wait until the scene finishes loading
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
         SceneManager.LoadScene(minigame);
         cam2.Priority = 5;
     }

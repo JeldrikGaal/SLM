@@ -18,12 +18,12 @@ public class IdleScript : MonoBehaviour
 
     private void OnEnable()
     {
-        LeanTouch.OnFingerUpdate += HandleFingerUpdate;
+        LeanTouch.OnFingerDown += HandleFingerUpdate;
     }
 
     private void OnDisable()
     {
-        LeanTouch.OnFingerUpdate -= HandleFingerUpdate;
+        LeanTouch.OnFingerDown -= HandleFingerUpdate;
     }
 
     private void HandleFingerUpdate(LeanFinger finger)
@@ -41,10 +41,13 @@ public class IdleScript : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.pageIndex == 0) return;
+        
         if (!isAFK)
         {
             timer += Time.deltaTime;
-        
+            
+            Debug.Log("not afk");
             if (timer >= afkThreshold)
             {
                 ShowPopup();
@@ -54,6 +57,7 @@ public class IdleScript : MonoBehaviour
         }
         else if (popup)
         {
+            Debug.Log("went afk");
             afkTimer += Time.deltaTime;
             
             if (afkTimer >= returnThreshold)
@@ -94,6 +98,7 @@ public class IdleScript : MonoBehaviour
         {
             afkWindow.SetActive(false);
             isAFK = false;
+            if (GameManager.Instance.pageIndex > 0) { menu.PreviousPage(); }
             GameManager.Instance.pageIndex = 0;
             menu.ShowCurrentPage();
             ResetTimer();
