@@ -285,7 +285,7 @@ public class QuestionManager : MonoBehaviour
             _questionObjectCounts[_currentQ][GetIDForClicked(cH)] += 1;
 
             // Tell progression system that something has been clicked the first time
-            _progression.CallFindObjectProgression(_currentQ ,cH);
+            // TODO _progression.CallFindObjectProgression(_currentQ ,cH);
 
             // Checking if the clicked object is one that requires the spawning of a counter animation
             bool effect = GetCurrentQuestion().ObjectsToFind1.Count > 1;

@@ -15,6 +15,10 @@ public class ProgressionSystem : MonoBehaviour
     [SerializeField] private ClickableStorage _storage;
     [SerializeField] private VALUECONTROLER _VC;
     [SerializeField] private List<GameObject> _foundSlots = new List<GameObject>();
+    [SerializeField] private GameObject _foundParent;
+    [SerializeField] private GameObject _toBeFoundParent;
+    private Vector3 _foundParentPos;
+    private Vector3 _toBeFoundParentPos;
     private List<Vector3> _foundSlotsPos = new List<Vector3>();
     [SerializeField] private List<GameObject> _toBeFoundSlots = new List<GameObject>();
     private List<Vector3> _toBeFoundSlotsPos = new List<Vector3>();
@@ -62,7 +66,8 @@ public class ProgressionSystem : MonoBehaviour
         {
             _toBeFoundSlotsPos.Add(g.transform.position);
         }
-
+        _foundParentPos = _foundParent.transform.localPosition;
+        _toBeFoundParentPos = _toBeFoundParent.transform.localPosition;
     }
 
     
@@ -71,13 +76,13 @@ public class ProgressionSystem : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            ToggleBar(_foundSlots, _found, true, _foundSlotsPos);
-            ToggleBar(_toBeFoundSlots, _toBeFound, true, _toBeFoundSlotsPos);
+            ToggleBar(true, true);
+            ToggleBar(false, true);
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            ToggleBar(_foundSlots, _found, false, _foundSlotsPos);
-            ToggleBar(_toBeFoundSlots, _toBeFound, false, _toBeFoundSlotsPos);
+            ToggleBar(true, false);
+            ToggleBar(false, false);
         }
 
         if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
@@ -137,7 +142,6 @@ public class ProgressionSystem : MonoBehaviour
             _toBeFoundSlots[index].transform.DOScale(Vector3.one, 0.75f);
         });
     }
-
 
     // Returns if one of the first 2 spots is free otherwise returns -1
     private int GetFreeSpot(List<ClickableHolder> order)
@@ -217,51 +221,72 @@ public class ProgressionSystem : MonoBehaviour
 
     public void ToggleFound()
     {
-        ToggleBar(_foundSlots, _found, !_foundSlots[1].activeInHierarchy, _foundSlotsPos);
+        ToggleBar(true, !_foundSlots[1].activeInHierarchy);
     }
     public void ToggleToBeFound()
     {
-        ToggleBar(_toBeFoundSlots, _toBeFound, !_toBeFoundSlots[1].activeInHierarchy, _toBeFoundSlotsPos);
+        ToggleBar(false, !_toBeFoundSlots[1].activeInHierarchy);
     }
 
     private void HideBothBars()
     {
-        ToggleBar(_foundSlots, _found, false, _foundSlotsPos);
-        ToggleBar(_toBeFoundSlots, _toBeFound, false, _toBeFoundSlotsPos);
+        ToggleBar(true, false);
+        ToggleBar(false, false);
     }
 
-    private void ToggleBar(List<GameObject> slots,List<ClickableHolder> content, bool toggle, List<Vector3> positions)
+    private void ToggleBar(bool found, bool toggle)
     {
+        List<GameObject> slots = new List<GameObject>();
+        List<ClickableHolder> content = new List<ClickableHolder>();
+        GameObject parent;
+        Vector3 parentPos;
+        if (found)
+        {
+            slots = _foundSlots;
+            content = _found;
+            parent = _foundParent;
+            parentPos = _foundParentPos;
+        }
+        else
+        {
+            slots = _toBeFoundSlots;
+            content = _toBeFound;
+            parent = _toBeFoundParent;
+            parentPos = _toBeFoundParentPos;
+        }
         if (toggle)
         {
             int i = 0;
+            Sequence seq = DOTween.Sequence();
+            // Moving Parent
+            float newX = parent.transform.localPosition.x - 1000;
+            seq.Insert(0, parent.transform.DOLocalMoveX(newX, 0.75f));
+
+            // Scaling slots
             foreach (GameObject g in slots)
             {
                 if (i > 0 && content[i] != _emptyHolder)
                 {
-                    Sequence seq = DOTween.Sequence();
                     g.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
                     g.SetActive(true);
-                    g.transform.position = slots[0].transform.position;
-                    seq.Insert(0, g.transform.DOMove(positions[i], 0.75f));
                     seq.Insert(0.25f, g.transform.DOScale(Vector3.one, 0.75f));
                 } 
                 i++;
             }
+            
         }
         else 
         {
             int i = 0;
             bool once = false;
+            Sequence seq = DOTween.Sequence();
+            float newX = parentPos.x;
+            seq.Insert(0, parent.transform.DOLocalMoveX(newX, 0.75f));
             foreach (GameObject g in slots)
             {
                 if (i > 0 && content[i] != _emptyHolder)
                 {
-                    //g.transform.localScale = Vector3.zero;
-                    //g.transform.position = slots[0].transform.position;
-                    Sequence seq = DOTween.Sequence();
                     seq.Insert(0, g.transform.DOScale(new Vector3(0.2f, 0.2f, 0.2f), 0.75f));
-                    seq.Insert(0.25f, g.transform.DOMove(slots[0].transform.position, 0.75f));
                     seq.OnComplete(() =>
                     {
                         g.SetActive(false);
@@ -271,19 +296,6 @@ public class ProgressionSystem : MonoBehaviour
                                 ResetAfterToggle();
                             }
                     });
-                    /*g.transform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 0.75f).OnComplete(() => 
-                    {
-                        g.transform.DOMove(slots[0].transform.position, 0.75f).OnComplete(() =>
-                        {
-                            g.SetActive(false);
-                            if (!once)
-                            {
-                                once = true;
-                                ResetAfterToggle();
-                            }
-                        });
-                        
-                    });*/
                 } 
                 i++;
             }
@@ -294,14 +306,14 @@ public class ProgressionSystem : MonoBehaviour
     {
         _toBeFoundSlots[0].transform.localScale = Vector3.one;
         _foundSlots[0].transform.localScale = Vector3.one;
-        for (int i = 0; i < _toBeFoundSlots.Count; i++)
+        /*for (int i = 0; i < _toBeFoundSlots.Count; i++)
         {
             _toBeFoundSlots[i].transform.position = _toBeFoundSlotsPos[i];
         }
         for (int i = 0; i < _foundSlots.Count; i++)
         {
             _foundSlots[i].transform.position = _foundSlotsPos[i];
-        }
+        }*/
     }
 
     private void ChangeAlpha(Image img, float a)

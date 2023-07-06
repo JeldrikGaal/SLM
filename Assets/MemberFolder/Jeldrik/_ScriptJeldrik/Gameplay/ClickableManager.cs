@@ -39,7 +39,7 @@ public class ClickableManager : MonoBehaviour
         _tutorialManager = GameObject.FindGameObjectWithTag("TutorialManager").GetComponent<MG1Tutorial>();
         foreach(ClickableHolder cH in _declinedHolders)
         {
-            cH.Title = LocalizationManager.Localize(cH.LocalizationKey);
+            cH.Title = "";
             cH.Description = LocalizationManager.Localize(cH.LocalizationKey);
         }
         if (_tutorialManager.SKIPTUTORIAL || _tutorialManager.Done)
@@ -57,9 +57,20 @@ public class ClickableManager : MonoBehaviour
         }
         else
         {
+            if (!_tutorialManager.SKIPTUTORIAL && !_tutorialManager.Done && cH != _tutorialManager._exampleClickable.cH)
+            {
+                Debug.Log("You shall not click this !");
+                return false;
+            }
             _currentClickable = C;
             if (_qM.GetCurrentQuestionId() == 0 && _VC.Questions[0].ObjectsToFind1[0] != cH)
             {
+                if (C == _tutorialManager._exampleClickable)
+                {
+                    int ran2 = Random.Range(1, _popUps.Count);
+                    DisplayPopUp(cH, _popUps[ran2]);
+                    return true;
+                }
                 int ran = Random.Range(1, _popUps.Count);
                 DisplayPopUp(_declinedHolders[0], _popUps[ran]);
                 return true;
@@ -78,11 +89,6 @@ public class ClickableManager : MonoBehaviour
             }
             if (cH.Question)
             {
-                if (!_tutorialManager.SKIPTUTORIAL && !_tutorialManager.Done && cH != _tutorialManager._exampleClickable.cH)
-                {
-                    Debug.Log("You shall not click this !");
-                    return false;
-                }
                 DisplayPopUp(cH,_popUps[0]);
             }
             else 
