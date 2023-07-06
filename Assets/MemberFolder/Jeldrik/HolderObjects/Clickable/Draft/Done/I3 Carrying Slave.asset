@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26cf9e1397fcfa439d8636d30126c25, type: 3}
   m_Name: I3 Carrying Slave
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: c105b2732dda003409648aba2f2a4e51, type: 3}
-  ProgressionImage: {fileID: 21300000, guid: c105b2732dda003409648aba2f2a4e51, type: 3}
+  Image: {fileID: 21300000, guid: 26115c832b640b74eba29fad0407d9ea, type: 3}
+  ProgressionImage: {fileID: 21300000, guid: 26115c832b640b74eba29fad0407d9ea, type: 3}
   Title: Young Man
   Description: This young man was enslaved and transported overseas from Turkey.
-    At 'Vrijburg' Johan Maurits branded him and his other slaves with his insignia
-    to mark them as his property.
+    At 'Vrijburg,' Johan Maurits branded him and his other enslaved people with his
+    insignia to mark them as his property.
   BookInfo: 
   Question: 0
   language: 0

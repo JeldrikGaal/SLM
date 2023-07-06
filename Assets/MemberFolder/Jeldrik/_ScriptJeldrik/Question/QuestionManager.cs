@@ -32,6 +32,7 @@ public class QuestionManager : MonoBehaviour
     [Tooltip("Reference to the book transition object")]
     [SerializeField] private BookTransition _bT;
     [SerializeField] private ProgressionSystem _progression;
+    [SerializeField] private TMP_Text _questionCompletedText;
 
     [HideInInspector] public TouchHandler _tH;
     private ClickableStorage _cS;
@@ -255,7 +256,18 @@ public class QuestionManager : MonoBehaviour
         {
             _doneOnce[_currentQ] = true;
             Invoke("Forward", 0.25f);
-
+            // Fading text to display question has been completed
+            _questionCompletedText.transform.localScale = Vector3.zero;
+            _questionCompletedText.enabled = true;
+            _questionCompletedText.text = LocalizationManager.Localize("QuestionCompleted");
+            _questionCompletedText.color = new Color(1,1,1,1);
+            _questionCompletedText.transform.DOScale(Vector3.one, 0.75f).OnComplete(() => 
+            {
+                _questionCompletedText.DOColor(new Color(1,1,1,0), 0.75f).OnComplete(() => 
+                {
+                    _questionCompletedText.enabled = false;
+                });
+            });
         }
     }
 
