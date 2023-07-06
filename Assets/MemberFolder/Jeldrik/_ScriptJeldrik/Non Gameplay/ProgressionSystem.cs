@@ -136,9 +136,6 @@ public class ProgressionSystem : MonoBehaviour
             _foundSlots[0].transform.DOScale(Vector3.one, 0.75f);
             _toBeFoundSlots[index].transform.DOScale(Vector3.one, 0.75f);
         });
-        
-
-        
     }
 
 
