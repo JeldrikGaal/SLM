@@ -108,6 +108,7 @@ namespace Lean.Touch
 
 			// Calculate the screenDelta value based on these fingers
 			var screenDelta = LeanGesture.GetScreenDelta(fingers);
+			
 
 			if (screenDelta != Vector2.zero)
 			{
@@ -124,7 +125,6 @@ namespace Lean.Touch
 
 			// Increment
 			remainingTranslation += transform.localPosition - oldPosition;
-
 			// Get t value
 			var factor = CwHelper.DampenFactor(Damping, Time.deltaTime);
 
@@ -133,6 +133,9 @@ namespace Lean.Touch
 
 			// Shift this transform by the change in delta
 			transform.localPosition = oldPosition + remainingTranslation - newRemainingTranslation;
+			transform.localPosition = new Vector2(Mathf.Clamp(transform.localPosition.x, -640f, 640f), Mathf.Clamp(transform.localPosition.y, -300f, 300f));
+
+			
 
 			if (fingers.Count == 0 && inertia > 0.0f && Damping > 0.0f)
 			{
@@ -141,7 +144,11 @@ namespace Lean.Touch
 
 			// Update remainingDelta with the dampened value
 			remainingTranslation = newRemainingTranslation;
+			// remainingTranslation = new Vector2(Mathf.Clamp(newRemainingTranslation.x, 0f, 1f * Screen.width), Mathf.Clamp(newRemainingTranslation.y, 0f, 1f * Screen.height));
+
 			//LimitPositionToScreenBounds();
+			
+
 		}
 
 		private void TranslateUI(Vector2 screenDelta)
@@ -163,6 +170,12 @@ namespace Lean.Touch
 
 			// Add the deltaPosition
 			screenPoint += screenDelta * Sensitivity;
+			
+			// ONLY FOR EFFECT TO NOT CLAMP SO HARSH
+			float _marginClampEffectX = 0.05f;
+			float _marginClampEffectY = 0.15f;
+			screenPoint = new Vector2(Mathf.Clamp(screenPoint.x, _marginClampEffectX * Screen.width, (1-_marginClampEffectX) * Screen.width), Mathf.Clamp(screenPoint.y, _marginClampEffectY * Screen.height, (1-_marginClampEffectY) * Screen.height));
+
 
 			// Convert back to world space
 			var worldPoint = default(Vector3);
@@ -170,6 +183,7 @@ namespace Lean.Touch
 			if (RectTransformUtility.ScreenPointToWorldPointInRectangle(transform.parent as RectTransform, screenPoint, finalCamera, out worldPoint) == true)
 			{
 				transform.position = worldPoint;
+				//transform.position = new Vector2(Mathf.Clamp(worldPoint.x, 0f, 1f * Screen.width), Mathf.Clamp(worldPoint.y, 0f, 1f * Screen.height));
 			}
 		}
 

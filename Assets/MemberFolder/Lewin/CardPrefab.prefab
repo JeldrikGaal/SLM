@@ -238,7 +238,7 @@ MonoBehaviour:
   onDeselected:
     m_PersistentCalls:
       m_Calls: []
-  use: 0
+  use: 1
   onSelectedFinger:
     m_PersistentCalls:
       m_Calls: []
