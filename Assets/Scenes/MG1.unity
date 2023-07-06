@@ -39513,6 +39513,22 @@ PrefabInstance:
       propertyPath: _popUps.Array.data[3]
       value: 
       objectReference: {fileID: 7472608574932716522}
+    - target: {fileID: 5471262566935796342, guid: f740ceb45edfc1a4cb6690d967a651c1, type: 3}
+      propertyPath: _declinedHolders.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471262566935796342, guid: f740ceb45edfc1a4cb6690d967a651c1, type: 3}
+      propertyPath: _declinedHolders.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 38eb67bb6bab88f4789973a3dbf73dee, type: 2}
+    - target: {fileID: 5471262566935796342, guid: f740ceb45edfc1a4cb6690d967a651c1, type: 3}
+      propertyPath: _declinedHolders.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 902bba067ba02cb4692f3e9d002e6540, type: 2}
+    - target: {fileID: 5471262566935796342, guid: f740ceb45edfc1a4cb6690d967a651c1, type: 3}
+      propertyPath: _declinedHolders.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6bb564acdfe07d946929db594f3f46ee, type: 2}
     - target: {fileID: 5471262567792342148, guid: f740ceb45edfc1a4cb6690d967a651c1, type: 3}
       propertyPath: m_RootOrder
       value: 1

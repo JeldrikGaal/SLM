@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using Assets.SimpleLocalization;
 
 public class ClickableManager : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class ClickableManager : MonoBehaviour
     #region References
     [SerializeField] private GameObject _popUp;
 
-    [SerializeField] private QuestionManager _qM;
+    [SerializeField] public QuestionManager _qM;
     [SerializeField] private Image _grayScaleImage;
     [SerializeField] private List<PopUp> _popUps = new List<PopUp>();
     [SerializeField] private SlideColorStripe _colorStripe;
@@ -22,6 +23,7 @@ public class ClickableManager : MonoBehaviour
     private ClickableStorage _cS;
     private VALUECONTROLER _VC;
     [SerializeField] public MG1Tutorial _tutorialManager;
+    [SerializeField] private List<ClickableHolder> _declinedHolders = new List<ClickableHolder>();
     private Transform _canvas;
     #endregion
 
@@ -35,6 +37,11 @@ public class ClickableManager : MonoBehaviour
         _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
         _canvas = GameObject.FindGameObjectWithTag("Canvas").transform;
         _tutorialManager = GameObject.FindGameObjectWithTag("TutorialManager").GetComponent<MG1Tutorial>();
+        foreach(ClickableHolder cH in _declinedHolders)
+        {
+            cH.Title = LocalizationManager.Localize(cH.LocalizationKey);
+            cH.Description = LocalizationManager.Localize(cH.LocalizationKey);
+        }
         if (_tutorialManager.SKIPTUTORIAL || _tutorialManager.Done)
         {
             _colorStripe.Appear();
@@ -51,6 +58,24 @@ public class ClickableManager : MonoBehaviour
         else
         {
             _currentClickable = C;
+            if (_qM.GetCurrentQuestionId() == 0 && _VC.Questions[0].ObjectsToFind1[0] != cH)
+            {
+                int ran = Random.Range(1, _popUps.Count);
+                DisplayPopUp(_declinedHolders[0], _popUps[ran]);
+                return true;
+            }
+            else if (_qM.GetCurrentQuestionId() == 1 && !_VC.Questions[1].ObjectsToFind1.Contains(cH))
+            {
+                int ran = Random.Range(1, _popUps.Count);
+                DisplayPopUp(_declinedHolders[1], _popUps[ran]);
+                return true;
+            }
+            else if (_qM.GetCurrentQuestionId() == 2 && !_VC.Questions[2].ObjectsToFind1.Contains(cH))
+            {
+                int ran = Random.Range(1, _popUps.Count);
+                DisplayPopUp(_declinedHolders[2], _popUps[ran]);
+                return true;
+            }
             if (cH.Question)
             {
                 if (!_tutorialManager.SKIPTUTORIAL && !_tutorialManager.Done && cH != _tutorialManager._exampleClickable.cH)
@@ -63,7 +88,7 @@ public class ClickableManager : MonoBehaviour
             else 
             {
                 int ran = Random.Range(1, _popUps.Count);
-                DisplayPopUp(cH,_popUps[ran]);
+                DisplayPopUp(cH, _popUps[ran]);
             }
             
             return true;

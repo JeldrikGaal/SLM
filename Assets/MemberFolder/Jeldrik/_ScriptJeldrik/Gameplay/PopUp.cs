@@ -77,6 +77,8 @@ public class PopUp : MonoBehaviour
 
     public void UpdateText(ClickableHolder cH)
     {
+        if (!cM) cM = GameObject.FindGameObjectWithTag("ClickableManager").GetComponent<ClickableManager>();
+        if (!_VC) _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
         // Setting all the info in the popup
         _titleText.text = cH.Title;
         _descriptionText.text = cH.Description;
@@ -84,7 +86,7 @@ public class PopUp : MonoBehaviour
         if (cH.Question)
         {
             _image.sprite = cH.Image;
-             _image.preserveAspect = true;
+            _image.preserveAspect = true;
         }
        
     }
