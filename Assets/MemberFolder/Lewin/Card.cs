@@ -60,6 +60,8 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public bool _placedOnTargetPile;
     private bool _animatingToOtherCardAtm;
     private TPC LastTPC;
+
+    private bool _shouldScreenShakeOnDrop;
     
     public void Init(int ID, CardDatabase pCardDatabase, bool pDraggable, bool pFlippable, Canvas pCardCanvas, Deck pDeck, DragOverManager pDragOverManager)
     {
@@ -75,6 +77,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         if (cardData.FrontSprite.name == "Ceramic Card Front")
         {
             this.GetComponent<LeanDragTranslate>().Damping = 5;
+            _shouldScreenShakeOnDrop = true;
         }
         
     }
@@ -395,10 +398,10 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 }
             }
 
-
+            
             ShowDropInfo(false, null);
         }
-        
+        if (draggingAvailable && _shouldScreenShakeOnDrop) DeckRef.FinalParentGO.GetComponent<ShakeUI>().StartShake();
     }
 
     void SetDraggingFalse()
@@ -572,7 +575,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         Color color = DropInfo.color;
         color.a = show ? 1f : 0f;
         DropInfo.color = color;
-        DropInfo.transform.GetChild(0).localScale = show ? Vector3.one : Vector3.zero;
+        //DropInfo.transform.GetChild(0).localScale = show ? Vector3.one : Vector3.zero;
         if (show)
         {
             LastTPC = pOtherHitbox.transform.parent.gameObject.GetComponent<TPC>();

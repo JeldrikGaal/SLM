@@ -37,6 +37,8 @@ public class Deck : MonoBehaviour
     public float FinalEndMoveTargetX; // The target x position you want to animate to
     public float FinalCamMoveDuration; // Duration of the animation
 
+    public GameObject FinalParentGO;
+
     void Start()
     {
         Deck2 = ShuffleArray(Deck2);
@@ -52,6 +54,7 @@ public class Deck : MonoBehaviour
         SpawnWholeDrawPile();
 
         //StartCoroutine(Final_1(5.5f));
+        ReparentChildObjects(cardCanvas.transform, EmptyGameObject.transform);
 
     }
 
@@ -297,7 +300,7 @@ public class Deck : MonoBehaviour
             collider.GetComponent<TPC>().TopCardGO.GetComponent<Card>().EnableFlippable(false);
         }
     }
-
-
+    
+    
 }
 
