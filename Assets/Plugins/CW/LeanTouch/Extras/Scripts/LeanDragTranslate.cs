@@ -133,7 +133,7 @@ namespace Lean.Touch
 
 			// Shift this transform by the change in delta
 			transform.localPosition = oldPosition + remainingTranslation - newRemainingTranslation;
-			transform.localPosition = new Vector2(Mathf.Clamp(transform.localPosition.x, -640f, 640f), Mathf.Clamp(transform.localPosition.y, -300f, 300f));
+			transform.localPosition = new Vector2(Mathf.Clamp(transform.localPosition.x, -700f, 700f), Mathf.Clamp(transform.localPosition.y, -400f, 400f));
 
 			
 
@@ -172,8 +172,8 @@ namespace Lean.Touch
 			screenPoint += screenDelta * Sensitivity;
 			
 			// ONLY FOR EFFECT TO NOT CLAMP SO HARSH
-			float _marginClampEffectX = 0.05f;
-			float _marginClampEffectY = 0.15f;
+			float _marginClampEffectX = 0.0f;
+			float _marginClampEffectY = 0.0f;
 			screenPoint = new Vector2(Mathf.Clamp(screenPoint.x, _marginClampEffectX * Screen.width, (1-_marginClampEffectX) * Screen.width), Mathf.Clamp(screenPoint.y, _marginClampEffectY * Screen.height, (1-_marginClampEffectY) * Screen.height));
 
 

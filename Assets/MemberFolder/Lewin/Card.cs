@@ -62,6 +62,8 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     private TPC LastTPC;
 
     private bool _shouldScreenShakeOnDrop;
+    private float _currentY;
+    
     
     public void Init(int ID, CardDatabase pCardDatabase, bool pDraggable, bool pFlippable, Canvas pCardCanvas, Deck pDeck, DragOverManager pDragOverManager)
     {
@@ -93,6 +95,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         transform.localScale = new Vector3(cardScale, cardScale, cardScale);
         textSide.rectTransform.localScale = new Vector3(0, 1, 1);
         ShowDropInfo(false, null);
+        _currentY = transform.position.y;
     }
 
     private void OnEnable()
@@ -386,6 +389,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 LastTPC.TopCardGO = gameObject;
                 LastTPC.cardCount++;
                 EnableDragging(false);
+                if (_shouldScreenShakeOnDrop) DeckRef.FinalParentGO.GetComponent<ShakeUI>().StartShake();
                 StartCoroutine(MoveToOtherCard(LastTPC.BottomCardGO, 0.15f));
                 if (DeckRef.DeckTopCard != null)
                 {
@@ -396,6 +400,12 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                     //DeckRef.NextDeck();
                     DeckRef.MoveTopCardToCenter();
                 }
+            }
+            else
+            {
+                DeckRef.AnimateVignetteAlpha(0.18f, 0.4f);
+                MoveToCenterDuration = 1.2f;
+                MoveToCenter();
             }
 
             
@@ -546,8 +556,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public void MoveToCenter()
     {
         // Get the current y position of the card
-        float currentY = transform.position.y;
-        StartCoroutine(MoveToPosition(new Vector2(Screen.width / 2, currentY)));
+        StartCoroutine(MoveToPosition(new Vector2(Screen.width / 2, _currentY)));
     }
     IEnumerator MoveToPosition(Vector2 targetPosition)
     {
@@ -580,10 +589,6 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         {
             LastTPC = pOtherHitbox.transform.parent.gameObject.GetComponent<TPC>();
             _otherCard = LastTPC.TopCardGO;
-        }
-        else
-        {
-            
         }
     }
     IEnumerator MoveToOtherCard(GameObject otherCard, float duration)

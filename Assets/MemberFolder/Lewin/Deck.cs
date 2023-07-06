@@ -39,6 +39,15 @@ public class Deck : MonoBehaviour
 
     public GameObject FinalParentGO;
 
+    public Image _vignette;
+    private float _originalAlpha;
+    private bool _drawnFistCard;
+
+    
+    void Awake()
+    {
+        _originalAlpha = _vignette.color.a;
+    }
     void Start()
     {
         Deck2 = ShuffleArray(Deck2);
@@ -139,6 +148,14 @@ public class Deck : MonoBehaviour
     {
         if (DeckTopCard)
         {
+            if (!_drawnFistCard)
+            {
+                _drawnFistCard = true;
+                foreach (var _tpc in PileColliders)
+                {
+                    _tpc.TopCardGO.GetComponent<Card>().FlipAnimated();
+                }
+            }
             DeckTopCard.MoveToCenter();
             DeckTopCard.MakeInteractableAfterTime();
             int _count = DrawPileCards.Count;
@@ -163,7 +180,7 @@ public class Deck : MonoBehaviour
             RectTransform cardRectTransform = CardReference.GetComponent<RectTransform>();
 
             CardReference._placedOnTargetPile = true;
-            CardReference.FlipAnimated();
+            //CardReference.FlipAnimated();
 
             // Calculate the anchors for the card
             float anchorX = 1f - (i + 0.5f) / 4f;
@@ -252,12 +269,7 @@ public class Deck : MonoBehaviour
             child.SetParent(newParent, true);
         }
     }
-
-
-
-
-
-
+    
 
     IEnumerator AnimatePosition(GameObject obj, float offsetY, float offsetX, float duration)
     {
@@ -301,6 +313,39 @@ public class Deck : MonoBehaviour
         }
     }
     
+    public void AnimateVignetteAlpha(float targetAlpha, float duration)
+    {
+        StartCoroutine(AnimateAlpha(targetAlpha, duration));
+    }
+
+    IEnumerator AnimateAlpha(float targetAlpha, float duration)
+    {
+        // Store the original color
+        Color originalColor = _vignette.color;
+        
+        // Half duration for fade in and fade out separately
+        float halfDuration = duration / 2;
+
+        // Animate from original alpha to target alpha
+        for (float t = 0; t < 1; t += Time.deltaTime / halfDuration)
+        {
+            float newAlpha = Mathf.Lerp(_originalAlpha, targetAlpha, t);
+            _vignette.color = new Color(originalColor.r, originalColor.g, originalColor.b, newAlpha);
+            yield return null;
+        }
+
+        // Animate from target alpha back to original alpha
+        for (float t = 0; t < 1; t += Time.deltaTime / halfDuration)
+        {
+            float newAlpha = Mathf.Lerp(targetAlpha, _originalAlpha, t);
+            _vignette.color = new Color(originalColor.r, originalColor.g, originalColor.b, newAlpha);
+            yield return null;
+        }
+
+        // Ensure it finishes exactly at the original alpha
+        _vignette.color = originalColor;
+    }
+
     
 }
 
