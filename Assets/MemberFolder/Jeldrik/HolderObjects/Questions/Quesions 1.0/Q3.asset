@@ -17,13 +17,16 @@ MonoBehaviour:
   Number: 2
   Image: {fileID: 21300000, guid: 99b49dab9c20ccf458d324a55dbabefb, type: 3}
   ObjectsToFind1:
-  - {fileID: 11400000, guid: caf6ab6c61d8efe47b62ddb352e2adcb, type: 2}
-  - {fileID: 11400000, guid: ad7f90346aacd6e4e89c74e12d382b4a, type: 2}
-  - {fileID: 11400000, guid: fa46ba566778881498791aa0ae54d2d4, type: 2}
-  - {fileID: 11400000, guid: a9798ea4726f2bd4cb1bd9c474da4ec5, type: 2}
-  - {fileID: 11400000, guid: 28b1f380194e31d4ba02402fdb45b242, type: 2}
+  - {fileID: 11400000, guid: 2e89491c5a8cfa547b2897357fb44921, type: 2}
+  - {fileID: 11400000, guid: 30b4272164ea61343ab9d2f14390bb30, type: 2}
+  - {fileID: 11400000, guid: 40b8a5005cb338a439a941c88615a762, type: 2}
+  - {fileID: 11400000, guid: f9ed260b117a47449834fae1b316f5d3, type: 2}
+  - {fileID: 11400000, guid: ef4decc66eaa3c5488669c97175a7559, type: 2}
+  - {fileID: 11400000, guid: 5d4905ad7fb77554db49fe8a9813aa64, type: 2}
+  - {fileID: 11400000, guid: 5dfcd77a0b115774ba4fb813c6efb992, type: 2}
+  - {fileID: 11400000, guid: 3a1197964235792419548e508482c3ae, type: 2}
   ObjectsToFind2: []
   ObjectsToFind3: []
-  AmountNeeded: 0200000001000000
+  AmountNeeded: 01000000
   End: 1
   LocalizationKey: MG1.Q3

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: G5 Wilhelm Piso
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 4bd22d45841756a4b9bf9a976541f655, type: 3}
+  ProgressionImage: {fileID: 21300000, guid: 4bd22d45841756a4b9bf9a976541f655, type: 3}
   Title: Dude4
   Description: 4
   BookInfo: 

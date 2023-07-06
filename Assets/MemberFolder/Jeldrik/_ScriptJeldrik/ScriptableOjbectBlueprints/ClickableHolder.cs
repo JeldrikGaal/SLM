@@ -11,6 +11,7 @@ public class ClickableHolder : ScriptableObject
 {
     [Header("Fill this stuff with all needed info")]
     [Tooltip("Main image thats gonna be displayed")] public Sprite Image;
+    [Tooltip("Image that is gonna be displayed in the progression UI")] public Sprite ProgressionImage;
     [Tooltip("Title of the image / popup")] public string Title;
     [Tooltip("Additional second information")] public string Description;
     [Tooltip("Information that only needs to be displayed in the book")] public string BookInfo;

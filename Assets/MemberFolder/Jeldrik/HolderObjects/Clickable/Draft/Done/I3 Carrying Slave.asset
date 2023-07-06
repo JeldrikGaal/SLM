@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: I3 Carrying Slave
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: c105b2732dda003409648aba2f2a4e51, type: 3}
-  Title: 
-  Description: 
+  ProgressionImage: {fileID: 21300000, guid: c105b2732dda003409648aba2f2a4e51, type: 3}
+  Title: Young Man
+  Description: This young man was enslaved and transported overseas from Turkey.
+    At 'Vrijburg' Johan Maurits branded him and his other slaves with his insignia
+    to mark them as his property.
   BookInfo: 
   Question: 0
   language: 0

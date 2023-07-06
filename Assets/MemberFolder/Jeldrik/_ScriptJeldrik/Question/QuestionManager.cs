@@ -31,6 +31,7 @@ public class QuestionManager : MonoBehaviour
 
     [Tooltip("Reference to the book transition object")]
     [SerializeField] private BookTransition _bT;
+    [SerializeField] private ProgressionSystem _progression;
 
     [HideInInspector] public TouchHandler _tH;
     private ClickableStorage _cS;
@@ -271,6 +272,9 @@ public class QuestionManager : MonoBehaviour
             _alreadyClicked.Add(cH);
             _questionObjectCounts[_currentQ][GetIDForClicked(cH)] += 1;
 
+            // Tell progression system that something has been clicked the first time
+            _progression.CallFindObjectProgression(_currentQ ,cH);
+
             // Checking if the clicked object is one that requires the spawning of a counter animation
             bool effect = GetCurrentQuestion().ObjectsToFind1.Count > 1;
             _currentQuestion.UpdateQuestionCounter(_questions[_currentQ], effect);
@@ -294,8 +298,6 @@ public class QuestionManager : MonoBehaviour
             GameObject tempSwirl = Instantiate(_swirl, _cM.GetCurrentClickable().transform);
             Image tempI = _cM.GetCurrentClickable().GetComponent<Image>();
             Sprite sprite = tempI.sprite;
-            Debug.Log(tempI.transform.name);
-            Debug.Log(_cM.GetCurrentClickable().GetComponent<RectTransform>().sizeDelta);
 
             Vector2 padding = tempI.sprite.textureRect.size;
             
@@ -307,8 +309,6 @@ public class QuestionManager : MonoBehaviour
             tempSwirl.GetComponent<Swirl>().ShowSwirl();
             tempSwirl.transform.localPosition = Vector3.zero;
             
-            Debug.Log(GetCurrentQuestionId());
-            Debug.Log(_swirls.Count);
             _swirls[GetCurrentQuestionId()].Add(tempSwirl);
         }
         

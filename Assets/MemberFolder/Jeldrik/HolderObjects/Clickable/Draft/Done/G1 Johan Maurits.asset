@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: G1 Johan Maurits
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 4b085183ea966a54283732278e38c5d6, type: 3}
-  Title: C1.Title
-  Description: C1.Description
+  ProgressionImage: {fileID: 21300000, guid: 4b085183ea966a54283732278e38c5d6, type: 3}
+  Title: Johan Maurits
+  Description: Johan Maurits of Nassau-Siegen was born in Siegen in 1604. In 1637,
+    he was appointed as the governor of the Dutch colony in Brazil by his employer,
+    the West India Company (WIC).
   BookInfo: 
   Question: 1
   language: 0

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: I6 Picking Oranges Slave
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: c92ba5ff43a01194abc8bb5e7a715608, type: 3}
-  Title: 
-  Description: 
+  ProgressionImage: {fileID: 21300000, guid: c92ba5ff43a01194abc8bb5e7a715608, type: 3}
+  Title: Man
+  Description: This man, a native brazilian, //
   BookInfo: 
   Question: 0
   language: 0

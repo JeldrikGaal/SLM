@@ -43,8 +43,6 @@ public class MG1Tutorial : MonoBehaviour
     void Start()
     {
 
-        Debug.Log("SSS");
-
         if (Instance == null)
         {
             Instance = this;
@@ -62,7 +60,6 @@ public class MG1Tutorial : MonoBehaviour
         _tH = Camera.main.GetComponent<TouchHandler>();
         if (SKIPTUTORIAL || Done) 
         { 
-            Debug.Log("XXX");
             Appear();
             _tH.UnlockInput();
         }

@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: I2 Cooking Slave
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 71727666f0e167a4196b0838ffc73c14, type: 3}
-  Title: 
-  Description: 
+  ProgressionImage: {fileID: 21300000, guid: 71727666f0e167a4196b0838ffc73c14, type: 3}
+  Title: Young Woman
+  Description: This young woman was enslaved and transported overseas from Africa.
+    Unlike many enslaved people, she survived the transit over the Atlantic. One
+    in ten slaves succumbed to sickness or died due to the inhumane transport conditions.
   BookInfo: 
   Question: 0
   language: 0

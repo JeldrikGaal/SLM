@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: I5 Cleaning Floor Slave
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 2eb14f4a414077b4580e331cbe02c098, type: 3}
-  Title: I5.Title
-  Description: I5.Description
+  ProgressionImage: {fileID: 21300000, guid: 2eb14f4a414077b4580e331cbe02c098, type: 3}
+  Title: Boy
+  Description: This boy, a native brazilian, was enslaved even before Johan Maurits
+    came to Recife. He was already forced to work on sugar mill farms when the area
+    was still a portuguese colony. Most native Brazilian enslaved people died before
+    they were 19 years old.
   BookInfo: 
   Question: 0
   language: 0

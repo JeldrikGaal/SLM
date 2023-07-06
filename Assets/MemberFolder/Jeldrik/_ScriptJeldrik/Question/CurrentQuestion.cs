@@ -19,11 +19,14 @@ public class CurrentQuestion : MonoBehaviour
     [SerializeField] private GameObject _backButton;
     [SerializeField] private Image _image;
     [SerializeField] private SlideColorStripe _slideColorStripe;
+    [SerializeField] private ProgressionSystem _progression;
 
     private QuestionManager _qM;
     private Question _currentQ;
     private ClickableManager _clickableManager;
     private TouchHandler _tH;
+
+   
 
     [HideInInspector] public bool _sliding;
     #endregion
@@ -82,6 +85,7 @@ public class CurrentQuestion : MonoBehaviour
             _questionTitle.text = _currentQ.Text;
         }
         UpdateQuestionCounter(_currentQ, questionCounter);
+        _progression.ShowOrder(_progression._orders[_qM.GetCurrentQuestionId()]);
     }
 
     public void ToggleForwardButton(bool toggle)
