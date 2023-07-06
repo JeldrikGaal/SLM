@@ -32,7 +32,8 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     private readonly Vector3 highlightedScale = new Vector3(1.15f, 1.15f, 1.15f); // Adjust this to the desired scale when highlighted
     private readonly Quaternion highlightedRotation = Quaternion.Euler(0, 0, 10); // Adjust this to the desired rotation when highlighted
 
-    public Image Picture;
+    public Image _backIamge;
+    public Image _frontImage;
 
     public float MoveToCenterDuration = 0.5f;
     private bool isMovingCardToCenter;
@@ -63,8 +64,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public void Init(int ID, CardDatabase pCardDatabase, bool pDraggable, bool pFlippable, Canvas pCardCanvas, Deck pDeck, DragOverManager pDragOverManager)
     {
         cardData = pCardDatabase.cards[ID];
-        SetPicture(cardData.Picture);
-        SetPicture(cardData.Picture);
+        SetPicture(cardData.BackSprite, cardData.FrontSprite);
         SetCardSide(true);
         EnableDragging(pDraggable);
         EnableFlippable(pFlippable);
@@ -72,6 +72,11 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         _text.text = LocalizationManager.Localize(cardData.LocalizationKey);
         DeckRef = pDeck;
         dragOverManager = pDragOverManager;
+        if (cardData.FrontSprite.name == "Ceramic Card Front")
+        {
+            this.GetComponent<LeanDragTranslate>().Damping = 5;
+        }
+        
     }
     
     
@@ -104,9 +109,10 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     }
 
-    public void SetPicture(Sprite pPicture)
+    public void SetPicture(Sprite pPic, Sprite pFront)
     {
-        Picture.sprite = pPicture;
+        _frontImage.sprite = pFront;
+        _backIamge.sprite = pPic;
     }
     
     // Flip the card
@@ -357,7 +363,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public void OnEndDrag(PointerEventData eventData)
     {
         actuallyDragging = false;
-        SetHighlight(false);
+        if (draggingAvailable) SetHighlight(false);
         Invoke("SetDraggingFalse", 0.2f);
         // Just moving it back for now
         //transform.position = originalPosition;

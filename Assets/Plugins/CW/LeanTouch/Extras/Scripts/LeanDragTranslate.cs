@@ -62,6 +62,42 @@ namespace Lean.Touch
 			Use.UpdateRequiredSelectable(gameObject);
 		}
 
+		private void LimitPositionToScreenBounds()
+		{
+			RectTransform rectTransform = GetComponent<RectTransform>();
+			if (rectTransform != null)
+			{
+				Canvas canvas = GetComponentInParent<Canvas>();
+				if (canvas != null)
+				{
+					Vector3[] corners = new Vector3[4];
+					rectTransform.GetWorldCorners(corners);
+					Rect canvasRect = canvas.pixelRect;
+
+					float margin = 0.2f; // 20% margin
+					float marginWidth = canvasRect.width * margin;
+					float marginHeight = canvasRect.height * margin;
+
+					Vector3 bottomLeft = RectTransformUtility.WorldToScreenPoint(Camera.main, corners[0]);
+					Vector3 topRight = RectTransformUtility.WorldToScreenPoint(Camera.main, corners[2]);
+
+					Vector2 localPoint;
+					RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, bottomLeft, null, out localPoint);
+
+					// Update margins
+					canvasRect.min = new Vector2(canvasRect.min.x + marginWidth, canvasRect.min.y + marginHeight);
+					canvasRect.max = new Vector2(canvasRect.max.x - marginWidth, canvasRect.max.y - marginHeight);
+
+					// Update rect transform
+					Vector2 clampedLocalPos = Vector2.Min(Vector2.Max(canvasRect.min, localPoint), canvasRect.max - rectTransform.rect.size);
+					rectTransform.anchoredPosition = clampedLocalPos;
+				}
+			}
+		}
+
+
+
+
 		protected virtual void Update()
 		{
 			// Store
@@ -105,6 +141,7 @@ namespace Lean.Touch
 
 			// Update remainingDelta with the dampened value
 			remainingTranslation = newRemainingTranslation;
+			//LimitPositionToScreenBounds();
 		}
 
 		private void TranslateUI(Vector2 screenDelta)

@@ -542,6 +542,7 @@ MonoBehaviour:
   WholeDrawPile: 
   EmptyGameObject: {fileID: 1089796728}
   FinalEndMoveTargetY: -25
+  FinalEndMoveTargetX: 2
   FinalCamMoveDuration: 1
 --- !u!114 &534006183
 MonoBehaviour:
@@ -561,100 +562,125 @@ MonoBehaviour:
   cards:
   - ID: 0
     LocalizationKey: DUMMY
-    Picture: {fileID: 0}
+    BackSprite: {fileID: 0}
+    FrontSprite: {fileID: 0}
     MatchingID: 0
   - ID: 1
     LocalizationKey: DUMMY
-    Picture: {fileID: 0}
+    BackSprite: {fileID: 0}
+    FrontSprite: {fileID: 0}
     MatchingID: 0
   - ID: 2
     LocalizationKey: D1.1_BrokenShip
-    Picture: {fileID: 21300000, guid: aaee5165a2a7c144f9c5ced5c142645d, type: 3}
+    BackSprite: {fileID: 21300000, guid: 4597507e3b523af4aa25d5794ccfc29d, type: 3}
+    FrontSprite: {fileID: 21300000, guid: e52bb186c285002488ab8f5361fb3f98, type: 3}
     MatchingID: 3
   - ID: 3
     LocalizationKey: D1.2_GasparInfo
-    Picture: {fileID: 21300000, guid: 7b5f58f864a0fe346bd32ac2073e8a33, type: 3}
+    BackSprite: {fileID: 21300000, guid: 71cca7eefc13f1943b7f013e66881d40, type: 3}
+    FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 4
   - ID: 4
     LocalizationKey: D1.3_FixedShip
-    Picture: {fileID: 21300000, guid: 7b5f58f864a0fe346bd32ac2073e8a33, type: 3}
+    BackSprite: {fileID: 21300000, guid: a98f19af3565da14e95b98caa8907e06, type: 3}
+    FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 5
   - ID: 5
     LocalizationKey: D1.4_Antonio
-    Picture: {fileID: 21300000, guid: 7b5f58f864a0fe346bd32ac2073e8a33, type: 3}
+    BackSprite: {fileID: 21300000, guid: d2c2c2243051ee842b3baa11cfd66ecb, type: 3}
+    FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 6
   - ID: 6
     LocalizationKey: D1.5_SlavesLoaded
-    Picture: {fileID: 21300000, guid: 7b5f58f864a0fe346bd32ac2073e8a33, type: 3}
+    BackSprite: {fileID: 21300000, guid: 3d50cdc1cdcaaf6449edbfaf12122dbd, type: 3}
+    FrontSprite: {fileID: 21300000, guid: e52bb186c285002488ab8f5361fb3f98, type: 3}
     MatchingID: 7
   - ID: 7
     LocalizationKey: D1.6_Shipwreck
-    Picture: {fileID: 21300000, guid: 7b5f58f864a0fe346bd32ac2073e8a33, type: 3}
+    BackSprite: {fileID: 21300000, guid: 8f0d02f34e7caa74ca87ffbb1d1dc7b6, type: 3}
+    FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: -1
   - ID: 8
     LocalizationKey: DUMMY
-    Picture: {fileID: 0}
+    BackSprite: {fileID: 0}
+    FrontSprite: {fileID: 0}
     MatchingID: -1
   - ID: 9
     LocalizationKey: D2.1_Identifier
-    Picture: {fileID: 21300000, guid: 7b5f58f864a0fe346bd32ac2073e8a33, type: 3}
+    BackSprite: {fileID: 21300000, guid: 431ceae5b2881d5428cebf6fc3f115db, type: 3}
+    FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 10
   - ID: 10
     LocalizationKey: D2.2_ArchitectModel
-    Picture: {fileID: 21300000, guid: 7b5f58f864a0fe346bd32ac2073e8a33, type: 3}
+    BackSprite: {fileID: 21300000, guid: ef3266eda55dbd64d8b70d4af5646cad, type: 3}
+    FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 11
   - ID: 11
     LocalizationKey: D2.3_OrangeTree
-    Picture: {fileID: 21300000, guid: 7b5f58f864a0fe346bd32ac2073e8a33, type: 3}
+    BackSprite: {fileID: 21300000, guid: 309acdfd8f36cf345ac09cc4e7a3392d, type: 3}
+    FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 12
   - ID: 12
     LocalizationKey: D2.4_WalkingSlaves
-    Picture: {fileID: 21300000, guid: 7b5f58f864a0fe346bd32ac2073e8a33, type: 3}
+    BackSprite: {fileID: 21300000, guid: 90225930a4ca3fe499de46017ddefd0c, type: 3}
+    FrontSprite: {fileID: 21300000, guid: e52bb186c285002488ab8f5361fb3f98, type: 3}
     MatchingID: -1
   - ID: 13
     LocalizationKey: DUMMY
-    Picture: {fileID: 21300000, guid: 7b5f58f864a0fe346bd32ac2073e8a33, type: 3}
+    BackSprite: {fileID: 0}
+    FrontSprite: {fileID: 0}
     MatchingID: 0
   - ID: 14
     LocalizationKey: D3.1_Gossip1
-    Picture: {fileID: 21300000, guid: 7b5f58f864a0fe346bd32ac2073e8a33, type: 3}
+    BackSprite: {fileID: 21300000, guid: 8fc252930fc9ce04797d528df34b217f, type: 3}
+    FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 15
   - ID: 15
     LocalizationKey: D3.2_Gossip2
-    Picture: {fileID: 21300000, guid: 7b5f58f864a0fe346bd32ac2073e8a33, type: 3}
+    BackSprite: {fileID: 21300000, guid: fef7e55e845c2f8419a41ab8ee7c24df, type: 3}
+    FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 16
   - ID: 16
     LocalizationKey: D3.3_Gossip3
-    Picture: {fileID: 21300000, guid: 7b5f58f864a0fe346bd32ac2073e8a33, type: 3}
+    BackSprite: {fileID: 21300000, guid: 8fc252930fc9ce04797d528df34b217f, type: 3}
+    FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 17
   - ID: 17
     LocalizationKey: D3.4_Documents
-    Picture: {fileID: 21300000, guid: 7b5f58f864a0fe346bd32ac2073e8a33, type: 3}
+    BackSprite: {fileID: 21300000, guid: 77c2d4261d04b4a42a3b898cb69660c2, type: 3}
+    FrontSprite: {fileID: 21300000, guid: e52bb186c285002488ab8f5361fb3f98, type: 3}
     MatchingID: -1
   - ID: 18
     LocalizationKey: DUMMY
-    Picture: {fileID: 0}
+    BackSprite: {fileID: 0}
+    FrontSprite: {fileID: 0}
     MatchingID: -1
   - ID: 19
     LocalizationKey: D4.1_ArtistFriend
-    Picture: {fileID: 21300000, guid: 7b5f58f864a0fe346bd32ac2073e8a33, type: 3}
+    BackSprite: {fileID: 21300000, guid: 1b0915835a9db184a97865902183289d, type: 3}
+    FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 20
   - ID: 20
     LocalizationKey: D4.2_ArtWorks
-    Picture: {fileID: 21300000, guid: aaee5165a2a7c144f9c5ced5c142645d, type: 3}
+    BackSprite: {fileID: 21300000, guid: fce2b2e616882a0469249e49e9454127, type: 3}
+    FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 21
   - ID: 21
     LocalizationKey: D4.3_GardenRemodel
-    Picture: {fileID: 21300000, guid: 7b5f58f864a0fe346bd32ac2073e8a33, type: 3}
+    BackSprite: {fileID: 21300000, guid: 97e27b9c7096c2248bbf35aa13c4cd62, type: 3}
+    FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 22
   - ID: 22
     LocalizationKey: D4.4_Whealth
-    Picture: {fileID: 21300000, guid: 7b5f58f864a0fe346bd32ac2073e8a33, type: 3}
+    BackSprite: {fileID: 21300000, guid: 441784855e09cce45a197509e568ed87, type: 3}
+    FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 23
   - ID: 23
     LocalizationKey: D4.5_Scam
-    Picture: {fileID: 21300000, guid: 7b5f58f864a0fe346bd32ac2073e8a33, type: 3}
+    BackSprite: {fileID: 21300000, guid: c364a6587c2070543bb4932d66c0d8a7, type: 3}
+    FrontSprite: {fileID: 21300000, guid: e52bb186c285002488ab8f5361fb3f98, type: 3}
     MatchingID: -1
+  DefaultCardSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
 --- !u!114 &534006184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1591,8 +1617,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -518.67, y: -216.9}
-  m_SizeDelta: {x: 114.5187, y: 173.1403}
+  m_AnchoredPosition: {x: -518.67, y: -184.8}
+  m_SizeDelta: {x: 114.5187, y: 172.05}
   m_Pivot: {x: 0.50000006, y: 0.50000006}
 --- !u!1 &1753191732
 GameObject:

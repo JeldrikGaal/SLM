@@ -31,10 +31,10 @@ public class Deck : MonoBehaviour
     private int CurrentDeckIndex = 7;
     private int maxDecks = 6;
     private int counterDrawDeckCards = 0;
-    private string aa;
 
     public GameObject EmptyGameObject; // The GameObject you select in the Inspector
     public float FinalEndMoveTargetY; // The target y position you want to animate to
+    public float FinalEndMoveTargetX; // The target x position you want to animate to
     public float FinalCamMoveDuration; // Duration of the animation
 
     void Start()
@@ -51,20 +51,16 @@ public class Deck : MonoBehaviour
         SpawnIntitalTargetCards();
         SpawnWholeDrawPile();
 
+        //StartCoroutine(Final_1(5.5f));
 
-        StartCoroutine(WaitAndExecute(6));
     }
 
-    IEnumerator WaitAndExecute(float waitTime)
+    IEnumerator Final_1(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
 
-        // Reparent all the canvas elements to the EmptyGameObject
         ReparentChildObjects(cardCanvas.transform, EmptyGameObject.transform);
-
-
-        // Start animation
-        StartCoroutine(AnimatePosition(EmptyGameObject, FinalEndMoveTargetY, FinalCamMoveDuration));
+        StartCoroutine(AnimatePosition(EmptyGameObject, FinalEndMoveTargetY, FinalEndMoveTargetX, FinalCamMoveDuration));
     }
 
     public void NextDeck()
@@ -153,6 +149,7 @@ public class Deck : MonoBehaviour
                 DeckTopCard = null;
             }
         }
+        else StartCoroutine(Final_1(0.5f));
     }
     
     void SpawnIntitalTargetCards()
@@ -259,15 +256,16 @@ public class Deck : MonoBehaviour
 
 
 
-    IEnumerator AnimatePosition(GameObject obj, float offsetY, float duration)
+    IEnumerator AnimatePosition(GameObject obj, float offsetY, float offsetX, float duration)
     {
         DisableCardInteractions();
         Vector3 startPos = obj.transform.position;
 
         // Convert offset to relative offset using Screen height
         float relativeOffsetY = (Screen.height * offsetY) / 100.0f;
+        float relativeOffsetX = (Screen.width * offsetX) / 100.0f;
 
-        Vector3 endPos = new Vector3(startPos.x, startPos.y + relativeOffsetY, startPos.z);
+        Vector3 endPos = new Vector3(startPos.x + relativeOffsetX, startPos.y + relativeOffsetY, startPos.z);
         float elapsedTime = 0f;
 
         while (elapsedTime < duration)

@@ -8,7 +8,8 @@ public struct CardData
 {
     public int ID;
     public string LocalizationKey;
-    public Sprite Picture;
+    public Sprite BackSprite;
+    public Sprite FrontSprite;
     public int MatchingID;
 }
 
@@ -20,6 +21,7 @@ public class CardDatabase : MonoBehaviour
     public CardData[] cards;
     private Deck DeckRef;
     private DragOverManager _dragOverManager;
+    public Sprite DefaultCardSprite;
 
     private void Awake()
     { 
