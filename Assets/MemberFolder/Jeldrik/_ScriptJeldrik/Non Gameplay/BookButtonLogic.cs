@@ -150,19 +150,17 @@ public class BookButtonLogic : MonoBehaviour
     }
 
     public void End()
-    {
-        //_colorStripe.Appear();
-        
+    {        
         _tH.UnlockInput();
-        _tutorialManager.Done = true;
-        _colorStripe.CompleteSlide(_colorStripe._q);
-
         _tutorialManager.DisablePopUp(0.75f);
-        
-        //_tutorialManager.ResetPopUp();
-        _dragController.enabled = true;
         _repeating = false;
-        _tutorialManager.SKIPTUTORIAL = true;
+
+        Invoke("InvokeStartTutorial", 1f);
+    }
+
+    private void InvokeStartTutorial()
+    {
+        _tutorialManager.StartTutorial();
     }
 
     private void RepeatAnim()

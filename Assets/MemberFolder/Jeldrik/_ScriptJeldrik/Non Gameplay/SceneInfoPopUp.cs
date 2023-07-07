@@ -22,6 +22,7 @@ public class SceneInfoPopUp : MonoBehaviour
     [SerializeField] private SlideColorStripe _colorStripe;
 
     [SerializeField] private BookButtonLogic _bookButton;
+    [SerializeField] private MG1Tutorial _tutorialManager;
     #endregion 
 
     private float _spawnTime;
@@ -89,7 +90,8 @@ public class SceneInfoPopUp : MonoBehaviour
         {
             
             // TODO: Trigger book button spawning in animation
-            _bookButton.SpawnAnimation();
+            //_bookButton.SpawnAnimation();
+            _tutorialManager.RealEnd();
 
             Destroy(_reminderRef);
             Destroy(this.gameObject);            

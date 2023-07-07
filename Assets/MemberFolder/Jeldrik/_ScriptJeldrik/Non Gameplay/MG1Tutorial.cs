@@ -18,6 +18,7 @@ public class MG1Tutorial : MonoBehaviour
     [SerializeField] private List<Image> _moveArrows;
 
     [SerializeField] private GameObject _tutorialPopUp;
+    [SerializeField] private GameObject _progressionSystem;
     [SerializeField] private SlideColorStripe _colorStripe;
     private TouchHandler _tH;
     private Transform _moveArrowsHolder;
@@ -32,8 +33,8 @@ public class MG1Tutorial : MonoBehaviour
     public bool Done;
     public bool infoShowed1;
     public bool infoShowed2;
-    public bool SKIPTUTORIAL;
-
+    public bool SKIPTUTORIAL;   
+    [SerializeField] private BookButtonLogic _bookButton;
     private Vector3 _lastPopUpPos;
     #endregion
 
@@ -55,6 +56,7 @@ public class MG1Tutorial : MonoBehaviour
             return;
         }
 
+        _progressionSystem.SetActive(false);
         _dragController = Camera.main.GetComponent<LeanDragCamera>();
         _moveArrowsHolder = _moveArrows[0].transform.parent;
         _tH = Camera.main.GetComponent<TouchHandler>();
@@ -66,7 +68,7 @@ public class MG1Tutorial : MonoBehaviour
         else 
         {
             _currentQuestion.gameObject.SetActive(false);
-            StartTutorial();
+            _bookButton.SpawnAnimation();
         }
         DOTween.SetTweensCapacity(200,50);
     }
@@ -206,9 +208,20 @@ public class MG1Tutorial : MonoBehaviour
          _tutorialPopUp.transform.localPosition = _lastPopUpPos;
     }
 
+    public void RealEnd()
+    {
+        _tH.UnlockInput();
+        Done = true;
+        _currentQuestion.gameObject.SetActive(true);
+        _colorStripe.CompleteSlide(_colorStripe._q);
+        //_tutorialManager.ResetPopUp();
+        _dragController.enabled = true;
+        SKIPTUTORIAL = true;
+        _progressionSystem.gameObject.SetActive(true);
+    }
+
     private void ShowSceneInfo()
     {   
-        Debug.Log( _sceneInfoPopUp);
         infoShowed1 = true;
         _sceneInfoPopUp.gameObject.SetActive(true);
         _dragController.enabled = false;
