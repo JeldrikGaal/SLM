@@ -63,9 +63,9 @@ public class ClickableManager : MonoBehaviour
                 return false;
             }
             _currentClickable = C;
-            if (_qM.GetCurrentQuestionId() == 0 && _VC.Questions[0].ObjectsToFind1[0] != cH)
+            if (_qM.GetCurrentQuestionId() == 0 && ( _VC.Questions[0].ObjectsToFind1[0] != cH ) )
             {
-                if (C == _tutorialManager._exampleClickable)
+                if (C == _tutorialManager._exampleClickable || cH.LocalizationKey.Contains('S') )
                 {
                     int ran2 = Random.Range(1, _popUps.Count);
                     DisplayPopUp(cH, _popUps[ran2]);
@@ -75,13 +75,13 @@ public class ClickableManager : MonoBehaviour
                 DisplayPopUp(_declinedHolders[0], _popUps[ran]);
                 return true;
             }
-            else if (_qM.GetCurrentQuestionId() == 1 && !_VC.Questions[1].ObjectsToFind1.Contains(cH))
+            else if (_qM.GetCurrentQuestionId() == 1 && ( !_VC.Questions[1].ObjectsToFind1.Contains(cH) && !cH.LocalizationKey.Contains('S') ) )
             {
                 int ran = Random.Range(1, _popUps.Count);
                 DisplayPopUp(_declinedHolders[1], _popUps[ran]);
                 return true;
             }
-            else if (_qM.GetCurrentQuestionId() == 2 && !_VC.Questions[2].ObjectsToFind1.Contains(cH))
+            else if (_qM.GetCurrentQuestionId() == 2 && ( !_VC.Questions[2].ObjectsToFind1.Contains(cH) && !cH.LocalizationKey.Contains('S') ))
             {
                 int ran = Random.Range(1, _popUps.Count);
                 DisplayPopUp(_declinedHolders[2], _popUps[ran]);
