@@ -268,7 +268,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.63997, y: 1.63997, z: 1.63997}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1166817114}
   m_Father: {fileID: 346646400}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -605,7 +606,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 153364887}
-  - {fileID: 1166817114}
   - {fileID: 1397484186}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -841,121 +841,145 @@ MonoBehaviour:
     BackSprite: {fileID: 0}
     FrontSprite: {fileID: 0}
     MatchingID: 0
+    fontSizes: 
   - ID: 1
     LocalizationKey: DUMMY
     BackSprite: {fileID: 0}
     FrontSprite: {fileID: 0}
     MatchingID: 0
+    fontSizes: 
   - ID: 2
     LocalizationKey: D1.1_BrokenShip
     BackSprite: {fileID: 21300000, guid: 4597507e3b523af4aa25d5794ccfc29d, type: 3}
     FrontSprite: {fileID: 21300000, guid: e52bb186c285002488ab8f5361fb3f98, type: 3}
     MatchingID: 3
+    fontSizes: 13,14,13,13
   - ID: 3
     LocalizationKey: D1.2_GasparInfo
     BackSprite: {fileID: 21300000, guid: 71cca7eefc13f1943b7f013e66881d40, type: 3}
     FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 4
+    fontSizes: 13,13,13,14
   - ID: 4
     LocalizationKey: D1.3_FixedShip
     BackSprite: {fileID: 21300000, guid: a98f19af3565da14e95b98caa8907e06, type: 3}
     FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 5
+    fontSizes: 13,13,13,13
   - ID: 5
     LocalizationKey: D1.4_Antonio
     BackSprite: {fileID: 21300000, guid: d2c2c2243051ee842b3baa11cfd66ecb, type: 3}
     FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 6
+    fontSizes: 13,15,14,14
   - ID: 6
     LocalizationKey: D1.5_SlavesLoaded
     BackSprite: {fileID: 21300000, guid: 3d50cdc1cdcaaf6449edbfaf12122dbd, type: 3}
     FrontSprite: {fileID: 21300000, guid: e52bb186c285002488ab8f5361fb3f98, type: 3}
     MatchingID: 7
+    fontSizes: 13,14,13,13
   - ID: 7
     LocalizationKey: D1.6_Shipwreck
     BackSprite: {fileID: 21300000, guid: 8f0d02f34e7caa74ca87ffbb1d1dc7b6, type: 3}
     FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: -1
+    fontSizes: 13,13,13,13
   - ID: 8
     LocalizationKey: DUMMY
     BackSprite: {fileID: 0}
     FrontSprite: {fileID: 0}
     MatchingID: -1
+    fontSizes: 
   - ID: 9
     LocalizationKey: D2.1_Identifier
     BackSprite: {fileID: 21300000, guid: 431ceae5b2881d5428cebf6fc3f115db, type: 3}
     FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 10
+    fontSizes: 13,13,14,13
   - ID: 10
     LocalizationKey: D2.2_ArchitectModel
     BackSprite: {fileID: 21300000, guid: ef3266eda55dbd64d8b70d4af5646cad, type: 3}
     FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 11
+    fontSizes: 13,13,13,13
   - ID: 11
     LocalizationKey: D2.3_OrangeTree
     BackSprite: {fileID: 21300000, guid: 309acdfd8f36cf345ac09cc4e7a3392d, type: 3}
     FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 12
+    fontSizes: 14,13,13,14
   - ID: 12
     LocalizationKey: D2.4_WalkingSlaves
     BackSprite: {fileID: 21300000, guid: 90225930a4ca3fe499de46017ddefd0c, type: 3}
     FrontSprite: {fileID: 21300000, guid: e52bb186c285002488ab8f5361fb3f98, type: 3}
     MatchingID: -1
+    fontSizes: 13,14,14,14
   - ID: 13
     LocalizationKey: DUMMY
     BackSprite: {fileID: 0}
     FrontSprite: {fileID: 0}
     MatchingID: 0
+    fontSizes: 
   - ID: 14
     LocalizationKey: D3.1_Gossip1
     BackSprite: {fileID: 21300000, guid: 8fc252930fc9ce04797d528df34b217f, type: 3}
     FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 15
+    fontSizes: 13,13,13,13
   - ID: 15
     LocalizationKey: D3.2_Gossip2
     BackSprite: {fileID: 21300000, guid: fef7e55e845c2f8419a41ab8ee7c24df, type: 3}
     FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 16
+    fontSizes: 13,13,13,13
   - ID: 16
     LocalizationKey: D3.3_Gossip3
     BackSprite: {fileID: 21300000, guid: 8fc252930fc9ce04797d528df34b217f, type: 3}
     FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 17
+    fontSizes: 13,13,13,14
   - ID: 17
     LocalizationKey: D3.4_Documents
     BackSprite: {fileID: 21300000, guid: 77c2d4261d04b4a42a3b898cb69660c2, type: 3}
     FrontSprite: {fileID: 21300000, guid: e52bb186c285002488ab8f5361fb3f98, type: 3}
     MatchingID: -1
+    fontSizes: 14,13,13,13
   - ID: 18
     LocalizationKey: DUMMY
     BackSprite: {fileID: 0}
     FrontSprite: {fileID: 0}
     MatchingID: -1
+    fontSizes: 
   - ID: 19
     LocalizationKey: D4.1_ArtistFriend
     BackSprite: {fileID: 21300000, guid: 1b0915835a9db184a97865902183289d, type: 3}
     FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 20
+    fontSizes: 13,13,14,14
   - ID: 20
     LocalizationKey: D4.2_ArtWorks
     BackSprite: {fileID: 21300000, guid: fce2b2e616882a0469249e49e9454127, type: 3}
     FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 21
+    fontSizes: 13,13,13,14
   - ID: 21
     LocalizationKey: D4.3_GardenRemodel
     BackSprite: {fileID: 21300000, guid: 97e27b9c7096c2248bbf35aa13c4cd62, type: 3}
     FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 22
+    fontSizes: 14,13,13,13
   - ID: 22
     LocalizationKey: D4.4_Whealth
     BackSprite: {fileID: 21300000, guid: 441784855e09cce45a197509e568ed87, type: 3}
     FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 23
+    fontSizes: 14,14,14,14
   - ID: 23
     LocalizationKey: D4.5_Scam
     BackSprite: {fileID: 21300000, guid: c364a6587c2070543bb4932d66c0d8a7, type: 3}
     FrontSprite: {fileID: 21300000, guid: e52bb186c285002488ab8f5361fb3f98, type: 3}
     MatchingID: -1
+    fontSizes: 14,14,13,14
   DefaultCardSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
 --- !u!114 &534006184
 MonoBehaviour:
@@ -1362,12 +1386,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetImage: {fileID: 1004069236}
+  OrangeImage: {fileID: 153364888}
+  OrangeButton: {fileID: 1166817116}
   infoBox_1: {fileID: 2080123714}
   infoBox_2: {fileID: 1975615744}
   infoBox_3: {fileID: 829986545}
   duration: 0.5
   targetAlpha: 0.6
   CardManager: {fileID: 534006179}
+  _text_backtobookbutton: {fileID: 0}
   _text_1: {fileID: 771291146}
   _text_1_button: {fileID: 1789651713}
   _text_1_headline: {fileID: 481678002}
@@ -1496,16 +1523,16 @@ RectTransform:
   m_GameObject: {fileID: 1166817113}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.040999997, y: 0.040999997, z: 0.040999997}
+  m_LocalScale: {x: 0.025000457, y: 0.025000457, z: 0.025000457}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1479694888}
-  m_Father: {fileID: 346646400}
-  m_RootOrder: 1
+  m_Father: {fileID: 153364887}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -64.31036, y: 82.82608}
+  m_AnchoredPosition: {x: -39.320457, y: 49.453053}
   m_SizeDelta: {x: 1319.6024, y: 2115.9746}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1166817116
@@ -1824,7 +1851,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 346646400}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

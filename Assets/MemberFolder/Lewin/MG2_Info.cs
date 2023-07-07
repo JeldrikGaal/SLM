@@ -8,7 +8,9 @@ using Assets.SimpleLocalization;
 
 public class MG2_Info : MonoBehaviour
 {
-    public Image targetImage; 
+    public Image targetImage;
+    public Image OrangeImage;
+    public Button OrangeButton;
     public Image infoBox_1; 
     public Image infoBox_2; 
     public Image infoBox_3; 
@@ -19,6 +21,7 @@ public class MG2_Info : MonoBehaviour
     private bool InfoClosed_3;
     public GameObject CardManager;
     
+    [SerializeField] private TMP_Text _text_backtobookbutton;
     [SerializeField] private TMP_Text _text_1;
     [SerializeField] private TMP_Text _text_1_button;
     [SerializeField] private TMP_Text _text_1_headline;
@@ -28,6 +31,7 @@ public class MG2_Info : MonoBehaviour
     
     private void Start()
     {
+        OrangeImage.rectTransform.localScale = new Vector3(0, 0, 0);
         infoBox_1.rectTransform.localScale = new Vector3(0, 0, 0);
         infoBox_2.rectTransform.localScale = new Vector3(0, 0, 0);
         infoBox_3.rectTransform.localScale = new Vector3(0, 0, 0);
@@ -140,7 +144,7 @@ public class MG2_Info : MonoBehaviour
     
     
     
-    
+
     
     
     public void AnimateAlpha(bool fadeIn)

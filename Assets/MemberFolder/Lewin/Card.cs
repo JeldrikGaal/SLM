@@ -74,6 +74,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     {
         cardData = pCardDatabase.cards[ID];
         SetPicture(cardData.BackSprite, cardData.FrontSprite);
+        _text.fontSize = getFontSizeBasedOnLanguage();
         SetCardSide(true);
         EnableDragging(pDraggable);
         EnableFlippable(pFlippable);
@@ -88,7 +89,15 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         }
         
     }
-    
+
+    private float getFontSizeBasedOnLanguage()
+    {
+        if (LocalizationManager.Language == "English") return GetFloatFromCSV(cardData.fontSizes, 0);
+        if (LocalizationManager.Language == "German") return GetFloatFromCSV(cardData.fontSizes, 1);
+        if (LocalizationManager.Language == "Simplified English") return GetFloatFromCSV(cardData.fontSizes, 2);
+        if (LocalizationManager.Language == "Simplified German") return GetFloatFromCSV(cardData.fontSizes, 3);
+        return 5;
+    }
     
     private void Awake()
     {
@@ -358,7 +367,6 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     isAnimationReversed = false;
     }
    
-   
     public void OnBeginDrag(PointerEventData eventData)
     {
         dragging = true;
@@ -426,7 +434,8 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
             }
             else
             {
-                DeckRef.AnimateVignetteAlpha(0.18f, 0.4f);
+                //DeckRef.AnimateVignetteAlpha(0.18f, 0.4f);
+                Shake();
                 MoveToCenterDuration = 1.2f;
                 MoveToCenter();
             }
@@ -702,7 +711,27 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         transform.localScale = target;
     }
     
-    
+    public float GetFloatFromCSV(string csv, int index)
+    {
+        string[] split = csv.Split(',');
+
+        if(index < split.Length)
+        {
+            if(float.TryParse(split[index], out float value))
+            {
+                return value;
+            }
+            else
+            {
+                return 0f;
+            }
+        }
+        else
+        {
+            return 0f;
+        }
+    }
+
     
     
     

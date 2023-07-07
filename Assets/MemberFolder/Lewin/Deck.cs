@@ -322,7 +322,7 @@ public class Deck : MonoBehaviour
     
     public void AnimateVignetteAlpha(float targetAlpha, float duration)
     {
-        StartCoroutine(AnimateAlpha(targetAlpha, duration));
+        //StartCoroutine(AnimateAlpha(targetAlpha, duration));
     }
 
     IEnumerator AnimateAlpha(float targetAlpha, float duration)

@@ -11,6 +11,7 @@ public struct CardData
     public Sprite BackSprite;
     public Sprite FrontSprite;
     public int MatchingID;
+    public string fontSizes;
 }
 
 public class CardDatabase : MonoBehaviour
