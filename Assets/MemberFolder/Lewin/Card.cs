@@ -25,6 +25,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     private float animationProgress = 0f;
     private bool isAnimationReversed = false;
     private Coroutine flipCoroutine;
+    private bool _currentlyTraceable = true;
     
     private Coroutine highlightCoroutine;
     private bool isHighlighted = false;
@@ -148,7 +149,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     void DevCardZero()
     {
-        pictureSide.transform.localScale = new Vector3(0, 0, 0);
+        //pictureSide.transform.localScale = new Vector3(0, 0, 0);
     }
     public void SetCardSide(bool picture)
     {
@@ -408,7 +409,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         graphicComponent_textSide.raycastTarget = true;
         DeckRef.SetPileCollidersTraceable(false);
         dragOverManager.SetActiveDraggingCard(null);
-        if (_droppable)
+        if (_droppable && _currentlyTraceable)
         {
             Card otherCardScript = _otherCard.GetComponent<Card>();
             if (otherCardScript.cardData.MatchingID == cardData.ID && otherCardScript.cardData.MatchingID != -1)
@@ -437,7 +438,6 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 //DeckRef.AnimateVignetteAlpha(0.18f, 0.4f);
                 SetTraceable(false);
                 Shake();
-                SetTraceable(false);
                 MoveToCenterDuration = 1.2f;
                 StartCoroutine(ReturnCardAfterTimeWithDelay(0.8f));
             }
@@ -571,7 +571,6 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
             float startTime = Time.time;
             while (Time.time < startTime + shakeDuration)
             {
-                SetTraceable(false);
                 float t = (Time.time - startTime) / shakeDuration;
                 transform.rotation = Quaternion.Lerp(startRotation, endRotation, t);
                 yield return null;
@@ -658,8 +657,10 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     public void SetTraceable(bool pTraceable)
     {
+        _currentlyTraceable = pTraceable;
         pictureSide.raycastTarget = pTraceable;
         textSide.raycastTarget = pTraceable;
+        _text.raycastTarget = pTraceable;
     }
 
     public void FlipIfPictureSideIsUp()
