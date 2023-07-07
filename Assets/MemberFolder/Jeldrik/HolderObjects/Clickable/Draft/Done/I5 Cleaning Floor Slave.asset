@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: I5 Cleaning Floor Slave
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 2eb14f4a414077b4580e331cbe02c098, type: 3}
-  ProgressionImage: {fileID: 21300000, guid: 2eb14f4a414077b4580e331cbe02c098, type: 3}
+  ProgressionImage: {fileID: 21300000, guid: b18a6ce598004fc4dbe5b0e1d6257fd2, type: 3}
   Title: Boy
   Description: This boy, a native brazilian, was enslaved even before Johan Maurits
     came to Recife. He was already forced to work on sugar mill farms when the area

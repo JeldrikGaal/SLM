@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: I2 Cooking Slave
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 71727666f0e167a4196b0838ffc73c14, type: 3}
-  ProgressionImage: {fileID: 21300000, guid: 71727666f0e167a4196b0838ffc73c14, type: 3}
+  ProgressionImage: {fileID: 21300000, guid: 626d0c68883759e419e6ac2727ca0738, type: 3}
   Title: Young Woman
   Description: This young woman was enslaved and transported overseas from Africa.
     Unlike many enslaved people, she survived the transit over the Atlantic. One
