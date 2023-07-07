@@ -297,6 +297,7 @@ MonoBehaviour:
   DropInfo: {fileID: 6756875443416828765}
   _placedOnTargetPile: 0
   tutWaitForDrag: 0
+  DurationUntilTurnBold: 15
 --- !u!1 &4496224263267640086
 GameObject:
   m_ObjectHideFlags: 0

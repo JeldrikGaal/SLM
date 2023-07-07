@@ -123,7 +123,7 @@ public class MG2_Info : MonoBehaviour
     public void Continue_tut()
     {
         StartCoroutine(ShowInfo_2WithDelay(1.3f));
-        StartCoroutine(ShowCardFlip_2WithDelay(2.3f));
+        StartCoroutine(ShowCardFlip_2WithDelay(1.9f));
         CardManager.GetComponent<Deck>().MoveTopCardToCenter();
     }
     

@@ -69,7 +69,11 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     private Coroutine pulseCoroutine; // store the coroutine reference
     private bool _isPulsing = false;
     public bool tutWaitForDrag = false;
-    
+    private string _regularText;
+    private string _boldText;
+    private Coroutine boldCoroutine = null;
+
+    public float DurationUntilTurnBold = 15;
     
     public void Init(int ID, CardDatabase pCardDatabase, bool pDraggable, bool pFlippable, Canvas pCardCanvas, Deck pDeck, DragOverManager pDragOverManager)
     {
@@ -80,7 +84,9 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         EnableDragging(pDraggable);
         EnableFlippable(pFlippable);
         yourCanvas = pCardCanvas;
-        _text.text = LocalizationManager.Localize(cardData.LocalizationKey);
+        _boldText = LocalizationManager.Localize(cardData.LocalizationKey);
+        _regularText = RemoveBoldTags(_boldText);
+        _text.text = _regularText;
         DeckRef = pDeck;
         dragOverManager = pDragOverManager;
         if (cardData.FrontSprite.name == "Ceramic Card Front")
@@ -421,6 +427,14 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 LastTPC.TopCardGO = gameObject;
                 LastTPC.cardCount++;
                 EnableDragging(false);
+                
+                if (boldCoroutine != null)
+                {
+                    StopCoroutine(boldCoroutine);
+                    boldCoroutine = null;
+                }
+                _text.text = _regularText;
+                
                 if (_shouldScreenShakeOnDrop) DeckRef.FinalParentGO.GetComponent<ShakeUI>().StartShake();
                 StartCoroutine(MoveToOtherCard(LastTPC.BottomCardGO, 0.15f));
                 if (DeckRef.DeckTopCard != null)
@@ -594,10 +608,23 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
         transform.rotation = Quaternion.identity;
     }
+    
+    private IEnumerator ActivateBoldTextWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        ActivateBoldText();
+    }
+
+    private void ActivateBoldText()
+    {
+        if (!_placedOnTargetPile) _text.text = _boldText;
+    }
+    
     public void MoveToCenter()
     {
         // Get the current y position of the card
         StartCoroutine(MoveToPosition(new Vector2(Screen.width / 2, DeckRef.startObject.transform.position.y)));
+        boldCoroutine = StartCoroutine(ActivateBoldTextWithDelay(DurationUntilTurnBold));
     }
     IEnumerator MoveToPosition(Vector2 targetPosition)
     {
@@ -743,7 +770,13 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         }
     }
 
+    public string RemoveBoldTags(string input)
+    {
+        if (string.IsNullOrEmpty(input)) return input;
     
+        // Remove both opening and closing bold tags
+        return input.Replace("<b>", "").Replace("</b>", "");
+    }
     
     
 

@@ -41,7 +41,7 @@ public class DragOverManager : MonoBehaviour
                     {
                         if(result.gameObject.tag != "" && result.gameObject.tag != "Card")
                         {
-                            Debug.Log("Pointer is over a UI element with the tag: " + result.gameObject.tag);
+                            //Debug.Log("Pointer is over a UI element with the tag: " + result.gameObject.tag);
                             if (result.gameObject.tag == "TP_Collider")
                             {
                                 ShowOutline(true, result.gameObject);

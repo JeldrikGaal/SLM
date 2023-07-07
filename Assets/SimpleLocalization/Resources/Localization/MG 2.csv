@@ -76,12 +76,12 @@ It's all thanks to Johan's gen-erous financial aid.""","""Ich bin sehr froh, das
 
 It's all thanks to Johan's gen-erosity.""","""Ich bin sehr froh, dass wir so viel zu bra-silianischen Tieren und Pflanzen for-schen konnten! 
 Und das nur dank Johann's Groß-zügigkeit!"""
-D4.4_Whealth,"Despite many pro-jects, artists, and scientists he financed, Johan Maurits’ wealth kept increasing.
+D4.4_Whealth,"Despite many pro-jects, artists, and scientists he <b>financed</b>, Johan Maurits’ wealth kept increasing.
 
 What channels besides his pay-ment from the WIC could he have recveived money through?","Obwohl Johann Mo-ritz verschie-denste Projekte, Künstler und Wis-senschaftler fi-nanzierte, wuchs sein Wohlstand weiter.
 Ob es neben sei-nem Lohn von der WIC noch andere Einkommensquellen gab?","Even though Johan paid for many different pro-jects from ar-tists and scien-tists, he kept getting richer. 
 Besides his pay-ment from the trading company, did he have other ways of earning money?","Obwohl Johann viele verschiede-ne Projekte von Künstlern und Wissenschaftlern bezahlt hat, wur-de er immer rei-cher. Ob er neben seinem Gehalt von der WIC noch andere Wege hat-te, um Geld zu vedienen?"
-D4.5_Scam,"Johan Maurits' signature on a specific set of documents has generated side income. 
+D4.5_Scam,"Johan Maurits' signature on a specific set of documents has generated <b>side income</b>. 
 
 First, enslaved people were sent as gifts - months later, they re-ceived a payment request.",Johann's Unter-schrift auf den richtigen Doku-menten sorgte für hohes Nebenein-kommen. Zuerst wurden versklavte Menschen ver-schenkt - Monate später ging eine Zahlungsauffor-derung raus.,"Johan earned a lot of money by signing the right papers:
 
@@ -109,9 +109,9 @@ the matching stack! ",,,
 ""I only agreed to steer the 'Diemen' to get Gaspar Dias’ favor. But as soon as I meet an official, I will tell them he is a fraud!"" - Antonio Machado, Portuguese Captain
 ""This ship left an African harbor with many enslaved people. Officially it’s heading for a Portuguese port. - Strange, that seems vaguely familiar.""
 ""This shipwreck is odd because no cargo sank with it. However, there are many footsteps that lead toward Mauritsstad.""","In einem Gespräch mit einem engen Mitarbeiter hat Johann Moritz über den Verkauf eines beschädigten Schiffes geredet. Verkauft wird es von der Handelsgesellschaft, für die er arbeitet.
-""Ich habe wich-tige Informationen erhalten, die für meine Betrugsidee helfen könnten!"" - Gaspar Dias, Kaufmann, arbeitete eng mit Johann Moritz zusammen.
+""Ich habe wichtige Informationen erhalten, die für meine Betrugsidee helfen könnten!"" - Gaspar Dias, Kaufmann, arbeitete eng mit Johann Moritz zusammen.
 Dieses Schiff wurde neulich von der WIC an irgendeinen Händler verkauft und musste repariert werden. Morgen fährt es unter portugiesischer Flagge von Recife nach Afrika.
-""Ich habe nur für eine Empfehlung von Dias eingewilligt, die 'Diemen' zu steuern. Aber dem nächst-besten Verwalter werde ich sagen, dass Dias ein Betrüger ist!"" - Antonio Machado, portugiesischer Kapitän.
+""Ich habe nur für eine Empfehlung von Dias eingewilligt, die 'Diemen' zu steuern. Aber dem nächstbesten Verwalter werde ich sagen, dass Dias ein Betrüger ist!"" - Antonio Machado, portugiesischer Kapitän.
 Dieses Schiff hat, beladen mit vielen versklavten Menschen, einen afrikanischen Hafen verlassen. Es steuert wohl einen portugiesischen Hafen an. Seltsam, das kommt mir vage bekannt vor.
 Dieses Schiffswrack ist ungewöhnlich, da keine Ladung mit gesunken ist. Allerdings führen am Ufer viele Fußstapfen nach Mauritsstad.","Johan Maurits was talking about a broken ship to an employee. 
 ""I will soon own a ship. It will help me with my illegal business!"" - said Gaspar Dias, a merchant who worked for Johan Maurits
@@ -173,4 +173,10 @@ These files list a number of enslaved people having been gifted to the Portugues
 Johan Maurits' signature on a specific set of documents has generated side income. First, enslaved people were sent as gifts - months later, they received a payment request.","Dieses Schiffswrack ist ungewöhnlich, da keine Ladung mit gesunken ist. Allerdings führen am Ufer viele Fußstapfen nach Mauritsstad.
 Normalerweise wurde importierte Handelsware in Häfen vom Schiff abgeladen - ebenso wie versklavte Menschen. Eine ungewöhnliche Gruppe versklavter Menschen muss stattdessen die Küste entlang gelaufen sein.
 Diese Unterlagen verzeichnen einige versklavte Menschen, die im Namen von Johann Moritz an portugiesische Zuckermühlenbesitzer verschenkt wurden.
-Johann's Unterschrift auf den richtigen Dokumenten sorgte für hohes Nebeneinkommen. Zuerst wurden versklavte Menschen verschenkt - Monate später ging eine Zahlungsaufforderung raus.",,
+Johann's Unterschrift auf den richtigen Dokumenten sorgte für hohes Nebeneinkommen. Zuerst wurden versklavte Menschen verschenkt - Monate später ging eine Zahlungsaufforderung raus.","""This broken ship is weird! It seems to have sunk without any cargo. However, many people have been at the beach nearby and walked to Mauritsstad.""
+Things that came with ships were unloaded in ports. People that were taken from their home against their will were, too. One group of people like that walked across the beach toward Mauritsstad instead.
+These papers document how Johan gifted a group of enslaved people to Portuguese sugar mill owners. 
+Johan earned a lot of money by signing the right papers: First, he gave enslaved people away as gifts, and later he demanded money for them.","Dieses kaputte Schiff ist seltsam! Es ist ohne Ladung gesunken. Aber am Strand sind Fußstapfen! Viele Leute müssen nach Mauritsstad gelaufen sein.
+Mit dem Schiff gelieferte Sachen wurden im Hafen entladen. Versklavte Menschen auch. Eine Gruppe solcher Menschen muss stattdessen am Strand nach Mauritsstad gelaufen sein.
+Auf diesen Papieren wurde aufgeschrieben, wie eine Gruppe von versklavten Menschen von Johann Moritz an portugiesische Zuckermühlenbesitzer verschenkt wurde.
+""Durch seine Unterschrift auf den richtigen Papieren hat Johann viel verdient. Zuerst hat er versklavte Menschen als Geschenke verteilt, und später hat er Geld für sie verlangt."""

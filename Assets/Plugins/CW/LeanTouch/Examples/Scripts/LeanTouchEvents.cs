@@ -32,36 +32,36 @@ namespace Lean.Touch
 
 		public void HandleFingerDown(LeanFinger finger)
 		{
-			Debug.Log("Finger " + finger.Index + " began touching the screen");
+			//Debug.Log("Finger " + finger.Index + " began touching the screen");
 		}
 
 		public void HandleFingerUpdate(LeanFinger finger)
 		{
-			Debug.Log("Finger " + finger.Index + " is still touching the screen");
+			//Debug.Log("Finger " + finger.Index + " is still touching the screen");
 		}
 
 		public void HandleFingerUp(LeanFinger finger)
 		{
-			Debug.Log("Finger " + finger.Index + " finished touching the screen");
+			//Debug.Log("Finger " + finger.Index + " finished touching the screen");
 		}
 
 		public void HandleFingerTap(LeanFinger finger)
 		{
-			Debug.Log("Finger " + finger.Index + " tapped the screen");
+			//Debug.Log("Finger " + finger.Index + " tapped the screen");
 		}
 
 		public void HandleFingerSwipe(LeanFinger finger)
 		{
-			Debug.Log("Finger " + finger.Index + " swiped the screen");
+			//Debug.Log("Finger " + finger.Index + " swiped the screen");
 		}
 
 		public void HandleGesture(List<LeanFinger> fingers)
 		{
-			Debug.Log("Gesture with " + fingers.Count + " finger(s)");
-			Debug.Log("    pinch scale: " + LeanGesture.GetPinchScale(fingers));
-			Debug.Log("    twist degrees: " + LeanGesture.GetTwistDegrees(fingers));
-			Debug.Log("    twist radians: " + LeanGesture.GetTwistRadians(fingers));
-			Debug.Log("    screen delta: " + LeanGesture.GetScreenDelta(fingers));
+			//Debug.Log("Gesture with " + fingers.Count + " finger(s)");
+			//Debug.Log("    pinch scale: " + LeanGesture.GetPinchScale(fingers));
+			//Debug.Log("    twist degrees: " + LeanGesture.GetTwistDegrees(fingers));
+			//Debug.Log("    twist radians: " + LeanGesture.GetTwistRadians(fingers));
+			//Debug.Log("    screen delta: " + LeanGesture.GetScreenDelta(fingers));
 		}
 	}
 }
