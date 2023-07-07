@@ -435,9 +435,11 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
             else
             {
                 //DeckRef.AnimateVignetteAlpha(0.18f, 0.4f);
+                SetTraceable(false);
                 Shake();
+                SetTraceable(false);
                 MoveToCenterDuration = 1.2f;
-                MoveToCenter();
+                StartCoroutine(ReturnCardAfterTimeWithDelay(0.8f));
             }
 
             
@@ -446,6 +448,13 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         if (draggingAvailable && _shouldScreenShakeOnDrop) DeckRef.FinalParentGO.GetComponent<ShakeUI>().StartShake();
     }
 
+    private IEnumerator ReturnCardAfterTimeWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        MoveToCenter();
+    }
+    
+    
     void SetDraggingFalse()
     {
         if (!actuallyDragging)
@@ -562,6 +571,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
             float startTime = Time.time;
             while (Time.time < startTime + shakeDuration)
             {
+                SetTraceable(false);
                 float t = (Time.time - startTime) / shakeDuration;
                 transform.rotation = Quaternion.Lerp(startRotation, endRotation, t);
                 yield return null;
