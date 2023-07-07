@@ -17,6 +17,7 @@ public class ProgressionSystem : MonoBehaviour
     [SerializeField] private List<GameObject> _foundSlots = new List<GameObject>();
     [SerializeField] private GameObject _foundParent;
     [SerializeField] private GameObject _toBeFoundParent;
+    [SerializeField] private TouchHandler _tH;
     private Vector3 _foundParentPos;
     private Vector3 _toBeFoundParentPos;
     private List<Vector3> _foundSlotsPos = new List<Vector3>();
@@ -25,13 +26,16 @@ public class ProgressionSystem : MonoBehaviour
     private List<Image> _foundSlotsImages = new List<Image>();
     private List<Image> _toBeFoundSlotsImages = new List<Image>();
     [SerializeField] private List<ClickableHolder> _found;
+    private bool _foundIsOpen;
     [SerializeField] private List<ClickableHolder> _toBeFound;
+    private bool _toBeFoundIsOpen;
     [SerializeField] private ClickableHolder _emptyHolder;
     private List<ClickableHolder> _q1Order = new List<ClickableHolder>();
     private List<ClickableHolder> _q2Order = new List<ClickableHolder>();
     private List<ClickableHolder> _q3Order = new List<ClickableHolder>();
     public List<List<ClickableHolder>> _orders = new List<List<ClickableHolder>>();
     private List<ClickableHolder> _orderSaver = new List<ClickableHolder>();
+
 
     // Start is called before the first frame update
     void Awake()
@@ -156,7 +160,7 @@ public class ProgressionSystem : MonoBehaviour
         return -1;
     }
 
-    public void ShowOrder(List<ClickableHolder> order)
+    public void ShowOrder(List<ClickableHolder> order, bool anim = false)
     {
         _toBeFoundSlots[0].transform.DOScale(Vector3.zero, 0.75f);
         _foundSlots[0].transform.DOScale(Vector3.zero, 0.75f).OnComplete(() =>
@@ -184,8 +188,34 @@ public class ProgressionSystem : MonoBehaviour
                     _found.Add(_emptyHolder);
                 }
             }
+            // Fill the toBeFound list with empty holders
+            if (_toBeFound.Count < 9)
+            {
+                int count =  9 - _toBeFound.Count;
+                for (int i = 0; i < count; i++)
+                {
+                    _toBeFound.Add(_emptyHolder);
+                }
+            }
+
             UpdateDisplay();
-            HideBothBars();
+
+            if (anim)
+            {
+                float newX = _foundParent.transform.localPosition.x + 200;
+                _foundParent.transform.DOLocalMoveX(newX, 0.75f).OnComplete(() =>
+                {
+                     _foundParent.transform.DOLocalMoveX(_foundParentPos.x, 0.75f);
+                });
+
+                float newX2 = _toBeFoundParent.transform.localPosition.x + 200;
+                _toBeFoundParent.transform.DOLocalMoveX(newX, 0.75f).OnComplete(() =>
+                {
+                     _toBeFoundParent.transform.DOLocalMoveX(_toBeFoundParentPos.x, 0.75f);
+                });
+            }
+            
+            //HideBothBars();
             
 
             _toBeFoundSlots[0].transform.DOScale(Vector3.one, 0.75f);
@@ -221,11 +251,11 @@ public class ProgressionSystem : MonoBehaviour
 
     public void ToggleFound()
     {
-        ToggleBar(true, !_foundSlots[1].activeInHierarchy);
+        ToggleBar(true, !_foundIsOpen);
     }
     public void ToggleToBeFound()
     {
-        ToggleBar(false, !_toBeFoundSlots[1].activeInHierarchy);
+        ToggleBar(false, !_toBeFoundIsOpen);
     }
 
     private void HideBothBars()
@@ -236,6 +266,15 @@ public class ProgressionSystem : MonoBehaviour
 
     private void ToggleBar(bool found, bool toggle)
     {
+        if (found)
+        {
+            _foundIsOpen = toggle;
+        }
+        else
+        {
+            _toBeFoundIsOpen = toggle;
+        }
+        UpdateDisplay();
         List<GameObject> slots = new List<GameObject>();
         List<ClickableHolder> content = new List<ClickableHolder>();
         GameObject parent;
@@ -259,7 +298,18 @@ public class ProgressionSystem : MonoBehaviour
             int i = 0;
             Sequence seq = DOTween.Sequence();
             // Moving Parent
-            float newX = parent.transform.localPosition.x - 1000;
+            float spacing = 100 * parent.transform.localScale.x;
+            float distance;
+            Debug.Log(GetFreeSpot(content));
+            if (GetFreeSpot(content) != -1)
+            {
+                distance = (spacing * ( GetFreeSpot(content) - 1 ));
+            }
+            else 
+            {
+                distance = spacing * ( content.Count - 1 );
+            }
+            float newX = parent.transform.localPosition.x - distance;
             seq.Insert(0, parent.transform.DOLocalMoveX(newX, 0.75f));
 
             // Scaling slots
@@ -289,12 +339,12 @@ public class ProgressionSystem : MonoBehaviour
                     seq.Insert(0, g.transform.DOScale(new Vector3(0.2f, 0.2f, 0.2f), 0.75f));
                     seq.OnComplete(() =>
                     {
-                        g.SetActive(false);
-                            if (!once)
-                            {
-                                once = true;
-                                ResetAfterToggle();
-                            }
+                        //g.SetActive(false);
+                        if (!once)
+                        {
+                            once = true;
+                            ResetAfterToggle();
+                        }
                     });
                 } 
                 i++;

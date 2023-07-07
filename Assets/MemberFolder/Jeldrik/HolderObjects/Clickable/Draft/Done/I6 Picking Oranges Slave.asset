@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: I6 Picking Oranges Slave
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: c92ba5ff43a01194abc8bb5e7a715608, type: 3}
-  ProgressionImage: {fileID: 21300000, guid: c92ba5ff43a01194abc8bb5e7a715608, type: 3}
+  ProgressionImage: {fileID: 21300000, guid: b1bac7c2c932c994898f9a3269880f59, type: 3}
   Title: Man
-  Description: This man, a native brazilian, //
+  Description: "Johan Maurits used this symbol to mark his possessions. \n\nThis
+    man was enslaved and brought overseas from Africa. He was one of ca. 23.500 enslaved
+    people that were brought to Dutch Brazil during Johan Maurits' time as governor
+    of the Dutch colony (1636-1645)."
   BookInfo: 
   Question: 0
   language: 0

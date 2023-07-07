@@ -85,7 +85,7 @@ public class CurrentQuestion : MonoBehaviour
             _questionTitle.text = _currentQ.Text;
         }
         UpdateQuestionCounter(_currentQ, questionCounter);
-        // TODO _progression.ShowOrder(_progression._orders[_qM.GetCurrentQuestionId()]);
+        _progression.ShowOrder(_progression._orders[_qM.GetCurrentQuestionId()], true);
     }
 
     public void ToggleForwardButton(bool toggle)
