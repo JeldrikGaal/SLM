@@ -44,6 +44,12 @@ public class VALUECONTROLER : MonoBehaviour
     [Header("Confetti")]
     [Tooltip("The size of the confetti")] public float Confetti_Size;
 
+    [Header("Glow Effect")]
+    [Tooltip("The size of the confetti")] public Color Glow_Color;
+    [Tooltip("The size of the confetti")] public float RepetetionTime;
+    [Tooltip("The size of the confetti")] public float GlowTime;
+    public bool Do_Glow_Effect;
+
     /*[InspectorButton("SetValues")]
     [Tooltip("Updates the values from the Valuecontroller during runtime")] public bool SETVALUES;*/
     /* 
