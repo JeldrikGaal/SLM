@@ -64,6 +64,11 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     private bool _shouldScreenShakeOnDrop;
     private float _currentY;
     
+    private Vector3 initialScale; // store the original scale
+    private Coroutine pulseCoroutine; // store the coroutine reference
+    private bool _isPulsing = false;
+    public bool tutWaitForDrag = false;
+    
     
     public void Init(int ID, CardDatabase pCardDatabase, bool pDraggable, bool pFlippable, Canvas pCardCanvas, Deck pDeck, DragOverManager pDragOverManager)
     {
@@ -96,6 +101,8 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         textSide.rectTransform.localScale = new Vector3(0, 1, 1);
         ShowDropInfo(false, null);
         _currentY = transform.position.y;
+        initialScale = transform.localScale; // store the initial scale in Awake
+
     }
 
     private void OnEnable()
@@ -167,6 +174,12 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
             else
             {
                 flipCoroutine = StartCoroutine(FlipUp());
+            }
+
+            if (_isPulsing)
+            {
+                TogglePulse(false, cardScale, 0.3f);
+                DeckRef.MG2_Info_Component.Continue_2();
             }
         }
         else
@@ -358,6 +371,11 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
             graphicComponent_pictureSide.raycastTarget = false;
             graphicComponent_textSide.raycastTarget = false;
             DeckRef.SetPileCollidersTraceable(true);
+            if (tutWaitForDrag)
+            {
+                tutWaitForDrag = false;
+                DeckRef.MG2_Info_Component.Continue_3();
+            }
         }
     }
 
@@ -556,7 +574,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public void MoveToCenter()
     {
         // Get the current y position of the card
-        StartCoroutine(MoveToPosition(new Vector2(Screen.width / 2, _currentY)));
+        StartCoroutine(MoveToPosition(new Vector2(Screen.width / 2, DeckRef.startObject.transform.position.y)));
     }
     IEnumerator MoveToPosition(Vector2 targetPosition)
     {
@@ -596,7 +614,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         _animatingToOtherCardAtm = true;
         Vector3 offset = new Vector3(-5, -5, 0);
         Vector3 startPosition = this.transform.position; // Starting position
-        Vector3 endPosition = new Vector3(otherCard.transform.position.x, otherCard.transform.position.y-24, this.transform.position.z) + offset * LastTPC.cardCount; // Target position
+        Vector3 endPosition = new Vector3(otherCard.transform.position.x, otherCard.transform.position.y - (Screen.height* 0.035f), 0) + offset * LastTPC.cardCount; // Target position
 
         float startTime = Time.time;
 
@@ -625,7 +643,59 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         if (isPictureUp) FlipAnimated();
     }
 
+    public void TogglePulse(bool shouldPulse, float targetScale, float duration)
+    {
+        if (pulseCoroutine != null) // if pulseCoroutine is not null, stop it
+        {
+            _isPulsing = false;
+            StopCoroutine(pulseCoroutine);
+            SetHighlight(false);
+        }
 
+        if (shouldPulse)
+        {
+            _isPulsing = true;
+            Color color = DropInfo.color;
+            color.a = shouldPulse ? 1f : 0f;
+            DropInfo.color = color;
+            pulseCoroutine = StartCoroutine(Pulse(targetScale, duration));
+        }
+        else
+        {
+            _isPulsing = false;
+            Color color = DropInfo.color;
+            color.a = shouldPulse ? 1f : 0f;
+            DropInfo.color = color;
+            // make sure to animate back to the original scale
+            StartCoroutine(ScaleToTarget(initialScale, duration));
+        }
+    }
+
+    // coroutine to create the pulse effect
+    private IEnumerator Pulse(float targetScale, float duration)
+    {
+        while (true)
+        {
+            yield return ScaleToTarget(Vector3.one * targetScale, duration);
+            yield return ScaleToTarget(initialScale, duration);
+        }
+    }
+
+    // coroutine to scale the object to a target scale over a certain duration
+    private IEnumerator ScaleToTarget(Vector3 target, float duration)
+    {
+        float time = 0;
+        Vector3 startScale = transform.localScale;
+
+        while (time < duration)
+        {
+            transform.localScale = Vector3.Lerp(startScale, target, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.localScale = target;
+    }
     
     
     

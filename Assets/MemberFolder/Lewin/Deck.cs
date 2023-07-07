@@ -17,6 +17,7 @@ public class Deck : MonoBehaviour
     public Vector3 offset; // The offset between each card
     public GameObject TargetPileCollider;
     public Card DeckTopCard;
+    public Card CurrentDraggableCard;
     private CardDatabase CDB;
     private List<TPC> PileColliders = new List<TPC>();
     private List<Card> DrawPileCards = new List<Card>();
@@ -43,10 +44,14 @@ public class Deck : MonoBehaviour
     private float _originalAlpha;
     private bool _drawnFistCard;
 
+    public GameObject TutorialGO;
+    public MG2_Info MG2_Info_Component;
+
     
     void Awake()
     {
         _originalAlpha = _vignette.color.a;
+        MG2_Info_Component = TutorialGO.GetComponent<MG2_Info>();
     }
     void Start()
     {
@@ -156,6 +161,8 @@ public class Deck : MonoBehaviour
                     _tpc.TopCardGO.GetComponent<Card>().FlipAnimated();
                 }
             }
+
+            CurrentDraggableCard = DeckTopCard;
             DeckTopCard.MoveToCenter();
             DeckTopCard.MakeInteractableAfterTime();
             int _count = DrawPileCards.Count;

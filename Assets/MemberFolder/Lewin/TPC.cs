@@ -12,6 +12,7 @@ public class TPC : MonoBehaviour
     public GameObject TopCardGO;
     public GameObject BottomCardGO;
     public int cardCount;
+    
 
     private void Awake()
     {
