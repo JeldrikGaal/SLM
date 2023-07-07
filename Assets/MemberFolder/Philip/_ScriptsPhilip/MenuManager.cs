@@ -280,21 +280,23 @@ public class MenuManager : MonoBehaviour
         
         //mapUnfold.SetActive(true);
         mapUnfoldAnim.Play("mapunfoldAnim");
-        yield return new WaitForSeconds(mapUnfold.length - 5.7f);
+        yield return new WaitForSeconds(mapUnfold.length - 6.7f);
         
         cam2.Priority = 15;
         
         yield return new WaitForSeconds(mapDelay);
         
         GameManager.Instance.CurrentState = GameManager.GameState.Idle;
+
+        SceneManager.LoadScene(minigame);
         
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(minigame);
+        //AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(minigame);
 
         // Wait until the scene finishes loading
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
+        //while (!asyncLoad.isDone)
+        //{
+        //    yield return null;
+        //}
         
         GameManager.Instance.CurrentState = GameManager.GameState.Idle;
 
