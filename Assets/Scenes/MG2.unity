@@ -479,7 +479,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -75.37014, y: 1.3585359, z: -59.354057, w: -28.750805}
+  m_margin: {x: -95.593254, y: -10.591515, z: -97.961815, w: -28.750805}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2102,7 +2102,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -75.37014, y: 1.3585359, z: -59.354057, w: -28.750805}
+  m_margin: {x: -101.10859, y: 1.3585359, z: -98.881035, w: -28.750805}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2221,7 +2221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 812f38a97684b4d4a85ab84c745f72c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _font: {fileID: 11400000, guid: fe6a0a0923b4eeb4cb3a963da20cf677, type: 2}
+  _font: {fileID: 11400000, guid: c8e2e71a45fd0d34db5ca32795682656, type: 2}
 --- !u!4 &1439977349
 Transform:
   m_ObjectHideFlags: 0
@@ -3375,7 +3375,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -75.37014, y: -19.140049, z: -59.354057, w: -28.750805}
+  m_margin: {x: -82.72405, y: -19.140049, z: -89.68868, w: -28.750805}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
