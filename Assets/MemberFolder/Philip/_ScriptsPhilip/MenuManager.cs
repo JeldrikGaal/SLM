@@ -14,6 +14,8 @@ public class MenuManager : MonoBehaviour
     public InfoPageManager _infoManager;
     private LangugageStorage _langugageStorage;
 
+    public SceneLoader sceneLoader;
+
     public float mapDelay = 2f;
     
     public float loadMinigameDelay = 5f;
@@ -21,6 +23,7 @@ public class MenuManager : MonoBehaviour
     public AnimationClip mapUnfold;
     public CinemachineVirtualCamera cam1;
     public CinemachineVirtualCamera cam2;
+    public CinemachineVirtualCamera MG2cam;
 
     
     private void Awake()
@@ -267,43 +270,47 @@ public class MenuManager : MonoBehaviour
     
     #endregion
 
-    public void LoadMinigame(string minigame)
+    public void LoadMinigame1()
     {
         //if (GameManager.Instance.CurrentState == GameManager.GameState.Animating) return;
          
-        StartCoroutine(MapTransition(loadMinigameDelay, minigame));
+        StartCoroutine(MapTransition(loadMinigameDelay));
     }
 
-    private IEnumerator MapTransition(float time, string minigame)
+    public void LoadMinigame2()
+    {
+        StartCoroutine(MG2Transition());
+    }
+
+    private IEnumerator MG2Transition()
+    {
+        MG2cam.Priority = 20;
+        
+        yield return new WaitForSeconds(4f);
+
+
+        SceneManager.LoadScene("MG2");
+        //AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("MG2");
+
+        //Wait until the scene finishes loading
+        //while (!asyncLoad.isDone)
+        {
+        //    yield return null;
+        }
+    }
+
+    private IEnumerator MapTransition(float time)
     {
         GameManager.Instance.CurrentState = GameManager.GameState.Animating;
-        
-        //mapUnfold.SetActive(true);
+
         mapUnfoldAnim.Play("mapunfoldAnim");
         yield return new WaitForSeconds(mapUnfold.length - 6.7f);
-        
+
         cam2.Priority = 15;
-        
+
         yield return new WaitForSeconds(mapDelay);
         
-        GameManager.Instance.CurrentState = GameManager.GameState.Idle;
-
-        SceneManager.LoadScene(minigame);
-        
-        //AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(minigame);
-
-        // Wait until the scene finishes loading
-        //while (!asyncLoad.isDone)
-        //{
-        //    yield return null;
-        //}
-        
-        GameManager.Instance.CurrentState = GameManager.GameState.Idle;
-
-        SceneManager.LoadScene(minigame);
-        cam2.Priority = 5;
-        
-        
+        sceneLoader.ActivateScene();
     }
 
     public void QuitGame()

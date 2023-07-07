@@ -9,6 +9,10 @@ public class SwipeController : MonoBehaviour
     public MenuManager menuManager;
     private bool _isSwiping;
     public TrailRenderer tr;
+
+    public float minSwipeDistance = 50f;
+
+    private Vector2 swipeStartPos;
     
     void OnEnable()
     {
@@ -24,23 +28,32 @@ public class SwipeController : MonoBehaviour
         LeanTouch.OnFingerUp -= ReleaseHandler;
     }
 
+    private void Update()
+    {
+        throw new NotImplementedException();
+    }
+    
     void SwipeHandler(LeanFinger finger)
     {
         Vector2 swipeDirection = finger.SwipeScreenDelta.normalized;
+        float swipeDistance = finger.SwipeScreenDelta.magnitude;
 
-        if (Mathf.Abs(swipeDirection.x) > Mathf.Abs(swipeDirection.y))
+        if (Mathf.Abs(swipeDistance) > minSwipeDistance)
         {
-            if (swipeDirection.x > 0)
+            if (Mathf.Abs(swipeDirection.x) > Mathf.Abs(swipeDirection.y))
             {
-                menuManager.PreviousPage();
-            }
-            else
-            {
-                menuManager.NextPage();
+                if (swipeDirection.x > 0)
+                {
+                    menuManager.PreviousPage();
+                }
+                else
+                {
+                    menuManager.NextPage();
+                }
             }
         }
     }
-
+    
     void HoldHandler(LeanFinger finger)
     {
         Vector3 mousePosition = Input.mousePosition;

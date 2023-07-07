@@ -7,11 +7,276 @@
     <list default="true" id="58850cd5-8d2e-4765-8fce-206cb2b23995" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SLM/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SLM/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Jeldrik/TestAssets/Fonts/XTypeWriter/XTypewriter-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Jeldrik/TestAssets/Fonts/XTypeWriter/XTypewriter-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Background.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Base.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Base.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/BaseCrop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/BaseCrop.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/1.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/10.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/10.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/11.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/11.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/12.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/12.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/13.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/13.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/14.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/14.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/15.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/15.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/16.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/16.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/2.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/3.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/3.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/4.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/4.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/5.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/5.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/6.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/6.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/7.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/7.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/8.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/8.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/9.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book/9.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book_BG.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Book_BG.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Edge.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Edge/Edge_0000_From-selection.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Edge/Edge_0000_From-selection.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Edge/Edge_0001_From-selection.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Edge/Edge_0001_From-selection.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Edge/Edge_0002_From-selection.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Edge/Edge_0002_From-selection.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Edge/Edge_0004_From-selection.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Edge/Edge_0004_From-selection.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Edge/Edge_0005_From-selection.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Edge/Edge_0005_From-selection.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Empty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Empty.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Ground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Ground.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/IMG_5355.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/IMG_5355.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/IMG_5356.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/IMG_5356.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/JM-Scene-No-Persons.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/JM-Scene-No-Persons.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0000_Layer-46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0000_Layer-46.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0001_Layer-47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0001_Layer-47.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0002_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0002_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0003_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0003_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0004_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0004_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0005_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0005_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0006_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0006_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0007_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0007_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0008_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0008_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0009_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0009_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0010_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0010_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0011_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0011_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0012_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0012_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0013_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0013_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0014_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0014_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0015_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0015_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0016_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0016_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0017_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0017_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0018_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0018_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0019_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0019_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0020_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0020_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0021_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0021_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0022_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0022_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0023_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0023_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0024_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0024_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0025_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0025_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0026_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0026_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0027_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0027_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0028_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0028_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0029_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0029_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0030_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0030_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0031_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0031_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0032_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0032_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0033_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0033_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0034_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0034_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0035_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0035_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0036_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0036_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0037_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0037_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0038_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0038_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0039_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0039_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0040_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0040_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0041_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0041_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0042_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0042_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0043_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0043_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0044_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding - Full Anim/Map-Unfolding_0044_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0000_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0000_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0001_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0001_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0002_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0002_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0003_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0003_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0004_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0004_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0005_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0005_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0006_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0006_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0007_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0007_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0008_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0008_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0009_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0009_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0010_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0010_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0011_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0011_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0012_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0012_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0013_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0013_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0014_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0014_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0015_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0015_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0016_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0016_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0017_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0017_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0018_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0018_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0019_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0019_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0020_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0020_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0021_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0021_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0022_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0022_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0023_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0023_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0024_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0024_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0025_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0025_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0026_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0026_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0027_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0027_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0028_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0028_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0029_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0029_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0030_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0030_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0031_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0031_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0032_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0032_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0033_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0033_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0034_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0034_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0035_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0035_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0036_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0036_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0037_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0037_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0038_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0038_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0039_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0039_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0040_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0040_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0041_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0041_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0042_Layer-45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Map Unfolding/Map-unfolding_0042_Layer-45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Pop-up paper 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Pop-up paper 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Pop-up paper 2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Pop-up paper 2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Pop-up paper 3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Pop-up paper 3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Pop-up paper 4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Pop-up paper 4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Ripped Page Left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Ripped Page Left.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Ripped Page Right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/Ripped Page Right.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/johann.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/johann.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/johannDevil.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/johannDevil.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/kindasus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/kindasus.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/sceneColored.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/sceneColored.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/trail.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Assets/trail.mat.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/MenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/SwipeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/SwipeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/customBlend.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/customBlend.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Book_Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Book_Main.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/Localization/MG 1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/Localization/MG 1.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/Localization/Menu.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/Localization/Menu.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +292,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/InfoCard.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/InfoPage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/LanguageManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/SceneLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/minigameStuff.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
