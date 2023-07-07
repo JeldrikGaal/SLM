@@ -82,7 +82,7 @@ public class SlideColorStripe : MonoBehaviour
         Invoke("SlideIn", (_slideTime * tf + 0.2f) * fast);
     }
 
-    public void Appear(bool cQToggle = true, float time = 0.75f)
+    public void Appear(bool cQToggle = true, float time = 0.5f)
     {
        ChangeAlpha(_text1Text, 0);
        ChangeAlpha(_text2Text, 0);
@@ -118,23 +118,23 @@ public class SlideColorStripe : MonoBehaviour
        _currentQuestion.gameObject.SetActive(cQToggle);
     }
 
-    public void ChangeAlpha(Image img, float a)
+    static public void ChangeAlpha(Image img, float a)
     {
         Color c = new Color(img.color.r, img.color.g, img.color.b, a);
         img.color = c;
     }
-    public void ChangeAlpha(TMP_Text tex, float a)
+    static public void ChangeAlpha(TMP_Text tex, float a)
     {
         Color c = new Color(tex.color.r, tex.color.g, tex.color.b, a);
         tex.color = c;
     }
 
-    public void DOAlpha(TMP_Text tex, float a, float time)
+    static public void DOAlpha(TMP_Text tex, float a, float time)
     {
         Color c = new Color(tex.color.r, tex.color.g, tex.color.b, a);
         tex.DOColor(c, time);
     }
-    public void DOAlpha(Image img, float a, float time)
+    static public void DOAlpha(Image img, float a, float time)
     {
         Color c = new Color(img.color.r, img.color.g, img.color.b, a);
         img.DOColor(c, time);

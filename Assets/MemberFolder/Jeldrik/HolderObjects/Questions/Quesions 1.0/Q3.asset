@@ -15,7 +15,7 @@ MonoBehaviour:
   Text: Where can you find this symbol?
   Hint: 
   Number: 2
-  Image: {fileID: 21300000, guid: 99b49dab9c20ccf458d324a55dbabefb, type: 3}
+  Image: {fileID: 21300000, guid: dea4d7bdeb38e924686da66aff833372, type: 3}
   ObjectsToFind1:
   - {fileID: 11400000, guid: 2e89491c5a8cfa547b2897357fb44921, type: 2}
   - {fileID: 11400000, guid: 30b4272164ea61343ab9d2f14390bb30, type: 2}

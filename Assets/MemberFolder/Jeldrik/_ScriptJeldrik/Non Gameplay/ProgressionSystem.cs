@@ -34,6 +34,7 @@ public class ProgressionSystem : MonoBehaviour
     private List<ClickableHolder> _q2Order = new List<ClickableHolder>();
     private List<ClickableHolder> _q3Order = new List<ClickableHolder>();
     public List<List<ClickableHolder>> _orders = new List<List<ClickableHolder>>();
+    public List<List<ClickableHolder>> _ordersSaved = new List<List<ClickableHolder>>();
     private List<ClickableHolder> _orderSaver = new List<ClickableHolder>();
 
 
@@ -160,7 +161,16 @@ public class ProgressionSystem : MonoBehaviour
         return -1;
     }
 
-    public void ShowOrder(List<ClickableHolder> order, bool anim = false)
+    public void SaveOrders()
+    {
+
+    }
+    public void LoadOrders()
+    {
+        
+    }
+
+    public void ShowOrder(List<ClickableHolder> order, bool anim = false) 
     {
         _toBeFoundSlots[0].transform.DOScale(Vector3.zero, 0.75f);
         _foundSlots[0].transform.DOScale(Vector3.zero, 0.75f).OnComplete(() =>

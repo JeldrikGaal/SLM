@@ -47,6 +47,18 @@ public class QuestionManager : MonoBehaviour
 
     [SerializeField] private List<List<GameObject>> _swirls = new List<List<GameObject>>();
 
+    // Next Question Question References 
+    [SerializeField] private GameObject _continueButton;
+    [SerializeField] private Image _continueArrow;
+    [SerializeField] private GameObject _goOnButton;
+    [SerializeField] private TMP_Text _continueButtonText;
+    [SerializeField] private TMP_Text _goOnButtonText;
+    [SerializeField] private Image _goOnArrow;
+    [SerializeField] private TMP_Text _nextQuestionQuestionText;
+    private Image _grayScaleImage;
+    
+
+
     //private List<List<int>> _question = new List<List<int>>();
 
     private int _currentQ = -1;
@@ -72,7 +84,6 @@ public class QuestionManager : MonoBehaviour
         {
             q.Text = LocalizationManager.Localize(q.LocalizationKey); 
         }
-        
 
         // Loading and displaying question objects in the menu
         if (_questions.Count < 3)
@@ -106,6 +117,8 @@ public class QuestionManager : MonoBehaviour
         _cS = GameObject.FindGameObjectWithTag("ClickableStorage").GetComponent<ClickableStorage>();
         _cM = GameObject.FindGameObjectWithTag("ClickableManager").GetComponent<ClickableManager>();
         _canvas = GameObject.FindGameObjectWithTag("Canvas");
+
+        _grayScaleImage = _cM._grayScaleImage;
 
         _completedQuestions.Add(false);
         _completedQuestions.Add(false);
@@ -254,21 +267,127 @@ public class QuestionManager : MonoBehaviour
     {
         if (_completedQuestions[_currentQ] && !_doneOnce[_currentQ])
         {
-            _doneOnce[_currentQ] = true;
-            Invoke("Forward", 0.25f);
+            _doneOnce[_currentQ] = true;            
+
             // Fading text to display question has been completed
             _questionCompletedText.transform.localScale = Vector3.zero;
             _questionCompletedText.enabled = true;
             _questionCompletedText.text = LocalizationManager.Localize("QuestionCompleted");
-            _questionCompletedText.color = new Color(1,1,1,1);
+            _questionCompletedText.color = new Color(_questionCompletedText.color.r,_questionCompletedText.color.g,_questionCompletedText.color.b, 1);
+
             _questionCompletedText.transform.DOScale(Vector3.one, 0.75f).OnComplete(() => 
             {
-                _questionCompletedText.DOColor(new Color(1,1,1,0), 0.75f).OnComplete(() => 
+
+                if (_currentQ > 0)
                 {
-                    _questionCompletedText.enabled = false;
-                });
+                    NextQuestionCheck();
+                } 
+                else 
+                {
+                    Color fadeColor = new Color(_questionCompletedText.color.r,_questionCompletedText.color.g,_questionCompletedText.color.b,0);
+                    _questionCompletedText.DOColor(fadeColor, 0.75f).OnComplete(() => {
+                        _questionCompletedText.enabled = false;
+                        Invoke("Forward", 0.1f);
+                    });
+                }
+                   
             });
         }
+    }
+
+    private void NextQuestionCheck()
+    {
+        // Enable grayScaleImage to make text more prominent
+        Image _grayScaleImage = _cM._grayScaleImage;
+        _grayScaleImage.enabled = true;
+        _grayScaleImage.color = new Color(_grayScaleImage.color.r, _grayScaleImage.color.g, _grayScaleImage.color.b, 0);
+        Color fade = new Color(_grayScaleImage.color.r, _grayScaleImage.color.g, _grayScaleImage.color.b, 0.8f);
+        _grayScaleImage.DOColor(fade, _VC.PopUp_AnimSpeed);
+
+        // Enabling object
+        _continueButton.SetActive(true);
+        _goOnButton.SetActive(true);
+        _nextQuestionQuestionText.gameObject.SetActive(true);
+        // Setting Text 
+        _nextQuestionQuestionText.text = LocalizationManager.Localize("NQ.Question");
+        _goOnButtonText.text = LocalizationManager.Localize("NQ.Yes");
+        _continueButtonText.text = LocalizationManager.Localize("NQ.No");
+
+        /* // Setting scale to 0
+        _continueButton.transform.localScale = Vector3.zero;
+        _continueArrow.transform.localScale = Vector3.zero;
+        _goOnButtonText.transform.localScale = Vector3.zero;
+        _goOnArrow.transform.localScale = Vector3.zero;
+        _nextQuestionQuestionText.transform.localScale = Vector3.zero;
+
+        // Animating scale up
+        _continueButton.transform.DOScale(Vector3.one, 0.75f);
+        _goOnButtonText.transform.DOScale(Vector3.one, 0.75f);
+        _continueArrow.transform.DOScale(Vector3.one, 0.75f);
+        _goOnArrow.transform.DOScale(Vector3.one, 0.75f);
+        _nextQuestionQuestionText.transform.DOScale(Vector3.one, 0.75f);
+        _tH.LockInput(); */ 
+
+        SlideColorStripe.ChangeAlpha(_continueButtonText, 0);
+        SlideColorStripe.ChangeAlpha(_continueArrow,0);
+        SlideColorStripe.ChangeAlpha(_goOnButtonText,0);
+        SlideColorStripe.ChangeAlpha(_goOnArrow,0);
+        SlideColorStripe.ChangeAlpha(_nextQuestionQuestionText,0);
+
+        SlideColorStripe.DOAlpha(_continueButtonText,1, 0.75f);
+        SlideColorStripe.DOAlpha(_continueArrow,1, 0.75f);
+        SlideColorStripe.DOAlpha(_goOnButtonText,1, 0.75f);
+        SlideColorStripe.DOAlpha(_goOnArrow,1, 0.75f);
+        SlideColorStripe.DOAlpha(_nextQuestionQuestionText,1, 0.75f);
+
+    }
+
+    private void DisableStuff()
+    {
+        Color fade = new Color(_grayScaleImage.color.r, _grayScaleImage.color.g, _grayScaleImage.color.b, 0);
+        _grayScaleImage.DOColor(fade, _VC.PopUp_AnimSpeed);
+
+        /*_continueButton.transform.DOScale(Vector3.zero, 0.75f);
+        _continueArrow.transform.DOScale(Vector3.zero, 0.75f);
+        _goOnArrow.transform.DOScale(Vector3.zero, 0.75f);
+        _nextQuestionQuestionText.transform.DOScale(Vector3.zero, 0.75f);*/
+
+        SlideColorStripe.DOAlpha(_continueButtonText, 0, 0.75f);
+        SlideColorStripe.DOAlpha(_continueArrow, 0, 0.75f);
+        SlideColorStripe.DOAlpha(_goOnButtonText, 0, 0.75f);
+        SlideColorStripe.DOAlpha(_goOnArrow, 0, 0.75f);
+        SlideColorStripe.DOAlpha(_nextQuestionQuestionText, 0, 0.75f);
+
+        _questionCompletedText.enabled = false;
+    }
+
+    public void GoOn()
+    {
+        DisableStuff();
+
+        _goOnButtonText.transform.DOScale(Vector3.zero, 0.75f).OnComplete(() => {
+            _tH.UnlockInput();
+            _continueButton.SetActive(false);
+            _goOnButton.SetActive(false);
+            _nextQuestionQuestionText.gameObject.SetActive(false);
+            _grayScaleImage.enabled = false;
+
+            Invoke("Forward", 0.25f);
+        });
+       
+    }
+
+    public void Continue()
+    {
+        DisableStuff();
+
+        _goOnButtonText.transform.DOScale(Vector3.zero, 0.75f).OnComplete(() => {
+            _tH.UnlockInput();
+            _continueButton.SetActive(false);
+            _goOnButton.SetActive(false);
+             _grayScaleImage.enabled = false;
+            _nextQuestionQuestionText.gameObject.SetActive(false);
+        });
     }
 
     // Gets called by Clickables whenever they are sucessfully clicked -> Questionmanager checks if its the currently needed object

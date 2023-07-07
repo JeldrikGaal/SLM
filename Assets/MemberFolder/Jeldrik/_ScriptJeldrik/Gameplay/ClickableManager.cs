@@ -13,7 +13,7 @@ public class ClickableManager : MonoBehaviour
     [SerializeField] private GameObject _popUp;
 
     [SerializeField] public QuestionManager _qM;
-    [SerializeField] private Image _grayScaleImage;
+    [SerializeField] public Image _grayScaleImage;
     [SerializeField] private List<PopUp> _popUps = new List<PopUp>();
     [SerializeField] private SlideColorStripe _colorStripe;
     private Transform _grayScaleParentSafe;
