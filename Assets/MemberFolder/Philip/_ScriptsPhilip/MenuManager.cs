@@ -38,13 +38,7 @@ public class MenuManager : MonoBehaviour
         cam2.Priority = 5;
         
         _currentPageIndex = GameManager.Instance.pageIndex;
-        
-        _ageButtonText = ageButton.GetComponentInChildren<TextMeshProUGUI>();
-        _ageButtonText.text = _ageGroups[_currentIndex];
 
-        _languageButtonText = languageButton.GetComponentInChildren<TextMeshProUGUI>();
-        _languageButtonText.text = _languages[0];
-        
         ResolutionSetup();
         ShowCurrentPage();
     }
@@ -146,70 +140,6 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    #endregion
-    
-    #region Language and Age
-    
-    [Header("Options")]
-    public Button ageButton;
-    private TextMeshProUGUI _ageButtonText;
-    private string[] _ageGroups = { "Normal", "Simplified" };
-    private int _currentIndex = 0;
-    
-    public Button languageButton;
-    private TextMeshProUGUI _languageButtonText;
-    private string[] _languages = { "English (EN)", "German (DE)" };
-    private string[] _localizationNames = {"English", "Simplified English", "German", "Simplified German"};
-
-    
-    public void ToggleAgeGroup()
-    {
-        _currentIndex = (_currentIndex + 1) % _ageGroups.Length;
-        _ageButtonText.text = _ageGroups[_currentIndex];
-        SetLocalization();
-    }
-
-    public void ToggleLanguage()
-    {
-        if (_languageButtonText.text == _languages[0])
-        {
-            _languageButtonText.text = _languages[1];
-        }
-        else
-        {
-            _languageButtonText.text = _languages[0];
-        }
-        SetLocalization();
-    }
-
-    public void SetLocalization()
-    {
-        if (_languageButtonText.text == _languages[0])
-        {
-            if (_currentIndex == 0)
-            {
-                LocalizationManager.Language = _localizationNames[0];
-            }
-            else
-            {
-                LocalizationManager.Language = _localizationNames[1];
-            }
-        }
-        else
-        {
-            if (_currentIndex == 0)
-            {
-                LocalizationManager.Language = _localizationNames[2];
-            }
-            else
-            {
-                LocalizationManager.Language = _localizationNames[3];
-            }
-        }
-        //Debug.Log(LocalizationManager.Language);
-        //_langugageStorage.Language = LocalizationManager.Language;
-    }
-    
     #endregion
     
     #region Screen Resolution
