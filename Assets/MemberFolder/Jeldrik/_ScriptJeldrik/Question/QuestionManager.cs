@@ -230,6 +230,8 @@ public class QuestionManager : MonoBehaviour
 
     public void Forward()
     {
+        Debug.Log("=========Forward==========");
+        Debug.Log(_currentQ);
         _currentQuestion._sliding = true;
         _currentQ++;
         DisableSwirls(_currentQ);
@@ -297,6 +299,12 @@ public class QuestionManager : MonoBehaviour
 
     private void NextQuestionCheck()
     {
+        // Set button functions
+        _continueButton.GetComponent<Button>().onClick.RemoveAllListeners();
+        _goOnButton.GetComponent<Button>().onClick.RemoveAllListeners();
+        _continueButton.GetComponent<Button>().onClick.AddListener(Continue);
+        _goOnButton.GetComponent<Button>().onClick.AddListener(GoOn);
+
         // Enable grayScaleImage to make text more prominent
         Image _grayScaleImage = _cM._grayScaleImage;
         _grayScaleImage.enabled = true;
@@ -363,6 +371,7 @@ public class QuestionManager : MonoBehaviour
 
     public void GoOn()
     {
+        Debug.Log("test");
         DisableStuff();
 
         _goOnButtonText.transform.DOScale(Vector3.zero, 0.75f).OnComplete(() => {
@@ -374,7 +383,6 @@ public class QuestionManager : MonoBehaviour
 
             Invoke("Forward", 0.25f);
         });
-       
     }
 
     public void Continue()

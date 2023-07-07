@@ -210,5 +210,6 @@ NQ.Question,Would you like to proceed to the next question?,Would you like to pr
 NQ.Yes,Yes Proceed,Yes Proceed,Yes Proceed,Yes Proceed,
 NQ.No,No Stay !,No Stay,No Stay,No Stay,
 ,,,,,
+Book.Question,You wanna go to book?,You wanna go to book?,You wanna go to book?,You wanna go to book?,
 Book.Yes,Go back to Book,Go back to Book,Go back to Book,Go back to Book,
 Book.No,Stay here blease,Stay here blease,Stay here blease,Stay here blease,
