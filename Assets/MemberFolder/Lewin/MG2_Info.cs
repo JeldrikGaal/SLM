@@ -20,6 +20,8 @@ public class MG2_Info : MonoBehaviour
     public GameObject CardManager;
     
     [SerializeField] private TMP_Text _text_1;
+    [SerializeField] private TMP_Text _text_1_button;
+    [SerializeField] private TMP_Text _text_1_headline;
     [SerializeField] private TMP_Text _text_2;
     [SerializeField] private TMP_Text _text_3;
     private FontManager _fontManager;
@@ -35,6 +37,12 @@ public class MG2_Info : MonoBehaviour
         
         _text_1.font = _fontManager.GetFont();
         _text_1.text = LocalizationManager.Localize(_text_1.text);
+        
+        _text_1_button.font = _fontManager.GetFont();
+        _text_1_button.text = LocalizationManager.Localize(_text_1_button.text);
+        
+        _text_1_headline.font = _fontManager.GetFont();
+        _text_1_headline.text = LocalizationManager.Localize(_text_1_headline.text);
         
         _text_2.font = _fontManager.GetFont();
         _text_2.text = LocalizationManager.Localize(_text_2.text);
@@ -95,7 +103,7 @@ public class MG2_Info : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         ShowCardDrag_3();
-        StartCoroutine(MakeCardDragPossible_3WithDelay(1f));
+        StartCoroutine(MakeCardDragPossible_3WithDelay(0.8f));
     }
 
     private void ShowCardDrag_3()
@@ -114,6 +122,7 @@ public class MG2_Info : MonoBehaviour
     {
         CardManager.GetComponent<Deck>().CurrentDraggableCard.EnableDragging(true);
         CardManager.GetComponent<Deck>().CurrentDraggableCard.tutWaitForDrag = true;
+        CardManager.GetComponent<Deck>().CurrentDraggableCard.CheckForDragging();
     }
 
     public void Continue_3()
