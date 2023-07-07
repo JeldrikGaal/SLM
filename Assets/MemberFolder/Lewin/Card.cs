@@ -363,7 +363,12 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     {
         dragging = true;
         actuallyDragging = true;
-        if (draggingAvailable)
+        CheckForDragging();
+    }
+
+    public void CheckForDragging()
+    {
+        if (draggingAvailable && actuallyDragging)
         {
             SetHighlight(true);
             transform.SetAsLastSibling();

@@ -28,8 +28,8 @@ D2.1_Identifier,"This object identifies Johan Maurits as the governor of Dutch B
 He lived in Mau-ritsstad.","Dieses Objekt bedeutet, dass Johann Moritz die niederlän-dische Kolonie in Brasilien kontrollierte. 
 
 Er hat dort in Mauritsstad gewohnt."
-D2.2_ArchitectModel,This model shows a Dutch-inspired building near Johan Maurits’ governor's resi-dence in Mau-ritsstad that was initiated and financed by Johan Maurits.,"Dieses Architek-turmodell zeigt ein niederlän-disch inspirier-tes Gebäude, dessen Bau in Mauritsstad von Johann Moritz initiiert und finanziert wur-de. ","This model shows a Dutch-looking house.
-Johan Maurits paid a lot of money to build many houses like this in Maurits-stad.","Dies ist ein Modell von einem niederländisch aussehenden Haus. 
+D2.2_ArchitectModel,These plans show a Dutch-inspired building near Johan Maurits’ governor's resi-dence in Mau-ritsstad that was initiated and financed by Johan Maurits.,"Diese Pläne zeigen ein niederlän-disch inspirier-tes Gebäude, dessen Bau in Mauritsstad von Johann Moritz initiiert und finanziert wur-de. ","These plans show a Dutch-looking house.
+Johan Maurits paid a lot of money to build many houses like this in Maurits-stad.","Diese Pläne zeigen ein niederländisch aussehenden Haus. 
 
 Johann Moritz hat viel Geld gezahlt, um sol-che Häuser in Mauritsstad zu bauen."
 D2.3_OrangeTree,"Johan Maurits imported many things like food, animals, and plants to stay true to his origins. Among them, for ex-ample, the orange tree.","Um dem Vorbild seiner Heimat treu zu bleiben, wurden viele Waren wie Le-bensmittel, Tie-re und Pflanzen importiert - darunter zum Beispiel auch der Orangenbaum.","Johan imported many things from his homeland to Brazil to make the surroundings look like his home.
@@ -79,6 +79,7 @@ First, enslaved people were sent as gifts - months later, they re-ceived a payme
 First, he gave enslaved people away as gifts, and later he demanded money for them. ","Durch seine Un-terschrift auf den richtigen Pa-pieren hat Johann viel verdient. 
 Zuerst hat er versklavte Men-schen als Ge-schenke verteilt, und später hat er Geld für sie ver-langt."
 ,,,,
+E0.Explanation.Headline,Mini Game 2,,,
 E0.Explanation,"(Mini) Story Time! 
 
 Flip & Match your card to the right mini-story to find out what happened!","(Mini) Geschichten! 
@@ -88,5 +89,6 @@ Dreh deine Karte um und ziehe sie auf die richtige Mini-Geschichte, um herauszuf
 Flip & Match your card to the right mini-story to find out what happened!","(Mini) Geschichten! 
 
 Dreh deine Karte um und ziehe sie auf die richtige Mini-Geschichte, um herauszufinden, was passiert ist!"
+E0.Explanation.Button,Alrighty,,,
 E0.TapCard,The Card antappen in order to flippen it,,,
 E0.DragCard,And now dragge it,,,
