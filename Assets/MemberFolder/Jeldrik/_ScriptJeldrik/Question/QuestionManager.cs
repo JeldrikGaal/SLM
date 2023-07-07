@@ -366,36 +366,28 @@ public class QuestionManager : MonoBehaviour
         SlideColorStripe.DOAlpha(_goOnArrow, 0, 0.75f);
         SlideColorStripe.DOAlpha(_nextQuestionQuestionText, 0, 0.75f);
 
-        _questionCompletedText.enabled = false;
-    }
-
-    public void GoOn()
-    {
-        Debug.Log("test");
-        DisableStuff();
-
-        _goOnButtonText.transform.DOScale(Vector3.zero, 0.75f).OnComplete(() => {
-            _tH.UnlockInput();
-            _continueButton.SetActive(false);
-            _goOnButton.SetActive(false);
-            _nextQuestionQuestionText.gameObject.SetActive(false);
-            _grayScaleImage.enabled = false;
-
-            Invoke("Forward", 0.25f);
-        });
-    }
-
-    public void Continue()
-    {
-        DisableStuff();
-
-        _goOnButtonText.transform.DOScale(Vector3.zero, 0.75f).OnComplete(() => {
+        Color newColor = new Color(_goOnButtonText.color.r, _goOnButtonText.color.g, _goOnButtonText.color.b, 0);
+        _goOnButtonText.DOColor(newColor, 0.75f).OnComplete(() => {
             _tH.UnlockInput();
             _continueButton.SetActive(false);
             _goOnButton.SetActive(false);
              _grayScaleImage.enabled = false;
             _nextQuestionQuestionText.gameObject.SetActive(false);
         });
+
+        _questionCompletedText.enabled = false;
+    }
+
+    public void GoOn()
+    {
+        DisableStuff();
+
+        Invoke("Forward", 1f);
+    }
+
+    public void Continue()
+    {
+        DisableStuff();
     }
 
     // Gets called by Clickables whenever they are sucessfully clicked -> Questionmanager checks if its the currently needed object
