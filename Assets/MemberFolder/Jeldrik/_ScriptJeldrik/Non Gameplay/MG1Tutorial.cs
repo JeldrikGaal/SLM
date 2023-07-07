@@ -64,6 +64,7 @@ public class MG1Tutorial : MonoBehaviour
         { 
             Appear();
             _tH.UnlockInput();
+            _progressionSystem.SetActive(true);
         }
         else 
         {
@@ -201,6 +202,11 @@ public class MG1Tutorial : MonoBehaviour
     {
         _lastPopUpPos = _tutorialPopUp.transform.localPosition;
         _tutorialPopUp.transform.localPosition = new Vector3(650, 0 ,0);
+    }
+    public void MovePopUp(Vector3 pos)
+    {
+        _lastPopUpPos = _tutorialPopUp.transform.localPosition;
+        _tutorialPopUp.transform.localPosition = pos;
     }
 
     public void ResetPopUp()

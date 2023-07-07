@@ -14,7 +14,8 @@ public class ClickableManager : MonoBehaviour
 
     [SerializeField] public QuestionManager _qM;
     [SerializeField] public Image _grayScaleImage;
-    [SerializeField] private List<PopUp> _popUps = new List<PopUp>();
+    [SerializeField] public List<PopUp> _popUps = new List<PopUp>();
+    
     [SerializeField] private SlideColorStripe _colorStripe;
     private Transform _grayScaleParentSafe;
     private int _grayScaleSiblingIndexSafe;
@@ -67,23 +68,23 @@ public class ClickableManager : MonoBehaviour
             {
                 if (C == _tutorialManager._exampleClickable || cH.LocalizationKey.Contains('S') )
                 {
-                    int ran2 = Random.Range(1, _popUps.Count);
+                    int ran2 = Random.Range(2, _popUps.Count);
                     DisplayPopUp(cH, _popUps[ran2]);
                     return true;
                 }
-                int ran = Random.Range(1, _popUps.Count);
+                int ran = Random.Range(2, _popUps.Count);
                 DisplayPopUp(_declinedHolders[0], _popUps[ran]);
                 return true;
             }
             else if (_qM.GetCurrentQuestionId() == 1 && ( !_VC.Questions[1].ObjectsToFind1.Contains(cH) && !cH.LocalizationKey.Contains('S') ) )
             {
-                int ran = Random.Range(1, _popUps.Count);
+                int ran = Random.Range(2, _popUps.Count);
                 DisplayPopUp(_declinedHolders[1], _popUps[ran]);
                 return true;
             }
             else if (_qM.GetCurrentQuestionId() == 2 && ( !_VC.Questions[2].ObjectsToFind1.Contains(cH) && !cH.LocalizationKey.Contains('S') ))
             {
-                int ran = Random.Range(1, _popUps.Count);
+                int ran = Random.Range(2, _popUps.Count);
                 DisplayPopUp(_declinedHolders[2], _popUps[ran]);
                 return true;
             }
@@ -93,12 +94,39 @@ public class ClickableManager : MonoBehaviour
             }
             else 
             {
-                int ran = Random.Range(1, _popUps.Count);
+                int ran = Random.Range(2, _popUps.Count);
                 DisplayPopUp(cH, _popUps[ran]);
             }
             
             return true;
         }
+    }
+
+    public void DisplayPopUpStatic(ClickableHolder cH, PopUp _popUpScript)
+    {
+        // If the popup is currently being animated in some shape or form it should not take any other input
+        if (_animating) return;
+
+        _tH.LockInput(true);
+
+        _popUpScript.UpdateText(cH);
+
+        _animating = true;
+
+        // Toggling the grayscale fake effect 
+        _grayScaleImage.enabled = true;
+        _grayScaleImage.color = new Color(_grayScaleImage.color.r, _grayScaleImage.color.g, _grayScaleImage.color.b, 0);
+        Color fade = new Color(_grayScaleImage.color.r, _grayScaleImage.color.g, _grayScaleImage.color.b, 0.8f);
+        _grayScaleImage.DOColor(fade, _VC.PopUp_AnimSpeed);
+
+        Vector3 safeScale = _popUpScript.transform.localScale;
+        _popUpScript.transform.localScale = Vector3.zero;
+        _popUpScript.gameObject.SetActive(true);
+        _popUpScript.transform.DOScale(safeScale, _VC.PopUp_AnimSpeed).OnComplete(() => {
+            _animating = false;
+        });
+
+        
     }
 
     // return if the popup is currently being shown
@@ -188,6 +216,7 @@ public class ClickableManager : MonoBehaviour
         
     }
 
+    
     // Store information about a clickable having been clicked to later transfer to the book
     public void StoreClicked(ClickableHolder cH)
     {
@@ -214,15 +243,19 @@ public class ClickableManager : MonoBehaviour
             //_currentClickable.SetColor(_disabled);
 
             // Hide outline
-            if (_currentClickable._outline != null)
+            if (_currentClickable != null)
             {
-                _currentClickable._outline.ToggleOutline(false);
+                if (_currentClickable._outline != null)
+                {
+                    _currentClickable._outline.ToggleOutline(false);
+                    _currentClickable.transform.parent.transform.parent = _grayScaleParentSafe;
+                    _currentClickable.transform.parent.transform.SetSiblingIndex(_grayScaleSiblingIndexSafe);
+                }
             }
-
+           
             // Toggling the grayscale fake effect 
             _grayScaleImage.enabled = false;
-            _currentClickable.transform.parent.transform.parent = _grayScaleParentSafe;
-            _currentClickable.transform.parent.transform.SetSiblingIndex(_grayScaleSiblingIndexSafe);
+            
 
             _tutorialManager.PopUpClosing();
             _qM.ClosePopUp();

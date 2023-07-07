@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Assets.SimpleLocalization;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -36,6 +37,25 @@ public class ProgressionSystem : MonoBehaviour
     public List<List<ClickableHolder>> _orders = new List<List<ClickableHolder>>();
     public List<List<ClickableHolder>> _ordersSaved = new List<List<ClickableHolder>>();
     private List<ClickableHolder> _orderSaver = new List<ClickableHolder>();
+    [SerializeField] private List<ClickableHolder> _questionHints = new List<ClickableHolder>();
+    
+
+
+   [SerializeField] private GameObject _hintButton;
+
+    // Tutorial section
+    private bool _effect1Running;
+    private float _effect1StartTime;
+    [SerializeField] private float _effect1RepeatTime;
+    [SerializeField] private float _effect1SegTime;
+    [SerializeField] private GameObject _tutorialButton;
+     private bool _step2Running;
+    private float _step2StartingTime;
+    [SerializeField] private float _step2BlockTime;
+    private bool _tutorialRan;
+    
+    [SerializeField] private MG1Tutorial _tutorialManager;
+    [SerializeField] private GameObject _topButton;
 
 
     // Start is called before the first frame update
@@ -73,6 +93,14 @@ public class ProgressionSystem : MonoBehaviour
         }
         _foundParentPos = _foundParent.transform.localPosition;
         _toBeFoundParentPos = _toBeFoundParent.transform.localPosition;
+
+       
+
+        foreach(ClickableHolder cH in _questionHints)
+        {
+            cH.Title = "";
+            cH.Description = LocalizationManager.Localize(cH.LocalizationKey);
+        }
     }
 
     
@@ -89,6 +117,11 @@ public class ProgressionSystem : MonoBehaviour
             ToggleBar(true, false);
             ToggleBar(false, false);
         }
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+             StartProgressionTutorial();
+        }
+       
 
         if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
         {
@@ -97,6 +130,35 @@ public class ProgressionSystem : MonoBehaviour
                 HideBothBars();
             }
         }
+
+        // Tutorial stuff
+        if (_effect1Running && Time.time - _effect1StartTime > _effect1RepeatTime)
+        {
+            TutorialEffect1();
+        }
+        if (_step2Running && Time.time - _step2StartingTime > _step2BlockTime)
+        {
+            if (Input.touchCount > 0 || Input.GetMouseButtonDown(0)) 
+            {
+                EndTutorial();
+            }
+           
+        }
+
+        // Hint button
+        if (_found.Count > 0)
+        {
+            if (_found[0] == _emptyHolder)
+            { 
+                _hintButton.SetActive(true);
+                _topButton.SetActive(false);
+            }
+            else 
+            {
+                _hintButton.SetActive(false);
+                _topButton.SetActive(true);
+            }
+        }       
     }
 
     private void InitOrders()
@@ -167,7 +229,7 @@ public class ProgressionSystem : MonoBehaviour
     }
     public void LoadOrders()
     {
-        
+
     }
 
     public void ShowOrder(List<ClickableHolder> order, bool anim = false) 
@@ -230,6 +292,11 @@ public class ProgressionSystem : MonoBehaviour
 
             _toBeFoundSlots[0].transform.DOScale(Vector3.one, 0.75f);
             _foundSlots[0].transform.DOScale(Vector3.one, 0.75f);
+            if (_qM.GetCurrentQuestionId() == 1 && !_tutorialRan)
+            {
+                _tutorialRan = true;
+                Invoke("StartProgressionTutorial", 1.5f);
+            }
         });
         
     }
@@ -308,7 +375,7 @@ public class ProgressionSystem : MonoBehaviour
             int i = 0;
             Sequence seq = DOTween.Sequence();
             // Moving Parent
-            float spacing = 100 * parent.transform.localScale.x;
+            float spacing = 110 * parent.transform.localScale.x;
             float distance;
             Debug.Log(GetFreeSpot(content));
             if (GetFreeSpot(content) != -1)
@@ -362,6 +429,27 @@ public class ProgressionSystem : MonoBehaviour
         }
     }
 
+    public void HintButtonLogic()
+    {
+        Debug.Log("SSIO");
+        ClickableHolder cH = ScriptableObject.CreateInstance("ClickableHolder") as ClickableHolder;
+        //ClickableHolder cH;
+        if (_qM.GetCurrentQuestionId() == 0)
+        {
+            cH = _questionHints[0];
+        }
+        else if (_qM.GetCurrentQuestionId() == 1)
+        {
+            cH = _questionHints[1];
+        }
+        else if (_qM.GetCurrentQuestionId() == 2)
+        {
+            cH = _questionHints[2];
+        }
+        
+        _cM.DisplayPopUpStatic(cH, _cM._popUps[1]);
+    }
+
     private void ResetAfterToggle()
     {
         _toBeFoundSlots[0].transform.localScale = Vector3.one;
@@ -374,6 +462,50 @@ public class ProgressionSystem : MonoBehaviour
         {
             _foundSlots[i].transform.position = _foundSlotsPos[i];
         }*/
+    }
+
+    private void StartProgressionTutorial()
+    {
+        _tH.LockInput();
+        _tutorialManager.EnablePopUp(0.75f, "PS.Tutorial1");
+        _tutorialManager.MovePopUp();
+        _effect1Running = true;
+        _tutorialButton.SetActive(true);
+    }
+
+    private void TutorialEffect1()
+    {
+        _effect1StartTime = Time.time;
+        Sequence seq = DOTween.Sequence();
+        seq.SetEase(Ease.InOutSine);
+        float newX = _toBeFoundParent.transform.localPosition.x - 90;
+        seq.Append( _toBeFoundParent.transform.DOLocalMoveX(newX, _effect1SegTime) );
+        seq.Append( _toBeFoundParent.transform.DOLocalMoveX(_toBeFoundParentPos.x, _effect1SegTime) );
+        //seq.Append( _toBeFoundParent.transform.DOLocalMoveX(newX, _effect1SegTime) );
+        //seq.Append( _toBeFoundParent.transform.DOLocalMoveX(_toBeFoundParentPos.x, _effect1SegTime) );
+    }
+
+    public void EndTutrialEffect1()
+    {
+        _tutorialManager.DisablePopUp(0.75f);
+        ToggleBar(false, true);
+        _tutorialButton.SetActive(false);
+        _effect1Running = false;
+        Invoke("StartTutorialStep2", 1f);
+    }
+
+    private void StartTutorialStep2()
+    {
+        _step2Running = true;
+        _tutorialManager.EnablePopUp(0.75f, "PS.Tutorial2");
+        _tutorialManager.MovePopUp();
+    }
+
+    private void EndTutorial()
+    {
+        _step2Running = false;
+        _tutorialManager.DisablePopUp(0.75f);
+        _tH.UnlockInput();
     }
 
     private void ChangeAlpha(Image img, float a)
