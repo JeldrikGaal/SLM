@@ -5,9 +5,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Assets.SimpleLocalization;
+using UnityEngine.SceneManagement;
 
 public class MG2_Info : MonoBehaviour
 {
+    public bool skipTutorial;
     public Image targetImage;
     public Image OrangeImage;
     public Button OrangeButton;
@@ -16,6 +18,7 @@ public class MG2_Info : MonoBehaviour
     public Image infoBox_3; 
     public Image infoBox_bb; 
     public Image infoBox_tapanywhere; 
+    public Button FinalReturnBB; 
     public float duration = 1.5f; 
     public float targetAlpha = 0.75f;
     private bool InfoClosed_1;
@@ -38,14 +41,26 @@ public class MG2_Info : MonoBehaviour
     
     private void Start()
     {
+        OrangeButton.enabled = false;
         SetOrangeAlpha(0);
         infoBox_1.rectTransform.localScale = new Vector3(0, 0, 0);
         infoBox_2.rectTransform.localScale = new Vector3(0, 0, 0);
         infoBox_3.rectTransform.localScale = new Vector3(0, 0, 0);
         infoBox_bb.rectTransform.localScale = new Vector3(0, 0, 0);
         infoBox_tapanywhere.rectTransform.localScale = new Vector3(0, 0, 0);
-        AnimateAlpha(true);
-        StartCoroutine(ScaleIn(infoBox_1, duration));
+        if (skipTutorial)
+        {
+            this.gameObject.SetActive(false);
+            CardManager.GetComponent<Deck>().MoveTopCardToCenter();
+            SetOrangeAlpha(1);
+            OrangeButton.enabled = true;
+        }
+        else
+        {
+            this.gameObject.SetActive(true);
+            AnimateAlpha(true);
+            StartCoroutine(ScaleIn(infoBox_1, duration));
+        }
         _fontManager = GameObject.FindGameObjectWithTag("FontManager").GetComponent<FontManager>();
         
         _text_1.font = _fontManager.GetFont();
@@ -89,6 +104,7 @@ public class MG2_Info : MonoBehaviour
 
     private void ShowInfo_bb()
     {
+        OrangeButton.enabled = true;
         StartCoroutine(ScaleIn(infoBox_bb, duration));
         orangeTriggerFade(true);
         StartCoroutine(StartButtonScaleLoop(1));
@@ -298,6 +314,7 @@ public class MG2_Info : MonoBehaviour
 
     public void orangeTriggerFade(bool fadeIn)
     {
+        Debug.Log("so");
         StartCoroutine(orangeFadeAnimation(fadeIn ? 0f : 1f, fadeIn ? 1f : 0f));
     }
 
@@ -368,5 +385,63 @@ public class MG2_Info : MonoBehaviour
         }
         
     }
+    
+    public void ReturnToBook()
+    {
+        SceneManager.LoadScene("Book_Main");
+    }
+    
+    IEnumerator FadeInFinalReturnBB(float duration)
+    {
+        Button button = FinalReturnBB;
+        Color buttonColor = button.image.color;
+        Color textColor = button.GetComponentInChildren<TextMeshProUGUI>().color;
+
+        float elapsed = 0;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float normalizedTime = elapsed / duration;
+
+            buttonColor.a = normalizedTime;
+            textColor.a = normalizedTime;
+
+            button.image.color = buttonColor;
+            button.GetComponentInChildren<TextMeshProUGUI>().color = textColor;
+
+            yield return null;
+        }
+
+        buttonColor.a = 1;
+        textColor.a = 1;
+
+        button.image.color = buttonColor;
+        button.GetComponentInChildren<TextMeshProUGUI>().color = textColor;
+    }
+
+    public void StartFadeInFinalReturnBB(float duration)
+    {
+        FinalReturnBB.gameObject.SetActive(true);
+        FinalReturnBB.transform.SetAsLastSibling();
+        StartCoroutine(FadeInFinalReturnBB(duration));
+    }
+    
+    private IEnumerator ShowFinalButtonAfterTime()
+    {
+        yield return new WaitForSeconds(3f);
+        ShowFinalButton();
+    }
+
+    private void ShowFinalButton()
+    {
+        StartFadeInFinalReturnBB(1f);
+    }
+
+    public void ShowFinalButtonAdjusted()
+    {
+        StartCoroutine(ShowFinalButtonAfterTime());
+    }
+
     
 }

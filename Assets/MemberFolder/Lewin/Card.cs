@@ -30,8 +30,8 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     private Coroutine highlightCoroutine;
     private bool isHighlighted = false;
 
-    private readonly Vector3 highlightedScale = new Vector3(1.15f, 1.15f, 1.15f); // Adjust this to the desired scale when highlighted
-    private readonly Quaternion highlightedRotation = Quaternion.Euler(0, 0, 10); // Adjust this to the desired rotation when highlighted
+    private Vector3 highlightedScale = new Vector3(1.15f, 1.15f, 1.15f); // Adjust this to the desired scale when highlighted
+    private Quaternion highlightedRotation = Quaternion.Euler(0, 0, 10); // Adjust this to the desired rotation when highlighted
 
     public Image _backIamge;
     public Image _frontImage;
@@ -779,5 +779,27 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     }
     
     
+    public void FinalHighlight(bool pHighlight)
+    {
+        highlightedRotation = Quaternion.Euler(0, 0, 0);
+        highlightedScale = new Vector3(1.2f, 1.2f, 1.2f);
+        Color color = DropInfo.color;
+        color.a = pHighlight ? 1f : 0f;
+        DropInfo.color = color;    
+        
+        if (highlightCoroutine != null)
+        {
+            StopCoroutine(highlightCoroutine);
+        }
+
+        if (pHighlight)
+        {
+            highlightCoroutine = StartCoroutine(EnterHighlightState());
+        }
+        else
+        {
+            highlightCoroutine = StartCoroutine(LeaveHighlightState());
+        }
+    }
 
 }
