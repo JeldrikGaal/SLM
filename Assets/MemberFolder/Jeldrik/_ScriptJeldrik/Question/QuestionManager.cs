@@ -92,9 +92,6 @@ public class QuestionManager : MonoBehaviour
         }
         else
         {
-            _questionsText[0].text = _questions[0].Text;
-            _questionsText[1].text = _questions[1].Text;
-            _questionsText[2].text = _questions[2].Text;
             _currentQ = 0;
             _timeOnCurrentQ = Time.time;
             _currentQuestion.ChangeCurrentQuestionInternal(GetCurrentQuestion());
@@ -142,7 +139,7 @@ public class QuestionManager : MonoBehaviour
         LoadingCurrentQuestion();        
 
         // Starts off disables
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
   
     }
 
@@ -269,7 +266,7 @@ public class QuestionManager : MonoBehaviour
 
     public void ClosePopUp()
     {
-        if (_completedQuestions[_currentQ] && !_doneOnce[_currentQ])
+        if (_completedQuestions[_currentQ] && ( !_doneOnce[_currentQ] || _questionObjectCounts[GetCurrentQuestionId()][0] == _questions[_currentQ].ObjectsToFind1.Count ))
         {
             _doneOnce[_currentQ] = true;            
 
@@ -284,7 +281,15 @@ public class QuestionManager : MonoBehaviour
 
                 if (_currentQ > 0)
                 {
-                    NextQuestionCheck();
+                    if (_questionObjectCounts[GetCurrentQuestionId()][0] == _questions[_currentQ].ObjectsToFind1.Count)
+                    {
+                        StartCoroutine(AllObjectsFound());
+                    }
+                    else
+                    {
+                        NextQuestionCheck();
+                    }
+                    
                 } 
                 else 
                 {
@@ -350,6 +355,19 @@ public class QuestionManager : MonoBehaviour
         SlideColorStripe.DOAlpha(_goOnArrow,1, 0.75f);
         SlideColorStripe.DOAlpha(_nextQuestionQuestionText,1, 0.75f);
 
+    }
+
+    private IEnumerator AllObjectsFound()
+    {
+        _progression.ToggleBar(true, true, 1.25f);
+        yield return new WaitForSeconds(1.25f);
+        GameObject temp = Instantiate(_confetti, Camera.main.transform);
+        temp.transform.localScale *= _VC.Confetti_Size;
+        Destroy(temp, 4);
+        yield return new WaitForSeconds(2f);
+        _questionCompletedText.enabled = false;
+        _progression.ToggleBar(true, false, 1.25f);
+        Invoke("Forward", 2f);
     }
 
     private void DisableStuff()

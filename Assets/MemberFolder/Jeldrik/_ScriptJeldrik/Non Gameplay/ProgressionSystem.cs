@@ -55,7 +55,7 @@ public class ProgressionSystem : MonoBehaviour
     private bool _tutorialRan;
     
     [SerializeField] private MG1Tutorial _tutorialManager;
-    [SerializeField] private GameObject _topButton;
+    [SerializeField] public GameObject _topButton;
 
 
     // Start is called before the first frame update
@@ -344,7 +344,7 @@ public class ProgressionSystem : MonoBehaviour
         ToggleBar(false, false);
     }
 
-    private void ToggleBar(bool found, bool toggle)
+    public void ToggleBar(bool found, bool toggle, float time = 0.75f)
     {
         if (found)
         {
@@ -387,10 +387,10 @@ public class ProgressionSystem : MonoBehaviour
             }
             else 
             {
-                distance = spacing * ( content.Count - 1 );
+                distance = spacing * ( content.Count - 2 );
             }
             float newX = parent.transform.localPosition.x - distance;
-            seq.Insert(0, parent.transform.DOLocalMoveX(newX, 0.75f));
+            seq.Insert(0, parent.transform.DOLocalMoveX(newX, time));
 
             // Scaling slots
             foreach (GameObject g in slots)
@@ -399,7 +399,7 @@ public class ProgressionSystem : MonoBehaviour
                 {
                     g.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
                     g.SetActive(true);
-                    seq.Insert(0.25f, g.transform.DOScale(Vector3.one, 0.75f));
+                    seq.Insert(0.25f, g.transform.DOScale(Vector3.one, time));
                 } 
                 i++;
             }
@@ -411,12 +411,12 @@ public class ProgressionSystem : MonoBehaviour
             bool once = false;
             Sequence seq = DOTween.Sequence();
             float newX = parentPos.x;
-            seq.Insert(0, parent.transform.DOLocalMoveX(newX, 0.75f));
+            seq.Insert(0, parent.transform.DOLocalMoveX(newX, time));
             foreach (GameObject g in slots)
             {
                 if (i > 0 && content[i] != _emptyHolder)
                 {
-                    seq.Insert(0, g.transform.DOScale(new Vector3(0.2f, 0.2f, 0.2f), 0.75f));
+                    seq.Insert(0, g.transform.DOScale(new Vector3(0.2f, 0.2f, 0.2f), time));
                     seq.OnComplete(() =>
                     {
                         //g.SetActive(false);
