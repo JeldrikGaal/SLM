@@ -33,7 +33,6 @@ public class BB_Questiom : MonoBehaviour
 
     public void FadeIn()
     {
-        Debug.Log("aaaaaa");
         SetActive(true);
         greyBG.gameObject.SetActive(true);
         StartCoroutine(Fade(0, 1));  // Fade in from alpha 0 to 1

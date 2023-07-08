@@ -46,6 +46,16 @@ public class Deck : MonoBehaviour
 
     public GameObject TutorialGO;
     public MG2_Info MG2_Info_Component;
+    public Image ProgressbarRef;
+
+    private int _currentFinalCardHighlightIndex = -1;
+    
+    public GameObject finalProgressBarPrefab; // Assign this in the Inspector
+    private List<GameObject> finalProgressBars = new List<GameObject>();
+
+    public float FinalProgressbarDuration = 10f;
+    public float ShowNextCardFinalDuration = 10f;
+    public float FinalProgressbarsY_Offset = 40f;
 
     
     void Awake()
@@ -67,7 +77,7 @@ public class Deck : MonoBehaviour
         SpawnIntitalTargetCards();
         SpawnWholeDrawPile();
 
-        //StartCoroutine(Final_1(5.5f));
+        //StartCoroutine(Final_1(2f));
         ReparentChildObjects(cardCanvas.transform, EmptyGameObject.transform);
 
     }
@@ -76,8 +86,14 @@ public class Deck : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
 
-        ReparentChildObjects(cardCanvas.transform, EmptyGameObject.transform);
+        //ReparentChildObjects(cardCanvas.transform, EmptyGameObject.transform);
         StartCoroutine(AnimatePosition(EmptyGameObject, FinalEndMoveTargetY, FinalEndMoveTargetX, FinalCamMoveDuration));
+        MG2_Info_Component.OrangeButton.enabled = false;
+        MG2_Info_Component.targetImage.gameObject.SetActive(true);
+        MG2_Info_Component.targetAlpha = 0;
+        MG2_Info_Component.AnimateAlpha(true);
+        MG2_Info_Component.orangeTriggerFade(false);
+
     }
 
     public void NextDeck()
@@ -298,8 +314,86 @@ public class Deck : MonoBehaviour
             obj.transform.position = Vector3.Lerp(startPos, endPos, t);
             yield return null;
         }
-
+        
         obj.transform.position = endPos; // Ensure GameObject is at target position at the end
+        //ProgressbarRef.gameObject.GetComponent<ProgressBar>().AnimateFillUp(1, FinalProgressbarDuration);
+        
+        SpawnProgressBar(PileColliders[0].TopCardGO, PileColliders[1].TopCardGO, 110, -35);
+        SpawnProgressBar(PileColliders[1].TopCardGO, PileColliders[2].TopCardGO, 120, -15);
+        SpawnProgressBar(PileColliders[2].TopCardGO, PileColliders[3].TopCardGO, 120, 50);
+        finalProgressBars.Reverse();
+        
+        PileColliders[0].TopCardGO.transform.SetAsLastSibling();
+        PileColliders[1].TopCardGO.transform.SetAsLastSibling();
+        PileColliders[2].TopCardGO.transform.SetAsLastSibling();
+        PileColliders[3].TopCardGO.transform.SetAsLastSibling();
+        HighlightNextFinalCard();
+    }
+
+    private void HighlightNextFinalCard()
+    {
+        _currentFinalCardHighlightIndex++;
+        if (_currentFinalCardHighlightIndex == 0)
+        {
+            PileColliders[3].TopCardGO.GetComponent<Card>().FinalHighlight(true);
+            finalProgressBars[0].GetComponent<ProgressBar>().AnimateFillUp(1, FinalProgressbarDuration);
+        }
+        if (_currentFinalCardHighlightIndex == 1)
+        {
+            PileColliders[3].TopCardGO.GetComponent<Card>().FinalHighlight(false);
+            PileColliders[2].TopCardGO.GetComponent<Card>().FinalHighlight(true);
+            finalProgressBars[1].GetComponent<ProgressBar>().AnimateFillUp(1, FinalProgressbarDuration);
+        }
+        if (_currentFinalCardHighlightIndex == 2)
+        {
+            PileColliders[2].TopCardGO.GetComponent<Card>().FinalHighlight(false);
+            PileColliders[1].TopCardGO.GetComponent<Card>().FinalHighlight(true);
+            finalProgressBars[2].GetComponent<ProgressBar>().AnimateFillUp(1, FinalProgressbarDuration);
+        }
+        if (_currentFinalCardHighlightIndex == 3)
+        {
+            PileColliders[1].TopCardGO.GetComponent<Card>().FinalHighlight(false);
+            PileColliders[0].TopCardGO.GetComponent<Card>().FinalHighlight(true);
+        }
+        if (_currentFinalCardHighlightIndex == 4)
+        {
+            PileColliders[0].TopCardGO.GetComponent<Card>().FinalHighlight(false);
+            MG2_Info_Component.ShowFinalButtonAdjusted();
+        }
+
+
+        if (_currentFinalCardHighlightIndex < 4)
+        {
+            StartCoroutine(HighlightNextFinalCardAfterTime(ShowNextCardFinalDuration));
+        }
+    }
+    
+    private IEnumerator HighlightNextFinalCardAfterTime(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        HighlightNextFinalCard();
+    }
+    
+    
+    public void SpawnProgressBar(GameObject obj1, GameObject obj2, float width, float horizontalOffset)
+    {
+        RectTransform rt1 = obj1.GetComponent<RectTransform>();
+        RectTransform rt2 = obj2.GetComponent<RectTransform>();
+
+        Vector3 pos1 = rt1.transform.position;
+        Vector3 pos2 = rt2.transform.position;
+
+        Vector3 centerPosition = (pos1 + pos2) / 2;
+
+        GameObject newProgressBar = Instantiate(finalProgressBarPrefab);
+        newProgressBar.transform.SetParent(obj1.transform.parent, false);  // Set the parent of the new progress bar to the parent of the UI elements.
+
+        RectTransform rectTransform = newProgressBar.GetComponent<RectTransform>();
+        rectTransform.position = new Vector3 (centerPosition.x + horizontalOffset, centerPosition.y + FinalProgressbarsY_Offset, 0); // Set the position of the progress bar.
+
+        rectTransform.sizeDelta = new Vector2(width, rectTransform.sizeDelta.y); // Change the width of the progress bar.
+
+        finalProgressBars.Add(newProgressBar);
     }
 
 
@@ -352,7 +446,7 @@ public class Deck : MonoBehaviour
         // Ensure it finishes exactly at the original alpha
         _vignette.color = originalColor;
     }
-
+    
     
 }
 

@@ -48,6 +48,9 @@ public class ClickableStorage : MonoBehaviour
             _doneOnceSave.Add(false);
             _doneOnceSave.Add(false);
             _doneOnceSave.Add(false);
+            _alreadyClickedCombSave.Add(new List<ClickableHolder>());
+            _alreadyClickedCombSave.Add(new List<ClickableHolder>());
+            _alreadyClickedCombSave.Add(new List<ClickableHolder>());
 
         }
         else
