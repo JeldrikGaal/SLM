@@ -380,7 +380,6 @@ public class ProgressionSystem : MonoBehaviour
             // Moving Parent
             float spacing = 110 * parent.transform.localScale.x;
             float distance;
-            Debug.Log(GetFreeSpot(content));
             if (GetFreeSpot(content) != -1)
             {
                 distance = (spacing * ( GetFreeSpot(content) - 1 ));

@@ -227,8 +227,6 @@ public class QuestionManager : MonoBehaviour
 
     public void Forward()
     {
-        Debug.Log("=========Forward==========");
-        Debug.Log(_currentQ);
         _currentQuestion._sliding = true;
         _currentQ++;
         DisableSwirls(_currentQ);
@@ -323,8 +321,13 @@ public class QuestionManager : MonoBehaviour
         _continueButton.SetActive(true);
         _goOnButton.SetActive(true);
         _nextQuestionQuestionText.gameObject.SetActive(true);
+
         // Setting Text 
-        _nextQuestionQuestionText.text = LocalizationManager.Localize("NQ.Question");
+        string extraText = LocalizationManager.Localize("NQ.Question2");
+        extraText = extraText.Replace("*", _questionObjectCounts[GetCurrentQuestionId()][0].ToString());
+        extraText = extraText.Replace("+", _questions[_currentQ].ObjectsToFind1.Count.ToString());
+        _nextQuestionQuestionText.text = LocalizationManager.Localize("NQ.Question") + "\n" + extraText;
+        
         _goOnButtonText.text = LocalizationManager.Localize("NQ.Yes");
         _continueButtonText.text = LocalizationManager.Localize("NQ.No");
 
