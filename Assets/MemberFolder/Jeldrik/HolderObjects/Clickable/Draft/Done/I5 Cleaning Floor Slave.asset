@@ -15,12 +15,16 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: 2eb14f4a414077b4580e331cbe02c098, type: 3}
   ProgressionImage: {fileID: 21300000, guid: b18a6ce598004fc4dbe5b0e1d6257fd2, type: 3}
   Title: Boy
-  Description: This boy, a native brazilian, was enslaved even before Johan Maurits
-    came to Recife. He was already forced to work on sugar mill farms when the area
-    was still a portuguese colony. Most native Brazilian enslaved people died before
-    they were 19 years old.
+  Description: 'Johan Maurits used this symbol to mark his "possessions".
+
+
+    This
+    boy, a native Brazilian, was enslaved even before Johan Maurits came to Recife.
+    He was already forced to work on sugar mill farms when the area was still a Portuguese
+    colony. Most native Brazilian enslaved people died before they were 19 years
+    old.'
   BookInfo: 
-  Question: 0
+  Question: 1
   language: 0
   FirstClickTime: 0
   Num: 0

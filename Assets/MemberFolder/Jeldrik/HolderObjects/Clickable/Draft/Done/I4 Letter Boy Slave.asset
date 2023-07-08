@@ -15,11 +15,15 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: fe67dde898025f44494885c93eaf4666, type: 3}
   ProgressionImage: {fileID: 21300000, guid: ffda3df0c794a904bbd233773cbfc1d2, type: 3}
   Title: Boy
-  Description: This boy was enslaved and transported overseas from Africa. In Recife,
-    they were forced to work on the sugar farms and wherever else forced manual labor
-    was needed. Most enslaved people from Africa didn't get older than 23 years.
+  Description: 'Johan Maurits used this symbol to mark his "possessions".
+
+
+    This
+    boy was enslaved and transported overseas from Africa. In Recife, they were forced
+    to work on the sugar farms and wherever else forced manual labor was needed.
+    Most enslaved people from Africa didn''t get older than 23 years.'
   BookInfo: 
-  Question: 0
+  Question: 1
   language: 0
   FirstClickTime: 0
   Num: 0

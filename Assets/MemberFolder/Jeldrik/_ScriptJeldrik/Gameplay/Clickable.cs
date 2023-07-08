@@ -48,8 +48,10 @@ public class Clickable : MonoBehaviour
     // Function used by the UI button if this object is clicked. Tries to display the information in an popup by calling the function on the Clickable Manager and returns an warning if the holder is missing
     public void Clicked()
     {
+        Debug.Log("!");
         if (cH != null && ( !_tutorialManager._runningStep2 || _tutorialManager.SKIPTUTORIAL))
         {
+            Debug.Log("!!!");
             UpdateLocalizedData();
             cM.TryDisplayPopUp(cH, this);
             _tH.BlockWrongInputPart();

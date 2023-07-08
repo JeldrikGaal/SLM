@@ -26,8 +26,10 @@ public class ClickableManager : MonoBehaviour
     [SerializeField] public MG1Tutorial _tutorialManager;
     [SerializeField] private List<ClickableHolder> _declinedHolders = new List<ClickableHolder>();
     private Transform _canvas;
+    
     #endregion
 
+    public bool _tutorialBlock;
     private bool _animating;
 
     void Start()
@@ -58,7 +60,7 @@ public class ClickableManager : MonoBehaviour
         }
         else
         {
-            if (!_tutorialManager.SKIPTUTORIAL && !_tutorialManager.Done && cH != _tutorialManager._exampleClickable.cH)
+            if (( !_tutorialManager.SKIPTUTORIAL && !_tutorialManager.Done && ( cH != _tutorialManager._exampleClickable.cH) ) || _tutorialBlock)
             {
                 Debug.Log("You shall not click this !");
                 return false;

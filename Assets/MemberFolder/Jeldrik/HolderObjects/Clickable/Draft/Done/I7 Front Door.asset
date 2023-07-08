@@ -15,11 +15,15 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: 398e7d977387c934692b13144c94e2bd, type: 3}
   ProgressionImage: {fileID: 21300000, guid: 398e7d977387c934692b13144c94e2bd, type: 3}
   Title: Front Door
-  Description: This door would not actually have been at 'Vrijburg.' It is a representation
-    of Johan Maurits' burial chamber here in Siegen. Maybe you'll notice it next
-    time you're passing by?
+  Description: 'Johan Maurits used this symbol to mark his "possessions".
+
+
+    This
+    door would not actually have been at ''Vrijburg.'' It is a representation of
+    Johan Maurits'' burial chamber here in Siegen. Maybe you''ll notice it next time
+    you''re passing by?'
   BookInfo: 
-  Question: 0
+  Question: 1
   language: 0
   FirstClickTime: 0
   Num: 0

@@ -49,7 +49,7 @@ public class ProgressionSystem : MonoBehaviour
     [SerializeField] private float _effect1RepeatTime;
     [SerializeField] private float _effect1SegTime;
     [SerializeField] private GameObject _tutorialButton;
-     private bool _step2Running;
+    private bool _step2Running;
     private float _step2StartingTime;
     [SerializeField] private float _step2BlockTime;
     private bool _tutorialRan;
@@ -94,8 +94,6 @@ public class ProgressionSystem : MonoBehaviour
         _foundParentPos = _foundParent.transform.localPosition;
         _toBeFoundParentPos = _toBeFoundParent.transform.localPosition;
 
-       
-
         foreach(ClickableHolder cH in _questionHints)
         {
             cH.Title = "";
@@ -123,11 +121,18 @@ public class ProgressionSystem : MonoBehaviour
         }
        
 
-        if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
+        if (Input.GetMouseButtonDown(0))
         {
             if (_toBeFoundSlots[1].activeInHierarchy || _foundSlots[1].activeInHierarchy)
             {
-                HideBothBars();
+                if(_tutorialRan) HideBothBars();
+            }
+        }
+        else if (Input.touchCount > 0 && Input.GetTouch(0).phase.Equals(TouchPhase.Began))
+        {
+            if (_toBeFoundSlots[1].activeInHierarchy || _foundSlots[1].activeInHierarchy)
+            {
+                if(_tutorialRan) HideBothBars();
             }
         }
 
@@ -163,8 +168,6 @@ public class ProgressionSystem : MonoBehaviour
 
     private void InitOrders()
     {
-
-
         // Add Johan to the list
         _q1Order.Add(_VC.Questions[0].ObjectsToFind1[0]);
         // Insert empty holders
@@ -466,6 +469,7 @@ public class ProgressionSystem : MonoBehaviour
 
     private void StartProgressionTutorial()
     {
+        _cM._tutorialBlock = true;
         _tH.LockInput();
         _tutorialManager.EnablePopUp(0.75f, "PS.Tutorial1");
         _tutorialManager.MovePopUp();
@@ -506,6 +510,7 @@ public class ProgressionSystem : MonoBehaviour
         _step2Running = false;
         _tutorialManager.DisablePopUp(0.75f);
         _tH.UnlockInput();
+        _cM._tutorialBlock = false;
     }
 
     private void ChangeAlpha(Image img, float a)

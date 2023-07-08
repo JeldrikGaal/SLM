@@ -36,6 +36,7 @@ public class MG1Tutorial : MonoBehaviour
     public bool SKIPTUTORIAL;   
     [SerializeField] private BookButtonLogic _bookButton;
     private Vector3 _lastPopUpPos;
+    private ClickableManager _cM;
     #endregion
 
     public static MG1Tutorial Instance = null;
@@ -60,6 +61,7 @@ public class MG1Tutorial : MonoBehaviour
         _dragController = Camera.main.GetComponent<LeanDragCamera>();
         _moveArrowsHolder = _moveArrows[0].transform.parent;
         _tH = Camera.main.GetComponent<TouchHandler>();
+        _cM = GameObject.FindGameObjectWithTag("ClickableManager").GetComponent<ClickableManager>();
         if (SKIPTUTORIAL || Done) 
         { 
             Appear();
@@ -107,6 +109,7 @@ public class MG1Tutorial : MonoBehaviour
     {
         _running = true;
         _effectRunning = true;
+        
 
         // Disabling touch input
         _dragController.enabled = false;
@@ -218,6 +221,7 @@ public class MG1Tutorial : MonoBehaviour
     {
         _tH.UnlockInput();
         Done = true;
+        _cM._tutorialBlock = false;
         _currentQuestion.gameObject.SetActive(true);
         _colorStripe.CompleteSlide(_colorStripe._q);
         //_tutorialManager.ResetPopUp();
@@ -239,6 +243,7 @@ public class MG1Tutorial : MonoBehaviour
         {
             _moveArrows[i].GetComponent<Image>().enabled = true;
         }
+        _cM._tutorialBlock = true;
     }
 
     // Fade out the Arrows once the user has moved the camera enough

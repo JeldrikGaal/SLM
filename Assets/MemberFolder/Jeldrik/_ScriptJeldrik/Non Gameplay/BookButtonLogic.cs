@@ -37,6 +37,9 @@ public class BookButtonLogic : MonoBehaviour
     [SerializeField] private TMP_Text _nextQuestionQuestionText;
     private Image _grayScaleImage;
     private ClickableManager _cM;
+    private float _clicks = 0;
+
+    private bool _tutorial = true;
 
      
     
@@ -49,7 +52,11 @@ public class BookButtonLogic : MonoBehaviour
         _dragController = Camera.main.GetComponent<LeanDragCamera>();
         _tutorialManager = GameObject.FindGameObjectWithTag("TutorialManager").GetComponent<MG1Tutorial>();
         _grayScaleImage = _cM._grayScaleImage;
-        
+        if (_tutorial && !_tutorialManager.SKIPTUTORIAL)
+        {
+            _tH.LockInput();
+            _cM._tutorialBlock = true;
+        }
 
     }
 
@@ -62,15 +69,15 @@ public class BookButtonLogic : MonoBehaviour
             _repeatStartTime = Time.time;
         }
 
-        if (_repeating)
+        if (_repeating && !_tutorial)
         {
-            if (Input.touchCount > 0 && Time.time - _repeatStartTime > _blockTime)
+            if (Input.touchCount > 0 && Time.time - _repeatStartTime > _blockTime &&  Input.GetTouch(0).phase.Equals(TouchPhase.Began))
+            {
+                End();                
+            }
+            else if (Input.GetMouseButtonDown(0) && Time.time - _repeatStartTime > _blockTime)
             {
                 End();
-            }
-            if (Input.GetMouseButtonDown(0) && Time.time - _repeatStartTime > _blockTime)
-            {
-                End();  
             }
         }
     }
@@ -78,10 +85,20 @@ public class BookButtonLogic : MonoBehaviour
 
     public void AskQuestion(float time = 0.75f)
     {
+        _cM._tutorialBlock = true;
         _continueButton.GetComponent<Button>().onClick.RemoveAllListeners();
         _goOnButton.GetComponent<Button>().onClick.RemoveAllListeners();
-        _continueButton.GetComponent<Button>().onClick.AddListener(DisableStuff);
+        if (_tutorial)
+        {
+            _continueButton.GetComponent<Button>().onClick.AddListener(End);   
+        }
+        else 
+        {
+            _continueButton.GetComponent<Button>().onClick.AddListener(DisableStuff);
+        }
+        
         _goOnButton.GetComponent<Button>().onClick.AddListener(OpenBook);
+
 
         // Enable grayScaleImage to make text more prominent
         _grayScaleImage.enabled = true;
@@ -124,8 +141,10 @@ public class BookButtonLogic : MonoBehaviour
         SlideColorStripe.DOAlpha(_goOnButtonText, 0, time);
         SlideColorStripe.DOAlpha(_goOnArrow, 0, time);
         SlideColorStripe.DOAlpha(_nextQuestionQuestionText, 0, time);
-
-        _tH.LockInput();   
+        _continueButton.SetActive(false);
+        _goOnButton.SetActive(false);
+        _cM._tutorialBlock = false;
+        //_tH.LockInput();   
     }
 
 
@@ -151,9 +170,13 @@ public class BookButtonLogic : MonoBehaviour
 
     public void End()
     {        
-        _tH.UnlockInput();
-        _tutorialManager.DisablePopUp(0.75f);
+        _tutorial = false;
         _repeating = false;
+        DisableStuff();
+        _tH.UnlockInput();
+        _cM._tutorialBlock = false;
+        _tutorialManager.DisablePopUp(0.75f);
+        
 
         Invoke("InvokeStartTutorial", 1f);
     }

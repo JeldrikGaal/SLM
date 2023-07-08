@@ -15,11 +15,12 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: 26115c832b640b74eba29fad0407d9ea, type: 3}
   ProgressionImage: {fileID: 21300000, guid: 4384b8df8f03e324d9d87fb6646cd128, type: 3}
   Title: Young Man
-  Description: This young man was enslaved and transported overseas from Turkey.
-    At 'Vrijburg,' Johan Maurits branded him and his other enslaved people with his
-    insignia to mark them as his property.
+  Description: "Johan Maurits used this symbol to mark his \"possessions\". \n\nThis
+    young man was enslaved and transported overseas from Turkey. At 'Vrijburg,' Johan
+    Maurits branded him and his other enslaved people with his insignia to mark them
+    as his \"property\"."
   BookInfo: 
-  Question: 0
+  Question: 1
   language: 0
   FirstClickTime: 0
   Num: 0

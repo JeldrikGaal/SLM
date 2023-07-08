@@ -19,7 +19,8 @@ public class SlideColorStripe : MonoBehaviour
     [SerializeField] private Transform _twig;
     [SerializeField] private Transform _child;
 
-
+    [SerializeField] ProgressionSystem _progression;
+    [SerializeField] QuestionManager _qM;
 
     [SerializeField] TMP_Text _text1Text; 
     [SerializeField] TMP_Text _text2Text;
@@ -177,7 +178,9 @@ public class SlideColorStripe : MonoBehaviour
 
     public void Slide(float distance)
     {
-        
+        // Also slide progression Menu
+        //_progression.ShowOrder(_progression._orders[_qM.GetCurrentQuestionId()], true);
+
         Sequence seq = DOTween.Sequence();
 
         // Move Elements

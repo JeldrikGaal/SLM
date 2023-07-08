@@ -15,10 +15,14 @@ MonoBehaviour:
   Image: {fileID: 0}
   ProgressionImage: {fileID: 21300000, guid: 94a38223abbfae146b3c67edc7eadbdf, type: 3}
   Title: Wood Panel
-  Description: Brazilwood was the second most important export of the Dutch territory.
-    It was mainly used to make red textile dye.
+  Description: 'Johan Maurits used this symbol to mark his "possessions".
+
+
+    Brazilwood
+    was the second most important export of the Dutch territory. It was mainly used
+    to make red textile dye.'
   BookInfo: 
-  Question: 0
+  Question: 1
   language: 0
   FirstClickTime: 0
   Num: 0

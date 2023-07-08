@@ -15,10 +15,14 @@ MonoBehaviour:
   Image: {fileID: 0}
   ProgressionImage: {fileID: 21300000, guid: ca6ffdd2890240546b76c6d01e105c94, type: 3}
   Title: Ivory Chair
-  Description: This chair was one of the objects that helped identify Johan Maurits'
-    ownership of enslaved people and his slave branding practices.
+  Description: 'Johan Maurits used this symbol to mark his "possessions".
+
+
+    This
+    chair was one of the objects that helped identify Johan Maurits'' ownership of
+    enslaved people and his slave branding practices.'
   BookInfo: 
-  Question: 0
+  Question: 1
   language: 0
   FirstClickTime: 0
   Num: 0

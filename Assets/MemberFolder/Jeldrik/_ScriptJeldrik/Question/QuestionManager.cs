@@ -238,6 +238,7 @@ public class QuestionManager : MonoBehaviour
         //_completed = false;
         ResetCounts();
         _currentQuestion.ChangeCurrentQuestion(_questions[_currentQ]);
+        _progression.ShowOrder(_progression._orders[GetCurrentQuestionId()], true);
         SavingCurrentQuestion();
     }
 
@@ -249,6 +250,7 @@ public class QuestionManager : MonoBehaviour
         //_completed = true;
         ResetCounts();
         _currentQuestion.ChangeCurrentQuestion(_questions[_currentQ]);
+        _progression.ShowOrder(_progression._orders[GetCurrentQuestionId()], true);
         
     }
 
