@@ -494,7 +494,7 @@ public class ProgressionSystem : MonoBehaviour
         ToggleBar(false, true);
         _tutorialButton.SetActive(false);
         _effect1Running = false;
-        Invoke("StartTutorialStep2", 1f);
+        Invoke("EndTutorial", 1f);
     }
 
     private void StartTutorialStep2()
@@ -507,7 +507,7 @@ public class ProgressionSystem : MonoBehaviour
     private void EndTutorial()
     {
         _step2Running = false;
-        _tutorialManager.DisablePopUp(0.75f);
+        //_tutorialManager.DisablePopUp(0.75f);
         _tH.UnlockInput();
         _cM._tutorialBlock = false;
     }
