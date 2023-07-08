@@ -42,7 +42,7 @@ public class QuestionManager : MonoBehaviour
 
     public List<List<int>> _questionObjectCounts = new List<List<int>>();
     private List<ClickableHolder> _alreadyClicked = new List<ClickableHolder>();
-    private List<List<ClickableHolder>> _alreadyClickedComb = new List<List<ClickableHolder>>();
+    public List<List<ClickableHolder>> _alreadyClickedComb = new List<List<ClickableHolder>>();
     private List<bool> _completedQuestions = new List<bool>();
 
     [SerializeField] private List<List<GameObject>> _swirls = new List<List<GameObject>>();

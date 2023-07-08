@@ -140,6 +140,11 @@ public class SlideColorStripe : MonoBehaviour
         Color c = new Color(img.color.r, img.color.g, img.color.b, a);
         img.DOColor(c, time);
     }
+    static public void DOAlpha(Image img, float a, float time, Sequence seq, float insertTime)
+    {
+        Color c = new Color(img.color.r, img.color.g, img.color.b, a);
+        seq.Insert(insertTime,img.DOColor(c, time));
+    }
 
 
     public void SlideIn()
