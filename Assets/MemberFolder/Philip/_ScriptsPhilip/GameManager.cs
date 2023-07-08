@@ -37,6 +37,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void LoadBook()
+    {
+        SceneManager.LoadScene("Book_Main");
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))

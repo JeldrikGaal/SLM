@@ -10,12 +10,16 @@ public class OptionsManager : MonoBehaviour
 
     public GameObject EngButton, GerButton, NorButton, SimpButton;
 
+    private void Start()
+    {
+        LocalizationManager.Language = "German";
+    }
+
     public void German()
     {
         GerButton.GetComponent<OptionsButton>().SetActive();
         EngButton.GetComponent<OptionsButton>().SetInactive();
-        
-        
+
         if (NorButton.GetComponent<OptionsButton>().active)
         {
             LocalizationManager.Language = "German";

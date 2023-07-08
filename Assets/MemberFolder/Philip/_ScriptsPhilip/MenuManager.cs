@@ -13,6 +13,7 @@ public class MenuManager : MonoBehaviour
     private ClickableStorage _storage;
     public InfoPageManager _infoManager;
     private LangugageStorage _langugageStorage;
+    public GameObject initialPage;
 
     public SceneLoader sceneLoader;
 
@@ -31,8 +32,6 @@ public class MenuManager : MonoBehaviour
         GameManager.Instance.CurrentState = GameManager.GameState.Idle;
         
         _storage = ClickableStorage.Instance;
-
-        //mapUnfold.gameObject.SetActive(false);
         
         cam1.Priority = 10;
         cam2.Priority = 5;
@@ -42,7 +41,21 @@ public class MenuManager : MonoBehaviour
         ResolutionSetup();
         ShowCurrentPage();
     }
+
+    private void Start()
+    {
+        StartCoroutine("InitialPage");
+    }
+
+    private IEnumerator InitialPage()
+    {
+        yield return new WaitForSeconds(.5f);
+        
+        initialPage.SetActive(false);
+    }
     
+
+
     void Update()
     {
         _currentPageIndex = GameManager.Instance.pageIndex;
