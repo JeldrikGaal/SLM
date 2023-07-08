@@ -132,10 +132,14 @@ Flip & Match your card to the right mini-story to find out what happened!","(Min
 
 Dreh deine Karte um und ziehe sie auf die richtige Mini-Geschichte, um herauszufinden, was passiert ist!"
 E0.Explanation.Button,Continue,Weiter,Continue,Weiter
-E0.TapCard,Tap the card to flip it! ,,,
-E0.DragCard,"Drag & drop the card on
-the matching stack! ",,,
+E0.TapCard,Tap the card to flip it! ,Tippe die Karte an um sie umzudrehen!,Tap the card to flip it! ,Tippe die Karte an um sie umzudrehen!
+E0.DragCard,"Drag and drop the card on
+the matching stack! ","Ziehe die Karte zum passenden
+Stapel und lege sie dort ab!","Drag and drop the card on
+the matching stack! ","Ziehe die Karte zum passenden
+Stapel und lege sie dort ab!"
 ,,,,
+MG2StoryTitle1,COOL TITLE,COOL TITLE,COOL TITLE,COOL TITLE
 MG2Story1,"""Johan Maurits talked about a broken ship for sale by the slave trading company he works for in a conversation with his right-hand man!"" ""I received im-portant information for that scam idea I had the other day."" -Gaspar Dias, a merchant who worked closely with Johan Maurits. ""This ship was recently sold by the WIC to some merchant guy. I heard they had to fix it up! It is leaving Recife as a portuguese vessel for Africa tomorrow. "" ""I only agreed to steer the 'Diemen' to get Gaspar Dias’ favor. But as soon as I meet an official, I will tell them he is a fraud!"" - Antonio Machado, Portuguese Captain This ship left an African harbor with many enslaved people. Officially it’s heading for a Portuguese port. - Strange, that seems vaguely familiar. This shipwreck is odd because no cargo sank with it. However, there are many footsteps that lead toward Mauritsstad.","In einem Gespräch mit einem engen Mitarbeiter hat Johann Moritz über den Verkauf eines beschädigten Schiffes geredet. Verkauft wird es von der Handelsgesellschaft, für die er arbeitet.
 ""Ich habe wichtige Informationen erhalten, die für meine Betrugsidee helfen könnten!"" - Gaspar Dias, Kaufmann, arbeitete eng mit Johann Moritz zusammen.
 Dieses Schiff wurde neulich von der WIC an irgendeinen Händler verkauft und musste repariert werden. Morgen fährt es unter portugiesischer Flagge von Recife nach Afrika.
@@ -152,6 +156,7 @@ Diese Schiff war kaputt, wurde dann aber an einen portugiesischen Händler verka
 ""Eigentlich will ich das Schiff 'Diemen' nicht steuern. Sobald ich jemand wichtiges treffe, werde ich erzählen, dass Gaspar Dias ein Betrüger ist!"" - sagte Antonio, Kaptiän
 Dieses Schiff hat in Afrika viele Menschen aufgeladen, die gegen ihren Willen nach Brasilien gebracht werden sollten, um dort zu arbeiten.
 Dieses kaputte Schiff ist seltsam! Es ist ohne Ladung gesunken. Aber am Strand sind Fußstapfen! Viele Leute müssen nach Mauritsstad gelaufen sein."
+MG2StoryTitle2,COOL TITLE,COOL TITLE,COOL TITLE,COOL TITLE
 MG2Story2,"This object identifies Johan Maurits as the governor of Dutch Brazil, where he resided in Mauritsstad.
 These plans show a Dutch-inspired building near Johan Maurits’ governor's residence in Mauritsstad that was initiated and financed by Johan Maurits.
 Inspired by european court life, Johan Maurits imported many things he was used to from his home such as food, animals, and plants. Among them, for example, the orange tree.
@@ -165,6 +170,7 @@ Things that came with ships were unloaded in ports. People that were taken from 
 Diese Pläne zeigen ein niederländisch aussehenden Haus. Johann Moritz hat viel Geld gezahlt, um solche Häuser in Mauritsstad zu bauen.
 Johann hat viele Dinge aus seiner Heimat nach Brasilien bringen lassen, um die Umgebung wie Europa aussehen zu lassen. Dazu gehören Lebensmittel, Tiere, und Pflanzen wie zum Beispiel der  Orangenbaum.
 Mit dem Schiff gelieferte Sachen wurden im Hafen entladen. Versklavte Menschen auch. Eine Gruppe solcher Menschen muss stattdessen am Strand nach Mauritsstad gelaufen sein."
+MG2StoryTitle3,COOL TITLE,COOL TITLE,COOL TITLE,COOL TITLE
 MG2Story3,"""Isn't it so progressive of the humanist prince to allow freedom of belief in his colony?""
 ""I worry that Johan Maurits may be getting a little too nice toward the portuguese catholics who own the sugar farms.""
 ""Didn't he also promise them new workers on their sugar farms?""
@@ -178,6 +184,7 @@ These papers document how Johan gifted a group of enslaved people to portuguese 
 ""Ich fürchte, dass Johann vielleicht zu nett zu den portugiesischen Katholiken, denen die Zuckermühlen gehören, ist.""
 ""Hat er ihnen nicht auch neue Arbeiter für ihre Zuckermühlen versprochen? Er scheint noch ein Schiff zu erwarten, das mehr versklavte Menschen bringt.""
 Auf diesen Papieren wurde aufgeschrieben, wie eine Gruppe von versklavten Menschen von Johann Moritz an portugiesische Zuckermühlenbesitzer verschenkt wurde."
+MG2StoryTitle4,COOL TITLE,COOL TITLE,COOL TITLE,COOL TITLE
 MG2Story4,"""I have an artist friend back in the Netherlands. Do you think Johan Maurits would fund him too?"" - some Guest in 'Vrijburg'.
 Artists traveling with Johan Maurits documented the Brazilian flora and fauna of the 17th century in great detail.
 ""I am so glad that our research on the local flora and fauna, medicine and all the other areas has made immense progress! It's all thanks to Johan's generous financial aid.""
@@ -195,6 +202,7 @@ Künstler, die mit Johann gereist sind, haben viele Bilder von brasilianischen P
 ""Ich bin sehr froh, dass wir so viel zu brasilianischen Tieren und Pflanzen, Medizin und vielen anderen Sachen forschen konnten! Und das nur dank Johann's Großzügigkeit!""
 Obwohl Johann viele verschiedene Projekte von Künstlern und Wissenschaftlern bezahlt hat, wurde er immer reicher. Ob er neben seinem Gehalt von der WIC noch andere Wege hatte, um Geld zu vedienen?
 Durch seine Unterschrift auf den richtigen Papieren hat Johann viel dazu verdient. Zuerst hat er versklavte Menschen als Geschenke verteilt, und später hat er Geld für sie verlangt."
+MG2StoryTitle5,COOL TITLE,COOL TITLE,COOL TITLE,COOL TITLE
 MG2Story5,"""This shipwreck is odd because no cargo sank with it. However, there are many footsteps that lead toward Mauritsstad.""
 Usually, imported trade goods were unloaded in the ports - as were enslaved people. A peculiar group of enslaved people must have come walking up the coast instead.
 These files list a number of enslaved people having been gifted to the Portuguese sugar mill owners in the name of Johan Maurits.

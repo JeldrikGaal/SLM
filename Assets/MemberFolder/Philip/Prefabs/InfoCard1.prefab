@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.2}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -53.2177, y: -24.6121}
-  m_SizeDelta: {x: 326.661, y: 339.5357}
+  m_AnchoredPosition: {x: -54.067, y: -21.0525}
+  m_SizeDelta: {x: 314.5823, y: 331.7565}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2609481374518150079
 CanvasRenderer:
@@ -70,8 +70,8 @@ MonoBehaviour:
     company. She and other enslaved people belonging to the WIC were given to Johann
     Maurits as part of his working agreement.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 57fd86071007a324bae932303e6632eb, type: 2}
-  m_sharedMaterial: {fileID: 1329876089496857965, guid: 57fd86071007a324bae932303e6632eb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c8e2e71a45fd0d34db5ca32795682656, type: 2}
+  m_sharedMaterial: {fileID: -3808078736369377490, guid: c8e2e71a45fd0d34db5ca32795682656, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -95,13 +95,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 25
   m_fontSizeBase: 19
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 12
-  m_fontSizeMax: 24
-  m_fontStyle: 16
+  m_fontSizeMax: 25
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 1
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -376,7 +376,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c19a7ef3603f65847b256669ab1e6085, type: 3}
+  m_Sprite: {fileID: 21300000, guid: adb4c8f23c2b8434ca34118c2969642d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

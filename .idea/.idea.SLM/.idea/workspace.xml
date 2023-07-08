@@ -6,10 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="58850cd5-8d2e-4765-8fce-206cb2b23995" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SLM/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SLM/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Jeldrik/TestAssets/Fonts/XTypeWriter/EXCLA_XTypewriter-Regular-DEUTSCH_ SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Jeldrik/TestAssets/Fonts/XTypeWriter/EXCLA_XTypewriter-Regular-DEUTSCH_ SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Jeldrik/TestAssets/Fonts/XTypeWriter/XTypewriter-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Jeldrik/TestAssets/Fonts/XTypeWriter/XTypewriter-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/OptionsButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/OptionsButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/InfoCard1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/InfoCard1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/JohanFanpage.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/JohanFanpage.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/MG2Page1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/MG2Page1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/MG2Page2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/MG2Page2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/MG2Page3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/MG2Page3.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Book_Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Book_Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

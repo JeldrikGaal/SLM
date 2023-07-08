@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2827888996980129546
+--- !u!1 &271708264720770939
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7050282279377718263}
-  - component: {fileID: 2609481374518150079}
-  - component: {fileID: 3323379121231982868}
+  - component: {fileID: 1037710062737634232}
+  - component: {fileID: 8959375676863802299}
+  - component: {fileID: 3395193115405721230}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -18,41 +18,41 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &7050282279377718263
+--- !u!224 &1037710062737634232
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2827888996980129546}
-  m_LocalRotation: {x: 0.043619405, y: 0.9990483, z: 0, w: 0}
+  m_GameObject: {fileID: 271708264720770939}
+  m_LocalRotation: {x: -0.054078825, y: -0.9985367, z: -0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.852273, y: 0.852273, z: 0.852273}
+  m_LocalScale: {x: 0.8363598, y: 0.83636004, z: 0.8363598}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9204909235128461394}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 5}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.2}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -81.5248, y: 4.1121}
-  m_SizeDelta: {x: 284.965, y: 317.2789}
+  m_AnchoredPosition: {x: -81, y: 3.0614}
+  m_SizeDelta: {x: 299.0563, y: 326.2076}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &2609481374518150079
+--- !u!222 &8959375676863802299
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2827888996980129546}
+  m_GameObject: {fileID: 271708264720770939}
   m_CullTransparentMesh: 1
---- !u!114 &3323379121231982868
+--- !u!114 &3395193115405721230
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2827888996980129546}
+  m_GameObject: {fileID: 271708264720770939}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -66,12 +66,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Das ist Frans Post. Er war ein niederl\xE4ndischer Maler des 17ten Jahrhunderts.
-    Er begleitete Johann Moritz als Teil seines Gefolges 1637 auf dessen Expedition
-    nach Brasilien. Dort fertigte er haupts\xE4chlich Landschaftsmalereien an."
+  m_text: This native brazilian woman was enslaved and owned by the west india trading
+    company. She and other enslaved people belonging to the WIC were given to Johann
+    Maurits as part of his working agreement.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 57fd86071007a324bae932303e6632eb, type: 2}
-  m_sharedMaterial: {fileID: 1329876089496857965, guid: 57fd86071007a324bae932303e6632eb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c8e2e71a45fd0d34db5ca32795682656, type: 2}
+  m_sharedMaterial: {fileID: -3808078736369377490, guid: c8e2e71a45fd0d34db5ca32795682656, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -95,13 +95,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21.15
+  m_fontSize: 25
   m_fontSizeBase: 19
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 12
-  m_fontSizeMax: 24
-  m_fontStyle: 16
+  m_fontSizeMax: 25
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 1
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.5514679, y: -0.28705406, z: -0.8228378, w: 0.68598175}
+  m_margin: {x: -1.1789246, y: -0.8158399, z: -0.4186707, w: 0.8711244}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -246,8 +246,8 @@ RectTransform:
   m_Children:
   - {fileID: 1769310022683250883}
   - {fileID: 5989456247229177588}
-  - {fileID: 7050282279377718263}
   - {fileID: 1871320400428223896}
+  - {fileID: 1037710062737634232}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -284,7 +284,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4f7fa21430a9760408b3d0e630794552, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1fc1383d8c6ba4e4aa07028747455848, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -307,7 +307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 3784796932204713786}
-  description: {fileID: 3323379121231982868}
+  description: {fileID: 3395193115405721230}
   title: {fileID: 9031434376904675336}
 --- !u!1 &7514570850201945940
 GameObject:
@@ -376,7 +376,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c19a7ef3603f65847b256669ab1e6085, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1fc1383d8c6ba4e4aa07028747455848, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -432,7 +432,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9204909235128461394}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 5}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

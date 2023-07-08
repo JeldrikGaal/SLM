@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4392225095875322338}
   - component: {fileID: 8581554006291316730}
   - component: {fileID: 5418793273958213680}
+  - component: {fileID: 4901741973724635339}
   m_Layer: 5
   m_Name: Title2
   m_TagString: Untagged
@@ -135,6 +136,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4901741973724635339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178456764939400101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1429d296f6eaded488398c6709b52d0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _localizationKey: MG2StoryTitle4
 --- !u!1 &878710157065123429
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,6 +236,7 @@ GameObject:
   - component: {fileID: 68805600490307420}
   - component: {fileID: 4014930059709538820}
   - component: {fileID: 2649196725885939577}
+  - component: {fileID: 1164406864755333327}
   m_Layer: 5
   m_Name: Title1
   m_TagString: Untagged
@@ -346,6 +361,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1164406864755333327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252883128100479084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1429d296f6eaded488398c6709b52d0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _localizationKey: MG2StoryTitle3
 --- !u!1 &5208156519640809727
 GameObject:
   m_ObjectHideFlags: 0
