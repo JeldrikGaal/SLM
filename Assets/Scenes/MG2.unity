@@ -1469,7 +1469,7 @@ MonoBehaviour:
     BackSprite: {fileID: 21300000, guid: 97e27b9c7096c2248bbf35aa13c4cd62, type: 3}
     FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 22
-    fontSizes: 14,15,15,15
+    fontSizes: 14,13,15,15
   - ID: 22
     LocalizationKey: D4.4_Whealth
     BackSprite: {fileID: 21300000, guid: 441784855e09cce45a197509e568ed87, type: 3}
