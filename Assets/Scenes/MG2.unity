@@ -1361,13 +1361,13 @@ MonoBehaviour:
     BackSprite: {fileID: 21300000, guid: 71cca7eefc13f1943b7f013e66881d40, type: 3}
     FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 4
-    fontSizes: 15,15,15,14
+    fontSizes: 15,14,15,14
   - ID: 4
     LocalizationKey: D1.3_FixedShip
     BackSprite: {fileID: 21300000, guid: a98f19af3565da14e95b98caa8907e06, type: 3}
     FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 5
-    fontSizes: 15,15,15,15
+    fontSizes: 15,14,15,15
   - ID: 5
     LocalizationKey: D1.4_Antonio
     BackSprite: {fileID: 21300000, guid: d2c2c2243051ee842b3baa11cfd66ecb, type: 3}
@@ -1397,13 +1397,13 @@ MonoBehaviour:
     BackSprite: {fileID: 21300000, guid: 431ceae5b2881d5428cebf6fc3f115db, type: 3}
     FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 10
-    fontSizes: 15,15,14,15
+    fontSizes: 15,14,14,15
   - ID: 10
     LocalizationKey: D2.2_ArchitectModel
     BackSprite: {fileID: 21300000, guid: ef3266eda55dbd64d8b70d4af5646cad, type: 3}
     FrontSprite: {fileID: 21300000, guid: 27b5367cdbb5ea148a5802e251bfdb03, type: 3}
     MatchingID: 11
-    fontSizes: 15,15,15,15
+    fontSizes: 15,14,15,15
   - ID: 11
     LocalizationKey: D2.3_OrangeTree
     BackSprite: {fileID: 21300000, guid: 309acdfd8f36cf345ac09cc4e7a3392d, type: 3}
