@@ -134,7 +134,14 @@ public class ClickableManager : MonoBehaviour
     // return if the popup is currently being shown
     public bool Showing()
     {
-        return _popUp.activeInHierarchy;
+        foreach(PopUp p in _popUps)
+        {
+            if (p.gameObject.activeInHierarchy)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     // Returns the gameobject of the currently selected clickable
