@@ -12,7 +12,7 @@ public class mg1Confirm : MonoBehaviour
     public void no()
     {
         if (!gameObject.activeInHierarchy) return;
-        StartCoroutine("Deactivate", 1);
+        StartCoroutine("Deactivate", 0.7f);
     }
 
     private IEnumerator Deactivate(float delay)
