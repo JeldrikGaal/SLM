@@ -71,6 +71,8 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] private List<ClickableHolder> _question3Objects = new List<ClickableHolder>();
     [SerializeField] private EndScreenLogic _endscreenManager;
 
+    private bool askedForEndOnce;
+
     private void Awake()
     {
         
@@ -308,12 +310,21 @@ public class QuestionManager : MonoBehaviour
 
     public void ClosePopUp()
     {
-        Debug.Log(CheckQ3Conditions());
-        Debug.Log(_currentQ);
         if (CheckQ3Conditions() && _currentQ == 2)
         {
-            //_endscreenManager.LoadEndScreen();
-            AskEndScreen();
+            if (!askedForEndOnce)
+            {
+                AskEndScreen();
+                askedForEndOnce = true;
+            }
+            else 
+            {
+                if (_questionObjectCounts[_currentQ][0] == _questions[_currentQ].ObjectsToFind1.Count)
+                {
+                    AskEndScreen();
+                }
+            }
+            
         }
         if (_completedQuestions[_currentQ] && ( !_doneOnce[_currentQ] || _questionObjectCounts[GetCurrentQuestionId()][0] == _questions[_currentQ].ObjectsToFind1.Count ))
         {

@@ -60,12 +60,21 @@ public class ClickableManager : MonoBehaviour
         }
         else
         {
+            // Skip if blocked or tutorial running
             if (( !_tutorialManager.SKIPTUTORIAL && !_tutorialManager.Done && ( cH != _tutorialManager._exampleClickable.cH) ) || _tutorialBlock)
             {
-                Debug.Log("You shall not click this !");
                 return false;
             }
             _currentClickable = C;
+
+            // Johan can always be clicked ( Alpha ! )
+            if (cH.LocalizationKey == "G1")
+            {
+                DisplayPopUp(cH,_popUps[0]);
+                return true;
+            }
+
+            // First Question Decline
             if (_qM.GetCurrentQuestionId() == 0 && ( _VC.Questions[0].ObjectsToFind1[0] != cH ) )
             {
                 if (C == _tutorialManager._exampleClickable || cH.LocalizationKey.Contains('S') )
@@ -78,29 +87,36 @@ public class ClickableManager : MonoBehaviour
                 DisplayPopUp(_declinedHolders[0], _popUps[ran]);
                 return true;
             }
+
+            // Second Question
             else if (_qM.GetCurrentQuestionId() == 1 && ( !_VC.Questions[1].ObjectsToFind1.Contains(cH) && !cH.LocalizationKey.Contains('S') ) )
             {
                 int ran = Random.Range(2, _popUps.Count);
                 DisplayPopUp(_declinedHolders[1], _popUps[ran]);
                 return true;
             }
+
+            // Third Question
             else if (_qM.GetCurrentQuestionId() == 2 && ( !_VC.Questions[2].ObjectsToFind1.Contains(cH) && !cH.LocalizationKey.Contains('S') ))
             {
                 int ran = Random.Range(2, _popUps.Count);
                 DisplayPopUp(_declinedHolders[2], _popUps[ran]);
                 return true;
             }
+
+            // All big ones
             if (cH.Question)
             {
                 DisplayPopUp(cH,_popUps[0]);
+                return true;
             }
+            // All small ones
             else 
             {
                 int ran = Random.Range(2, _popUps.Count);
                 DisplayPopUp(cH, _popUps[ran]);
+                return true;
             }
-            
-            return true;
         }
     }
 
