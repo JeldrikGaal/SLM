@@ -38,7 +38,7 @@ public class OptionsButton : MonoBehaviour
    {
       text.fontSize = fontSizeInactive;
       var shadow = GetComponent<Shadow>().effectDistance = new Vector2(1, -2);
-      rect.sizeDelta = new Vector2(220f, 100f);
+      rect.sizeDelta = new Vector2(200f, 90f);
       image.color = new Color(230,230,230);
 
       active = false;

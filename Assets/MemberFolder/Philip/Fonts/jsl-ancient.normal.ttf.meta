@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 354ef57ef5805f04f8a67cd3686520ca
+guid: 2fae2b14c1bf8e64088ab15aadca703c
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Andesia
+  - JSL Ancient
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

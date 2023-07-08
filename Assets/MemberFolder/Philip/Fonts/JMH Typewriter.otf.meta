@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c96aa14cf4e02f5419e1790a86778b57
+guid: 09d6282fc36825c4883814a7bc014f5d
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,8 +9,9 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Sofia
-  fallbackFontReferences: []
+  - JMH Typewriter
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 66ea20b3931668040bec0249c4e3652b, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

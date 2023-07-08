@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fa257b5bbec64f14286f7fd6e1b1a413
+guid: 21353f07df9cc51418e9e0bd805447cd
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Monsieur La Doulaise
+  - Precious
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
