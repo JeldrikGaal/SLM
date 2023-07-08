@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Assets.SimpleLocalization;
+using DG.Tweening;
 
 [RequireComponent(typeof(Image))]
 public class Clickable : MonoBehaviour
@@ -36,6 +37,20 @@ public class Clickable : MonoBehaviour
         
         // Setting the alpha threshold for the image to be clickable
         _image.alphaHitTestMinimumThreshold = 0.1f;
+
+        StartUpAnimation();
+    }
+
+    private void StartUpAnimation()
+    {
+        
+        if (cH.StartAnimation)
+        {
+            SlideColorStripe.ChangeAlpha(GetComponent<Image>(), 0);
+            SlideColorStripe.DOAlpha(GetComponent<Image>(), 1, 1f);
+            transform.localScale = Vector3.zero;
+            transform.DOScale(Vector3.one, 1f);
+        }
     }
 
     // Function to be called when the languages get changed to update the text fields

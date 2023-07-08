@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S5 Pieter Post
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 7b9813cef4bcbda4cb384df35a400cec, type: 3}
+  ProgressionImage: {fileID: 0}
   Title: 
   Description: 
   BookInfo: 
@@ -26,3 +27,4 @@ MonoBehaviour:
   guest: 1
   slave: 0
   info: 0
+  StartAnimation: 1

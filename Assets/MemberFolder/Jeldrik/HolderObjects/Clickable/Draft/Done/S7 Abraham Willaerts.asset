@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S7 Abraham Willaerts
   m_EditorClassIdentifier: 
   Image: {fileID: 0}
+  ProgressionImage: {fileID: 0}
   Title: 
   Description: 
   BookInfo: 
@@ -26,3 +27,4 @@ MonoBehaviour:
   guest: 1
   slave: 0
   info: 0
+  StartAnimation: 1

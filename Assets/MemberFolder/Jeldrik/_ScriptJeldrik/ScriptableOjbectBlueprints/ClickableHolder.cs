@@ -29,4 +29,5 @@ public class ClickableHolder : ScriptableObject
     public bool guest;
     public bool slave;
     public bool info;
+    public bool StartAnimation;
 }

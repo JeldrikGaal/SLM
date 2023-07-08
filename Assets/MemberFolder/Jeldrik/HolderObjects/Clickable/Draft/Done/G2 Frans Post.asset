@@ -27,3 +27,4 @@ MonoBehaviour:
   guest: 1
   slave: 0
   info: 0
+  StartAnimation: 1

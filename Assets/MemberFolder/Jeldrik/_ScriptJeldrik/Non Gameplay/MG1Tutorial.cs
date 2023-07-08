@@ -62,6 +62,16 @@ public class MG1Tutorial : MonoBehaviour
         _moveArrowsHolder = _moveArrows[0].transform.parent;
         _tH = Camera.main.GetComponent<TouchHandler>();
         _cM = GameObject.FindGameObjectWithTag("ClickableManager").GetComponent<ClickableManager>();
+
+        DOTween.SetTweensCapacity(1000,100);
+
+        _colorStripe.OrangeAppear();
+
+        Invoke("InvokeStart", 0.75f);
+    }
+
+    private void InvokeStart()
+    {
         if (SKIPTUTORIAL || Done) 
         { 
             Appear();
@@ -73,7 +83,6 @@ public class MG1Tutorial : MonoBehaviour
             _currentQuestion.gameObject.SetActive(false);
             _bookButton.SpawnAnimation();
         }
-        DOTween.SetTweensCapacity(200,50);
     }
 
     public void Appear() 
