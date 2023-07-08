@@ -20,7 +20,7 @@ public class QuestionManager : MonoBehaviour
     private List<Question> _questions = new List<Question>();
 
     [Tooltip("Prefab for spawning confetti upon question completion")]
-    [SerializeField] private GameObject _confetti;
+    [SerializeField] public GameObject _confetti;
 
     [Tooltip("Prefab for spawning the swirl aorund clicked objects")]
     [SerializeField] private GameObject _swirl;    
@@ -33,6 +33,8 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] private BookTransition _bT;
     [SerializeField] private ProgressionSystem _progression;
     [SerializeField] private TMP_Text _questionCompletedText;
+
+
 
     [HideInInspector] public TouchHandler _tH;
     private ClickableStorage _cS;
@@ -58,15 +60,16 @@ public class QuestionManager : MonoBehaviour
     private Image _grayScaleImage;
     
 
-
-    //private List<List<int>> _question = new List<List<int>>();
-
     private int _currentQ = -1;
     private float _timeOnCurrentQ;
     private bool _completed;
     private List<bool> _doneOnce = new List<bool>();
-    private VALUECONTROLER _VC;
+    public VALUECONTROLER _VC;
 
+    // End Conditions
+    [SerializeField] private List<ClickableHolder> _question3People = new List<ClickableHolder>();
+    [SerializeField] private List<ClickableHolder> _question3Objects = new List<ClickableHolder>();
+    [SerializeField] private EndScreenLogic _endscreenManager;
 
     private void Awake()
     {
@@ -133,6 +136,10 @@ public class QuestionManager : MonoBehaviour
         _swirls.Add(new List<GameObject>());
         _swirls.Add(new List<GameObject>());
         _swirls.Add(new List<GameObject>());
+
+        _alreadyClickedComb.Add(new List<ClickableHolder>());
+        _alreadyClickedComb.Add(new List<ClickableHolder>());
+        _alreadyClickedComb.Add(new List<ClickableHolder>());
 
         // Loading current Question from storage and displaying it
         LoadSwirls();
@@ -262,8 +269,52 @@ public class QuestionManager : MonoBehaviour
         _completedQuestions[_currentQ] = true;
     }
 
+    private bool CheckQ3Conditions()
+    {
+        int counter1 = 0;
+        int counter2 = 0;
+        foreach(ClickableHolder cH in _question3Objects)
+        {
+            if (CheckAlreadyClicked(cH))
+            {
+                counter1++;
+            }
+        }
+        foreach(ClickableHolder cH in _question3People)
+        {
+            if (CheckAlreadyClicked(cH))
+            {
+                counter2++;
+            }
+        }
+        if (counter1 >= 1 && counter2 >= 1)
+        {
+            return true;
+        }
+        else 
+        {
+            return false;
+        }
+    }
+
+    public void HideEndQuestion()
+    {
+        _nextQuestionQuestionText.text = "";
+        _goOnButtonText.text = "";
+        _continueButtonText.text = "";
+        _goOnArrow.enabled = false;
+        _continueArrow.enabled = false;
+    }
+
     public void ClosePopUp()
     {
+        Debug.Log(CheckQ3Conditions());
+        Debug.Log(_currentQ);
+        if (CheckQ3Conditions() && _currentQ == 2)
+        {
+            //_endscreenManager.LoadEndScreen();
+            AskEndScreen();
+        }
         if (_completedQuestions[_currentQ] && ( !_doneOnce[_currentQ] || _questionObjectCounts[GetCurrentQuestionId()][0] == _questions[_currentQ].ObjectsToFind1.Count ))
         {
             _doneOnce[_currentQ] = true;            
@@ -360,6 +411,45 @@ public class QuestionManager : MonoBehaviour
 
     }
 
+    private void AskEndScreen()
+    {
+        // Set button functions
+        _continueButton.GetComponent<Button>().onClick.RemoveAllListeners();
+        _goOnButton.GetComponent<Button>().onClick.RemoveAllListeners();
+        _continueButton.GetComponent<Button>().onClick.AddListener(Continue);
+        _goOnButton.GetComponent<Button>().onClick.AddListener(_endscreenManager.LoadEndScreen);
+
+        // Enable grayScaleImage to make text more prominent
+        Image _grayScaleImage = _cM._grayScaleImage;
+        _grayScaleImage.enabled = true;
+        _grayScaleImage.color = new Color(_grayScaleImage.color.r, _grayScaleImage.color.g, _grayScaleImage.color.b, 0);
+        Color fade = new Color(_grayScaleImage.color.r, _grayScaleImage.color.g, _grayScaleImage.color.b, 0.8f);
+        _grayScaleImage.DOColor(fade, _VC.PopUp_AnimSpeed);
+
+        // Enabling object
+        _continueButton.SetActive(true);
+        _goOnButton.SetActive(true);
+        _nextQuestionQuestionText.gameObject.SetActive(true);
+
+        // Setting Text 
+        _nextQuestionQuestionText.text = LocalizationManager.Localize("Final.Question");
+        _goOnButtonText.text = LocalizationManager.Localize("Final.Yes");
+        _continueButtonText.text = LocalizationManager.Localize("Final.No");
+
+        SlideColorStripe.ChangeAlpha(_continueButtonText, 0);
+        SlideColorStripe.ChangeAlpha(_continueArrow,0);
+        SlideColorStripe.ChangeAlpha(_goOnButtonText,0);
+        SlideColorStripe.ChangeAlpha(_goOnArrow,0);
+        SlideColorStripe.ChangeAlpha(_nextQuestionQuestionText,0);
+
+        SlideColorStripe.DOAlpha(_continueButtonText,1, 0.75f);
+        SlideColorStripe.DOAlpha(_continueArrow,1, 0.75f);
+        SlideColorStripe.DOAlpha(_goOnButtonText,1, 0.75f);
+        SlideColorStripe.DOAlpha(_goOnArrow,1, 0.75f);
+        SlideColorStripe.DOAlpha(_nextQuestionQuestionText,1, 0.75f);
+
+    }
+
     private IEnumerator AllObjectsFound()
     {
         _progression.ToggleBar(true, true, 1.25f);
@@ -424,6 +514,7 @@ public class QuestionManager : MonoBehaviour
 
             // Track already clicked objects
             _alreadyClicked.Add(cH);
+            _alreadyClickedComb[GetCurrentQuestionId()].Add(cH);
             _questionObjectCounts[_currentQ][GetIDForClicked(cH)] += 1;
 
             // Tell progression system that something has been clicked the first time
