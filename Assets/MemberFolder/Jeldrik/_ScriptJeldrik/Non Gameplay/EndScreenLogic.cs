@@ -64,6 +64,8 @@ public class EndScreenLogic : MonoBehaviour
 
     public void LoadEndScreen()
     {
+        _tH.UnlockInput(); 
+
         _currentQuestion.SetActive(false);
         _progressionSystem.SetActive(false);
 

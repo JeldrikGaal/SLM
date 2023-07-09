@@ -89,6 +89,8 @@ public class BookButtonLogic : MonoBehaviour
 
     public void AskQuestion(float time = 0.75f)
     {
+        if (_cM._tutorialBlock && ( _tutorialManager.Done || _tutorialManager.SKIPTUTORIAL )) return;
+        
         _cM._tutorialBlock = true;
         _continueButton.GetComponent<Button>().onClick.RemoveAllListeners();
         _goOnButton.GetComponent<Button>().onClick.RemoveAllListeners();

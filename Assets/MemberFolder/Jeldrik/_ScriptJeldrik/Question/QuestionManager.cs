@@ -366,6 +366,9 @@ public class QuestionManager : MonoBehaviour
 
     private void NextQuestionCheck()
     {
+        _tH.LockInput();
+        _cM._tutorialBlock = true;
+
         // Set button functions
         _continueButton.GetComponent<Button>().onClick.RemoveAllListeners();
         _goOnButton.GetComponent<Button>().onClick.RemoveAllListeners();
@@ -424,6 +427,9 @@ public class QuestionManager : MonoBehaviour
 
     private void AskEndScreen()
     {
+        _tH.LockInput();
+        _cM._tutorialBlock = true;
+
         // Set button functions
         _continueButton.GetComponent<Button>().onClick.RemoveAllListeners();
         _goOnButton.GetComponent<Button>().onClick.RemoveAllListeners();
@@ -504,6 +510,8 @@ public class QuestionManager : MonoBehaviour
 
     public void GoOn()
     {
+        _tH.UnlockInput(); 
+        _cM._tutorialBlock = false;
         DisableStuff();
 
         Invoke("Forward", 1f);
@@ -511,6 +519,8 @@ public class QuestionManager : MonoBehaviour
 
     public void Continue()
     {
+        _cM._tutorialBlock = false;
+        _tH.UnlockInput(); 
         DisableStuff();
     }
 
