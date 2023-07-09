@@ -65,12 +65,12 @@ public class Deck : MonoBehaviour
     }
     void Start()
     {
-        Deck2 = ShuffleArray(Deck2);
+        Deck2 = ShuffleWithCertainElementFirst(Deck2, 10);
         Deck3 = ShuffleArray(Deck3);
         Deck4 = ShuffleArray(Deck4);
         Deck5= ShuffleArray(Deck5);
         Deck6 = ShuffleArray(Deck6);
-        
+
         CDB = GetComponent<CardDatabase>();
 
         
@@ -81,6 +81,26 @@ public class Deck : MonoBehaviour
         ReparentChildObjects(cardCanvas.transform, EmptyGameObject.transform);
 
     }
+
+    public int[] ShuffleWithCertainElementFirst(int[] array, int certainElement)
+    {
+        // Convert array to list for easier manipulation
+        List<int> list = array.ToList();
+
+        // Remove 'certainElement' from the list
+        list.Remove(certainElement);
+
+        // Use your shuffle function, you may need to adjust this part to match your shuffle function
+        list = ShuffleArray(list.ToArray()).ToList();
+
+        // Insert 'certainElement' back to the start of the list
+        list.Insert(0, certainElement);
+        list.Reverse();
+        
+        // Return the list as an array
+        return list.ToArray();
+    }
+
 
     IEnumerator Final_1(float waitTime)
     {
@@ -161,6 +181,14 @@ public class Deck : MonoBehaviour
     }
 }
 
+    public void RotateTargetCards()
+    {
+        foreach (var _tpc in PileColliders)
+        {
+            _tpc.TopCardGO.GetComponent<Card>().FlipAnimated();
+        }
+    }
+    
     public int[] AppendAllDecks()
     {
         return Deck6.Concat(Deck5).Concat(Deck4).Concat(Deck3).Concat(Deck2).ToArray();
@@ -172,10 +200,6 @@ public class Deck : MonoBehaviour
             if (!_drawnFistCard)
             {
                 _drawnFistCard = true;
-                foreach (var _tpc in PileColliders)
-                {
-                    _tpc.TopCardGO.GetComponent<Card>().FlipAnimated();
-                }
             }
 
             CurrentDraggableCard = DeckTopCard;
@@ -318,9 +342,9 @@ public class Deck : MonoBehaviour
         obj.transform.position = endPos; // Ensure GameObject is at target position at the end
         //ProgressbarRef.gameObject.GetComponent<ProgressBar>().AnimateFillUp(1, FinalProgressbarDuration);
         
-        SpawnProgressBar(PileColliders[0].TopCardGO, PileColliders[1].TopCardGO, 110, -35);
-        SpawnProgressBar(PileColliders[1].TopCardGO, PileColliders[2].TopCardGO, 120, -15);
-        SpawnProgressBar(PileColliders[2].TopCardGO, PileColliders[3].TopCardGO, 120, 50);
+        SpawnProgressBar(PileColliders[0].TopCardGO, PileColliders[1].TopCardGO, 140, 0);
+        SpawnProgressBar(PileColliders[1].TopCardGO, PileColliders[2].TopCardGO, 137, 0);
+        SpawnProgressBar(PileColliders[2].TopCardGO, PileColliders[3].TopCardGO, 142, 6);
         finalProgressBars.Reverse();
         
         PileColliders[0].TopCardGO.transform.SetAsLastSibling();

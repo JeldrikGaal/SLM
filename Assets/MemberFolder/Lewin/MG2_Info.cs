@@ -36,6 +36,7 @@ public class MG2_Info : MonoBehaviour
     [SerializeField] private TMP_Text _text_3;
     [SerializeField] private TMP_Text _text_bb;
     [SerializeField] private TMP_Text _text_tapanywhere;
+    [SerializeField] private TMP_Text _text_finalreturnButton;
     private FontManager _fontManager;
     [SerializeField] private float _orangeFadeDuration = 0.7f;
     
@@ -84,6 +85,7 @@ public class MG2_Info : MonoBehaviour
         _text_tapanywhere.font = _fontManager.GetFont();
         _text_tapanywhere.text = LocalizationManager.Localize(_text_tapanywhere.text);
         
+
     }
 
     public void Continue_1()
@@ -211,6 +213,7 @@ public class MG2_Info : MonoBehaviour
             InfoClosed_3 = true;
             StartCoroutine(ScaleOut(infoBox_3, duration));
             AnimateAlpha(false);
+            CardManager.GetComponent<Deck>().RotateTargetCards();
         }
     }
     
@@ -423,6 +426,8 @@ public class MG2_Info : MonoBehaviour
     public void StartFadeInFinalReturnBB(float duration)
     {
         FinalReturnBB.gameObject.SetActive(true);
+        _text_finalreturnButton.font = _fontManager.GetFont();
+        _text_finalreturnButton.text = LocalizationManager.Localize(_text_finalreturnButton.text);
         FinalReturnBB.transform.SetAsLastSibling();
         StartCoroutine(FadeInFinalReturnBB(duration));
     }

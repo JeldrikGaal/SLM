@@ -644,6 +644,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         this.transform.position = targetPosition; // Ensure card is at target position at the end
         this.transform.rotation = endRotation; // Ensure card rotation is 0 at the end
         SetTraceable(true);
+        if (draggingAvailable && _shouldScreenShakeOnDrop) DeckRef.FinalParentGO.GetComponent<ShakeUI>().StartShake();
     }
 
     public void ShowDropInfo(bool show, GameObject pOtherHitbox)
