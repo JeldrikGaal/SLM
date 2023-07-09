@@ -252,7 +252,8 @@ public class MenuManager : MonoBehaviour
         cam2.Priority = 15;
 
         yield return new WaitForSeconds(mapDelay);
-        
+
+        //SceneManager.LoadScene("MG1");
         sceneLoader.ActivateScene();
     }
 

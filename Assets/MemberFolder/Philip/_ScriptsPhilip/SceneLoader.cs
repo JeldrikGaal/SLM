@@ -34,4 +34,19 @@ public class SceneLoader : MonoBehaviour
     {
         asyncLoad.allowSceneActivation = true;
     }
+
+    public void SetPageIndex(int page)
+    {
+        GameManager.Instance.pageIndex = page;
+    }
+
+    public void CompleteMG2()
+    {
+        GameManager.Instance.minigame2Complete = true;
+    }
+    
+    public void CompleteMG1()
+    {
+        GameManager.Instance.minigame1Complete = true;
+    }
 }

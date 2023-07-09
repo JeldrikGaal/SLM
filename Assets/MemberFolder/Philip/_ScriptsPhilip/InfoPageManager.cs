@@ -17,12 +17,18 @@ public class InfoPageManager : MonoBehaviour
     public GameObject infoCard3;
     public GameObject infoCard4;
 
+    public GameObject cardPage1;
+    public GameObject cardPage2;
+    public GameObject cardPage3;
+
     public Sprite placeHolderImage;
 
     public MenuManager menuManager;
 
     private void Start()
     {
+        StartCoroutine(StartDelay());
+        
         if (ClickableStorage.Instance == null) {return;}
         StartCoroutine(AddInfoPagesCoroutine());
     }
@@ -31,8 +37,34 @@ public class InfoPageManager : MonoBehaviour
     {
         // Wait for a short delay to ensure the storage is properly initialized
         yield return new WaitForSeconds(0.1f);
-        
+
         CreateInfoPages();
+    }
+    
+    private IEnumerator StartDelay()
+    {
+        // Wait for a short delay to ensure the storage is properly initialized
+        yield return new WaitForSeconds(0.2f);
+
+        AddMG2Pages();
+    }
+
+    private void AddMG2Pages()
+    {
+        if (GameManager.Instance.minigame2Complete)
+        {
+            var newPage1 = Instantiate(cardPage1, book);
+            menuManager.pages.Add(newPage1);
+            
+            var newPage2 = Instantiate(cardPage2, book);
+            menuManager.pages.Add(newPage2);
+            
+            var newPage3 = Instantiate(cardPage3, book);
+            menuManager.pages.Add(newPage3);
+
+        }
+
+        menuManager.ShowCurrentPage();
     }
 
     private void CreateInfoPages()

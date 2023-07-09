@@ -7,33 +7,40 @@ public class MinigameManager : MonoBehaviour
 {
     private GameManager gm;
 
-    public GameObject scribble1, scribble2;
-
+    public List<GameObject> scribbles1 = new List<GameObject>();
+    public List<GameObject> scribbles2 = new List<GameObject>();
+    
     private void Start()
     {
         gm = GameManager.Instance;
     }
-
+    
     private void CheckCompletion()
     {
         if (gm.toggleMG1)
         {
-            scribble1.SetActive(false);
+            foreach (GameObject scribble in scribbles1)
+            {
+                scribble.SetActive(false);
+            }
         }
 
         if (gm.toggleMG2)
         {
-            scribble2.SetActive(false);
+            foreach (GameObject scribble in scribbles2)
+            {
+                scribble.SetActive(false);
+            }
         }
 
         if (gm.minigame1Complete)
         {
-            StartCoroutine(FadeOut(scribble1, 1));
+            StartCoroutine(FadeOut(scribbles1, 1));
         }
 
         if (gm.minigame2Complete)
         {
-            StartCoroutine(FadeOut(scribble2, 2));
+            StartCoroutine(FadeOut(scribbles2, 2));
         }
     }
 
@@ -44,13 +51,16 @@ public class MinigameManager : MonoBehaviour
         CheckCompletion();
     }
 
-    private IEnumerator FadeOut(GameObject minigame, int mg)
+    private IEnumerator FadeOut(List<GameObject> minigame, int mg)
     {
-        minigame.GetComponent<Animator>().SetTrigger("winGame");
-        
         yield return new WaitForSeconds(2);
+        
+        foreach (GameObject scribble in minigame)
+        {
+            scribble.GetComponent<Animator>().SetTrigger("winGame");
+        }
 
-        //
+        yield return new WaitForSeconds(2);
         
         if (mg == 1)
         {
