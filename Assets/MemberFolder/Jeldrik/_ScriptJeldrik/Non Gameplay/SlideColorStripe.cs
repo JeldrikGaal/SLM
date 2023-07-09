@@ -188,6 +188,8 @@ public class SlideColorStripe : MonoBehaviour
 
         Sequence seq = DOTween.Sequence();
 
+        //_moving = true;
+
         // Move Elements
         SlideElement(transform,distance, seq);
         SlideElement(_text1,distance, seq);

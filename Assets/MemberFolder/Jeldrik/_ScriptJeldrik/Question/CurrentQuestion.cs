@@ -100,11 +100,13 @@ public class CurrentQuestion : MonoBehaviour
 
     public void Forward()
     {
+        if (_sliding) return; 
         _qM.Forward();
     }
 
     public void Backward()
     {
+        if (_sliding) return; 
         _qM.Backward();
     }
 
