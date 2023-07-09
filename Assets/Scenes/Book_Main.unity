@@ -3425,7 +3425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.54901963}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3985,7 +3985,7 @@ GameObject:
   - component: {fileID: 413225366}
   - component: {fileID: 413225365}
   m_Layer: 5
-  m_Name: Title (2)
+  m_Name: BestGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4008,7 +4008,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 278.95, y: 163}
+  m_AnchoredPosition: {x: 277.48, y: 179}
   m_SizeDelta: {x: 492.75, y: 131.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &413225365
@@ -4031,7 +4031,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The Best Group
+  m_text: '- The Best Group -'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7522b7f9832013d458b8d330ae009676, type: 2}
   m_sharedMaterial: {fileID: -2853144949772449057, guid: 7522b7f9832013d458b8d330ae009676, type: 2}
@@ -4040,8 +4040,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280103798
-  m_fontColor: {r: 0.4627451, g: 0.2, b: 0.11372549, a: 1}
+    rgba: 4280232346
+  m_fontColor: {r: 0.6037736, g: 0.16169353, b: 0.12246352, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4064,7 +4064,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 2
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -7804,7 +7804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7168890305178761407, guid: bf811deba3bc22b43ae1f73a93fe2ae2, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7168890305178761407, guid: bf811deba3bc22b43ae1f73a93fe2ae2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10284,7 +10284,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 282.27002, y: 337.6}
+  m_AnchoredPosition: {x: 282.26, y: 275.04}
   m_SizeDelta: {x: 502.29, y: 92.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1484911934
@@ -10398,12 +10398,12 @@ GameObject:
   - component: {fileID: 1486221222}
   - component: {fileID: 1486221221}
   m_Layer: 5
-  m_Name: Title (1)
+  m_Name: Subtitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1486221220
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12829,7 +12829,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1707065295
 GameObject:
@@ -15635,7 +15635,7 @@ GameObject:
   - component: {fileID: 2028053676}
   - component: {fileID: 2028053675}
   m_Layer: 5
-  m_Name: Title (3)
+  m_Name: bottomtext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15658,8 +15658,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 282.26, y: -254.28}
-  m_SizeDelta: {x: 502.3, y: 187.67}
+  m_AnchoredPosition: {x: 282.26, y: -296}
+  m_SizeDelta: {x: 502.3, y: 151.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2028053675
 MonoBehaviour:
@@ -15681,7 +15681,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: legalize slavery
+  m_text: A CGL Student Project in collaboration with the Siegerlandmuseum
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c8e2e71a45fd0d34db5ca32795682656, type: 2}
   m_sharedMaterial: {fileID: -3808078736369377490, guid: c8e2e71a45fd0d34db5ca32795682656, type: 2}
