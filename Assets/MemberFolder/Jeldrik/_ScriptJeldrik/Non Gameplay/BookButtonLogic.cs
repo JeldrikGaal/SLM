@@ -41,6 +41,8 @@ public class BookButtonLogic : MonoBehaviour
 
     private bool _tutorial = true;
 
+    [SerializeField] private TMP_Text _tagText;
+
      
     
 
@@ -57,6 +59,8 @@ public class BookButtonLogic : MonoBehaviour
             _tH.LockInput();
             _cM._tutorialBlock = true;
         }
+
+        _tagText.text = LocalizationManager.Localize("BookButton");
 
     }
 
