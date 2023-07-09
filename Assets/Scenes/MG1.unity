@@ -9831,7 +9831,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 360, y: -365}
+  m_AnchoredPosition: {x: 360, y: -361}
   m_SizeDelta: {x: 765, y: 294}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1183931833
@@ -9856,7 +9856,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: a8c9b17476cf60645b5e967b75863b10, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -45635,9 +45635,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2075511005}
     - target: {fileID: 271976483, guid: f740ceb45edfc1a4cb6690d967a651c1, type: 3}
+      propertyPath: _signature
+      value: 
+      objectReference: {fileID: 21300000, guid: a8c9b17476cf60645b5e967b75863b10, type: 3}
+    - target: {fileID: 271976483, guid: f740ceb45edfc1a4cb6690d967a651c1, type: 3}
       propertyPath: _buttonImage
       value: 
       objectReference: {fileID: 1560941910}
+    - target: {fileID: 271976483, guid: f740ceb45edfc1a4cb6690d967a651c1, type: 3}
+      propertyPath: _unterschrift
+      value: 
+      objectReference: {fileID: 21300000, guid: 7c8c162b8a4c0f544816c65c6d28d179, type: 3}
     - target: {fileID: 271976483, guid: f740ceb45edfc1a4cb6690d967a651c1, type: 3}
       propertyPath: _currentQuestion
       value: 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Assets.SimpleLocalization;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -25,6 +26,10 @@ public class EndScreenLogic : MonoBehaviour
     private List<Image> _slotImages = new List<Image>();
     private List<TMP_Text> _slotText = new List<TMP_Text>();
 
+    [SerializeField] private Sprite _signature;
+    [SerializeField] private Sprite _unterschrift;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +39,18 @@ public class EndScreenLogic : MonoBehaviour
             _slotText.Add(_slots[i].GetComponentInChildren<TMP_Text>(true));
         }
         _buttonImageColorSave = _buttonImage.color;
+
+        if (LocalizationManager.Language.Contains("German"))
+        {
+            _fakeSignatureImage.sprite = _unterschrift;
+        }
+        else
+        {
+            _fakeSignatureImage.sprite = _signature;
+        }
+        {
+
+        }
     }
 
     // Update is called once per frame
