@@ -7,9 +7,41 @@ Symbol finden?","Where can you
 find this symbol?","Wo kannst du dieses
 Symbol finden?",
 ,,,,,
-Mg1.Q1Hint,Johan Mauritz van Nassau-Siegen is the owner of this palace called 'Vrijburg'. Find him to learn more!,"Johann Moritz von Nassau-Siegen ist der Inhaber dieses Palastes namens 'Vrijburg'. Finde ihn, um mehr zu erfahren!",Johan Maurits van Nassau-Siegen is the owner of this palace. Find him to learn more!,Dieser Palast hat Johann Moritz von Nassau-Siegen gehört! Finde ihn um mehr zu erfahren!,
-Mg1.Q2Hint,Hint mint 2,"Johann Moritz hat in seinem Palast in Brasilien zahlreiche renommierte Künstler und Wissenschaftler empfangen, die bis heute bekannt sind! Finde sie, um mehr zu erfahren!",Hint mint 2,Hint mint 2,
-Mg1.Q3Hint,"To demonstrate his influence, Johan Maurits marked his ""possessions"" with this symbol. This included not only objects but also enslaved individuals who were forced into unfree labor at his palace. Find them to learn more!","Als Zeichen seines Einflusses hat Johann Moritz seine ""Besitzümer"" mit seinem Symbol markiert. Dies schloss damals neben Objekten auch versklavte Personen ein, die zu unfreier Arbeit an seinem Palast gezwungen wurden. Finde sie, um mehr zu erfahren!","Johan Maurits used his symbol to mark ""things"" that he ""owned"". Besides objects, enslaved people that were forced to work at the palace were also branded with it. Find them to learn more!","Um zu zeigen, welche ""Dinge"" ihm ""gehörten"" hat Johann Moritz sie mit seinem Zeichen markiert. Damals wurden neben Gegenständen auch versklavte Personen, die gezwungen wurden für ihn zu arbeiten, mit diesem Zeichen gekennzeichnet. Finde sie um mehr zu erfahren!",
+Mg1.Q1Hint,"Johan Maurits van Nassau-Siegen is the owner of this palace called 'Vrijburg'. 
+
+Find him to learn more!","Johann Moritz von Nassau-Siegen ist der Inhaber dieses Palastes namens 'Vrijburg'. 
+
+Finde ihn, um mehr zu erfahren!","Johan Maurits van Nassau-Siegen is the owner of this palace. 
+
+Find him to learn more!","Dieser Palast hat Johann Moritz von Nassau-Siegen gehört! 
+
+Finde ihn, um mehr zu erfahren!",
+Mg1.Q2Hint,"Johan Maurits had many guests at his palace in brazil. 
+Many among them were renommated artists amd scientists that are still known today!
+
+Who looks like they might be a guest?","Johann Moritz hatte in seinem Palast in Brasilien zahlreiche Gäste.
+Darunter waren auch renommierte Künstler und Wissenschaftler, die bis heute bekannt sind! 
+
+Wer sieht so aus, als sei er zu Gast?","Johan Maurits had many guests at his palace in brazil. 
+Many among them were artists amd scientists that are still known today!
+
+Who looks like they might be a guest?","Johann Moritz hatte in seinem Palast in Brasilien viele Gäste.
+Darunter waren auch Künstler und Wissenschaftler, die bis heute bekannt sind! 
+
+Wer sieht so aus, als sei er zu Gast?",
+Mg1.Q3Hint,"To demonstrate his influence, Johan Maurits marked his ""possessions"" with this symbol. 
+This included not only objects but also enslaved individuals who were forced into unfree labor at his palace. 
+
+Find them to learn more!","Als Zeichen seines Einflusses hat Johann Moritz seine ""Besitzümer"" mit seinem Symbol markiert. 
+Dies schloss damals neben Objekten auch versklavte Personen ein, die zu unfreier Arbeit an seinem Palast gezwungen wurden. 
+
+Finde sie, um mehr zu erfahren!","Johan Maurits used his symbol to mark ""things"" that he ""owned"". 
+Besides objects, enslaved people that were forced to work at the palace were also branded with it. 
+
+Find them to learn more!","Um zu zeigen, welche ""Dinge"" ihm ""gehörten"" hat Johann Moritz sie mit seinem Zeichen markiert. 
+Damals wurden neben Gegenständen auch versklavte Personen, die gezwungen wurden für ihn zu arbeiten, mit diesem Zeichen gekennzeichnet. 
+
+Finde sie um mehr zu erfahren!",
 ,,,,,
 G0.Title,Enslaved Person,Versklavte Person,Enslaved Person,Versklavte Person,
 G0.Description,That is not a visitor. This is an enslaved person from Africa who is performing unfree labor in Johan Maurits's palace in the Dutch colony in Brazil.,"Das ist kein:e Besucher:in. Das ist eine versklavte Person aus Afrika, die in Johann Moritz' Palast in der niederländischen Kolonie in Brasilien unfreie Arbeit leistet.",That is not a visitor. It is an enslaved person from Africa who is being forced to work in Johan Maurits's palace in the Dutch colony in Brazil.,"Das ist kein:e Besucher:in. Das ist eine versklavte Person aus Afrika, die in Johann Moritz' Palast in der niederländischn Kolonie in Brasilien unfreie Arbeit leistet.",
@@ -199,9 +231,9 @@ Can you find all there is to discover? Have fun exploring and uncovering!","Entd
 
 Kannst du Alles finden? Viel Spaß beim Entdecken!",
 ,,,,,
-TutorialText1,Inspect the object by tapping it.,Untersuche das Objekt in dem du es antippst,Inspect the object by tapping it.,Untersuche das Objekt in dem du es antippst,
-TutorialText2,Move the camera by dragging.,Bewege die Kamera in dem du über den Bildschirm wischt ,Move the camera by dragging,Bewege die Kamera in dem du über den Bildschirm wischt,
-TutorialText3,"With this button, you can get back to the main menu",Hiermit kommst du zurück ins Hauptmenü,"With this button, you can get back to the main menu",Hiermit kommst du zurück ins Hauptmenü,
+TutorialText1,Inspect the object by tapping it.,Untersuche das Objekt in dem du es antippst.,Inspect the object by tapping it.,Untersuche das Objekt in dem du es antippst.,
+TutorialText2,Move the camera by dragging.,Ziehe die Kamera über das Bild.,Move the camera by dragging.,Ziehe die Kamera über das Bild.,
+TutorialText3,"With this button, you can return to the book!",Hiermit kommst du zurück zum Buch!,"With this button, you can return to the book!",Hiermit kommst du zurück zum Buch!,
 ,,,,,
 QuestionCompleted,Question Cleared!,Frage abgeschlossen!,Question Cleared!,Frage abgeschlossen!,
 ,,,,,
@@ -220,8 +252,8 @@ Book.No,I want to stay.,Ich möchte bleiben.,I want to stay.,Ich möchte bleiben
 ,,,,,
 TapAnywhere,Tap anywhere to continue,"Tippe irgendwo, um fortzufahren",Tap anywhere to continue,"Tippe irgendwo, um fortzufahren",
 ,,,,,
-PS.Tutorial1,Tap here to see what else you can find!,"Tippe hier, um zu sehen was du noch finden kannst!",Tap here to see what else you can find!,"Tippe hier, um zu sehen was du noch finden kannst!",
-PS.Tutorial2,Here  you see the questions objectives or sum,?????????????????????????????????????????????????,Here  you see the questions objectives or sum,Here  you see the questions objectives or sum,
+PS.Tutorial1,Tap here to see what else you can find!,"Tippe hier, um zu sehen, was du noch finden kannst!",Tap here to see what else you can find!,"Tippe hier, um zu sehen, was du noch finden kannst!",
+PS.Tutorial2,Tap here for more context to the current question,Tippe hier für mehr informationen zur aktuellen Frage.,Tap here for more context to the current question,Tippe hier für mehr informationen zur aktuellen Frage.,
 ,,,,,
 Final.Question,You cleared all questions! Do you want to go back to the book?,Du hast alle Fragen abgeschlossen! Möchtest du zum Buch zurückkehren?,You cleared all questions! Do you want to go back to the book?,Du hast alle Fragen abgeschlossen! Möchtest du zum Buch zurückkehren?,
 Final.Yes,"Yes, take me back to the book!",Ich möchte zurück zum Buch.,"Yes, take me back to the book!",Ich möchte zurück zum Buch!,

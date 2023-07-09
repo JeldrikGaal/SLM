@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 09d6282fc36825c4883814a7bc014f5d
+guid: d29086e2ae872c54f8a9b43163ec32c2
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,9 +9,9 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - JMH Typewriter
+  - Redacted Script
   fallbackFontReferences:
-  - {fileID: 12800000, guid: 66ea20b3931668040bec0249c4e3652b, type: 3}
+  - {fileID: 12800000, guid: f0699a6519622cb4192abc078c269a32, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

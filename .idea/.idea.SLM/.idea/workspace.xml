@@ -6,16 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="58850cd5-8d2e-4765-8fce-206cb2b23995" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SLM/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SLM/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Animations/mg1Confirm.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Animations/mg1Confirm.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Animations/mg1disappear.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Animations/mg1disappear.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Scenes/Book.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Scenes/Book.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/mg1Confirm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/mg1Confirm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Fonts/JMH Typewriter SDF.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Fonts/JMH Typewriter SDF.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Fonts/JMH Typewriter.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Fonts/JMH Typewriter.otf.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Book_Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Book_Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestPhilip.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestPhilip.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/Localization/Menu.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/Localization/Menu.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +27,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/InfoCard.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/InfoPage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/LanguageManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/OptionsManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/SceneLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/mg1Confirm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/minigameStuff.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
@@ -148,6 +142,8 @@
       <workItem from="1688503930924" duration="5887000" />
       <workItem from="1688554483787" duration="11495000" />
       <workItem from="1688719979112" duration="950000" />
+      <workItem from="1688856772344" duration="1000" />
+      <workItem from="1688893869508" duration="595000" />
     </task>
     <servers />
   </component>
