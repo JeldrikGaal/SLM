@@ -158,6 +158,13 @@ public class ClickableManager : MonoBehaviour
                 return true;
             }
         }
+        foreach(PopUp p in _halfPagePopUps)
+        {
+            if (p.gameObject.activeInHierarchy)
+            {
+                return true;
+            }
+        }
         return false;
     }
 
