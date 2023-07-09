@@ -261,5 +261,22 @@ public class MenuManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void ResetGame()
+    {
+        //Clickable Storage reset
+        GameObject storage = GameObject.FindWithTag("ClickableStorage");
+        Destroy(storage);
+        
+        GameManager.Instance.Reset();
+
+        for (int i = pages.Count - 1; i >= 3; i--)
+        {
+            pages.RemoveAt(i);
+        }
+        
+        ShowCurrentPage();
+        
+    }
     
 }

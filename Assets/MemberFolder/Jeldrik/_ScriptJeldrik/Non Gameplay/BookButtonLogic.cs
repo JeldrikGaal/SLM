@@ -19,6 +19,7 @@ public class BookButtonLogic : MonoBehaviour
     [SerializeField] private SlideColorStripe _colorStripe;
     [SerializeField] private MG1Tutorial _tutorialManager;
     [SerializeField] private QuestionManager _qM;
+    [SerializeField] private SceneLoader _sceneLoader;
     private float _repeatStartTime;
     private float _repeatTimer;
     private bool _repeating;
@@ -204,7 +205,12 @@ public class BookButtonLogic : MonoBehaviour
     {
         DisableStuff();
         _tutorialManager.Done = true;
-        SceneManager.LoadScene("Book_Main");
+        //SceneManager.LoadScene("Book_Main");
+        
+        //activate loaded scene from scene manager
+        _sceneLoader.ActivateScene();
+        _sceneLoader.SetPageIndex(0);
+        
         if (_qM == null)
         {
             _qM = GameObject.FindGameObjectWithTag("QuestionMenu").GetComponent<QuestionManager>();

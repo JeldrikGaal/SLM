@@ -21,6 +21,7 @@ public class EndScreenLogic : MonoBehaviour
     [SerializeField] private Image _blockEverythingElse;
     [SerializeField] private GameObject _currentQuestion;
     [SerializeField] private GameObject _progressionSystem;
+    [SerializeField] private SceneLoader _sceneLoader;
     private Color _buttonImageColorSave;
 
     private List<Image> _slotImages = new List<Image>();
@@ -134,7 +135,10 @@ public class EndScreenLogic : MonoBehaviour
 
     private void InvokeLeaveScene()
     {
-        SceneManager.LoadScene("Book_Main");
+        _sceneLoader.ActivateScene();
+        _sceneLoader.SetPageIndex(2);
+        _sceneLoader.CompleteMG1();
+        //SceneManager.LoadScene("Book_Main");
     }
 
     private bool ContainsHolder(ClickableHolder cH)

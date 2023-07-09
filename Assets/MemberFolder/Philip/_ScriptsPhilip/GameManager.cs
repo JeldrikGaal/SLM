@@ -54,4 +54,13 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("MG1");
         }
     }
+
+    public void Reset()
+    {
+        minigame1Complete = false;
+        minigame2Complete = false;
+        toggleMG1 = false;
+        toggleMG2 = false;
+        pageIndex = 0;
+    }
 }
