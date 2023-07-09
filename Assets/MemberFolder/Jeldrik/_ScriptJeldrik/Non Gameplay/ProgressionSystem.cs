@@ -45,8 +45,11 @@ public class ProgressionSystem : MonoBehaviour
 
     // Tutorial section
     private bool _effect1Running;
+    private bool _effect2Running;
     private float _effect1StartTime;
+    private float _effect2StartTime;
     [SerializeField] private float _effect1RepeatTime;
+    [SerializeField] private float _effect2RepeatTime;
     [SerializeField] private float _effect1SegTime;
     [SerializeField] private GameObject _tutorialButton;
     private bool _step2Running;
@@ -141,14 +144,18 @@ public class ProgressionSystem : MonoBehaviour
         {
             TutorialEffect1();
         }
-        if (_step2Running && Time.time - _step2StartingTime > _step2BlockTime)
+        if (_effect2Running && Time.time - _effect2StartTime > _effect2RepeatTime)
+        {
+            TutorialEffect2();
+        }
+        /*if (_step2Running && Time.time - _step2StartingTime > _step2BlockTime)
         {
             if (Input.touchCount > 0 || Input.GetMouseButtonDown(0)) 
             {
                 EndTutorial();
             }
            
-        }
+        }*/
 
         // Hint button
         if (_found.Count > 0)
@@ -375,6 +382,12 @@ public class ProgressionSystem : MonoBehaviour
         }
         if (toggle)
         {
+            // Prevent sliding out if its already out
+            if (Vector3.Distance(parent.transform.localPosition, parentPos) > 1f )
+            {
+                return;
+            }
+
             int i = 0;
             Sequence seq = DOTween.Sequence();
             // Moving Parent
@@ -388,20 +401,37 @@ public class ProgressionSystem : MonoBehaviour
             {
                 distance = spacing * ( content.Count - 2 );
             }
-            float newX = parent.transform.localPosition.x - distance;
-            seq.Insert(0, parent.transform.DOLocalMoveX(newX, time));
-
-            // Scaling slots
-            foreach (GameObject g in slots)
+            
+            Debug.Log(distance);
+            if (distance == 0)
             {
-                if (i > 0 && content[i] != _emptyHolder)
-                {
-                    g.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-                    g.SetActive(true);
-                    seq.Insert(0.25f, g.transform.DOScale(Vector3.one, time));
-                } 
-                i++;
+                float newX = parent.transform.localPosition.x - 60;
+                // Effect for clicking on the empty slider
+                seq.Insert(0, parent.transform.DOLocalMoveX(newX, 0.5f));
+                seq.Insert(0.5f, parent.transform.DOLocalMoveX(parentPos.x, 0.5f));
+
             }
+            else 
+            {
+                float newX = parent.transform.localPosition.x - distance;
+                // Effect when there is a hidden object to see
+                seq.Insert(0, parent.transform.DOLocalMoveX(newX, time));
+                // Scaling slots
+                foreach (GameObject g in slots)
+                {
+                    if (i > 0 && content[i] != _emptyHolder)
+                    {
+                        g.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+                        g.SetActive(true);
+                        seq.Insert(0.25f, g.transform.DOScale(Vector3.one, time));
+                    } 
+                    i++;
+                }
+            }
+
+           
+
+            
             
         }
         else 
@@ -435,6 +465,12 @@ public class ProgressionSystem : MonoBehaviour
     {
         Debug.Log("SSIO");
         ClickableHolder cH = ScriptableObject.CreateInstance("ClickableHolder") as ClickableHolder;
+
+        if (_step2Running)
+        {   
+            EndTutorial();
+        }
+
         //ClickableHolder cH;
         if (_qM.GetCurrentQuestionId() == 0)
         {
@@ -487,6 +523,15 @@ public class ProgressionSystem : MonoBehaviour
         //seq.Append( _toBeFoundParent.transform.DOLocalMoveX(newX, _effect1SegTime) );
         //seq.Append( _toBeFoundParent.transform.DOLocalMoveX(_toBeFoundParentPos.x, _effect1SegTime) );
     }
+    private void TutorialEffect2()
+    {
+        _effect2StartTime = Time.time;
+        Sequence seq = DOTween.Sequence();
+        seq.SetEase(Ease.InOutSine);
+        float newX = _foundParent.transform.localPosition.x - 90;
+        seq.Append( _foundParent.transform.DOLocalMoveX(newX, _effect1SegTime) );
+        seq.Append( _foundParent.transform.DOLocalMoveX(_foundParentPos.x, _effect1SegTime) );
+    }
 
     public void EndTutrialEffect1()
     {
@@ -494,12 +539,13 @@ public class ProgressionSystem : MonoBehaviour
         ToggleBar(false, true);
         _tutorialButton.SetActive(false);
         _effect1Running = false;
-        Invoke("EndTutorial", 1f);
+        Invoke("StartTutorialStep2", 1f);
     }
 
     private void StartTutorialStep2()
     {
         _step2Running = true;
+        _effect2Running = true;
         _tutorialManager.EnablePopUp(0.75f, "PS.Tutorial2");
         _tutorialManager.MovePopUp();
     }
@@ -507,7 +553,8 @@ public class ProgressionSystem : MonoBehaviour
     private void EndTutorial()
     {
         _step2Running = false;
-        //_tutorialManager.DisablePopUp(0.75f);
+        _effect2Running = false;
+        _tutorialManager.DisablePopUp(0.75f);
         _tH.UnlockInput();
         _cM._tutorialBlock = false;
     }

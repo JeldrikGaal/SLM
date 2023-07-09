@@ -45887,6 +45887,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 812729001}
     - target: {fileID: 1903992363, guid: f740ceb45edfc1a4cb6690d967a651c1, type: 3}
+      propertyPath: _effect2RepeatTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1903992363, guid: f740ceb45edfc1a4cb6690d967a651c1, type: 3}
       propertyPath: _foundSlots.Array.data[0]
       value: 
       objectReference: {fileID: 855675032}
