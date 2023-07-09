@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: I8 Ivory Chair
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: ca6ffdd2890240546b76c6d01e105c94, type: 3}
-  ProgressionImage: {fileID: 21300000, guid: ca6ffdd2890240546b76c6d01e105c94, type: 3}
+  ProgressionImage: {fileID: 21300000, guid: 62bfaf0d2f2c6844ca7ddbb27c263f38, type: 3}
   Title: Ivory Chair
   Description: 'Johan Maurits used this symbol to mark his "possessions".
 
@@ -32,3 +32,4 @@ MonoBehaviour:
   guest: 0
   slave: 0
   info: 1
+  StartAnimation: 0

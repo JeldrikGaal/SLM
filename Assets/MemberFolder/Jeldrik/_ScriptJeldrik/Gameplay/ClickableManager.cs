@@ -15,6 +15,7 @@ public class ClickableManager : MonoBehaviour
     [SerializeField] public QuestionManager _qM;
     [SerializeField] public Image _grayScaleImage;
     [SerializeField] public List<PopUp> _popUps = new List<PopUp>();
+    [SerializeField] public List<PopUp> _halfPagePopUps = new List<PopUp>();
     
     [SerializeField] private SlideColorStripe _colorStripe;
     private Transform _grayScaleParentSafe;
@@ -79,8 +80,8 @@ public class ClickableManager : MonoBehaviour
             {
                 if (C == _tutorialManager._exampleClickable || cH.LocalizationKey.Contains('S') )
                 {
-                    int ran2 = Random.Range(2, _popUps.Count);
-                    DisplayPopUp(cH, _popUps[ran2]);
+                    int ran2 = Random.Range(0, _halfPagePopUps.Count);
+                    DisplayPopUp(cH, _halfPagePopUps[ran2]);
                     return true;
                 }
                 int ran = Random.Range(2, _popUps.Count);
@@ -113,8 +114,8 @@ public class ClickableManager : MonoBehaviour
             // All small ones
             else 
             {
-                int ran = Random.Range(2, _popUps.Count);
-                DisplayPopUp(cH, _popUps[ran]);
+                int ran = Random.Range(0, _halfPagePopUps.Count);
+                DisplayPopUp(cH, _halfPagePopUps[ran]);
                 return true;
             }
         }
