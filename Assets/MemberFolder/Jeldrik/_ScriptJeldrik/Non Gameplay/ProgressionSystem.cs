@@ -56,6 +56,8 @@ public class ProgressionSystem : MonoBehaviour
     private float _step2StartingTime;
     [SerializeField] private float _step2BlockTime;
     private bool _tutorialRan;
+    private Sequence effect1Seq;
+    private Sequence effect2Seq;
     
     [SerializeField] private MG1Tutorial _tutorialManager;
     [SerializeField] public GameObject _topButton;
@@ -512,27 +514,33 @@ public class ProgressionSystem : MonoBehaviour
         _tutorialManager.MovePopUp();
         _effect1Running = true;
         _tutorialButton.SetActive(true);
+        // Toggling the grayscale fake effect 
+        Image _grayScaleImage = _cM._grayScaleImage;
+        _grayScaleImage.enabled = true;
+        _grayScaleImage.color = new Color(_grayScaleImage.color.r, _grayScaleImage.color.g, _grayScaleImage.color.b, 0);
+        Color fade = new Color(_grayScaleImage.color.r, _grayScaleImage.color.g, _grayScaleImage.color.b, 0.8f);
+        _grayScaleImage.DOColor(fade, _VC.PopUp_AnimSpeed);
     }
 
     private void TutorialEffect1()
     {
         _effect1StartTime = Time.time;
-        Sequence seq = DOTween.Sequence();
-        seq.SetEase(Ease.InOutSine);
+        effect1Seq = DOTween.Sequence();
+        effect1Seq.SetEase(Ease.InOutSine);
         float newX = _toBeFoundParent.transform.localPosition.x - 90;
-        seq.Append( _toBeFoundParent.transform.DOLocalMoveX(newX, _effect1SegTime) );
-        seq.Append( _toBeFoundParent.transform.DOLocalMoveX(_toBeFoundParentPos.x, _effect1SegTime) );
+        effect1Seq.Append( _toBeFoundParent.transform.DOLocalMoveX(newX, _effect1SegTime) );
+        effect1Seq.Append( _toBeFoundParent.transform.DOLocalMoveX(_toBeFoundParentPos.x, _effect1SegTime) );
         //seq.Append( _toBeFoundParent.transform.DOLocalMoveX(newX, _effect1SegTime) );
         //seq.Append( _toBeFoundParent.transform.DOLocalMoveX(_toBeFoundParentPos.x, _effect1SegTime) );
     }
     private void TutorialEffect2()
     {
         _effect2StartTime = Time.time;
-        Sequence seq = DOTween.Sequence();
-        seq.SetEase(Ease.InOutSine);
+        effect2Seq = DOTween.Sequence();
+        effect2Seq.SetEase(Ease.InOutSine);
         float newX = _foundParent.transform.localPosition.x - 90;
-        seq.Append( _foundParent.transform.DOLocalMoveX(newX, _effect1SegTime) );
-        seq.Append( _foundParent.transform.DOLocalMoveX(_foundParentPos.x, _effect1SegTime) );
+        effect2Seq.Append( _foundParent.transform.DOLocalMoveX(newX, _effect1SegTime) );
+        effect2Seq.Append( _foundParent.transform.DOLocalMoveX(_foundParentPos.x, _effect1SegTime) );
     }
 
     public void EndTutrialEffect1()
@@ -557,6 +565,9 @@ public class ProgressionSystem : MonoBehaviour
         _step2Running = false;
         _effect2Running = false;
         _tutorialManager.DisablePopUp(0.75f);
+        Image _grayScaleImage = _cM._grayScaleImage;
+        Color fade = new Color(_grayScaleImage.color.r, _grayScaleImage.color.g, _grayScaleImage.color.b, 0);
+        _grayScaleImage.DOColor(fade, _VC.PopUp_AnimSpeed);
         _tH.UnlockInput();
         _cM._tutorialBlock = false;
     }
