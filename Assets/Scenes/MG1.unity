@@ -5156,7 +5156,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &563922904
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5867,7 +5867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &631950959
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6441,7 +6441,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -769.8, y: 296.8}
+  m_AnchoredPosition: {x: -769.8, y: 297.1}
   m_SizeDelta: {x: 581, y: 487}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &758722163
@@ -15209,7 +15209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1582991263
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16588,7 +16588,7 @@ RectTransform:
   m_GameObject: {fileID: 1706945926}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
+  m_LocalScale: {x: 0.39, y: 0.39, z: 0.39}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 631950959}
@@ -16596,7 +16596,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 549, y: 380}
+  m_AnchoredPosition: {x: 893, y: 457.1}
   m_SizeDelta: {x: 528, y: 613}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1706945928
@@ -17333,7 +17333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1825881234
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20467,6 +20467,14 @@ PrefabInstance:
     - target: {fileID: 70780733498442951, guid: 4f3be7cdd7480ce4c8317e212f0c4a71, type: 3}
       propertyPath: RepetetionTime
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 70780733498442951, guid: 4f3be7cdd7480ce4c8317e212f0c4a71, type: 3}
+      propertyPath: Misc_WaitTime_InputReminder
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 70780733498442951, guid: 4f3be7cdd7480ce4c8317e212f0c4a71, type: 3}
+      propertyPath: Misc_SecondWaitTime_InputReminder
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f3be7cdd7480ce4c8317e212f0c4a71, type: 3}

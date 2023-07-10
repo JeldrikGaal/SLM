@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using DG.Tweening;
+using Assets.SimpleLocalization;
+
 public class ReminerPopUp : MonoBehaviour
 {
     #region References
@@ -22,7 +24,7 @@ public class ReminerPopUp : MonoBehaviour
     void Start()
     {
         _title.text = _holder.Title;
-        _content.text = _holder.Content;
+        _content.text = LocalizationManager.Localize(_holder.LocalizationKey);
         
         // Set correct font 
         _fontManager = GameObject.FindWithTag("FontManager").GetComponent<FontManager>();

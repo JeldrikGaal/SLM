@@ -11,4 +11,5 @@ public class ReminderPopUpHolder : ScriptableObject
     public string Title;
     public string Content;
     public float LifeTime;
+    public string LocalizationKey;
 }

@@ -124,13 +124,27 @@ public class TouchHandler : MonoBehaviour
 
     void Update()
     {
+       
+        ReminderLogic();
+
         // Prevents any input when the handler is locked
         if (locked) return;
 
         #region Wrong Input particle Logic
 
+
         if (Input.touchCount > 0)
         {
+            // Logging last input time
+             if (Input.GetTouch(0).phase.Equals(TouchPhase.Began))
+            {
+                LogInputTime();
+            }
+            if (Input.GetMouseButtonDown(0))
+            {
+                LogInputTime();
+            }
+
             if (!_dragged && Mathf.Abs(_cameraDrag._currentDragMoveDist) > 0.1f)
             {
                 _dragged = true;
@@ -215,7 +229,7 @@ public class TouchHandler : MonoBehaviour
         }
         #endregion
 
-        ReminderLogic();
+
     }
 
     // Legacy functions -> replaced by leantouch package
@@ -257,7 +271,7 @@ public class TouchHandler : MonoBehaviour
     private void SpawnInputReminder()
     {
         GameObject temp = Instantiate(_inputReminderObject, _canvas.transform);
-        temp.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + Camera.main.orthographicSize * _VC.PopUp_Reminder_Pos, temp.transform.position.z);
+        temp.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + Camera.main.orthographicSize * (_VC.PopUp_Reminder_Pos * 0.01f), temp.transform.position.z);
         temp.GetComponent<ReminerPopUp>().Show();
     }
     #endregion
@@ -283,7 +297,7 @@ public class TouchHandler : MonoBehaviour
     #endregion
 
     #region Input helper
-    private void LogInputTime()
+    public void LogInputTime()
     {
         _lastInputTime = Time.time;
     }

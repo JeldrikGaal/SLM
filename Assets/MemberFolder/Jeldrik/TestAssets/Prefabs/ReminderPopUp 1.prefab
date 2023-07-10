@@ -99,5 +99,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: ReminderPopUp 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7636297327256846339, guid: a6fa90edf154d7d4797d03582a5ddd5f, type: 3}
+      propertyPath: m_fontSize
+      value: 10.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636297327256846339, guid: a6fa90edf154d7d4797d03582a5ddd5f, type: 3}
+      propertyPath: m_margin.w
+      value: 9.047424
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636297327256846339, guid: a6fa90edf154d7d4797d03582a5ddd5f, type: 3}
+      propertyPath: m_margin.x
+      value: 14.183533
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636297327256846339, guid: a6fa90edf154d7d4797d03582a5ddd5f, type: 3}
+      propertyPath: m_margin.z
+      value: 13.088867
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636297327256846339, guid: a6fa90edf154d7d4797d03582a5ddd5f, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636297327256846340, guid: a6fa90edf154d7d4797d03582a5ddd5f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636297327256846340, guid: a6fa90edf154d7d4797d03582a5ddd5f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 13.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636297327382615262, guid: a6fa90edf154d7d4797d03582a5ddd5f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6fa90edf154d7d4797d03582a5ddd5f, type: 3}

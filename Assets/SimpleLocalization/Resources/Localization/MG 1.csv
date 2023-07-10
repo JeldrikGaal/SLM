@@ -260,3 +260,6 @@ Final.Yes,"Yes, take me back to the book!",Ich möchte zurück zum Buch.,"Yes, t
 Final.No,No I want to continue!,Ich möchte bleiben.,No I want to continue!,Ich möchte bleiben.,
 ,,,,,
 BookButton,Book,Buch,Book,Buch,
+,,,,,
+MG1.InputReminder1,Tap anywhere to continue,Klick um fortzufahren,Tap anywhere to continue,Klick um fortzufahren,
+MG1.AfkReminder,Are you still playing?,Spielst du noch?,Are you still playing?,Spielst du noch?,
