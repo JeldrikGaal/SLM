@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S6 Zacharias Wagner
   m_EditorClassIdentifier: 
   Image: {fileID: 0}
+  ProgressionImage: {fileID: 0}
   Title: 
   Description: 
   BookInfo: 
@@ -23,6 +24,7 @@ MonoBehaviour:
   LocalizationKey: S6
   swirlMod: 1
   johann: 0
-  guest: 1
+  guest: 0
   slave: 0
   info: 0
+  StartAnimation: 0
