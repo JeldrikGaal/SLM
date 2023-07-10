@@ -9,6 +9,8 @@ public class InfoPageManager : MonoBehaviour
     public List<GameObject> infoPagePrefabs;
     public GameObject infoPagePrefab;
 
+    private bool toggled = false;
+
     public GameObject johannPage;
 
     public Transform book;
@@ -40,10 +42,16 @@ public class InfoPageManager : MonoBehaviour
 
         CreateInfoPages();
 
-        if (GameManager.Instance.minigame1Complete)
+        if (ClickableStorage.Instance._clickedQuestion.Count > 0)
         {
-            menuManager.infoPopup.SetActive(true);
+            if (GameManager.Instance.minigame1Complete && !toggled)
+            {
+                //menuManager.infoPopup.SetActive(true);
+                toggled = true;
+            }
         }
+        
+        
         
     }
     

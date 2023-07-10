@@ -35,12 +35,13 @@ public class MinigameManager : MonoBehaviour
             }
         }
 
-        if (gm.minigame1Complete)
+        
+        if (gm.minigame1Complete && !gm.toggleMG1)
         {
             StartCoroutine(FadeOut(scribbles1, 1));
         }
 
-        if (gm.minigame2Complete)
+        if (gm.minigame2Complete && !gm.toggleMG2)
         {
             StartCoroutine(FadeOut(scribbles2, 2));
         }
