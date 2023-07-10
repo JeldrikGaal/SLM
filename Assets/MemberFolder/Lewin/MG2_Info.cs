@@ -37,8 +37,13 @@ public class MG2_Info : MonoBehaviour
     [SerializeField] private TMP_Text _text_bb;
     [SerializeField] private TMP_Text _text_tapanywhere;
     [SerializeField] private TMP_Text _text_finalreturnButton;
+    [SerializeField] private TMP_Text _text_gg;
     private FontManager _fontManager;
     [SerializeField] private float _orangeFadeDuration = 0.7f;
+    
+    public Image imageToMoveFinalPaper; // The Image to move
+    public float moveDistanceFinalPaper = -100f; // The distance to move the image to the left. Negative values for leftward movement.
+    public float durationFinalPaper = 1f; // The duration of the movement in seconds
     
     private void Start()
     {
@@ -87,6 +92,9 @@ public class MG2_Info : MonoBehaviour
 
         _text_backtobookbutton.font = _fontManager.GetFont();
         _text_backtobookbutton.text = LocalizationManager.Localize("BookButton");
+        
+        _text_gg.font = _fontManager.GetFont();
+        _text_gg.text = LocalizationManager.Localize("CongratsMG2");
     }
 
     public void Continue_1()
@@ -436,13 +444,13 @@ public class MG2_Info : MonoBehaviour
     private IEnumerator ShowFinalButtonAfterTime()
     {
         yield return new WaitForSeconds(3f);
-        ShowFinalButton();
+        StartMovingFinalPaper();
     }
 
-    private void ShowFinalButton()
-    {
-        StartFadeInFinalReturnBB(1f);
-    }
+    //private void ShowFinalButton()
+    //{
+    //    StartFadeInFinalReturnBB(1f);
+    //}
 
     public void ShowFinalButtonAdjusted()
     {
@@ -450,4 +458,34 @@ public class MG2_Info : MonoBehaviour
     }
 
     
+    
+    
+    
+    public void StartMovingFinalPaper()
+    {
+        StartCoroutine(MoveFinalPaperToTop());
+        _text_finalreturnButton.font = _fontManager.GetFont();
+        _text_finalreturnButton.text = LocalizationManager.Localize(_text_finalreturnButton.text);
+        FinalReturnBB.transform.SetAsLastSibling();
+    }
+
+    IEnumerator MoveFinalPaperToTop()
+    {
+        Vector3 startPosition = imageToMoveFinalPaper.rectTransform.localPosition;
+        Vector3 targetPosition = new Vector3(startPosition.x, startPosition.y + moveDistanceFinalPaper, startPosition.z);
+        float startTime = Time.time;
+
+        while (Time.time < startTime + durationFinalPaper)
+        {
+            float t = (Time.time - startTime) / durationFinalPaper; // Normalized time between 0 and 1
+            t = Mathf.SmoothStep(0.0f, 1.0f, t); // Apply easing
+            imageToMoveFinalPaper.rectTransform.localPosition = Vector3.Lerp(startPosition, targetPosition, t);
+            yield return null;
+        }
+
+        // Ensure the image ends exactly at the target position.
+        imageToMoveFinalPaper.rectTransform.localPosition = targetPosition;
+    }
+
+
 }
