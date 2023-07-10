@@ -16,15 +16,15 @@ public class SwipeController : MonoBehaviour
     
     void OnEnable()
     {
-        LeanTouch.OnFingerSwipe += SwipeHandler;
-        LeanTouch.OnFingerUpdate += HoldHandler;
+        //LeanTouch.OnFingerSwipe += SwipeHandler;
+        //LeanTouch.OnFingerUpdate += HoldHandler;
         LeanTouch.OnFingerUp += ReleaseHandler;
     }
 
     void OnDisable()
     {
-        LeanTouch.OnFingerSwipe -= SwipeHandler;
-        LeanTouch.OnFingerUpdate -= HoldHandler;
+        //LeanTouch.OnFingerSwipe -= SwipeHandler;
+        //LeanTouch.OnFingerUpdate -= HoldHandler;
         LeanTouch.OnFingerUp -= ReleaseHandler;
     }
 
