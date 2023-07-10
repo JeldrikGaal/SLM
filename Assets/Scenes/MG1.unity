@@ -20450,15 +20450,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 70780733498442951, guid: 4f3be7cdd7480ce4c8317e212f0c4a71, type: 3}
       propertyPath: Glow_Color.b
-      value: 0
+      value: 0.5372549
       objectReference: {fileID: 0}
     - target: {fileID: 70780733498442951, guid: 4f3be7cdd7480ce4c8317e212f0c4a71, type: 3}
       propertyPath: Glow_Color.g
-      value: 0
+      value: 0.84705883
       objectReference: {fileID: 0}
     - target: {fileID: 70780733498442951, guid: 4f3be7cdd7480ce4c8317e212f0c4a71, type: 3}
       propertyPath: Glow_Color.r
-      value: 1
+      value: 0.93333334
       objectReference: {fileID: 0}
     - target: {fileID: 70780733498442951, guid: 4f3be7cdd7480ce4c8317e212f0c4a71, type: 3}
       propertyPath: Do_Glow_Effect
@@ -45512,7 +45512,7 @@ PrefabInstance:
     - target: {fileID: 2736865359859063183, guid: 94e8be5d8f93b5a49887bfe09572f9ef, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 5b8b68f8dcc232c4784d719691836739, type: 3}
+      objectReference: {fileID: 21300000, guid: 10dc42a7b5528d241a09cc6bbcaf88fe, type: 3}
     - target: {fileID: 2736865359859063183, guid: 94e8be5d8f93b5a49887bfe09572f9ef, type: 3}
       propertyPath: m_Color.a
       value: 0
@@ -45878,6 +45878,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1416376103}
     m_Modifications:
+    - target: {fileID: 5992559916481397709, guid: 96570ab8591c2ca41812d524580d232b, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5992559916481397710, guid: 96570ab8591c2ca41812d524580d232b, type: 3}
       propertyPath: m_Name
       value: S5 Pieter Post
