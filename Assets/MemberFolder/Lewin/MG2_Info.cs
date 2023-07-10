@@ -84,8 +84,9 @@ public class MG2_Info : MonoBehaviour
         
         _text_tapanywhere.font = _fontManager.GetFont();
         _text_tapanywhere.text = LocalizationManager.Localize(_text_tapanywhere.text);
-        
 
+        _text_backtobookbutton.font = _fontManager.GetFont();
+        _text_backtobookbutton.text = LocalizationManager.Localize("BookButton");
     }
 
     public void Continue_1()
