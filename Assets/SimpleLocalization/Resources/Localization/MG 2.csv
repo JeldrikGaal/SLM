@@ -1,7 +1,6 @@
 Key,English,German,Simplified English,Simplified German
-D1.1_BrokenShip,"Johan Maurits talked about a broken ship for sale by the slave trading company he works for in a conver-
-sation with his right-hand man!","In einem Gespräch mit einem engen Mitarbeiter hat Johann Moritz über den Verkauf eines beschädig-ten Schiffes ge-redet. Verkauft wird es von der Handelsgesell-schaft, für die er arbeitet.",Johan Maurits was talking about a broken ship to an em-ployee. ,Johann Moritz hat mit seinem Mitarbeiter über ein kaputtes Schiff geredet.
-D1.2_GasparInfo,"""I received im-portant infor-mation for that scam idea I had the other day."" 
+D1.1_BrokenShip,Johan Maurits talked about a broken ship for sale by the slave trading company he works for in a con-versation with his right-hand man!,"In einem Gespräch mit einem engen Mitarbeiter hat Johann Moritz über den Verkauf eines beschädig-ten Schiffes ge-redet. Verkauft wird es von der Handelsgesell-schaft, für die er arbeitet.",Johan Maurits was talking about a broken ship to an em-ployee. ,Johann Moritz hat mit seinem Mitarbeiter über ein kaputtes Schiff geredet.
+D1.2_GasparInfo,"""I received impor-tant information for that scam idea I had the other day."" 
 
 - Gaspar Dias, a merchant who <b>worked closely</b> with Johan Mau-rits.","""Ich habe wich-tige Informatio-nen erhalten, die für meine Be-trugsidee helfen könnten!""
 
@@ -12,15 +11,19 @@ Das kann ich dann für meine ille-galen Geschäfte benutzen!""
 
 - sagte Gaspar Dias, ein Händler der <b>für Johann Moritz gear-beitet</b> hat."
 D1.3_FixedShip,"This ship was recently sold by the WIC to some <b>merchant</b> guy. 
-I heard they had to fix it up! It is leaving Re-cife as a por-tuguese vessel for Africa to-morrow. ","Dieses Schiff wurde neulich von der WIC an irgendeinen <b>Händler</b> verkauft und musste re-pariert werden. 
+
+I heard they had to fix it up! It is leaving Recife as a Portuguese ves-sel for Africa tomorrow. ","Dieses Schiff wurde neulich von der WIC an irgendeinen <b>Händler</b> verkauft und musste re-pariert werden. 
 
 Morgen fährt es unter portugie-sischer Flagge von Recife nach Afrika.","This ship was broken, but then it was sold to a Portuguese <b>mer-chant</b>. 
 
 Tomorrow it's going to leave Brazil to go to Africa!","Diese Schiff war kaputt, wurde dann aber an ei-nen portugie-sischen <b>Händler</b> verkauft. 
 
 Morgen fährt es von Brasilien nach Afrika!"
-D1.4_Antonio,"""I only agreed to steer the 'Diemen' to get Gaspar Dias’ fa-vor. But as soon as I meet an of-ficial, I will tell them he is a fraud!""
-- Antonio Macha-do, Portuguese <b>Captain</b>","""Ich habe nur für eine Empfehlung von Dias einge-willigt, die 'Die-men' zu steu-ern. 
+D1.4_Antonio,"""I only agreed to steer the 'Diemen' to get Gaspar Dias' favor. 
+
+But as soon as I meet an official, I will tell them he is a fraud!""
+
+- Antonio Machado, Portuguese <b>Cap-tain</b>","""Ich habe nur für eine Empfehlung von Dias einge-willigt, die 'Die-men' zu steu-ern. 
 Aber dem nächst-besten Verwalter werde ich sagen, dass Dias ein Betrüger ist!"" 
 
 - Antonio Machado, portugiesischer <b>Kapitän</b>","""I don't actually want to steer the ship 'Diemen.' 
@@ -29,15 +32,16 @@ As soon as I meet someone impor-tant, I will tell them Gaspar Dias is a fraud!
 - said Antonio, a <b>captain</b>","""Eigentlich will ich das <b>Schiff</b> 'Diemen' nicht steuern. Sobald ich jemand wich-tiges treffe, werde ich er-zählen, dass Gas-par Dias ein Betrüger ist!
 
 - sagte Antonio, <b>Kaptiän</b>"
-D1.5_SlavesLoaded,"This <b>ship</b> left an African har-bor with many enslaved people. Officially it’s heading for a Portuguese port. 
+D1.5_SlavesLoaded,"This <b>ship</b> left an African harbor with many enslaved people. 
+Officially it’s heading for a Portuguese port. 
 
-Strange, that seems vaguely familiar.","Dieses <b>Schiff</b> hat, beladen mit vielen versklav-ten Menschen, einen afrikani-schen Hafen ver-lassen. Es steu-ert wohl einen portugie-sischen Hafen an.  
+Strange, that seems somewhat familiar.","Dieses <b>Schiff</b> hat, beladen mit vielen versklav-ten Menschen, einen afrikani-schen Hafen ver-lassen. Es steu-ert wohl einen portugie-sischen Hafen an.  
 Seltsam, das kommt mir vage bekannt vor.","This <b>ship</b> had many enslaved people come on board in Africa. 
 
 The people were taken from their home to be brought to Bra-zil to work.","Dieses <b>Schiff</b> hat in Afrika viele Menschen aufgeladen, die gegen ihren Wil-len nach Bra-silien gebracht werden sollten, um dort zu ar-beiten."
 D1.6_Shipwreck,"This <b>shipwreck</b> is odd because no cargo sank with it. 
 
-However, there are many foot-steps that lead toward Maurits-stad.","Dieses <b>Schiffs-wrack</b> ist unge-wöhnlich, da keine Ladung mit gesunken ist. 
+However, there are many footsteps that lead toward Mauritsstad.","Dieses <b>Schiffs-wrack</b> ist unge-wöhnlich, da keine Ladung mit gesunken ist. 
 
 Allerdings füh-ren am Ufer vie-le Fußstapfen nach Maurits-stad.","This <b>broken ship</b> is weird!
 It seems to have sunk without any cargo. 
@@ -46,27 +50,27 @@ However, many people have been at the beach nearby and wal-ked to Maurits-stad."
 
 Aber am Strand sind Fußstap-fen! Viele Leute müssen nach Mau-ritsstad gelau-fen sein."
 ,,,,
-D2.1_Identifier,"This object identifies Johan Maurits as the governor of Dutch Brazil, where he resided in Mauritsstad.","Dieses Objekt identifiziert Jo-hann Moritz als  Gouverneur von Niederländisch-Brasilien, wo er in Mauritsstad residierte.","This object means that Johan Mau-rits controlled the Dutch colony in Brazil.
+D2.1_Identifier,"This object iden-tifies Johan Mau-rits as the go-vernor of Dutch Brazil, where he resided in Mau-ritsstad.","Dieses Objekt identifiziert Jo-hann Moritz als  Gouverneur von Niederländisch-Brasilien, wo er in Mauritsstad residierte.","This object means that Johan Mau-rits controlled the Dutch colony in Brazil.
 
 He lived in Mau-ritsstad.","Dieses Objekt bedeutet, dass Johann Moritz die niederlän-dische Kolonie in Brasilien kontrollierte. 
 
 Er hat dort in Mauritsstad gewohnt."
-D2.2_ArchitectModel,These plans show a Dutch-inspired building near Johan Maurits’ governor's resi-dence in <b>Mau-ritsstad</b> that was initiated and financed by Johan Maurits.,"Diese Pläne zei-gen ein euro-päisch inspi-riertes Gebäude, dessen Bau in <b>Mauritsstad</b> von Johann Moritz initiiert und finanziert wur-de. ","These plans show a european-looking house.
+D2.2_ArchitectModel,These plans show a Dutch-inspired building near Jo-han Maurits' go-vernor's resi-dence in <b>Mau-ritsstad</b> that was initiated and financed by Johan Maurits.,"Diese Pläne zei-gen ein euro-päisch inspi-riertes Gebäude, dessen Bau in <b>Mauritsstad</b> von Johann Moritz initiiert und finanziert wur-de. ","These plans show a european-looking house.
 
 Johan Maurits paid a lot of money to build many houses like this in <b>Mau-ritsstad</b>.","Diese Pläne zeigen ein europäisch aussehenden Haus. 
 
 Johann Moritz hat viel Geld gezahlt, um sol-che Häuser in <b>Mauritsstad</b> zu bauen."
-D2.3_OrangeTree,"<b>Inspired</b> by eu-ropean court life, Johan Mau-rits imported many things he was used to from his home such as food, animals, and plants. 
+D2.3_OrangeTree,"<b>Inspired</b> by Eu-ropean court life, Johan Maurits im-ported many things he was used to from his home such as food, animals, and plants. 
 
-Among them, for example, the or-ange tree.","<b>Inspiriert</b> vom europäischen Hofleben, hat Johann Moritz viele Waren wie Lebensmittel, Tie-re und Pflanzen importieren lassen 
+Among them, for example, the orange tree.","<b>Inspiriert</b> vom europäischen Hofleben, hat Johann Moritz viele Waren wie Lebensmittel, Tie-re und Pflanzen importieren lassen 
 
 - darunter zum Beispiel auch der Orangenbaum.","Johan imported many things from <b>europe</b> to Brazil to make the colony look more familiar.
 
 These included food, animals, and plants like the orange tree.","Johann hat viele Dinge aus seiner <b>Heimat</b> nach Bra-silien bringen lassen, um die Umgebung wie <b>Eu-ropa</b> aussehen zu lassen. 
 Dazu gehören Le-bensmittel, Tiere, und Pflanzen wie zum Beispiel der  Orangenbaum."
-D2.4_WalkingSlaves,"Usually, <b>import-ed</b> trade goods were unloaded in the ports - as were enslaved people.
+D2.4_WalkingSlaves,"Usually, <b>imported</b> trade goods were unloaded in the ports - as were enslaved people.
 
-A peculiar group of enslaved peo-ple must have come walking up the coast in-stead.",Normalerweise wurde <b>importier-te</b> Handelsware in Häfen vom Schiff abgeladen - eben-so wie versklavte Menschen. Eine ungewöhnliche Gruppe versklav-ter Menschen muss stattdessen die Küste entlang ge-laufen sein.,"<b>Imported</b> things were unloaded in ports. People that were taken from their home against their will were, too. 
+A peculiar group of enslaved people must have come walking up the coast instead.",Normalerweise wurde <b>importier-te</b> Handelsware in Häfen vom Schiff abgeladen - eben-so wie versklavte Menschen. Eine ungewöhnliche Gruppe versklav-ter Menschen muss stattdessen die Küste entlang ge-laufen sein.,"<b>Imported</b> things were unloaded in ports. People that were taken from their home against their will were, too. 
 
 One group of peo-ple like that walked across the beach toward Mau-ritsstad instead.","Aus <b>Europa</b> geholte Sachen wurden im Hafen entladen. 
 Versklavte Men-schen auch. 
@@ -74,15 +78,15 @@ Eine Gruppe sol-cher Menschen muss stattdessen am Strand nach Mauritsstad ge-lau
 ,,,,
 D3.1_Gossip1,"""Isn't it so progressive of the humanist prince to allow freedom of be-lief in his colony?""","""Ist es nicht unglaublich fortschrittlich vom humanis-tischen Fürsten, in der Kolonie Glaubensfreiheit zu erlauben?""","""Isn't it really nice of Johan to allow everyone in the colony to practice their religion?""
 ","""Ist es nicht super nett von Johann, allen Leuten hier zu erlauben, ihre Religion zu ha-ben?"""
-D3.2_Gossip2,"""I worry that Johan Maurits may be getting a little <b>too nice</b> toward the por-tuguese catho-lics who own the sugar farms.""","""Ich fürchte, dass Johann Mo-ritz vielleicht ein wenig <b>zu freundlich</b> zu den portugiesi-schen Katholi-ken, denen die Zuckerplantagen gehören, ist.""","""I worry that Johan may be getting <b>too friendly</b> with the portuguese catholics who own the sugar farms.""","""Ich fürchte, dass Johann vielleicht zu <b>nett</b> zu den portugiesischen Katholiken, de-nen die Zucker-mühlen gehören, ist."""
+D3.2_Gossip2,"""I worry that Jo-han Maurits may be getting a little <b>too nice</b> toward the Portuguese Ca-tholics who own the sugar farms.""","""Ich fürchte, dass Johann Mo-ritz vielleicht ein wenig <b>zu freundlich</b> zu den portugiesi-schen Katholi-ken, denen die Zuckerplantagen gehören, ist.""","""I worry that Johan may be getting <b>too friendly</b> with the portuguese catholics who own the sugar farms.""","""Ich fürchte, dass Johann vielleicht zu <b>nett</b> zu den portugiesischen Katholiken, de-nen die Zucker-mühlen gehören, ist."""
 D3.3_Gossip3,"""Didn't he also promise them new workers on their <b>sugar farms</b>?""","""Hat er ihnen nicht auch neue Arbeiter für ihre <b>Zucker-mühlen</b> verspro-chen?""","""Didn't he also promise them new workers on their <b>sugar farms</b>? 
 
 He must be ex-pecting another ship with en-slaved people from Africa.""","""Hat er ihnen nicht auch neue Arbeiter für ihre <b>Zuckermühlen</b> versprochen? 
 
 Er scheint noch ein Schiff zu erwarten, das mehr versklavte Menschen bringt."""
-D3.4_Documents,These files list a number of en-slaved people having been gif-ted to the <b>por-tuguese sugar mill owners</b> in the name of Jo-han Maurits.,"Diese Unterlagen verzeichnen ei-nige versklavte Menschen, die im Namen von Johann Moritz an <b>por-tugiesische Zu-ckermühlenbesit-zer</b> verschenkt wurden.",These papers document how Johan gifted a group of en-slaved people to <b>portuguese sugar mill owners</b>. ,"Auf diesen Pa-pieren wurde aufgeschrieben, wie eine Gruppe von versklavten Menschen von Jo-hann Moritz an <b>portugiesische Zuckermühlen-besitzer</b> ver-schenkt wurde."
+D3.4_Documents,These files list a number of enslaved people having been gifted to the <b>Por-tuguese sugar mill owners</b> in the name of Johan Mau-rits.,"Diese Unterlagen verzeichnen ei-nige versklavte Menschen, die im Namen von Johann Moritz an <b>por-tugiesische Zu-ckermühlenbesit-zer</b> verschenkt wurden.",These papers document how Johan gifted a group of en-slaved people to <b>portuguese sugar mill owners</b>. ,"Auf diesen Pa-pieren wurde aufgeschrieben, wie eine Gruppe von versklavten Menschen von Jo-hann Moritz an <b>portugiesische Zuckermühlen-besitzer</b> ver-schenkt wurde."
 ,,,,
-D4.1_ArtistFriend,"""I have an artist friend back in the Ne-therlands. 
+D4.1_ArtistFriend,"""I have an artist friend back in the Netherlands. 
 
 Do you think Johan Maurits would fund him too?""
 
@@ -99,21 +103,21 @@ Do you think Johan Maurits would pay them for their art, too?""
 Meinst du, Johann Moritz würde ihn auch für seine Kunst bezahlen?""
 
 - ein Gast in 'Vrijburg'"
-D4.2_ArtWorks,<b>Artists</b> travel-ing with Johan Maurits docu-mented the bra-zilian flora and fauna of the 17th century in great detail.,"<b>Künstler</b>, die mit Johann Mo-ritz reisten, haben sehr de-tailliert brasi-lianische Pflan-zen und Tiere dokumentiert.",The <b>artists</b> who traveled with Johan painted many brazilian plants and ani-mals.,"Künstler</b>, die  mit Johann ge-reist sind, haben viele Bilder von brasilianischen Pflanzen und Tieren gemalt."
-D4.3_GardenRemodel,"""I am so glad that our re-search on the local <b>flora and fauna</b>, medicine and all the other areas has made immense progress! 
+D4.2_ArtWorks,<b>Artists</b> travel-ing with Johan Maurits docu-mented the Bra-zilian flora and fauna of the 17th century in great detail.,"<b>Künstler</b>, die mit Johann Mo-ritz reisten, haben sehr de-tailliert brasi-lianische Pflan-zen und Tiere dokumentiert.",The <b>artists</b> who traveled with Johan painted many brazilian plants and ani-mals.,"Künstler</b>, die  mit Johann ge-reist sind, haben viele Bilder von brasilianischen Pflanzen und Tieren gemalt."
+D4.3_GardenRemodel,"""I am so glad that our research on the local <b>flora and fauna</b>, medicine, and all the other areas have made immense progress! 
 
-It's all thanks to Johan's gen-erous financial aid.""","""Ich bin sehr froh, dass unsere Forschungen zur lokalen <b>Tier- und Pflanzenwelt</b>, Medizin und all den anderen Dingen dank Johanns' großzügiger finan-zieller Unterstüt-zung große Fort-schritte gemacht haben!""","""I am so glad that we could do so much research on brazilian <b>plants and animals</b>, med-icine, and many other things! 
+It's all thanks to Johan's generous financial aid.""","""Ich bin sehr froh, dass unsere Forschungen zur lokalen <b>Tier- und Pflanzenwelt</b>, Medizin und all den anderen Dingen dank Johanns' großzügiger finan-zieller Unterstüt-zung große Fort-schritte gemacht haben!""","""I am so glad that we could do so much research on brazilian <b>plants and animals</b>, med-icine, and many other things! 
 
 It's all thanks to Johan's gen-erosity.""","""Ich bin sehr froh, dass wir so viel zu bra-silianischen <b>Tieren und Pflanzen</b>, Me-dizin und vielen anderen Sachen forschen konnten! 
 Und das nur dank Johann's Groß-zügigkeit!"""
-D4.4_Whealth,"Despite many pro-jects, artists, and scientists he <b>financed</b>, Johan Maurits’ wealth kept increasing.
+D4.4_Whealth,"Despite many pro-jects, artists, and scientists he <b>financed</b>, Johan Maurits' wealth kept increasing.
 
 What channels besides his pay-ment from the WIC could he have recveived money through?","Obwohl Johann Mo-ritz verschie-denste Projekte, Künstler und Wis-senschaftler <b>fi-nanzierte</b>, wuchs sein Wohlstand weiter.
 Ob es neben sei-nem Lohn von der WIC noch andere Einkommensquellen gab?","Even though Johan <b>paid for</b> many different pro-jects from ar-tists and scien-tists, he kept getting richer. 
 Besides his pay-ment from the trading company, did he have other ways of earning money?","Obwohl Johann viele verschiede-ne Projekte von Künstlern und Wissenschaftlern <b>bezahlt</b>  hat, wurde er immer reicher. 
 
 Ob er neben sei-nem Gehalt von der WIC noch andere Wege hat-te, um Geld zu vedienen?"
-D4.5_Scam,"Johan Maurits' signature on a specific set of documents has generated <b>side income</b>. 
+D4.5_Scam,"Johan Maurits' signature on a spe-cific set of doc-uments has gener-ated <b>side income</b>. 
 
 First, enslaved people were sent as gifts - months later, they re-ceived a payment request.","Johann's Unter-schrift auf den richtigen Doku-menten sorgte für hohes <b>Nebenein-kommen</b>. 
 Zuerst wurden versklavte Men-schen verschenkt - Monate später ging eine Zah-lungsaufforderung raus.","Johan <b>earned a lot of money</b> by signing the right papers:
@@ -121,16 +125,8 @@ Zuerst wurden versklavte Men-schen verschenkt - Monate später ging eine Zah-lun
 First, he gave enslaved people away as gifts, and later he demanded money for them. ","Durch seine Un-terschrift auf den richtigen Pa-pieren hat Johann viel <b>dazu ver-dient</b>. 
 Zuerst hat er versklavte Men-schen als Ge-schenke verteilt, und später hat er Geld für sie ver-langt."
 ,,,,
-E0.Explanation.Headline,Mini Game 2,Mini Spiel 2,Mini Game 2,Mini Spiel 2
-E0.Explanation,"(Mini) Story Time! 
-
-Flip & Match your card to the right mini-story to find out what happened!","(Mini) Geschichten! 
-
-Dreh deine Karte um und ziehe sie auf die richtige Mini-Geschichte, um herauszufinden, was passiert ist!","(Mini) Story Time! 
-
-Flip & Match your card to the right mini-story to find out what happened!","(Mini) Geschichten! 
-
-Dreh deine Karte um und ziehe sie auf die richtige Mini-Geschichte, um herauszufinden, was passiert ist!"
+E0.Explanation.Headline,(Mini) Story Time! ,(Mini) Geschichten! ,(Mini) Story Time! ,(Mini) Geschichten! 
+E0.Explanation,Flip & Match your card to the right mini-story to find out what happened!,"Dreh deine Karte um und ziehe sie auf die richtige Mini-Geschichte, um herauszufinden, was passiert ist!",Flip & Match your card to the right mini-story to find out what happened!,"Dreh deine Karte um und ziehe sie auf die richtige Mini-Geschichte, um herauszufinden, was passiert ist!"
 E0.Explanation.Button,Continue,Weiter,Continue,Weiter
 E0.TapCard,Tap the card to flip it! ,Tippe die Karte an um sie umzudrehen!,Tap the card to flip it! ,Tippe die Karte an um sie umzudrehen!
 E0.DragCard,"Drag and drop the card on

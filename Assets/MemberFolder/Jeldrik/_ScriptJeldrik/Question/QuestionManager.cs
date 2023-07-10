@@ -471,6 +471,7 @@ public class QuestionManager : MonoBehaviour
 
     private IEnumerator AllObjectsFound()
     {
+        _cM._tutorialBlock = false;
         _progression.ToggleBar(true, true, 1.25f);
         yield return new WaitForSeconds(1.25f);
         GameObject temp = Instantiate(_confetti, Camera.main.transform);
