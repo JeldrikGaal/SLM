@@ -50,7 +50,7 @@ public class MakeOutline : MonoBehaviour
         // Switching the render order
         temp2.transform.SetParent(temp1.transform, false);
         temp2.transform.localPosition = Vector3.zero;
-        transform.parent = temp1.transform;
+        transform.SetParent(temp1.transform);
         temp1.transform.SetSiblingIndex(_orgSiblingIndex);
         
     }

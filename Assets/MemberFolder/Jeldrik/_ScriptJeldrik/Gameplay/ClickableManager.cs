@@ -218,7 +218,7 @@ public class ClickableManager : MonoBehaviour
         _grayScaleImage.DOColor(fade, _VC.PopUp_AnimSpeed);
         _grayScaleParentSafe = _currentClickable.transform.parent.transform.parent;
         _grayScaleSiblingIndexSafe = _currentClickable.transform.parent.transform.GetSiblingIndex();
-        _currentClickable.transform.parent.transform.parent = _grayScaleImage.transform;
+        _currentClickable.transform.parent.transform.SetParent(_grayScaleImage.transform);
 
         // Animate Camera so highlighted object is in the right spot
         Vector3 pos = _currentClickable.transform.position;
@@ -304,7 +304,7 @@ public class ClickableManager : MonoBehaviour
                 if (_currentClickable._outline != null)
                 {
                     _currentClickable._outline.ToggleOutline(false);
-                    _currentClickable.transform.parent.transform.parent = _grayScaleParentSafe;
+                    _currentClickable.transform.parent.transform.SetParent(_grayScaleParentSafe);
                     _currentClickable.transform.parent.transform.SetSiblingIndex(_grayScaleSiblingIndexSafe);
                 }
             }
