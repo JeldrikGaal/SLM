@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 289.38, y: 377}
-  m_SizeDelta: {x: 327.7536, y: 50}
+  m_AnchoredPosition: {x: 282.21, y: 377}
+  m_SizeDelta: {x: 481.53, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8581554006291316730
 CanvasRenderer:
@@ -94,8 +94,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -261,8 +261,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -290.8897, y: 377}
-  m_SizeDelta: {x: 299.5375, y: 50}
+  m_AnchoredPosition: {x: -288.76, y: 377}
+  m_SizeDelta: {x: 482.89, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4014930059709538820
 CanvasRenderer:
@@ -292,7 +292,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Story I.
+  m_text: Betrug um das kaputte Schiff
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c8e2e71a45fd0d34db5ca32795682656, type: 2}
   m_sharedMaterial: {fileID: -3808078736369377490, guid: c8e2e71a45fd0d34db5ca32795682656, type: 2}
@@ -319,8 +319,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -441,18 +441,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\"Johan Maurits talked about a broken ship for sale by the slave trading
-    company he works for in a conversation with his right-hand man!\" \"I received
-    im-portant information for that scam idea I had the other day.\" -Gaspar Dias,
-    a merchant who worked closely with Johan Maurits. \"This ship was recently sold
-    by the WIC to some merchant guy. I heard they had to fix it up! It is leaving
-    Recife as a portuguese vessel for Africa tomorrow. \" \"I only agreed to steer
-    the 'Diemen' to get Gaspar Dias\u2019 favor. But as soon as I meet an official,
-    I will tell them he is a fraud!\" - Antonio Machado, Portuguese Captain This
-    ship left an African harbor with many enslaved people. Officially it\u2019s heading
-    for a Portuguese port. - Strange, that seems vaguely familiar. This shipwreck
-    is odd because no cargo sank with it. However, there are many footsteps that
-    lead toward Mauritsstad."
+  m_text: "In einem Gespr\xE4ch mit einem engen Mitarbeiter hat Johann Moritz \xFCber
+    den Verkauf eines besch\xE4digten Schiffes geredet. Verkauft wird es von der
+    Handelsgesellschaft, f\xFCr die er arbeitet. \"Ich habe wichtige Informationen
+    erhal-ten, die f\xFCr meine Betrugsidee helfen k\xF6nnten!\" - Gaspar Dias, Kaufmann,
+    arbeitete eng mit Johann Moritz zusammen. Dieses Schiff wurde neulich von der
+    WIC an irgendeinen H\xE4ndler verkauft und musste repariert werden. Morgen f\xE4hrt
+    es unter portugiesischer Flagge von Recife nach Afrika. \"Ich habe nur f\xFCr
+    eine Empfehlung von Dias eingewilligt, die 'Diemen' zu steuern. Aber dem n\xE4chst-besten
+    Verwalter werde ich sagen, dass Dias ein Betr\xFCger ist!\" - Antonio Machado,
+    portugiesischer Kapit\xE4n. Dieses Schiff hat, beladen mit vielen ver-sklavten
+    Menschen, einen afrikanischen Hafen verlassen. Es steuert wohl einen portugiesischen
+    Hafen an. Seltsam, das kommt mir vage bekannt vor. Dieses Schiffswrack ist ungew\xF6hnlich,
+    da keine Ladung mit gesunken ist. Allerdings f\xFChren am Ufer viele Fu\xDFstapfen
+    nach Mauritsstad."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c8e2e71a45fd0d34db5ca32795682656, type: 2}
   m_sharedMaterial: {fileID: -3808078736369377490, guid: c8e2e71a45fd0d34db5ca32795682656, type: 2}
@@ -489,7 +491,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 8
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: -4
+  m_characterSpacing: -6
   m_wordSpacing: -20
   m_lineSpacing: 0
   m_lineSpacingMax: 0
