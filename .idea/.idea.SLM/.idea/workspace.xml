@@ -6,12 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="58850cd5-8d2e-4765-8fce-206cb2b23995" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SLM/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SLM/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Jeldrik/_ScriptJeldrik/Non Gameplay/BookButtonLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Jeldrik/_ScriptJeldrik/Non Gameplay/BookButtonLogic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Jeldrik/_ScriptJeldrik/Non Gameplay/EndScreenLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Jeldrik/_ScriptJeldrik/Non Gameplay/EndScreenLogic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/InfoCard1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/InfoCard1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/InfoCard2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/InfoCard2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/InfoCard3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/InfoCard3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/InfoCard4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/InfoCard4.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/JohanPage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/JohanPage.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/MG2Page1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/MG2Page1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/MG2Page2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/MG2Page2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/MG2Page3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/MG2Page3.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/MenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/OptionsButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/OptionsButton.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Book_Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Book_Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MG1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MG1.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,6 +151,7 @@
       <workItem from="1688893869508" duration="595000" />
       <workItem from="1688920635672" duration="6847000" />
       <workItem from="1688927995990" duration="11679000" />
+      <workItem from="1688997947012" duration="3365000" />
     </task>
     <servers />
   </component>

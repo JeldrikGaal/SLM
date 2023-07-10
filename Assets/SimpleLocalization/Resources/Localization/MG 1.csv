@@ -1,6 +1,10 @@
 Key,English,German,Simplified English,Simplified German,
 MG1.Q1,Find Johan Maurits!,Finde Johann Moritz!,Find Johan Maurits!,Finde Johann Moritz!,
-MG1.Q2,Which important guests visited Johan Maurits at his court?,Welche wichtigen Personen waren bei Johann Moritz zu Gast?,Which important guests visited Johan Maurits at his court?,Welche wichtigen Personen waren bei Johann Moritz zu Gast?,
+MG1.Q2,"Which important guests visited 
+Johan Maurits at his court?","Welche wichtigen Personen 
+waren bei Johann Moritz zu Gast?","Which important guests visited 
+Johan Maurits at his court?","Welche wichtigen Personen 
+waren bei Johann Moritz zu Gast?",
 MG1.Q3,"Where can you
 find this symbol?","Wo kannst du dieses
 Symbol finden?","Where can you
@@ -47,10 +51,27 @@ G0.Title,Enslaved Person,Versklavte Person,Enslaved Person,Versklavte Person,
 G0.Description,That is not a visitor. This is an enslaved person from Africa who is performing unfree labor in Johan Maurits's palace in the Dutch colony in Brazil.,"Das ist kein:e Besucher:in. Das ist eine versklavte Person aus Afrika, die in Johann Moritz' Palast in der niederländischen Kolonie in Brasilien unfreie Arbeit leistet.",That is not a visitor. It is an enslaved person from Africa who is being forced to work in Johan Maurits's palace in the Dutch colony in Brazil.,"Das ist kein:e Besucher:in. Das ist eine versklavte Person aus Afrika, die in Johann Moritz' Palast in der niederländischn Kolonie in Brasilien unfreie Arbeit leistet.",
 ,,,,,
 G1.Title,Johan Maurits,Johann Moritz,Johan Maurits,Johann Moritz,
-G1.Description,"Johan Maurits of Nassau-Siegen was born in Siegen in 1604. In 1637, he was appointed governor of the Dutch colony in Brazil by his employer, the West India Company (WIC).","Johann Moritz von Nassau-Siegen wurde 1604 in Siegen geboren.1637 wurde er von seinem Arbeitgeber, der Westindien-Kompanie (WIC), zum Gouverneur der niederländischen Kolonie in Brasilien ernannt.","Johan Maurits of Nassau-Siegen was born here in Siegen more than four hundred years ago. When he was a grown up, the international trading company he worked for (WIC) asked him to rule the Dutch colony in Brazil. ","Johann Moritz von Nassau-Siegen wurde hier in Siegen vor mehr als vierhundert Jahren geboren. Als er erwachsen war wurde er von der internationalen Handelsgesellschaft WIC, für die er gearbeitet hat, gebeten, die niederländische Kolonie in Brasilien zu regieren.",
+G1.Description,"Johan Maurits of Nassau-Siegen was born in Siegen in 1604. 
+
+In 1637, he was appointed governor of the Dutch colony in Brazil by his employer, the West India Company (WIC).","Johann Moritz von Nassau-Siegen wurde 1604 in Siegen geboren.
+
+1637 wurde er von seinem Arbeitgeber, der Westindien-Kompanie (WIC), zum Gouverneur der niederländischen Kolonie in Brasilien ernannt.","Johan Maurits of Nassau-Siegen was born here in Siegen more than four hundred years ago. 
+
+When he was a grown up, the international trading company he worked for (WIC) asked him to rule the Dutch colony in Brazil. ","Johann Moritz von Nassau-Siegen wurde hier in Siegen vor mehr als vierhundert Jahren geboren. 
+
+Als er erwachsen war wurde er von der internationalen Handelsgesellschaft WIC, für die er gearbeitet hat, gebeten, die niederländische Kolonie in Brasilien zu regieren.",
 ,,,,,
 G2.Title,Frans Post,Frans Post,Frans Post,Frans Post,
-G2.Description,"Frans Post, the brother of Pieter Post, was a Dutch painter of the 17th century. He accompanied Johan Maurits as part of his entourage in 1637 on his expedition to Brazil. There, he mainly created landscape paintings.",Frans Post war ein niederländischer Maler des 17ten Jahrhunderts. Er begleitete Johann Moritz als Teil seines Gefolges 1637 auf dessen Expedition nach Brasilien. Dort fertigte er hauptsächlich Landschaftsmalereien an.,"Frans Post was an artist from Holland. He went with Johan Maurits to Brazil, where he painted landscapes.",Frans Post war ein Künstler aus Holland. Er ist mit Johann Moritz nach Brasilien gegangen und hat dort Landschaften gemalt.,
+G2.Description,"Frans Post, the brother of Pieter Post, was a Dutch painter of the 17th century. 
+
+He accompanied Johan Maurits as part of his entourage in 1637 on his expedition to Brazil. There, he mainly created landscape paintings.","Frans Post war ein niederländischer Maler des 17ten Jahrhunderts. 
+
+Er begleitete Johann Moritz als Teil seines Gefolges 1637 auf dessen Expedition nach Brasilien. 
+Dort fertigte er hauptsächlich Landschaftsmalereien an.","Frans Post was an artist from Holland. 
+
+He went with Johan Maurits to Brazil, where he painted landscapes.","Frans Post war ein Künstler aus Holland. 
+
+Er ist mit Johann Moritz nach Brasilien gegangen und hat dort Landschaften gemalt.",
 ,,,,,
 G3.Title,Albert Eckhout,Albert Eckhout,Albert Eckhout,Albert Eckhout,
 G3.Description,"Albert Eckhout was a Dutch artist and the primary court artist of Johan Maurits van Nassau-Siegen in Dutch Brazil, where he created still lifes, portraits, and depictions of tropical plants and animals.","Albert Eckhout war ein niederländischer Künstler und der Haupt-Hofkünstler von Johann Moritz von Nassau-Siegen in der niederländischen Kolonie in Brasilien, wo er Stillleben, Porträts und Darstellungen von tropischen Pflanzen und Tieren schuf.","Albert Eckhout was an artist from Holland who worked for Johan Maurits in the Dutch colony in Brazil. He painted food, people, and interesting things in nature.","Albert Eckhout war ein Künstler aus Holland, der für Johann Moritz in der niederländischen Kolonie in Brasilien gearbeitet hat. Er malte Bilder von Essen, Menschen und interessanten Dingen in der Natur.",
@@ -59,7 +80,11 @@ G4.Title,Georg Marcgrave,Georg Marggraf,Georg Marcgrave,Georg Marggraf,
 G4.Description,"Georg Marcgrave was a cartographer, astronomer, natural scientist, and mathematician at the court of Johan Maurits in Brazil. He was also the apprentice of Willem Piso, with whom he wrote the book 'Historia Naturalis Brasiliae.'","Georg Marggrave war Kartograph, Astronom, Naturforscher und Mathematiker am Hof von Johann Moritz in Brasilien. Ebenso war er Lehrling von Willem Piso, mit dem er das Buch ‘Historia Naturalis Brasiliae’ schrieb.","Georg Marcgrave made maps as well as calculations and researched stars and nature at the court of Johan Maurits in Brazil. He was taught by Willem Piso, and they wrote an important book together.",Georg Marggraf hat in der niederländischen Kolonie Karten gezeichnet und Sachen ausgerechnet. Außerdem hat er Sterne und die Natur erforscht. Willem Piso war ein Lehrer von ihm und sieh haben zusammen ein wichtiges Buch geschrieben.,
 ,,,,,
 G5.Title,Willem Piso,Willem Piso,Willem Piso,Willem Piso,
-G5.Description,"Willem Piso was Johan Maurits' Doctor. Additionally, the count tasked him with researching the medical practices of indigenous Brazilians and natural history. Due to his contributions to the book 'Historia Naturalis Brasiliae,' he is still known today as one of the founders of tropical medicine.",Willem Piso war Johann Moritz' Leibarzt und wurde mit der Erforschung der medizinischen Praktiken der indigenen Bevölkerung und Naturgeschichte beauftragt. Dank seines Beitrages zum Buch ‘Historia Naturalis Brasiliae’ wird er bis heute als einer der Begründer der modernen Tropenmedizin angesehen.,Willem Piso was Johan Maurits' Doctor. He also found out many things about brazilian medicine and nature that were important for making the tropical medicine we use today.,"Willem Piso war Johann Moritz' Arzt. Er hat auch viele Sachen über brasilianische Medizin und Natur herausgefunden. Die waren sehr wichtig, als unsere heutige Tropenmedizin erfunden wurde. ",
+G5.Description,"Willem Piso was Johan Maurits' Doctor. Additionally, the count tasked him with researching the medical practices of indigenous Brazilians and natural history. 
+Due to his contributions to the book 'Historia Naturalis Brasiliae,' he is still known today as one of the founders of tropical medicine.","Willem Piso war Johann Moritz' Leibarzt und wurde mit der Erforschung der medizinischen Praktiken der indigenen Bevölkerung und Naturgeschichte beauftragt. 
+Dank seines Beitrages zum Buch ‘Historia Naturalis Brasiliae’ wird er bis heute als einer der Begründer der modernen Tropenmedizin angesehen.","Willem Piso was Johan Maurits' Doctor. 
+He also found out many things about brazilian medicine and nature that were important for making the tropical medicine we use today.","Willem Piso war Johann Moritz' Arzt. Er hat auch viele Sachen über brasilianische Medizin und Natur herausgefunden. 
+Die waren sehr wichtig, als unsere heutige Tropenmedizin erfunden wurde. ",
 ,,,,,
 G6.Title,Gaspar Dias Ferreira,Gaspar Dias Ferreira ,Gaspar Dias Ferreira,Gaspar Dias Ferreira,
 G6.Description,"Gaspar Dias Ferreira was a merchant and part of the luso-Brazilian elite. He is sometimes referred to as Johan Maurits' right-hand man. Due to the representation of both major colonist nations, their collaboration was fruitful and lucrative for both - though not always completely legal. ",Gaspar Dias Ferreira war als Kaufmann Teil der luso-brasilianischen Elite und wurde als Johann Moritz’ Rechte Hand angesehen. Diese Zusammenarbeit war durch die Repräsentation beider Besatzer Nationalitäten zweiseitig vorteilhaft und lukrativ - nicht selten auch abseits der legalen Handelswege.,"Gaspar Dias Ferreira was a Portuguese merchant, and worked together with Johan Maurits. They both made a lot of money because they collaborated - but it was not always legal. ","Gaspar Dias Ferreira war ein portugiesischer Kaufmann und hat mit Johann Moritz zusammengearbeitet. Beide haben dadurch viel Geld verdient, allerdings nicht immer legal!",
@@ -171,22 +196,36 @@ Look around you; maybe you can find the real painting?","Bevor Johann Moritz nac
 Schau dich um - vielleicht findest du das echte Bild?",
 ,,,,,
 S2.Title,Bust of Johan Maurits,Statue von Johann Moritz,Bust of Johan Maurits,Statue von Johann Moritz,
-S2.Description,"This is a marble bust of Johan Maurits, created by Bartholomeus Eggers. This would not actually have been found here, as it was commissioned in 1664. ","Das ist eine Marmorbüste von Johann Moritz, die von Bartholomeus Eggers angefertigt wurde. Diese wäre tatsächlich nicht an diesem Ort zu finden gewesen, da sie erst 1664 in Auftrag gegeben wurde.",This is a bust of Johan Maurits. It is made out of marble and was created by an artist named Bartholomeus Eggers.,Dies ist eine Statue aus Marmor von Johann Moritz. Sie wurde von einem Künstler namens Bartholomeus Eggers gemacht.,
+S2.Description,"This is a marble bust of Johan Maurits, created by Bartholomeus Eggers. 
+This would not actually have been found here, as it was commissioned in 1664. ","Das ist eine Marmorbüste von Johann Moritz, die von Bartholomeus Eggers angefertigt wurde. 
+Diese wäre tatsächlich nicht an diesem Ort zu finden gewesen, da sie erst 1664 in Auftrag gegeben wurde.","This is a bust of Johan Maurits. 
+It is made out of marble and was created by an artist named Bartholomeus Eggers.","Dies ist eine Statue aus Marmor von Johann Moritz. 
+Sie wurde von einem Künstler namens Bartholomeus Eggers gemacht.",
 ,,,,,
 S3.Title,Map of Mauritsstad,Mauritsstad Stadtkarte,Map of Mauritsstad,Mauritsstad Stadtkarte,
 S3.Description,A map like with might have shown Johan Maurits's plans for the transformation of 'Mauritsstad' (nowadays Recife) in Brazil. ,Karten wie diese könnten Johann Moritz' Pläne für den Umbau der Stadt 'Mauritsstad' (heute Recife) in Brasilien gezeigt haben.,"Johan Maurits had many plans like this. They show new buildings and parks he wanted to build in 'Mauritsstad.' Today, they call the city Recife.","Johann Moritz hatte viele Pläne wie diesen. Darauf waren Häuser und Parks, die er in 'Mauritsstad' (heute Recife) bauen wollte. Heute heißt die Stadt Recife.",
 ,,,,,
 S4.Title,Matthias van Ceulen,Matthias van Ceulen,Matthias van Ceulen,Matthias van Ceulen,
-S4.Description,"Matthias van Ceulen was a director of the West India Company (WIC) and commanded Dutch troops in Brazil. For a time, he was also a member of the 'high and secret council' that - contrary to its purpose - operated under strong influence of Johan Maurits' personal interests.","Das ist Matthias van Ceulen. Er war Direktor der Westindien-Kompanie (WIC) und hat niederländische Truppen in Brasilien befehligt. Zeitweise war er Mitglied des hohen, geheimen Rats, der - entgegen seines eigentlichen Zwecks - unter starkem Einfluss von Johann's persönlichen Interessen gestanden hat.","This is Matthias van Ceulen. Just like Johan Maurits, he was an important worker for the international trading company WIC. He was also part of a secret council that worked with Johan.","Das ist Matthias van Ceulen. Er war ein wichtiger Angestellter der internationalen Handelsgesellschaft WIC ebenso wie Johann Moritz. Zusätzlich war er auch Teil eines geheimen Rats, der mit Johann zusammengearbeitet hat.",
+S4.Description,"Matthias van Ceulen was a director of the West India Company (WIC) and commanded Dutch troops in Brazil. 
+For a time, he was also a member of the 'high and secret council' that - contrary to its purpose - operated under strong influence of Johan Maurits' personal interests.","Das ist Matthias van Ceulen. Er war Direktor der Westindien-Kompanie (WIC) und hat niederländische Truppen in Brasilien befehligt. 
+Zeitweise war er Mitglied des hohen, geheimen Rats, der - entgegen seines eigentlichen Zwecks - unter starkem Einfluss von Johann's persönlichen Interessen gestanden hat.","This is Matthias van Ceulen. Just like Johan Maurits, he was an important worker for the international trading company WIC. 
+He was also part of a secret council that worked with Johan.","Das ist Matthias van Ceulen. Er war ein wichtiger Angestellter der internationalen Handelsgesellschaft WIC ebenso wie Johann Moritz. 
+Zusätzlich war er auch Teil eines geheimen Rats, der mit Johann zusammengearbeitet hat.",
 ,,,,,
 S5.Title,Pieter Post,Pieter Post,Pieter Post,Pieter Post,
 S5.Description,"Pieter Post, the brother of Frans Post, was a Dutch architect and painter who significantly influenced the design of 'Mauritsstad' (now Recife) in Brazil. This includes the planning of the city fortifications and the construction of palaces and churches in the city.","Pieter Post, der Bruder von Frans Post, war ein niederländischer Architekt und Maler, der die Gestaltung von Mauritsstad (Heute Recife) in Brasilien geprägt hat. Dazu gehören die Planung der Stadtbefestigung sowie der Bau von Palästen und Kirchen in der Stadt.","This is Pieter Post, the brother of Frans Post. He was a Dutch artist and architect. He helped build the city called Mauritsstad (now Recife) in Brazil.","Das ist Pieter Post, der Bruder von Frans Post. Er war ein niederländischer Künstler und Baumeister. Er hat dabei geholfen, verschiedene Gebäude für eine Stadt namens Mauritsstad (heute Recife) in Brasilien zu bauen.",
 ,,,,,
 S6.Title,Zacharias Wagner,Zacharias Wagner,Zacharias Wagner,Zacharias Wagner,
-S6.Description,"Zacharias Wagner was originally a soldier in the West India Company (WIC) and was later employed by Johan Maurits. He created his famous work ""Thier Buch"" during his expeditions with 109 watercolor paintings of Brazilian animals, plants, and the indigenous population.","Zacharias Wagner war ursprünglich ein Soldat der Westindien-Kompanie (WIC) und wurde später von Johann Moritz als Küchenschreiber angestellt. Während seiner Expeditionen entstand sein bekanntes Werk ""Thier Buch"" mit 109 Aquarellen von brasilianischen Tieren, Pflanzen und der einheimischen Bevölkerung.","Zacharias Wagner was a soldier at first. Later, he was hired by Johan Maurits. During his travels in Brazil, he wrote a book. It's called ""Thier Buch"" and has a lot of pictures of animals, plants, and people from Brazil.","Zacharias Wagner war zuerst ein Soldat, dann hat ihn Johann Moritz eingestellt. Während seiner Reisen in Brasilien hat er ein Buch geschrieben. Es heißt ""Thier Buch"" und zeigt viele Bilder von Tieren, Pflanzen und Menschen aus Brasilien.",
+S6.Description,"Zacharias Wagner was originally a soldier in the West India Company (WIC) and was later employed by Johan Maurits. 
+He created his famous work ""Thier Buch"" during his expeditions with 109 watercolor paintings of Brazilian animals, plants, and the indigenous population.","Zacharias Wagner war ursprünglich ein Soldat der Westindien-Kompanie (WIC) und wurde später von Johann Moritz als Küchenschreiber angestellt. 
+Während seiner Expeditionen entstand sein bekanntes Werk ""Thier Buch"" mit 109 Aquarellen von brasilianischen Tieren, Pflanzen und der einheimischen Bevölkerung.","Zacharias Wagner was a soldier at first. Later, he was hired by Johan Maurits. 
+During his travels in Brazil, he wrote a book. It's called ""Thier Buch"" and has a lot of pictures of animals, plants, and people from Brazil.","Zacharias Wagner war zuerst ein Soldat, dann hat ihn Johann Moritz eingestellt. 
+Während seiner Reisen in Brasilien hat er ein Buch geschrieben. Es heißt ""Thier Buch"" und zeigt viele Bilder von Tieren, Pflanzen und Menschen aus Brasilien.",
 ,,,,,
 S7.Title,Abraham Willaerts,Abraham Willaerts,Abraham Willaerts,Abraham Willaerts,
-S7.Description,Abraham Willaerts was a Dutch Baroque painter who specialized in marine paintings.He was the designated marine painter in Brazil among Johan Maurits' entourage.,"Abraham Willaerts war ein niederländischer Barockmaler, der sich auf Marinegemälde Spezialisierte. In Brasilien war er der offizielle Marine-Maler in Johann Moritz’ Gefolgschaft.",Abraham Willaerts was a Dutch artist that was especially good at painting pictures of ships and the sea.,"Abraham Willaerts war ein niederländischer Maler, der besonders gut Bilder von Schiffen und dem Meer malen konnte.",
+S7.Description,"Abraham Willaerts was a Dutch Baroque painter who specialized in marine paintings.
+He was the designated marine painter in Brazil among Johan Maurits' entourage.","Abraham Willaerts war ein niederländischer Barockmaler, der sich auf Marinegemälde spezialisierte. 
+In Brasilien war er der offizielle Marine-Maler in Johann Moritz’ Gefolgschaft.",Abraham Willaerts was a Dutch artist that was especially good at painting pictures of ships and the sea.,"Abraham Willaerts war ein niederländischer Maler, der besonders gut Bilder von Schiffen und dem Meer malen konnte.",
 ,,,,,
 S8.Title,Orange Tree,Orangenbaum,Orange Tree,Orangenbaum,
 S8.Description,"Johan Maurits remodeled the local urban landscape according to his homeland’s influences. For this purpose, he also imported plants.",Unter Johann Moritz' Einfluss wurden viele Gebäude und andere Anlagen nach dem Vorbild seiner Heimat gebaut. Zu diesem Zweck wurden auch Pflanzen importiert..,"Johan Maurits remodeled the local urban landscape according to his homeland’s influences. For this purpose, he also imported plants.",Unter Johann Moritz' Einfluss wurden viele Gebäude und andere Anlagen nach dem Vorbild seiner Heimat gebaut. Zu diesem Zweck wurden auch Pflanzen importiert.,
@@ -203,22 +242,22 @@ S11.Description,"This painting by Frans Post depicts a typical subject for him: 
 S12.Title,Caspar van Baerle,Caspar van Baerle,Caspar van Baerle,Caspar van Baerle,
 S12.Description,"Caspar van Baerle was a theologian, philosopher, and medic. He was also never in Dutch Brazil. When Johan Maurits was back in the Netherlands, he approached him with the request of writing a book about his time at the colony - based on documents provided and emphasizing the 'brilliance of his supreme rule and military glory.'","Caspar van Baerle war Theologe, Philosoph und Mediziner. Außerdem war er nie in Brasilien. Nach seiner Rückkehr kam Johann Moritz mit dem Auftrag auf ihn zu, basierend auf von ihm bereitgestellten Dokumenten ein Buch über seine Amtszeit in Niederländisch-Brasilien zu schreiben. Hierbei sollte besonders die ""Brillanz seiner Herrschaft und seines Militärerfolgs"" betont werden. ","Caspar van Baerle was very knowledgeable in many areas, but never actually in Brazil! When Johan Maurits came back to the Netherlands, he paid Caspar to write a book about him, in which Johan was supposed to be described as a very successful person that had a very successful time in Dutch Brazil.","Caspar van Baerle war in vielen Bereichen gebildet und war tatsächlich nie selbst in Brasilien! Als Johann Moritz von Brasilien zurückkam, hat er Caspar dafür bezahlt, ein Buch über seine Zeit dort zu schreiben. Der Inhalt sollten betonen, wie erfolgreich Johann war.",
 ,,,,,
-S13.Title,Woman,,,,
+S13.Title,Woman,Frau,Woman,Frau,
 S13.Description,"This woman was enslaved and brought overseas from Africa. As an enslaved person, she was denied the right to live and move as she chose. ","Diese Frau wurde versklavt und aus Afrika nach Brasilien gebracht. Als eine versklavte Person wurde ihr das Recht, frei zu leben und sich frei zu bewegen abgesprochen. ","This African woman was brought to Brazil against her will. Because she was considered enslaved, she was not allowed to live or move freely!","Diese Frau aus Afrika wurde gegen ihren Willen nach Brasilien gebracht. Weil sie als eine versklavte Person angesehen wurde, durfte sie sich weder frei bewegen, noch frei leben!",
 ,,,,,
-S14.Title,Young Woman,,,,
+S14.Title,Young Woman,Junge Frau,Young Woman,Junge Frau,
 S14.Description,"This young woman was enslaved and brought overseas from Africa. Like many other enslaved people at 'Vrijburg', she was owned by the West India Trading Company.","Diese junge, afrikanische Frau wurde versklavt und nach Brasilien gebracht. Wie viele andere versklavte Personen in 'Vrijburg' wurde sie als Eigentum der Westindischen Kompanie (WIC) verstanden. ","This young woman was taken from her home in Africa and brought overseas to Brazil. Like many other enslaved people at 'Vrijburg', she was owned by the West India Trading Company.",Diese junge Frau aus Afrika wurde gegen ihren Willen nach Brasilien gebracht. Wie viele andere versklavte Menschen in 'Vrijburg' gehörte sie der Westindischen Handelsgesellschaft.,
 ,,,,,
-S15.Title,Woman,,,,
+S15.Title,Woman,Frau,Woman,Frau,
 S15.Description,This native Brazilian woman was an enslaved person owned by the West India Trading Company.  She and other enslaved people belonging to the WIC were given to Johan Maurits as part of his working agreement. ,Diese Frau ist eine indigene Brasilianerin. Sie wurde versklavt und als Eigentum der Westindischen Kompanie (WIC) angesehen. Sie und andere versklavte Personen wurden Johann Moritz im Rahmen seiner Arbeitsvereinbarung zugewiesen.,"This native Brazilian woman was taken from her home and forced to work. She and other enslaved people belonging to the West India Trading Company were given to Johan Maurits, who was employed by the WIC.","Diese Frau wurde in Brasilien geboren. Sie wurde von der Westindischen Handelsgesellschaft (WIC) zu unfreier Arbeit gezwungen und als deren Besitztum betrachtet. Gemeinsam mit anderen Menschen, die der WIC gehörten, wurde sie Johann Moritz als Arbeitskraft zugewiesen.",
 ,,,,,
-S16.Title,Young Man,,,,
+S16.Title,Young Man,Junger Mann,Young Man,Junger Mann,
 S16.Description,"This young man was enslaved and brought overseas from Africa. Only about half of the slaves at 'Vrijburg' belonged to the Dutch West India Company - the rest was ""owned"" by Johan Maurits himself.","Dieser junge Mann wurde in seiner afrikanischen Heimat versklavt und übersee nach Brasilien geholt. Nur etwa die Hälfte der Sklaven in 'Vrijburg' gehörten der Westindien Kompanie - der Rest war persönliches ""Eigentum"" von Johann Moritz.","This young man enslaved in his homeland in africa and brought over the atlantic ocean to work. Half of the enslaved people at 'Vrijburg' were working for the Dutch West India Company - the other half ""belonged"" to Johan Maurits. ","Dieser junge Mann wurde in seiner afrikanischen Heimat versklavt und mit dem Schiff nach Brasilien geholt. Etwa die Hälfte der Sklaven in 'Vrijburg' gehörten der Westindien Kompanie - der Rest ""gehörte"" Johann Moritz selbst.",
 ,,,,,
-S17.Title,Young Woman,,,,
+S17.Title,Young Woman,Junge Frau,Young Woman,Junge Frau,
 S17.Description,"This young woman was an enslaved person owned by the West India Trading Company. Contrary to the enslaved people owned by Johan Maurits, the people belonging to the WIC were not brandmarked.","Diese junge Frau wurde versklavt und als Eigentum der Westindischen Kompanie (WIC) angesehen. Im Gegensatz zu den versklavten Personen in Johann Moritz' Besitz, wurden die versklavten Personen der WIC nicht gebrandmarkt.","This young woman was forced to work by the West India Trading Company and viewed as its possession. Contrary to the enslaved people in Johan Maurits' possession, the enslaved people of the WIC were not marked with his symbol.","Diese junge Frau wurde von der westindischen Handelsgesellschaft (WIC) zu unfreier Arbeit gezwungen und als deren Besitztum betrachtet. Im Gegensatz zu den versklavten Personen in Johann Moritz' Besitz, wurden die versklavten Personen der WIC nicht mit Johanns Siegel markiert.",
 ,,,,,
-S18.Title,Woman,,,,
+S18.Title,Woman,Frau,Woman,Frau,
 S18.Description,"This woman was an enslaved person owned by the West India Trading Company. Religious backgrounds, political loyalties, and geographical origins were the prime reasons people were considered 'eligible for enslavement'.","Diese Frau wurde versklavt und als Eigentum der Westindischen Kompanie (WIC) angesehen. Religiöse Hintergründe, politische Loyalitäten, und geografische Herkünfte waren die Hauptgründe, die Personen als 'geeignet für die Versklavung' gekennzeichnet haben.","This woman was owned by the West India Trading Company after they had taken her from her home and forced her to work for them. Religious backgrounds, political loyalties, and geographical origins were the prime reasons people were considered 'eligible for enslavement'.","Diese Frau wurde von der westindischen Handelsgesellschaft (WIC) zu unfreier Arbeit gezwungen und als deren Besitztum betrachtet. Die Menschen wurden aus verschiedenen Gründen versklavt, zum Beispiel Religion, Politik und Herkunft.",
 ,,,,,
 PopUpText,"Explore Johan Maurits' Palace 'Vrijburg' in Dutch Brazil to find out what has been obscured in the book!
@@ -255,9 +294,13 @@ TapAnywhere,Tap anywhere to continue,"Tippe irgendwo, um fortzufahren",Tap anywh
 PS.Tutorial1,Tap here to see what else you can find!,"Tippe hier, um zu sehen, was du noch finden kannst!",Tap here to see what else you can find!,"Tippe hier, um zu sehen, was du noch finden kannst!",
 PS.Tutorial2,Tap here for more context to the current question,Tippe hier für mehr Informationen zur aktuellen Frage.,Tap here for more context to the current question,Tippe hier für mehr Informationen zur aktuellen Frage.,
 ,,,,,
-Final.Question,You cleared all questions! Do you want to go back to the book?,Du hast alle Fragen abgeschlossen! Möchtest du zum Buch zurückkehren?,You cleared all questions! Do you want to go back to the book?,Du hast alle Fragen abgeschlossen! Möchtest du zum Buch zurückkehren?,
-Final.Yes,"Yes, take me back to the book!",Ich möchte zurück zum Buch.,"Yes, take me back to the book!",Ich möchte zurück zum Buch!,
-Final.No,No I want to continue!,Ich möchte bleiben.,No I want to continue!,Ich möchte bleiben.,
+Final.Question,"You cleared all questions! 
+Do you want to go back to the book?","Du hast alle Fragen abgeschlossen! 
+Möchtest du zum Buch zurückkehren?","You cleared all questions! 
+Do you want to go back to the book?","Du hast alle Fragen abgeschlossen! 
+Möchtest du zum Buch zurückkehren?",
+Final.Yes,Return to book!,Zurück zum Buch.,Return to book!,Zurück zum Buch.,
+Final.No,"No, continue!",Hier bleiben!,"No, continue!",Hier bleiben!,
 ,,,,,
 BookButton,Book,Buch,Book,Buch,
 ,,,,,

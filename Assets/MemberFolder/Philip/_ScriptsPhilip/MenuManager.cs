@@ -275,7 +275,8 @@ public class MenuManager : MonoBehaviour
             pages.RemoveAt(i);
         }
         
-        ShowCurrentPage();
+        PreviousPage();
+        //ShowCurrentPage();
         
     }
     
