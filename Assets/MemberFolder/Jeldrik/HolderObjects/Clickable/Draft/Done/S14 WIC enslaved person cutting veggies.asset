@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: S14 WIC enslaved person cutting veggies
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: c63df5d42ff5cd447a23756f0566aefb, type: 3}
-  Title: Young Woman
-  Description: This young woman was enslaved and brought overseas from Africa. Like
-    many other enslaved people at 'Vrijburg', she was owned by the West India Trading
-    Company.
+  ProgressionImage: {fileID: 0}
+  Title: Junge Frau
+  Description: Diese junge, afrikanische Frau wurde versklavt und nach Brasilien
+    gebracht. Wie viele andere versklavte Personen in 'Vrijburg' wurde sie als Eigentum
+    der Westindischen Kompanie (WIC) verstanden.
   BookInfo: 
   Question: 0
   language: 0
@@ -26,5 +27,6 @@ MonoBehaviour:
   swirlMod: 1
   johann: 0
   guest: 0
-  slave: 1
+  slave: 0
   info: 0
+  StartAnimation: 0
