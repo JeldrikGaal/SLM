@@ -330,6 +330,8 @@ public class QuestionManager : MonoBehaviour
         {
             _doneOnce[_currentQ] = true;            
 
+            _cM._tutorialBlock = true;
+
             // Fading text to display question has been completed
             _questionCompletedText.transform.localScale = Vector3.zero;
             _questionCompletedText.enabled = true;

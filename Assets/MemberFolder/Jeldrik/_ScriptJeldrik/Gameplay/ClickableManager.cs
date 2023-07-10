@@ -281,6 +281,8 @@ public class ClickableManager : MonoBehaviour
         // If the popup is currently being animated in some shape or form it should not take any other input
         if (_animating) return;
                   
+        _tutorialBlock = true;
+
         _lastHiding = Time.time;
 
         Vector3 safeScale = _popUpScript.transform.localScale;
@@ -307,6 +309,8 @@ public class ClickableManager : MonoBehaviour
                 }
             }
            
+            _tutorialBlock = false;
+
             // Toggling the grayscale fake effect 
             _grayScaleImage.enabled = false;
             
