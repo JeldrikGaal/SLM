@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using Assets.SimpleLocalization;
+using Lean.Touch;
 
 public class ClickableManager : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class ClickableManager : MonoBehaviour
 
     public bool _tutorialBlock;
     private bool _animating;
+    private LeanDragCamera _dragController;
 
     [SerializeField] private float _clickableCooldown;
     private float _lastHiding;
@@ -44,6 +46,7 @@ public class ClickableManager : MonoBehaviour
         _VC = GameObject.FindGameObjectWithTag("VC").GetComponent<VALUECONTROLER>();
         _canvas = GameObject.FindGameObjectWithTag("Canvas").transform;
         _tutorialManager = GameObject.FindGameObjectWithTag("TutorialManager").GetComponent<MG1Tutorial>();
+        _dragController = Camera.main.GetComponent<LeanDragCamera>();
         foreach(ClickableHolder cH in _declinedHolders)
         {
             cH.Title = "";
@@ -70,6 +73,16 @@ public class ClickableManager : MonoBehaviour
             {
                 return false;
             }
+            // Block if the player is currently dragging
+            if (Input.touchCount > 0)
+            {
+                if (Input.GetTouch(0).phase.Equals(TouchPhase.Ended) &&  Mathf.Abs(_dragController._currentDragMoveDistLong) > 5f) return false;
+            }
+            
+            /*if (_dragController._hasBeenDragged)
+            {
+                //return false;
+            }*/
             _currentClickable = C;
 
             // Johan can always be clicked ( Alpha ! )
