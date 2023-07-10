@@ -45501,6 +45501,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6387122821677385237}
     m_Modifications:
+    - target: {fileID: 2736865359859063154, guid: 94e8be5d8f93b5a49887bfe09572f9ef, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2736865359859063154, guid: 94e8be5d8f93b5a49887bfe09572f9ef, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2736865359859063183, guid: 94e8be5d8f93b5a49887bfe09572f9ef, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5b8b68f8dcc232c4784d719691836739, type: 3}
+    - target: {fileID: 2736865359859063183, guid: 94e8be5d8f93b5a49887bfe09572f9ef, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6450780857097607736, guid: 94e8be5d8f93b5a49887bfe09572f9ef, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -45589,6 +45605,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: I4 slave letter
       objectReference: {fileID: 0}
+    - target: {fileID: 6450780857097607738, guid: 94e8be5d8f93b5a49887bfe09572f9ef, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: eea6d815c85246948b24be7ef98dad0e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94e8be5d8f93b5a49887bfe09572f9ef, type: 3}
 --- !u!114 &2762239983271049368
