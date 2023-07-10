@@ -45975,6 +45975,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6387122821677385237}
     m_Modifications:
+    - target: {fileID: 6037664208218203773, guid: 4b154c1ee85976744a67c7bc3430326c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1080ea9e9d2c64d428943fda159f6786, type: 3}
     - target: {fileID: 6037664208218203774, guid: 4b154c1ee85976744a67c7bc3430326c, type: 3}
       propertyPath: m_Name
       value: I3 slave fruits
@@ -50938,6 +50942,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 520766964399492679, guid: c240633da7afba3409fa0d5b5a983eb7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 789eec859bab0054d84c8c99cc3306d5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c240633da7afba3409fa0d5b5a983eb7, type: 3}
 --- !u!114 &8913731877963845027
