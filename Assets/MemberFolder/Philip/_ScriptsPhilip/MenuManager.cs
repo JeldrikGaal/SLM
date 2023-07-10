@@ -267,6 +267,8 @@ public class MenuManager : MonoBehaviour
         //Clickable Storage reset
         GameObject storage = GameObject.FindWithTag("ClickableStorage");
         Destroy(storage);
+
+        LocalizationManager.Language = "German";
         
         GameManager.Instance.Reset();
 

@@ -12,7 +12,7 @@ public class OptionsManager : MonoBehaviour
 
     private void Start()
     {
-        LocalizationManager.Language = "German";
+        //LocalizationManager.Language = "German";
     }
 
     public void German()

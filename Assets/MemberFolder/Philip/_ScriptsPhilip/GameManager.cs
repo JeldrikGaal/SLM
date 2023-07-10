@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Assets.SimpleLocalization;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -35,6 +36,11 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        LocalizationManager.Language = "German";
     }
 
     public void LoadBook()
