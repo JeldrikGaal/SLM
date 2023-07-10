@@ -92,6 +92,8 @@ public class MG1Tutorial : MonoBehaviour
 
     public void Update()
     {
+
+        Debug.Log(_dragController._currentDragMoveDistLong);
         // Handle displaying the bouncing effect for the clickable of the first tutorial part
         if (_effectRunning)
         {

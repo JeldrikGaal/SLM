@@ -4573,7 +4573,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &531940636
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14411,6 +14411,8 @@ MonoBehaviour:
   remainingDelta: {x: 0, y: 0, z: 0}
   NoTouchy: 0
   _currentDragMoveDist: 0
+  _currentDragMoveDistLong: 0
+  _hasBeenDragged: 0
 --- !u!1001 &1486124928
 PrefabInstance:
   m_ObjectHideFlags: 0

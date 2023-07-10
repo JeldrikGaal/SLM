@@ -41,6 +41,8 @@ namespace Lean.Touch
         private float _aspect;
     	public bool NoTouchy = false;
 		[SerializeField] public float _currentDragMoveDist;
+		[SerializeField] public float _currentDragMoveDistLong;
+		public bool _hasBeenDragged;
 
         /// <summary>This method resets the target position value to the <b>DefaultPosition</b> value.</summary>
         [ContextMenu("Reset Position")]
@@ -166,12 +168,31 @@ namespace Lean.Touch
                  Camera.main.transform.position.z);
 
 			_currentDragMoveDist =  Vector3.Distance(oldPosition, transform.position);
+			if (Vector3.Distance(oldPosition, transform.position) > _currentDragMoveDistLong)
+			{
+				_currentDragMoveDistLong =  Vector3.Distance(oldPosition, transform.position);
+				_hasBeenDragged = true;
+			}
 
 			if (fingers.Count == 0 && inertia > 0.0f && damping > 0.0f)
 			{
 				newRemainingDelta = Vector3.Lerp(newRemainingDelta, remainingDelta, inertia);
 				_currentDragMoveDist = 0;
 			}
+			if (Input.touchCount > 0)
+			{
+				if (Input.GetTouch(0).phase.Equals(TouchPhase.Ended))
+				{
+					
+					_currentDragMoveDistLong = 0;
+				}
+				if (Input.GetTouch(0).phase.Equals(TouchPhase.Began))
+				{
+					_hasBeenDragged = false;
+				}
+				
+			}
+			
 
 			// Update remainingDelta with the dampened value
 			remainingDelta = newRemainingDelta;
