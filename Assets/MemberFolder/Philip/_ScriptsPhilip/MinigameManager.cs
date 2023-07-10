@@ -9,6 +9,8 @@ public class MinigameManager : MonoBehaviour
 
     public List<GameObject> scribbles1 = new List<GameObject>();
     public List<GameObject> scribbles2 = new List<GameObject>();
+
+    public MenuManager menuManager;
     
     private void Start()
     {
@@ -62,6 +64,7 @@ public class MinigameManager : MonoBehaviour
 
         yield return new WaitForSeconds(2);
         
+        
         if (mg == 1)
         {
             gm.toggleMG1 = true;
@@ -70,6 +73,8 @@ public class MinigameManager : MonoBehaviour
         {
             gm.toggleMG2 = true;
         }
+
+        menuManager.infoPopup.SetActive(true);
     }
 
     public void WinGame(int i)

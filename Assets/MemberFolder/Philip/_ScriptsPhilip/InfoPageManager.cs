@@ -39,6 +39,12 @@ public class InfoPageManager : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         CreateInfoPages();
+
+        if (GameManager.Instance.minigame1Complete)
+        {
+            menuManager.infoPopup.SetActive(true);
+        }
+        
     }
     
     private IEnumerator StartDelay()
@@ -61,7 +67,6 @@ public class InfoPageManager : MonoBehaviour
             
             var newPage3 = Instantiate(cardPage3, book);
             menuManager.pages.Add(newPage3);
-
         }
 
         menuManager.ShowCurrentPage();

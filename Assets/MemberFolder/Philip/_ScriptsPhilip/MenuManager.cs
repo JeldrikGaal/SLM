@@ -14,7 +14,7 @@ public class MenuManager : MonoBehaviour
     public InfoPageManager _infoManager;
     private LangugageStorage _langugageStorage;
     public GameObject initialPage;
-
+    public GameObject infoPopup;
     public SceneLoader sceneLoader;
 
     public float mapDelay = 2f;
@@ -44,6 +44,7 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
+
         StartCoroutine("InitialPage");
     }
 
