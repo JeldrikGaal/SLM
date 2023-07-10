@@ -338,10 +338,12 @@ public class ProgressionSystem : MonoBehaviour
 
     public void ToggleFound()
     {
+        _tH.BlockWrongInputPart();
         ToggleBar(true, !_foundIsOpen);
     }
     public void ToggleToBeFound()
     {
+        _tH.BlockWrongInputPart();
         ToggleBar(false, !_toBeFoundIsOpen);
     }
 

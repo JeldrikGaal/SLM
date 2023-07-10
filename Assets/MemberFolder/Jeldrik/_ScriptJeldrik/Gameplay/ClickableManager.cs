@@ -33,6 +33,9 @@ public class ClickableManager : MonoBehaviour
     public bool _tutorialBlock;
     private bool _animating;
 
+    [SerializeField] private float _clickableCooldown;
+    private float _lastHiding;
+
     void Start()
     {
         // Getting References
@@ -50,6 +53,7 @@ public class ClickableManager : MonoBehaviour
         {
             _colorStripe.Appear();
         }
+        _lastHiding = Time.time;
     }
 
     // Try to display a new Popup. If one is already being displayed return false otherwise displays new one and returns true
@@ -180,6 +184,8 @@ public class ClickableManager : MonoBehaviour
         // If the popup is currently being animated in some shape or form it should not take any other input
         if (_animating) return;
 
+        if (Time.time - _lastHiding < _clickableCooldown) return;
+
         _tH.LockInput(true);
 
         _popUpScript.UpdateText(cH);
@@ -262,6 +268,8 @@ public class ClickableManager : MonoBehaviour
         // If the popup is currently being animated in some shape or form it should not take any other input
         if (_animating) return;
                   
+        _lastHiding = Time.time;
+
         Vector3 safeScale = _popUpScript.transform.localScale;
         Color fade = new Color(_grayScaleImage.color.r, _grayScaleImage.color.g, _grayScaleImage.color.b, 0);
         _grayScaleImage.DOColor(fade, _VC.PopUp_AnimSpeed);
