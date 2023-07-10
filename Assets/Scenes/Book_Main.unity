@@ -8083,7 +8083,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A CGL Student Project in collaboration with the Siegerlandmuseum
+  m_text: Ein CGL Studenten Projekt in Zusammenarbeit mit dem Siegerlandsmuseum
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c8e2e71a45fd0d34db5ca32795682656, type: 2}
   m_sharedMaterial: {fileID: -3808078736369377490, guid: c8e2e71a45fd0d34db5ca32795682656, type: 2}
