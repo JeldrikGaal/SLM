@@ -1,12 +1,12 @@
 Key,English,German,Simplified English,Simplified German,
 MG1.Q1,Find Johan Maurits!,Finde Johann Moritz!,Find Johan Maurits!,Finde Johann Moritz!,
 MG1.Q2,"Which important guests visited 
-Johan Maurits at his court?","Welche wichtigen Personen 
-waren bei Johann Moritz zu Gast?","Which important guests visited 
-Johan Maurits at his court?","Welche wichtigen Personen 
+'Vrijburg'?","<size=5>Welche wichtigen Personen waren in
+ 'Vrijburg' zu Gast?","Which important guests visited 
+'Vrijburg'?","Welche wichtigen Personen 
 waren bei Johann Moritz zu Gast?",
 MG1.Q3,"Where can you
-find this symbol?","Wo kannst du dieses
+find this symbol?","<size=5.5>Wo kannst du dieses 
 Symbol finden?","Where can you
 find this symbol?","Wo kannst du dieses
 Symbol finden?",
@@ -64,7 +64,7 @@ Als er erwachsen war, wurde er von der internationalen Handelsgesellschaft WIC, 
 G2.Title,Frans Post,Frans Post,Frans Post,Frans Post,
 G2.Description,"Frans Post, the brother of Pieter Post, was a Dutch painter of the 17th century. 
 
-He accompanied Johan Maurits as part of his entourage 1637 on his expedition to Brazil. There, he mainly created landscape paintings.","Frans Post war ein niederländischer Maler des 17ten Jahrhunderts. 
+He accompanied Johan Maurits as part of his entourage 1637 on his expedition to Brazil. There, he mainly created landscape paintings.","Frans Post war ein nieder-ländischer Maler des 17ten Jahrhunderts. 
 
 Er begleitete Johann Moritz als Teil seines Gefolges 1637 auf dessen Expedition nach Brasilien. 
 Dort fertigte er hauptsächlich Landschaftsmalereien an.","Frans Post was an artist from Holland. 
@@ -74,7 +74,7 @@ He went with Johan Maurits to Brazil, where he painted landscapes.","Frans Post 
 Er ist mit Johann Moritz nach Brasilien gegangen und hat dort Landschaften gemalt.",
 ,,,,,
 G3.Title,Albert Eckhout,Albert Eckhout,Albert Eckhout,Albert Eckhout,
-G3.Description,"Albert Eckhout was a Dutch artist and the primary court artist of Johan Maurits van Nassau-Siegen in Dutch Brazil, where he created still lifes, portraits, and depictions of tropical plants and animals.","Albert Eckhout war ein niederländischer Künstler und der Haupt-Hofkünstler von Johann Moritz von Nassau-Siegen in der niederländischen Kolonie in Brasilien, wo er Stillleben, Porträts und Darstellungen von tropischen Pflanzen und Tieren schuf.","Albert Eckhout was an artist from Holland who worked for Johan Maurits in the Dutch colony in Brazil. He painted food, people, and interesting things in nature.","Albert Eckhout war ein Künstler aus Holland, der für Johann Moritz in der niederländischen Kolonie in Brasilien gearbeitet hat. Er malte Bilder von Essen, Menschen und interessanten Dingen in der Natur.",
+G3.Description,"Albert Eckhout was a Dutch artist and the primary court artist of Johan Maurits van Nassau-Siegen in Dutch Brazil, where he created still lifes, portraits, and depictions of tropical plants and animals.","Albert Eckhout war ein nie-derländischer Künstler und der Haupt-Hofkünstler von Johann Moritz von Nassau-Siegen in der niederländischen Kolonie in Brasilien, wo er Stillleben, Porträts und Darstellungen von tropischen Pflanzen und Tieren schuf.","Albert Eckhout was an artist from Holland who worked for Johan Maurits in the Dutch colony in Brazil. He painted food, people, and interesting things in nature.","Albert Eckhout war ein Künstler aus Holland, der für Johann Moritz in der niederländischen Kolonie in Brasilien gearbeitet hat. Er malte Bilder von Essen, Menschen und interessanten Dingen in der Natur.",
 ,,,,,
 G4.Title,Georg Marcgrave,Georg Marggraf,Georg Marcgrave,Georg Marggraf,
 G4.Description,"Georg Marcgrave was a cartographer, astronomer, natural scientist, and mathematician at the court of Johan Maurits in Brazil. He was also the apprentice of Willem Piso, with whom he wrote the book 'Historia Naturalis Brasiliae.'","Georg Marggrave war Kartograf, Astronom, Naturforscher und Mathematiker am Hof von Johann Moritz in Brasilien. Ebenso war er Lehrling von Willem Piso, mit dem er das Buch ‘Historia Naturalis Brasiliae’ schrieb.","Georg Marcgrave made maps as well as calculations and researched stars and nature at the court of Johan Maurits in Brazil. Willem Piso taught him, and they wrote an important book together.",Georg Marggraf hat in der niederländischen Kolonie Karten gezeichnet und Sachen ausgerechnet. Außerdem hat er Sterne und die Natur erforscht. Willem Piso war ein Lehrer von ihm und sieh haben zusammen ein wichtiges Buch geschrieben.,
@@ -187,7 +187,7 @@ It was very interesting for many people long afterward because it contains a lot
 S1.Title,Johan Maurits Portrait,Johann Moritz Porträt,Johan Maurits Portrait,Johann Moritz Porträt,
 S1.Description,"This portrait of Johan Maurits was painted by the Dutch portrait artist Michiel van Miereveldt in 1636, shortly before Johann's departure to Brazil. 
 
-You'll find the real painting in this room!","Das ist ein Porträt von Johann Moritz. 1663, kurz vor seinem Aufbruch nach Brasilien, ließ er sich vom holländischen Maler Michiel van Miereveldt abbilden. 
+You'll find the real painting in this room!","Das ist ein Porträt von Johann Moritz. 1663, kurz vor seinem Aufbruch nach Brasilien, ließ er sich vom holländischen Maler Mi-chiel van Miereveldt abbilden. 
 
 Das echte Gemälde hängt hier im Raum!","Before Johan Maurits went to Brazil, he was painted by an artist called Michiel van Miereveldt. 
 
@@ -197,13 +197,13 @@ Schau dich um - vielleicht findest du das echte Bild?",
 ,,,,,
 S2.Title,Bust of Johan Maurits,Statue von Johann Moritz,Bust of Johan Maurits,Statue von Johann Moritz,
 S2.Description,"This is a marble bust of Johan Maurits, created by Bartholomeus Eggers. 
-This would not actually have been found here, as it was commissioned in 1664. ","Das ist eine Marmorbüste von Johann Moritz, die von Bartholomeus Eggers angefertigt wurde. 
+This would not actually have been found here, as it was commissioned in 1664. ","Das ist eine Marmorbüste von Johann Moritz, die von Bartholomeus Eggers an-gefertigt wurde. 
 Diese wäre tatsächlich nicht an diesem Ort zu finden gewesen, da sie erst 1664 in Auftrag gegeben wurde.","This is a bust of Johan Maurits. 
 It is made out of marble and was created by an artist named Bartholomeus Eggers.","Dies ist eine Statue aus Marmor von Johann Moritz. 
 Sie wurde von einem Künstler namens Bartholomeus Eggers gemacht.",
 ,,,,,
 S3.Title,Map of Mauritsstad,Mauritsstad Stadtkarte,Map of Mauritsstad,Mauritsstad Stadtkarte,
-S3.Description,A map like with might have shown Johan Maurits's plans for the transformation of 'Mauritsstad' (nowadays Recife) in Brazil. ,Karten wie diese könnten Johann Moritz' Pläne für den Umbau der Stadt 'Mauritsstad' (heute Recife) in Brasilien gezeigt haben.,"Johan Maurits had many plans like this. They show new buildings and parks he wanted to build in 'Mauritsstad.' Today, they call the city Recife.","Johann Moritz hatte viele Pläne wie diesen. Darauf waren Häuser und Parks, die er in 'Mauritsstad' (heute Recife) bauen wollte. Heute heißt die Stadt Recife.",
+S3.Description,A map like with might have shown Johan Maurits's plans for the transformation of 'Mauritsstad' (nowadays Recife) in Brazil. ,Karten wie diese könnten Johann Moritz' Pläne für den Umbau der Stadt 'Maurits-stad' (heute Recife) in Brasilien gezeigt haben.,"Johan Maurits had many plans like this. They show new buildings and parks he wanted to build in 'Mauritsstad.' Today, they call the city Recife.","Johann Moritz hatte viele Pläne wie diesen. Darauf waren Häuser und Parks, die er in 'Mauritsstad' (heute Recife) bauen wollte. Heute heißt die Stadt Recife.",
 ,,,,,
 S4.Title,Matthias van Ceulen,Matthias van Ceulen,Matthias van Ceulen,Matthias van Ceulen,
 S4.Description,"Matthias van Ceulen was a director of the West India Company (WIC) and commanded Dutch troops in Brazil. 
@@ -249,7 +249,7 @@ S14.Title,Young Woman,Junge Frau,Young Woman,Junge Frau,
 S14.Description,"This young woman was enslaved and brought overseas from Africa. Like many other enslaved people at 'Vrijburg', she was owned by the West India Trading Company.","Diese junge, afrikanische Frau wurde versklavt und nach Brasilien gebracht. Wie viele andere versklavte Personen in 'Vrijburg' wurde sie als Eigentum der Westindischen Kompanie (WIC) verstanden. ","This young woman was taken from her home in Africa and brought overseas to Brazil. Like many other enslaved people at 'Vrijburg', she was owned by the West India Trading Company.",Diese junge Frau aus Afrika wurde gegen ihren Willen nach Brasilien gebracht. Wie viele andere versklavte Menschen in 'Vrijburg' gehörte sie der Westindischen Handelsgesellschaft.,
 ,,,,,
 S15.Title,Woman,Frau,Woman,Frau,
-S15.Description,This native Brazilian woman was enslaved by the West India Trading Company. She and other enslaved people belonging to the WIC were given to Johan Maurits as part of his working agreement. ,Diese Frau ist eine indigene Brasilianerin. Sie wurde versklavt und als Eigentum der Westindischen Kompanie (WIC) angesehen. Sie und andere versklavte Personen wurden Johann Moritz im Rahmen seiner Arbeitsvereinbarung zugewiesen.,"This native Brazilian woman was taken from her home and forced to work. She and other enslaved people belonging to the West India Trading Company were given to Johan Maurits, who was employed by the WIC.","Diese Frau wurde in Brasilien geboren. Sie wurde von der Westindischen Handelsgesellschaft (WIC) zu unfreier Arbeit gezwungen und als deren Besitztum betrachtet. Gemeinsam mit anderen Menschen, die der WIC gehörten, wurde sie Johann Moritz als Arbeitskraft zugewiesen.",
+S15.Description,This native Brazilian woman was enslaved by the West India Trading Company. She and other enslaved people belonging to the WIC were given to Johan Maurits as part of his working agreement. ,Diese Frau ist eine indigene Brasilianerin. Sie wurde versklavt und als Eigentum der Westindischen Kompanie (WIC) angesehen. Sie und andere versklavte Personen wurden Johann Moritz im Rahmen seiner Arbeitsvereinbarung zuge-wiesen.,"This native Brazilian woman was taken from her home and forced to work. She and other enslaved people belonging to the West India Trading Company were given to Johan Maurits, who was employed by the WIC.","Diese Frau wurde in Brasilien geboren. Sie wurde von der Westindischen Handelsgesellschaft (WIC) zu unfreier Arbeit gezwungen und als deren Besitztum betrachtet. Gemeinsam mit anderen Menschen, die der WIC gehörten, wurde sie Johann Moritz als Arbeitskraft zuge-wiesen.",
 ,,,,,
 S16.Title,Young Man,Junger Mann,Young Man,Junger Mann,
 S16.Description,"This young man was enslaved and brought overseas from Africa. Only about half of the enslaved people at 'Vrijburg' belonged to the Dutch West India Company - the rest was ""owned"" by Johan Maurits himself.","Dieser junge Mann wurde in seiner afrikanischen Heimat versklavt und Übersee nach Brasilien geholt. Nur etwa die Hälfte der Sklaven in 'Vrijburg' gehörten der Westindien Kompanie - der Rest war persönliches ""Eigentum"" von Johann Moritz.","This young man was enslaved in his homeland in Africa and brought over the Atlantic Ocean to work. Half of the enslaved people at 'Vrijburg' worked for the Dutch West India Company - the other half ""belonged"" to Johan Maurits. ","Dieser junge Mann wurde in seiner afrikanischen Heimat versklavt und mit dem Schiff nach Brasilien geholt. Etwa die Hälfte der Sklaven in 'Vrijburg' gehörten der Westindien Kompanie - der Rest ""gehörte"" Johann Moritz selbst.",
@@ -262,17 +262,21 @@ S18.Description,"This woman was an enslaved person owned by the West India Tradi
 ,,,,,
 PopUpText,"Explore Johan Maurits' Palace 'Vrijburg' in Dutch Brazil to find out what has been obscured in the book!
 
-Can you find all there is to discover? Have fun exploring and uncovering!","Entdecke Johann Moritz' Palast 'Vrijburg' in Niederländisch-Brasilien um herauszufinden, was im Buch herausgestrichen wurde!
+Can you find all there is to discover? 
+Have fun exploring and uncovering!","Entdecke Johann Moritz' Palast 'Vrijburg' in Niederländisch-Brasilien um herauszufinden, was im Buch herausgestrichen wurde!
 
-Kannst du alles finden? Viel Spaß beim Entdecken!","Explore Johan Maurits' Palace 'Vrijburg' in Dutch Brazil to find out what has been obscured in the book!
+Kannst du alles finden? 
+Viel Spaß beim Entdecken!","Explore Johan Maurits' Palace 'Vrijburg' in Dutch Brazil to find out what has been obscured in the book!
 
-Can you find all there is to discover? Have fun exploring and uncovering!","Entdecke Johann Moritz' Palast 'Vrijburg' in Niederländisch-Brasilien, um herauszufinden, was im Buch herausgestrichen wurde!
+Can you find all there is to discover? 
+Have fun exploring and uncovering!","Entdecke Johann Moritz' Palast 'Vrijburg' in Niederländisch-Brasilien, um herauszufinden, was im Buch herausgestrichen wurde!
 
-Kannst du alles finden? Viel Spaß beim Entdecken!",
+Kannst du alles finden? 
+Viel Spaß beim Entdecken!",
 ,,,,,
-TutorialText1,Inspect the object by tapping it.,"Untersuche das Objekt, in dem du es antippst.",Inspect the object by tapping it.,"Untersuche das Objekt, in dem du es antippst.",
-TutorialText2,Move the camera by dragging.,Ziehe die Kamera über das Bild.,Move the camera by dragging.,Ziehe die Kamera über das Bild.,
-TutorialText3,"With this button, you can return to the book!",Hiermit kommst du zurück zum Buch!,"With this button, you can return to the book!",Hiermit kommst du zurück zum Buch!,
+TutorialText1,Inspect the object by <b>tapping</b> it.,"Untersuche das Objekt, in dem du es <b>antippst</b>.",Inspect the object by tapping it.,"Untersuche das Objekt, in dem du es antippst.",
+TutorialText2,Move the camera by <b>dragging</b>.,<b>Ziehe</b> die Kamera über das Bild.,Move the camera by <b>dragging</b>.,<b>Ziehe</b> die Kamera über das Bild.,
+TutorialText3,"With this button, you can <b>return</b> to the book!",Hiermit kommst du <b>zurück</b> zum Buch!,"With this button, you can <b>return</b> to the book!",Hiermit kommst du <b>zurück</b> zum Buch!,
 ,,,,,
 QuestionCompleted,Question Cleared!,Frage abgeschlossen!,Question Cleared!,Frage abgeschlossen!,
 ,,,,,
@@ -281,7 +285,7 @@ Declined.2,This is not a guest. ,Das ist kein Gast. ,This is not a guest. ,Das i
 Declined.3,The symbol is not visible here.,Hier ist das Symbol nicht zu sehen.,The symbol is not visible here.,Hier ist das Symbol nicht zu sehen.,
 ,,,,,
 NQ.Question,Would you like to proceed to the next question?,Möchtest du zur nächsten Frage springen?,Would you like to proceed to the next question?,Möchtest du zur nächsten Frage springen?,
-NQ.Question2,You found * out of + objects so far.,Du hast bisher * von + Objekten gefunden.,You found * out of + objects so far.,Du hast bisher * von + Objekten gefunden.,
+NQ.Question2,<size=40>You found</size> * out of + <size=40>objects so far.</size>,<size=40>Du hast bisher</size> * von + <size=40>Objekten gefunden.</size>,<size=40>You found</size> * out of + <size=40>objects so far.</size>,<size=40>Du hast bisher</size> * von + <size=40>Objekten gefunden.</size>,
 NQ.Yes,"Yes, proceed!","Ja, weiter!","Yes, proceed!","Ja, weiter!",
 NQ.No,"No, stay!",Hier bleiben!,"No, stay!",Hier bleiben!,
 ,,,,,

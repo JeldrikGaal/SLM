@@ -16,9 +16,11 @@ public class MenuManager : MonoBehaviour
     public GameObject initialPage;
     public GameObject infoPopup;
     public SceneLoader sceneLoader;
+    public GameObject blockPanel;
 
     public float mapDelay = 2f;
-    
+
+    public float inputDelay = 0.7f;
     public float loadMinigameDelay = 5f;
     public Animator mapUnfoldAnim;
     public AnimationClip mapUnfold;
@@ -44,7 +46,7 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
-
+        blockPanel.SetActive(false);
         StartCoroutine("InitialPage");
     }
 
@@ -54,8 +56,6 @@ public class MenuManager : MonoBehaviour
         
         initialPage.SetActive(false);
     }
-    
-
 
     void Update()
     {
@@ -137,6 +137,7 @@ public class MenuManager : MonoBehaviour
             _currentPageIndex++;
             GameManager.Instance.pageIndex = _currentPageIndex;
             ShowCurrentPage();
+            StartCoroutine(inputDelayCoroutine());
         }
     }
 
@@ -151,7 +152,17 @@ public class MenuManager : MonoBehaviour
             _currentPageIndex--;
             GameManager.Instance.pageIndex = _currentPageIndex;
             ShowCurrentPage();
+            StartCoroutine(inputDelayCoroutine());
         }
+    }
+
+    public IEnumerator inputDelayCoroutine()
+    {
+        blockPanel.SetActive(true);
+        
+        yield return new WaitForSeconds(inputDelay);
+        
+        blockPanel.SetActive((false));
     }
 
     #endregion
