@@ -70,15 +70,15 @@ public class BookButtonLogic : MonoBehaviour
             _repeatStartTime = Time.time;
         }
 
-        if (_repeating && ( !_tutorial || _textIsOpen ) )  
+        if (_repeating )  // && ( !_tutorial || _textIsOpen ) 
         {
             if (Input.touchCount > 0 && Time.time - _repeatStartTime > _blockTime &&  Input.GetTouch(0).phase.Equals(TouchPhase.Began))
             {
-                End();                
+                Invoke("InvokeEnd",0.1f);           
             }
             else if (Input.GetMouseButtonDown(0) && Time.time - _repeatStartTime > _blockTime)
             {
-                End();
+                Invoke("InvokeEnd",0.1f);  
             }
         }
     }
@@ -175,6 +175,26 @@ public class BookButtonLogic : MonoBehaviour
 
     public void End()
     {        
+        _tutorial = false;
+        _repeating = false;
+        DisableStuff();
+        _tH.UnlockInput();
+        _cM._tutorialBlock = false;
+        _tutorialManager.DisablePopUp(0.75f);
+        Invoke("InvokeStartTutorial", 1f);
+    }
+
+    public void InvokeEnd()
+    {
+        End(true);
+    }
+    public void End(bool b = false)
+    {        
+        if(b && _textIsOpen)
+        {
+            return;
+        }
+
         _tutorial = false;
         _repeating = false;
         DisableStuff();

@@ -140,7 +140,7 @@ public class MG1Tutorial : MonoBehaviour
         EnablePopUp(0.75f, "TutorialText2");
         EnableMoveArrows();
         EffectForMoveArrows(0.6f, 60, 3f);
-        _colorStripe.InstantDisappear();
+        
         _currentQuestion.gameObject.SetActive(false);
 
     }
@@ -168,6 +168,7 @@ public class MG1Tutorial : MonoBehaviour
     {
         if (_running)
         {
+            _colorStripe.InstantDisappear();
             Step2();
         }
         if (infoShowed1 && !Done)
