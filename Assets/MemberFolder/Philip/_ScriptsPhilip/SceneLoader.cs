@@ -9,7 +9,6 @@ public class SceneLoader : MonoBehaviour
 {
     public string sceneName;
     private AsyncOperation asyncLoad;
-    public GameObject localizationManagerRef;
 
     private void Start()
     {
@@ -18,8 +17,8 @@ public class SceneLoader : MonoBehaviour
 
     public void Awake()
     {
-        Debug.Log("SceneLoader Awake");
-        localizationManagerRef.GetComponent<LocalizationSync>().Sync();
+        //Debug.Log("SceneLoader Awake");
+        //localizationManagerRef.GetComponent<LocalizationSync>().Sync();
     }
 
     public void LoadScene()
