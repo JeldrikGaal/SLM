@@ -7,9 +7,7 @@
     <list default="true" id="58850cd5-8d2e-4765-8fce-206cb2b23995" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SLM/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SLM/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/JohanPage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/Prefabs/JohanPage.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/MenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/SwipeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/SwipeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/SwipeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/SwipeManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/OptionsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MemberFolder/Philip/_ScriptsPhilip/OptionsManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Book_Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Book_Main.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -147,7 +145,7 @@
       <workItem from="1688927995990" duration="11679000" />
       <workItem from="1688997947012" duration="3365000" />
       <workItem from="1689067932334" duration="637000" />
-      <workItem from="1693392086593" duration="7685000" />
+      <workItem from="1693392086593" duration="10987000" />
     </task>
     <servers />
   </component>
