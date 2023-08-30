@@ -49,7 +49,7 @@ public class MG1Tutorial : MonoBehaviour
         {
             Instance = this;
             transform.parent = null;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else 
         {

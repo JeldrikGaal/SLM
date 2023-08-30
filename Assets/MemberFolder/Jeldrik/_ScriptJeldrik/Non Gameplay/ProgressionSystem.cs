@@ -406,7 +406,6 @@ public class ProgressionSystem : MonoBehaviour
                 distance = spacing * ( content.Count - 2 );
             }
             
-            Debug.Log(distance);
             if (distance == 0)
             {
                 float newX = parent.transform.localPosition.x - 60;
@@ -467,7 +466,6 @@ public class ProgressionSystem : MonoBehaviour
 
     public void HintButtonLogic()
     {
-        Debug.Log("SSIO");
         ClickableHolder cH = ScriptableObject.CreateInstance("ClickableHolder") as ClickableHolder;
 
         if (_step2Running)
@@ -511,7 +509,7 @@ public class ProgressionSystem : MonoBehaviour
         _cM._tutorialBlock = true;
         _tH.LockInput();
         _tutorialManager.EnablePopUp(0.75f, "PS.Tutorial1");
-        _tutorialManager.MovePopUp();
+        _tutorialManager.MovePopUp(new Vector3(450, 250, 0));
         _effect1Running = true;
         _tutorialButton.SetActive(true);
         // Toggling the grayscale fake effect 
@@ -557,7 +555,7 @@ public class ProgressionSystem : MonoBehaviour
         _step2Running = true;
         _effect2Running = true;
         _tutorialManager.EnablePopUp(0.75f, "PS.Tutorial2");
-        _tutorialManager.MovePopUp();
+        _tutorialManager.MovePopUp(new Vector3(450, 425, 0));
     }
 
     private void EndTutorial()

@@ -63,10 +63,19 @@ public class GameManager : MonoBehaviour
 
     public void Reset()
     {
-        minigame1Complete = false;
+        Scene scene = SceneManager.GetActiveScene();
+    
+
+        foreach (GameObject gameObject in FindObjectsOfType<GameObject>()) {
+            if (gameObject.scene.buildIndex == -1) {
+                Destroy(gameObject);
+            }
+        }
+        SceneManager.LoadScene(scene.buildIndex, LoadSceneMode.Single);
+        /*minigame1Complete = false;
         minigame2Complete = false;
         toggleMG1 = false;
         toggleMG2 = false;
-        pageIndex = 0;
+        pageIndex = 0;*/
     }
 }
