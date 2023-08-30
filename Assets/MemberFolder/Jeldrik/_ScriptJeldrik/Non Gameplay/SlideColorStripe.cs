@@ -12,6 +12,7 @@ public class SlideColorStripe : MonoBehaviour
     [SerializeField] private Image _image;
     [SerializeField] private Image _button1;
     [SerializeField] private Image _button2;
+    [SerializeField] private Image _bookImage;
     [SerializeField] private float _slideTime;
     [SerializeField] private Transform _text1;
     [SerializeField] private Transform _text2;
@@ -24,6 +25,7 @@ public class SlideColorStripe : MonoBehaviour
 
     [SerializeField] TMP_Text _text1Text; 
     [SerializeField] TMP_Text _text2Text;
+    [SerializeField] TMP_Text _bookText;
 
     [SerializeField] CurrentQuestion _currentQuestion; 
 
@@ -89,10 +91,14 @@ public class SlideColorStripe : MonoBehaviour
        ChangeAlpha(_text2Text, 0);
        ChangeAlpha(_image, 0);
        ChangeAlpha(_twig.GetComponent<Image>(), 0);
+       ChangeAlpha(_bookImage, 0);
+       ChangeAlpha(_bookText, 0);
        _currentQuestion.gameObject.SetActive(cQToggle);
        DOAlpha(_text1Text, 1, time);
        DOAlpha(_text2Text, 1, time);
        DOAlpha(_image, 1, time);
+       DOAlpha(_bookImage, 1, time);
+       DOAlpha(_bookText, 1, time);
        DOAlpha(_twig.GetComponent<Image>(), 1, time);
     }
 
@@ -111,10 +117,14 @@ public class SlideColorStripe : MonoBehaviour
        ChangeAlpha(_text1Text, 1);
        ChangeAlpha(_text2Text, 1);
        ChangeAlpha(_image,     1);
+       ChangeAlpha(_bookImage,     1);
+       ChangeAlpha(_bookText,     1);
        ChangeAlpha(_twig.GetComponent<Image>(), 1);
        DOAlpha(_text1Text, 0, 0.75f);
        DOAlpha(_text2Text, 0, 0.75f);
        DOAlpha(_image,     0, 0.75f);
+       DOAlpha(_bookImage, 0, 0.75f);
+       DOAlpha(_bookText,  0, 0.75f);
        DOAlpha(_twig.GetComponent<Image>(), 0, 0.75f);
        _currentQuestion.gameObject.SetActive(cQToggle);
     }

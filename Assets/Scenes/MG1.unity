@@ -45729,6 +45729,7 @@ MonoBehaviour:
   _image: {fileID: 7472608573957569650}
   _button1: {fileID: 0}
   _button2: {fileID: 0}
+  _bookImage: {fileID: 0}
   _slideTime: 1
   _text1: {fileID: 63409063}
   _text2: {fileID: 7923881352486954013}
@@ -45739,6 +45740,7 @@ MonoBehaviour:
   _qM: {fileID: 0}
   _text1Text: {fileID: 0}
   _text2Text: {fileID: 0}
+  _bookText: {fileID: 0}
   _currentQuestion: {fileID: 0}
   _q: {fileID: 0}
   index: 0
@@ -50490,6 +50492,7 @@ MonoBehaviour:
   _image: {fileID: 7472608575633665275}
   _button1: {fileID: 1589395317}
   _button2: {fileID: 1463536347}
+  _bookImage: {fileID: 445064169}
   _slideTime: 2
   _text1: {fileID: 63409063}
   _text2: {fileID: 7923881352486954013}
@@ -50500,6 +50503,7 @@ MonoBehaviour:
   _qM: {fileID: 252887783}
   _text1Text: {fileID: 63409064}
   _text2Text: {fileID: 7923881352486954014}
+  _bookText: {fileID: 1441946943}
   _currentQuestion: {fileID: 1316571896}
   _q: {fileID: 11400000, guid: 90cae102534cdbb43b98c6c4fa192278, type: 2}
   index: 0
@@ -51041,6 +51045,7 @@ MonoBehaviour:
   _image: {fileID: 4590494170938161470}
   _button1: {fileID: 1589395317}
   _button2: {fileID: 1463536347}
+  _bookImage: {fileID: 0}
   _slideTime: 1
   _text1: {fileID: 63409063}
   _text2: {fileID: 7923881352486954013}
@@ -51051,6 +51056,7 @@ MonoBehaviour:
   _qM: {fileID: 0}
   _text1Text: {fileID: 0}
   _text2Text: {fileID: 0}
+  _bookText: {fileID: 0}
   _currentQuestion: {fileID: 0}
   _q: {fileID: 0}
   index: 0
