@@ -3,15 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Assets.SimpleLocalization;
 
 public class SceneLoader : MonoBehaviour
 {
     public string sceneName;
     private AsyncOperation asyncLoad;
+    public GameObject localizationManagerRef;
 
     private void Start()
     {
         LoadScene();
+    }
+
+    public void Awake()
+    {
+        Debug.Log("SceneLoader Awake");
+        localizationManagerRef.GetComponent<LocalizationSync>().Sync();
     }
 
     public void LoadScene()
@@ -38,6 +46,7 @@ public class SceneLoader : MonoBehaviour
     public void SetPageIndex(int page)
     {
         GameManager.Instance.pageIndex = page;
+        
     }
 
     public void CompleteMG2()

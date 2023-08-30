@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 namespace Assets.SimpleLocalization
 {
 	/// <summary>
 	/// Downloads spritesheets from Google Spreadsheet and saves them to Resources. My laziness made me to create it.
 	/// </summary>
-	[ExecuteInEditMode]
+	//[ExecuteInEditMode]
 	public class LocalizationSync : MonoBehaviour
 	{
 		/// <summary>
@@ -32,12 +33,15 @@ namespace Assets.SimpleLocalization
 
 		private const string UrlPattern = "https://docs.google.com/spreadsheets/d/{0}/export?format=csv&gid={1}";
 
-		#if UNITY_EDITOR
+#if UNITY_EDITOR
 
 		/// <summary>
 		/// Sync spreadsheets.
 		/// </summary>
-		public void Sync()
+		/// 
+
+
+        public void Sync()
 		{
 			StopAllCoroutines();
 			StartCoroutine(SyncCoroutine());
@@ -87,6 +91,16 @@ namespace Assets.SimpleLocalization
             UnityEditor.AssetDatabase.Refresh();
 
 			Debug.Log("<color=yellow>Localization sync completed!</color>");
+
+			//Debug.Log(LocalizationManager.Localize("SyncVersion"));
+			/*
+			if (LocalizationManager.Localize("SyncVersion") != GameManager.Instance.syncVersion)
+            {
+				GameManager.Instance.syncVersion = LocalizationManager.Localize("SyncVersion");
+				//SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+			}
+			*/
+			Debug.Log(LocalizationManager.Localize("SyncVersion"));
 		}
 
 		#endif
