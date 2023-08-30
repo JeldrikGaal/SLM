@@ -44,7 +44,7 @@ public class MG1Tutorial : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
         if (Instance == null)
         {
             Instance = this;

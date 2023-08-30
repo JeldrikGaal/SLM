@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.SceneManagement;
 
 public class ClickableStorage : MonoBehaviour
 {
@@ -55,10 +56,16 @@ public class ClickableStorage : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
-            return;
+            /*Scene scene = SceneManager.GetActiveScene();
+            foreach (GameObject gameObject in FindObjectsOfType<GameObject>()) {
+            if (gameObject.scene.buildIndex == -1) {
+                Destroy(gameObject);
+            }
+            SceneManager.LoadScene(scene.buildIndex, LoadSceneMode.Single);*/
         }
-    }
+            
+        }
+
 
     // Adds a clickableholder object to the correct list 
     public bool AddToStorage(ClickableHolder cH)

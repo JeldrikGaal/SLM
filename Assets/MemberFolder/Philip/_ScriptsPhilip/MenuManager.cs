@@ -228,7 +228,11 @@ public class MenuManager : MonoBehaviour
     public void LoadMinigame1()
     {
         //if (GameManager.Instance.CurrentState == GameManager.GameState.Animating) return;
-         
+        GameObject g = GameObject.FindGameObjectWithTag("ClickableStorage");
+        if (g)
+        {
+            Destroy(g);
+        }
         blockPanel.SetActive(true);
         StartCoroutine(MapTransition(loadMinigameDelay));
     }
