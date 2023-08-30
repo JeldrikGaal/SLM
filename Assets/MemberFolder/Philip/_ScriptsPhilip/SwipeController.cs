@@ -27,11 +27,6 @@ public class SwipeController : MonoBehaviour
         //LeanTouch.OnFingerUpdate -= HoldHandler;
         LeanTouch.OnFingerUp -= ReleaseHandler;
     }
-
-    private void Update()
-    {
-        throw new NotImplementedException();
-    }
     
     void SwipeHandler(LeanFinger finger)
     {
@@ -44,11 +39,17 @@ public class SwipeController : MonoBehaviour
             {
                 if (swipeDirection.x > 0)
                 {
-                    menuManager.PreviousPage();
+                    if (!menuManager.blockPanel.activeInHierarchy)
+                    {
+                        menuManager.PreviousPage();
+                    }
                 }
                 else
                 {
-                    menuManager.NextPage();
+                    if (!menuManager.blockPanel.activeInHierarchy)
+                    {
+                        menuManager.NextPage();
+                    }
                 }
             }
         }

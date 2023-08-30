@@ -355,6 +355,7 @@ GameObject:
   - component: {fileID: 8390238831085202248}
   - component: {fileID: 5569046779219383882}
   - component: {fileID: 5768276662299670450}
+  - component: {fileID: 420420918551104109}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -379,8 +380,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 282.54, y: 255.3}
-  m_SizeDelta: {x: 486.9067, y: 87.181}
+  m_AnchoredPosition: {x: 282.54, y: 280.77612}
+  m_SizeDelta: {x: 486.9067, y: 36.2287}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5569046779219383882
 CanvasRenderer:
@@ -479,6 +480,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &420420918551104109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6511243949772323339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50cf2546973275f4caa0511552ee3aef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TableId: J_Title
+  Sheets: []
+  SaveFolder: {fileID: 0}
 --- !u!1 &7804833971437309999
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +506,7 @@ GameObject:
   - component: {fileID: 1263852540143192418}
   - component: {fileID: 698713039764047807}
   - component: {fileID: 433216335815909517}
+  - component: {fileID: 869780610419054938}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -616,3 +633,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &869780610419054938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804833971437309999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50cf2546973275f4caa0511552ee3aef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TableId: J_Text
+  Sheets: []
+  SaveFolder: {fileID: 0}

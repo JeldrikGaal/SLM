@@ -229,17 +229,22 @@ public class MenuManager : MonoBehaviour
     {
         //if (GameManager.Instance.CurrentState == GameManager.GameState.Animating) return;
          
+        blockPanel.SetActive(true);
         StartCoroutine(MapTransition(loadMinigameDelay));
     }
 
     public void LoadMinigame2()
     {
+        blockPanel.SetActive(true);
+        
         StartCoroutine(MG2Transition());
     }
 
     private IEnumerator MG2Transition()
     {
         MG2cam.Priority = 20;
+        
+        blockPanel.SetActive(true);
         
         yield return new WaitForSeconds(4f);
 
@@ -256,8 +261,11 @@ public class MenuManager : MonoBehaviour
 
     private IEnumerator MapTransition(float time)
     {
+        
         GameManager.Instance.CurrentState = GameManager.GameState.Animating;
 
+        blockPanel.SetActive(true);
+        
         mapUnfoldAnim.Play("mapunfoldAnim");
         yield return new WaitForSeconds(mapUnfold.length - 6.7f);
 

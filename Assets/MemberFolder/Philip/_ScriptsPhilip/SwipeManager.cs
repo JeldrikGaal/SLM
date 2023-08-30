@@ -58,12 +58,18 @@ public class SwipeManager : MonoBehaviour
             else if (swipeAngle >= 135f && swipeAngle <= 225f)
             {
                 // Left swipe
-                menuManager.NextPage();
+                
+                if (!menuManager.blockPanel.activeInHierarchy)
+                {
+                    menuManager.NextPage();
+                }
             }
             else
             {
-                // Right swipe
-                menuManager.PreviousPage();
+                if (!menuManager.blockPanel.activeInHierarchy)
+                {
+                    menuManager.PreviousPage();
+                }
             }
         }
     }

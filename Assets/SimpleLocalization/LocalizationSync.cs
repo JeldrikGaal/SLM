@@ -39,7 +39,7 @@ namespace Assets.SimpleLocalization
 		/// Sync spreadsheets.
 		/// </summary>
 		/// 
-
+		
 
         public void Sync()
 		{
