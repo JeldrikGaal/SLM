@@ -65,8 +65,6 @@ public class MG1Tutorial : MonoBehaviour
 
         DOTween.SetTweensCapacity(1000,100);
 
-        _colorStripe.OrangeAppear();
-
         Invoke("InvokeStart", 0.75f);
     }
 
@@ -81,7 +79,8 @@ public class MG1Tutorial : MonoBehaviour
         else 
         {
             _currentQuestion.gameObject.SetActive(false);
-            _bookButton.SpawnAnimation();
+            //_bookButton.SpawnAnimation();
+            ShowSceneInfo();
         }
     }
 
@@ -120,9 +119,10 @@ public class MG1Tutorial : MonoBehaviour
         _running = true;
         _effectRunning = true;
         
-
         // Disabling touch input
         _dragController.enabled = false;
+        
+        _colorStripe.OrangeAppear();
         
         // Enabling and setting text for info popup
         EnablePopUp(1.5f, "TutorialText1");
@@ -140,8 +140,8 @@ public class MG1Tutorial : MonoBehaviour
         EnablePopUp(0.75f, "TutorialText2");
         EnableMoveArrows();
         EffectForMoveArrows(0.6f, 60, 3f);
-
-         _currentQuestion.gameObject.SetActive(false);
+        _colorStripe.InstantDisappear();
+        _currentQuestion.gameObject.SetActive(false);
 
     }
     public void EndTutorial()
@@ -149,7 +149,7 @@ public class MG1Tutorial : MonoBehaviour
         DisablePopUp(0.75f);
         if ( _runningStep2)
         {
-            Invoke("ShowSceneInfo", 0.75f);
+            Invoke("RealEnd", 0.75f);
         }        
         _running = false;
         _runningStep2 = false;
@@ -172,8 +172,9 @@ public class MG1Tutorial : MonoBehaviour
         }
         if (infoShowed1 && !Done)
         {
-            //Appear();
+            Appear();
             infoShowed2 = true;
+           
         }
         if (infoShowed2 && !Done)
         {
@@ -271,6 +272,9 @@ public class MG1Tutorial : MonoBehaviour
     // Makes the arrows bounce in scale and move themselve and the camera one after another starting from the top and going clockwise
     public void EffectForMoveArrows(float effect, float distance, float duration) 
     {
+
+        _colorStripe.Disappear();
+
         // Creating the needed sequence objects for the arrows, the holder object and the camera
         Sequence seq = DOTween.Sequence();
         Sequence seq2 = DOTween.Sequence();

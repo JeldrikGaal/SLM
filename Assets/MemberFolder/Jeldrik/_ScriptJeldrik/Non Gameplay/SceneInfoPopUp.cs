@@ -88,14 +88,20 @@ public class SceneInfoPopUp : MonoBehaviour
     {
         transform.DOScale(Vector3.zero, 0.5f).OnComplete(() => 
         {
-            
             // TODO: Trigger book button spawning in animation
             //_bookButton.SpawnAnimation();
-            _tutorialManager.RealEnd();
+            //_tutorialManager.RealEnd();
+            
+            Invoke("InvokeBookButtonSpawnAnim", 0.5f);
 
             Destroy(_reminderRef);
-            Destroy(this.gameObject);            
+            Destroy(this.gameObject, 1f);            
         });
         
+    }
+
+    void InvokeBookButtonSpawnAnim()
+    {
+        _bookButton.SpawnAnimation();
     }
 }

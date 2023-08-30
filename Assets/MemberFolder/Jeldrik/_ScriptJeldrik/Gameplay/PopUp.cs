@@ -101,7 +101,6 @@ public class PopUp : MonoBehaviour
         // Preventing popup to spawn while the animation is running
         _spawnTime = Time.time;
         
-        Debug.Log("CBT");
         cM.HidePopUp(this);
     }
 }

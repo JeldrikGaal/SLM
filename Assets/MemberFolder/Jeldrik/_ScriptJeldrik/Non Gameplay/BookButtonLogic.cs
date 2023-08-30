@@ -11,7 +11,6 @@ using System;
 
 public class BookButtonLogic : MonoBehaviour
 {
-
     [SerializeField] private float _animationTime;
     [SerializeField] private float _scaleModifier;
     [SerializeField] private float _repeatTime;
@@ -27,7 +26,6 @@ public class BookButtonLogic : MonoBehaviour
     private TouchHandler _tH;
     private LeanDragCamera _dragController;
     
-    
     // Next Question Question References 
     [SerializeField] private GameObject _continueButton;
     [SerializeField] private Image _continueArrow;
@@ -41,11 +39,9 @@ public class BookButtonLogic : MonoBehaviour
     private float _clicks = 0;
 
     private bool _tutorial = true;
+    private bool _textIsOpen = false;
 
     [SerializeField] private TMP_Text _tagText;
-
-     
-    
 
     // Start is called before the first frame update
     void Start()
@@ -74,7 +70,7 @@ public class BookButtonLogic : MonoBehaviour
             _repeatStartTime = Time.time;
         }
 
-        if (_repeating && !_tutorial)
+        if (_repeating && ( !_tutorial || _textIsOpen ) )  
         {
             if (Input.touchCount > 0 && Time.time - _repeatStartTime > _blockTime &&  Input.GetTouch(0).phase.Equals(TouchPhase.Began))
             {
@@ -91,6 +87,8 @@ public class BookButtonLogic : MonoBehaviour
     public void AskQuestion(float time = 0.75f)
     {
         if (_cM._tutorialBlock && ( _tutorialManager.Done || _tutorialManager.SKIPTUTORIAL )) return;
+
+        _textIsOpen = true;
         
         _cM._tutorialBlock = true;
         _continueButton.GetComponent<Button>().onClick.RemoveAllListeners();
@@ -134,7 +132,6 @@ public class BookButtonLogic : MonoBehaviour
         SlideColorStripe.DOAlpha(_goOnButtonText,1, time);
         SlideColorStripe.DOAlpha(_goOnArrow,1, time);
         SlideColorStripe.DOAlpha(_nextQuestionQuestionText,1, time);
-
     }
 
     public void DisableStuff()
@@ -157,7 +154,6 @@ public class BookButtonLogic : MonoBehaviour
 
     public void SpawnAnimation()
     {
-
         _colorStripe.OrangeAppear();
         _tutorialManager.MovePopUp();
         _tutorialManager.EnablePopUp(0.75f, "TutorialText3");
@@ -175,6 +171,8 @@ public class BookButtonLogic : MonoBehaviour
         _repeating = true;
     }
 
+
+
     public void End()
     {        
         _tutorial = false;
@@ -183,8 +181,6 @@ public class BookButtonLogic : MonoBehaviour
         _tH.UnlockInput();
         _cM._tutorialBlock = false;
         _tutorialManager.DisablePopUp(0.75f);
-        
-
         Invoke("InvokeStartTutorial", 1f);
     }
 

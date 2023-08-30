@@ -66,7 +66,6 @@ public class Clickable : MonoBehaviour
 
         if (cH != null && ( !_tutorialManager._runningStep2 || _tutorialManager.SKIPTUTORIAL))
         {
-            Debug.Log("!!!");
             UpdateLocalizedData();
             cM.TryDisplayPopUp(cH, this);
             _tH.BlockWrongInputPart();

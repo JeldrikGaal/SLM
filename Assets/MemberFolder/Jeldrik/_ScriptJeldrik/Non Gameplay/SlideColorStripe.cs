@@ -119,6 +119,14 @@ public class SlideColorStripe : MonoBehaviour
        _currentQuestion.gameObject.SetActive(cQToggle);
     }
 
+    public void InstantDisappear()
+    {
+       ChangeAlpha(_text1Text, 0);
+       ChangeAlpha(_text2Text, 0);
+       ChangeAlpha(_image,     0);
+       //ChangeAlpha(_twig.GetComponent<Image>(), 0);
+    }
+
     static public void ChangeAlpha(Image img, float a)
     {
         Color c = new Color(img.color.r, img.color.g, img.color.b, a);
